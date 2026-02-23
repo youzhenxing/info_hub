@@ -1,0 +1,122 @@
+[
+  {
+    "id": "reddit_t3_1qtjnbc",
+    "title": "[D] Self-Promotion Thread",
+    "url": "https://old.reddit.com/r/MachineLearning/comments/1qtjnbc/d_selfpromotion_thread/",
+    "score": 0,
+    "comments": 0,
+    "author": "AutoModerator",
+    "subreddit": "MachineLearning",
+    "created_at": "2026-02-08T08:24:18.150285",
+    "selftext": "Please post your personal projects, startups, product placements, collaboration needs, blogs etc.\n\n Please mention the payment and pricing requirements for products and services.\n\n Please do not post link shorteners, link aggregator websites , or auto-subscribe links.\n\n --\n\n Any abuse of trust will lead to bans.\n\n Encourage others who create new posts for questions to post here instead!\n\n Thread will stay alive until next one so keep posting after the date in the title.\n\n --\n\n Meta: This is an experiment. If the community doesnt like this, we will cancel it. This is to encourage those in the community to promote their work by not spamming the main threads.\n\n    submitted by    /u/AutoModerator  \n [link]   [comments]",
+    "source": "reddit"
+  },
+  {
+    "id": "reddit_t3_1qrrayn",
+    "title": "[D] Monthly Who's Hiring and Who wants to be Hired?",
+    "url": "https://old.reddit.com/r/MachineLearning/comments/1qrrayn/d_monthly_whos_hiring_and_who_wants_to_be_hired/",
+    "score": 0,
+    "comments": 0,
+    "author": "AutoModerator",
+    "subreddit": "MachineLearning",
+    "created_at": "2026-02-08T08:24:18.150384",
+    "selftext": "For Job Postings please use this template\n\n  Hiring: [Location], Salary:[], [Remote | Relocation], [Full Time | Contract | Part Time] and [Brief overview, what you're looking for]\n\n  For Those looking for jobs please use this template\n\n  Want to be Hired: [Location], Salary Expectation:[], [Remote | Relocation], [Full Time | Contract | Part Time] Resume: [Link to resume] and [Brief overview, what you're looking for]\n\n  ​\n\n Please remember that this community is geared towards those with experience.\n\n    submitted by    /u/AutoModerator  \n [link]   [comments]",
+    "source": "reddit"
+  },
+  {
+    "id": "reddit_t3_1qyhh04",
+    "title": "[D] Is there a push toward a \"Standard Grammar\" for ML architecture diagrams?",
+    "url": "https://old.reddit.com/r/MachineLearning/comments/1qyhh04/d_is_there_a_push_toward_a_standard_grammar_for/",
+    "score": 0,
+    "comments": 0,
+    "author": "Random_Arabic",
+    "subreddit": "MachineLearning",
+    "created_at": "2026-02-08T08:24:18.150407",
+    "selftext": "Looking through recent CVPR and NeurIPS papers, there seems to be an unofficial consensus on how to represent layers (colors, shapes, etc.), but it still feels very fragmented.\n\n  Is there a specific design language or 'standard' the community prefers to avoid ambiguity? When representing multi-modal or hybrid models, how do you balance visual clarity with technical accuracy? Are there any 'hidden gems' in terms of Python libraries that auto-generate clean diagrams directly from PyTorch/JAX code that actually look good enough for publication?  I’ve researched basic tools, but I’m looking for insights from those who regularly publish or present to stakeholders.\n\n    submitted by    /u/Random_Arabic  \n [link]   [comments]",
+    "source": "reddit"
+  },
+  {
+    "id": "reddit_t3_1qytpkl",
+    "title": "[R] Guidance for first time submission through OpenReview",
+    "url": "https://old.reddit.com/r/MachineLearning/comments/1qytpkl/r_guidance_for_first_time_submission_through/",
+    "score": 0,
+    "comments": 0,
+    "author": "kavinash366",
+    "subreddit": "MachineLearning",
+    "created_at": "2026-02-08T08:24:18.150423",
+    "selftext": "Hello everyone! It is my first time submitting a paper through KDD and Open Review and was wondering if I have completed the entire process as mentioned on the KDD website. I have submitted the full PDF through Open Review and it hasn't yet asked about who is going to serve as peer reviewer, GenAI disclosure etc as mentioned in KDD website. When do I get to choose these things? Is it after the submission window is closed?\n\n From KDD Website, \n\n  Every submission must nominate at least one author who is a qualified reviewer (i.e., authors with at least three papers in KDD or other related conferences). Only if no qualified reviewer exists in the author list, nominate the best-qualified author for consideration by the PC chairs.\n\n  Appreciate any guidance on this. Thanks!\n\n    submitted by    /u/kavinash366  \n [link]   [comments]",
+    "source": "reddit"
+  },
+  {
+    "id": "reddit_t3_1qyhi8k",
+    "title": "[P] A Matchbox Machine Learning model",
+    "url": "https://old.reddit.com/r/MachineLearning/comments/1qyhi8k/p_a_matchbox_machine_learning_model/",
+    "score": 0,
+    "comments": 0,
+    "author": "PureRepresentative89",
+    "subreddit": "MachineLearning",
+    "created_at": "2026-02-08T08:24:18.150434",
+    "selftext": "Hi everyone! I wanted to share a project I’ve been working on: I built a physical MENACE, the matchbox-based reinforcement learning model invented by Donald Michie in the 1960s to play tic‑tac‑toe. The model uses reinforcement learning and is implemented with matchboxes and beads for each game state. Don’t let the laptop screen fool you — the actual “AI” lives in the matchboxes, and I still have to pick moves by hand.On the laptop I’m running a small “Menace Manager” app that helps me quickly find the right box for the current board position and can also train MENACE using a Minimax opponent. I originally built all of this just to get an intuitive, hands‑on feel for how machine learning works.I’m thinking about cleaning it up and putting everything on GitHub (matchbox layout, training rules, and the manager app). Would that be interesting to you? By the way, if there are people from Taiwan here, I’d love to do a small group demo of the physical MENACE.\n\n    submitted by    /u/PureRepresentative89  \n [link]   [comments]",
+    "source": "reddit"
+  },
+  {
+    "id": "reddit_t3_1qyme3k",
+    "title": "[R] An open source dataset of aesthetic image variations (Apache 2.0)",
+    "url": "https://old.reddit.com/r/MachineLearning/comments/1qyme3k/r_an_open_source_dataset_of_aesthetic_image/",
+    "score": 0,
+    "comments": 0,
+    "author": "paper-crow",
+    "subreddit": "MachineLearning",
+    "created_at": "2026-02-08T08:24:18.150451",
+    "selftext": "Paper: https://arxiv.org/pdf/2602.01666\n Dataset: https://huggingface.co/datasets/moonworks/lunara-aesthetic-image-variations\n Colab notebook: https://colab.research.google.com/drive/1xrtJNS4rljgVa_6UKCuanyS2syJ0QZ7b\n\n After part I saw many downloads on huggingface, we're now sharing part II. While part I focused on aesthetic art styles, part II focuses on contextual variations, a key component of learning in Moonworks Lunara model. The dataset consists of original images and artwork created by Moonworks and their aesthetic contextual variations generated by Lunara, a sub-10B model with diffusion mixture architecture.\n\n We hope the dataset can be used to train LoRA, fine-tune image generation models, and help research in image-edit models.\n\n    submitted by    /u/paper-crow  \n [link]   [comments]",
+    "source": "reddit"
+  },
+  {
+    "id": "reddit_t3_1qykq5n",
+    "title": "[D] Best architecture for generating synthetic weather years (8760h)? My VAE is struggling with wind.",
+    "url": "https://old.reddit.com/r/MachineLearning/comments/1qykq5n/d_best_architecture_for_generating_synthetic/",
+    "score": 0,
+    "comments": 0,
+    "author": "Minute-Ad-5060",
+    "subreddit": "MachineLearning",
+    "created_at": "2026-02-08T08:24:18.150467",
+    "selftext": "Working on a generator for annual climate profiles (solar, wind, temp) at hourly resolution (8760 steps). I’m currently using a Conditional VAE with 1D ResNet blocks and some physics-informed loss functions (spectral, correlation, etc.).\n\n The solar and temp results are okay, but wind is a mess. It’s way too smooth and loses all that high-frequency \"noise\" and turbulence that makes wind data realistic. VAE just seems to blur everything out over such a long sequence.\n\n Is it worth sticking with VAEs and maybe switching to a Transformer-based backbone (like Informer), or should I just jump to Diffusion or GANs for this? Looking for any advice from people who've dealt with long-term time series generation where capturing the \"stochastic\" nature of the data is critical. Thanks!\n\n    submitted by    /u/Minute-Ad-5060  \n [link]   [comments]",
+    "source": "reddit"
+  },
+  {
+    "id": "reddit_t3_1qy0g29",
+    "title": "[P]Seeing models work is so satisfying",
+    "url": "https://old.reddit.com/r/MachineLearning/comments/1qy0g29/pseeing_models_work_is_so_satisfying/",
+    "score": 0,
+    "comments": 0,
+    "author": "Middle-Hurry4718",
+    "subreddit": "MachineLearning",
+    "created_at": "2026-02-08T08:24:18.150482",
+    "selftext": "Good evening everyone,\n\n I am new to this subreddit, and I wanted to share a couple charts I made of my ongoing progress with a ML challenge I found online. The challenge is trying to map children voices to 'phones', or actual mouth sounds. They recently released the bigger dataset and it has produced good fruit in my training pipeline. It was really nerve wrecking leaving the training to run by itself on my 5080, but I am glad I was able to wait it out.\n\n    submitted by    /u/Middle-Hurry4718  \n [link]   [comments]",
+    "source": "reddit"
+  },
+  {
+    "id": "reddit_t3_1qy7afx",
+    "title": "[P] How do you regression-test ML systems when correctness is fuzzy? (OSS tool)",
+    "url": "https://old.reddit.com/r/MachineLearning/comments/1qy7afx/p_how_do_you_regressiontest_ml_systems_when/",
+    "score": 0,
+    "comments": 0,
+    "author": "arauhala",
+    "subreddit": "MachineLearning",
+    "created_at": "2026-02-08T08:24:18.150494",
+    "selftext": "I’ve repeatedly run into the same issue when working with ML / NLP systems (and more recently LLM-based ones):\n\n there often isn’t a single correct answer - only better or worse behavior - and small changes can have non-local effects across the system.\n\n Traditional testing approaches (assertions, snapshot tests, benchmarks) tend to break down here:\n\n  failures don’t explain what changed evaluation is expensive tests become brittle or get ignored  We ended up building a review-driven regression testing approach that captures system behavior as readable artifacts, so humans can actually see and reason about regressions.\n\n We’ve now open-sourced it as Booktest:\n https://github.com/lumoa-oss/booktest\n\n I’m mostly curious how others handle this today:\n\n  do you rely on metrics? LLM-as-judge? manual spot checks?  Genuinely interested in what’s worked (or not).\n\n    submitted by    /u/arauhala  \n [link]   [comments]",
+    "source": "reddit"
+  },
+  {
+    "id": "reddit_t3_1qyjwlh",
+    "title": "[P] configgle: Hierarchical configuration using dataclasses factories",
+    "url": "https://old.reddit.com/r/MachineLearning/comments/1qyjwlh/p_configgle_hierarchical_configuration_using/",
+    "score": 0,
+    "comments": 0,
+    "author": "Legal-Pop-1330",
+    "subreddit": "MachineLearning",
+    "created_at": "2026-02-08T08:24:18.150511",
+    "selftext": "I've been working on (yet another...) library for managing ML experiment configs and wanted to share it. This project is intended for production ML research and development, though might be useful elsewhere.\n\n The basic idea is that a config is composed of nested dataclasses. Each nesting is defined in the class it configures and doubles as a factory. This keeps params \"close\" to their point of use and makes for more readable code.\n\n from configgle import Fig, Makes class Model: class Config(Fig[\"Model\"]): hidden_size: int = 256 num_layers: int = 4 def __init__(self, config: Config): self.config = config cfg = Model.Config() cfg.hidden_size = 512 model = cfg.make()  Alternatively there is also aconfiggle.autofig decorator to auto-generate the Config from __init__.\n\n The factory method make is built for you and automatically handles inheritance so you can also do:\n\n class OtherModel: class Config(Makes[\"OtherModel\"], Model.Config): hidden_size: int = 12 other_thing: float = 3.14 def __init__(self, config: Config): self.config = config other_model = OtherModel.Config().make()  A key feature of this design is that although makeis auto-populated we still retain type tracking for both the Config and the class it makes. (And if pyright/ty/mypy etc eventually support Intersection then you won't needFig[\"Model\"]nor Makes and can just use Fig.)\n\n Why another config library? There are great options out there (Hydra, Fiddle, gin-config, Sacred, Confugue, etc.), but they either focus more on YAML or wrapper objects and have various issues when it comes to typing. The goal here was a UX that's just simple Python--standard dataclasses, hierarchical, and class-local. No external files, no new syntax to learn. In fact the provided Dataclassclass is just for brevity--you can still use dataclasses.dataclass decorators.\n\n Learn more: https://pypi.org/project/configgle/\n\n    submitted by    /u/Legal-Pop-1330  \n [link]   [comments]",
+    "source": "reddit"
+  }
+]

@@ -1,0 +1,18 @@
+URL: https://www.reddit.com/r/artificial/comments/1quywnz/medical_ai_with_knowledgegraph_core_anchor_and/
+Title: Reddit - The heart of the internet
+Time: 2026-02-04T09:15:41.196757
+Go to artificial
+r/artificial
+•
+vagobond45
+Medical AI with Knowledge-Graph Core Anchor and RAG Answer Auditing
+Medical AI with Knowledge-Graph Core Anchor and RAG Answer Auditing
+A medical knowledge graph containing ~5,000 nodes, with medical terms organized into 7 main and 2 sub-categories: diseases, symptoms, treatments, risk factors, diagnostic tests, body parts, and cellular structures. The graph includes ~25,000 multi-directional relationships designed to reduce hallucinations and improve transparency in LLM-based reasoning.
+A medical AI that can answer basic health-related questions and support structured clinical reasoning through complex cases. The goal is to position this tool as an educational co-pilot for medical students, supporting learning in diagnostics, differential reasoning, and clinical training. The system is designed strictly for educational and training purposes and is not intended for clinical or patient-facing use.
+A working version can be tested on Hugging Face Spaces using preset questions or by entering custom queries:
+https://huggingface.co/spaces/cmtopbas/medical-slm-testing
+A draft site layout (demo / non-functional) is available here:
+https://wardmate.replit.app/
+I am looking for medical schools interested in running demos or pilot trials, as well as potential co-founders with marketing reach and a solid understanding of both AI and medical science. If helpful, I can share prompts and anonymized or synthetic reconstructions of over 20 complex clinical cases used for evaluation and demonstration.
+Read more
+Share

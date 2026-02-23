@@ -1,0 +1,98 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+!shared/lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+logs/*.log
+logs/mcp-*.log
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+wechat/data/wewe-rss/*.db
+
+# Output files (临时生成的邮件、报告等)
+output/*/email/*.html
+output/*/*/email/*.html
+output/podcast/audio/
+output/podcast/batch/
+wechat/data/output/
+
+# Test outputs
+agents/e2e_output/
+agents/deployment_test/*.html
+agents/deployment_test/*.md
+agents/*_output/
+
+# Cache
+.cache/
+*.cache
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.example
+
+# Deployment marker（部署标记文件，本地使用，不提交）
+.deployed_version
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Submodule specific
+wechat/wewe-rss/.next/
+wechat/wewe-rss/node_modules/
+wechat/wewe-rss/.turbo/
+wechat/wewe-rss/dist/
+wechat/wewe-rss/build/
+
+# Audit logs (保留结构，忽略内容)
+logs/*audit*.json
+
+# Test database
+wechat/data/wewe-rss/*.db-journal
+
+# 旧测试脚本已移至 agents/archive/
+# 防止误创建新的旧式测试脚本
+test_*.py
+agents/test_*.py
+!agents/test_e2e.py

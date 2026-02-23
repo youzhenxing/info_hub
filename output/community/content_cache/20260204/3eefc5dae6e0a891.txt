@@ -1,0 +1,1303 @@
+URL: https://github.com/orgs/community/discussions/185387
+Title: Exploring Solutions to Tackle Low-Quality Contributions on GitHub · community · Discussion #185387 · GitHub
+Time: 2026-02-04T08:33:40.651152
+GitHub Community
+Exploring Solutions to Tackle Low-Quality Contributions on GitHub
+#185387
+Pinned
+Unanswered
+moraesc
+asked this question in
+General
+Exploring Solutions to Tackle Low-Quality Contributions on GitHub
+#185387
+moraesc
+Jan 27, 2026
+·
+30 comments
+·
+48 replies
+Return to top
+Discussion options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+edited
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+moraesc
+Jan 27, 2026
+Maintainer
+-
+Hey everyone,
+I wanted to provide an update on a critical issue affecting the open source community: the increasing volume of low-quality contributions that is creating significant operational challenges for maintainers.
+We’ve been hearing from you that you’re dedicating substantial time to reviewing contributions that do not meet project quality standards for a number of reasons - they fail to follow project guidelines, are frequently abandoned shortly after submission, and are often AI-generated. As AI continues to reshape software development workflows and the nature of open source collaboration, I want you to know that we are actively investigating this problem and developing both immediate and longer-term strategic solutions.
+What we're exploring
+We’ve spent time reviewing feedback from community members, working directly with maintainers to explore various solutions, and looking through open source repositories to understand the nature of these contributions. Below is an overview of the solutions we’re currently evaluating.
+Short-term solutions:
+Configurable pull request permissions
+- This has been a long-standing request (since 2016) and is a first step in giving maintainers more tools to customize their PR experience. Repository owners will be able to control pull request access at a more granular level by restricting contributions to collaborators only or disabling PRs for specific use cases like mirror repositories. This also eliminates the need for custom automations that various open source projects are building to manage contributions.
+The ability to delete a PR from the UI
+- This provides maintainers with the ability to remove spam or low-quality PRs directly from the interface to improve repository organization.
+Long-term direction:
+As AI adoption accelerates, we recognize the need to proactively address how it can potentially transform both contributor and maintainer workflows. We are exploring:
+Enhanced permission models
+- Provide maintainers with more tools so they can customize their PR experience:
+More granular controls for determining who can create and reviewing PRs beyond blocking all users or restricting to collaborators only.
+Ways for maintainers to define criteria that PRs must meet before they can be opened.
+Improved triage tools
+- Potentially leveraging AI to evaluate contributions against project guidelines and standards to identify which contributions maintainers should focus on reviewing.
+Transparency in AI-assisted contributions
+- Improved visibility and attribution when AI tools are used throughout the PR lifecycle.
+Next Steps
+These are some starting points, and we’re continuing to explore both immediate improvements and long-term solutions.
+Please share your feedback, questions, or concerns in this thread.
+Your input is crucial to making sure we’re building the right things and tackling this challenge effectively. As always, thank you for being part of this conversation. Looking forward to hearing your thoughts and working together to address this problem.
+Beta
+Was this translation helpful?
+Give feedback.
+60
+You must be logged in to vote
+👍
+87
+👎
+1
+🎉
+21
+❤️
+39
+🚀
+4
+👀
+1
+All reactions
+👍
+87
+👎
+1
+🎉
+21
+❤️
+39
+🚀
+4
+👀
+1
+Replies:
+30 comments
+·
+48 replies
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+xavidop
+Jan 28, 2026
+-
+such a great intiative
+Beta
+Was this translation helpful?
+Give feedback.
+5
+You must be logged in to vote
+All reactions
+0 replies
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+xavidop
+Jan 28, 2026
+-
+I know this is a pretty ambitious idea and not trivial to implement, but it would be really powerful to have an AI-detection mechanism with a configurable threshold at the repository or organization level. That way, teams could decide what percentage of AI-generated code is acceptable in pull requests.
+Another possible approach would be to define a set of rules or prompts and evaluate pull requests against them. PRs that don’t meet those rules could be automatically flagged or potentially even closed.
+Beta
+Was this translation helpful?
+Give feedback.
+3
+You must be logged in to vote
+👍
+3
+👎
+6
+All reactions
+👍
+3
+👎
+6
+2 replies
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+edited
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+moraesc
+Jan 28, 2026
+Maintainer
+Author
+-
+Another possible approach would be to define a set of rules or prompts and evaluate pull requests against them. PRs that don’t meet those rules could be automatically flagged or potentially even closed.
+This is definitely something we’re exploring. One idea is to leverage a repository’s CONTRIBUTING.md file as a source of truth for project guidelines and then validate PRs against any defined rules.
+In regards to AI-generated code, have you seen cases where the code is AI-generated but still high-quality and actually solves the problem? Or is it always just something you want to close out immediately? I'm curious if an AI-detection mechanism would rule out PRs where AI is used constructively, but interested in investigating this more and understanding what sensible would thresholds look like.
+Beta
+Was this translation helpful?
+Give feedback.
+👍
+2
+All reactions
+👍
+2
+This comment was marked as spam.
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+xavidop
+Jan 28, 2026
+-
+As of today, I would say that 1 out of 10 PRs created with AI is legitimate and meets the standards required to open that PR.
+
+On 28 Jan 2026, at 18:41, Camilla Moraes ***@***.***> wrote:
+
+﻿
+
+Another possible approach would be to define a set of rules or prompts and evaluate pull requests against them. PRs that don’t meet those rules could be automatically flagged or potentially even closed.
+
+This is definitely something we’re exploring. One idea is to leverage a repository’s CONTRIBUTING.md file as a source of truth for project guidelines and then validate PRs against any defined rules.
+
+In regards to AI-generated code, have you seen cases where the code is AI-generated but still high-quality and genuinely solves the problem? Or is it alwaays just something you want to close out immediately? I'm curious because I'm wondering if an AI-detection mechanism would rule out PRs where AI is used constructively, but that's where we'd want to test this thoroughly and understand what sensible thresholds look like.
+
+—
+Reply to this email directly, view it on GitHub<
+#185387 (reply in thread)
+>, or unsubscribe<
+https://github.com/notifications/unsubscribe-auth/ABBWEYEKF6WLNDKE376L3GD4JDYFXAVCNFSM6AAAAACS7B7C7OVHI2DSMVQWIX3LMV43URDJONRXK43TNFXW4Q3PNVWWK3TUHMYTKNRTGEZTMMI
+>.
+You are receiving this because you commented.Message ID: ***@***.***>
+Beta
+Was this translation helpful?
+Give feedback.
+3
+You must be logged in to vote
+👎
+2
+All reactions
+👎
+2
+1 reply
+This comment was marked as spam.
+This comment was marked as off-topic.
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+edited
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+ThiefMaster
+Jan 28, 2026
+-
+Disable PRs entirely
+PLEASE make this better than disabling issues: Imparticular, do not restrict access to previously opened PRs. Fine to hide the UI or even the ability to list them, but let people access them with a direct link. I'd also appreciate if that was done in repos where issues got disabled.
+Context: Someone realizing that they no longer want to allow issues (or PRs) should NOT make any existing content disappear for good. Especially in cases where this content is referenced elsewhere and suddenly becomes a dead link...
+The ability to delete a PR from the UI
+Similar to my suggestion above, this should be limited in time. It's amazing to delete spam PRs. Hacktoberfest-cheating, Indian-Youtube-nonsense, and the likes. But if there is a controversy around a PR, which has happened numerous times before e.g. due to highly unpopular decisions by repo maintainers (Minio comes to my mind), then they should NOT be able to permanently delete at PR just because it's inconvenient or shows their true face.
+My suggestion would be to have a (very) limited timeframe to delete a PR. Maybe a week in case of low activity (e.g. a spam PR the maintainers did not see), much less in case of high activity. Having an exception for "quiet" PRs (no meaningful amount of comments) and allowing to delete those for longer would be perfectly fine of course so someone who rarely checks their repo can delete spam even when they notice it late.
+PS: Yes, I'm aware that deleting individual comments on PRs and issues is already possible. But that's a hassle compared to being able to nuke the whole thing with two clicks.
+Beta
+Was this translation helpful?
+Give feedback.
+15
+You must be logged in to vote
+👍
+12
+❤️
+4
+All reactions
+👍
+12
+❤️
+4
+2 replies
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+edited
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+moraesc
+Jan 28, 2026
+Maintainer
+Author
+-
+PLEASE make this better than disabling issues: Imparticular, do not restrict access to previously opened PRs. Fine to hide the UI or even the ability to list them, but let people access them with a direct link. I'd also appreciate if that was done in repos where issues got disabled.
+Context: Someone realizing that they no longer want to allow issues (or PRs) should NOT make any existing content disappear for good. Especially in cases where this content is referenced elsewhere and suddenly becomes a dead link...
+Would you want to be able to navigate to the PR just for viewing purposes or to potentially keep making changes to it? I agree it makes sense for users to still be able to view their PRs - will see what we can do here.
+Similar to my suggestion above, this should be limited in time. It's amazing to delete spam PRs. Hacktoberfest-cheating, Indian-Youtube-nonsense, and the likes. But if there is a controversy around a PR, which has happened numerous times before e.g. due to highly unpopular decisions by repo maintainers (Minio comes to my mind), then they should NOT be able to permanently delete at PR just because it's inconvenient or shows their true face.
+My suggestion would be to have a (very) limited timeframe to delete a PR. Maybe a week in case of low activity (e.g. a spam PR the maintainers did not see), much less in case of high activity. Having an exception for "quiet" PRs (no meaningful amount of comments) and allowing to delete those for longer would be perfectly fine of course so someone who rarely checks their repo can delete spam even when they notice it late.
+Thoughts on having this be an org-level or repo-level setting so admins can determine when deletion can be done? I know there are also certain repos/orgs where PRs can't be deleted for legal reasons.
+Beta
+Was this translation helpful?
+Give feedback.
+All reactions
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+ThiefMaster
+Jan 28, 2026
+-
+I think just being able to view would be more than enough.
+For private repos I would not limit this at all by default, or make it configurable. My comment was mostly about public repos where I don't think the maintainer should have the ability to make a PR and its associated discussion simply disappear for good, e.g. because they do not like how that discussion went.
+Beta
+Was this translation helpful?
+Give feedback.
+👍
+6
+All reactions
+👍
+6
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+Mossaka
+Jan 28, 2026
+-
+Hey! I am from Azure Core Upstream and we have a lot of OSS maintainers who mainly maintain repositories on GitHub. We held an internal session to talk about copilot and there is a discussion on the topic where maintainers feel caught between today’s required review rigor (line-by-line understanding for anything shipped) and a future where agentic / AI-generated code makes that model increasingly unsustainable.
+below are some key maintainer's pain points:
+Review trust model is broken: reviewers can no longer assume authors understand or wrote the code they submit.
+AI-generated PRs can look structurally “fine” but be logically wrong, unsafe, or interact with systems the reviewer doesn’t fully know.
+Line-by-line review is still mandatory for shipped code, but does not scale with large AI-assisted or agentic PRs.
+Maintainers are uncomfortable approving PRs they don’t fully understand, yet AI makes it easy to submit large changes without deep understanding.
+Increased cognitive load: reviewers must now evaluate both the code and whether the author understands it.
+Review burden is higher than pre-AI, not lower.
+Beta
+Was this translation helpful?
+Give feedback.
+10
+You must be logged in to vote
+👍
+10
+😕
+1
+❤️
+9
+All reactions
+👍
+10
+😕
+1
+❤️
+9
+2 replies
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+edited
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+moraesc
+Jan 28, 2026
+Maintainer
+Author
+-
+Thanks for sharing
+@Mossaka
+! Great to get more feedback. This looks along the lines of what we've been hearing from maintainers too, so validates what some of the key pain points are. Were there any feature requests mentioned during the session?
+Beta
+Was this translation helpful?
+Give feedback.
+All reactions
+This comment was marked as off-topic.
+This comment was marked as off-topic.
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+Tibor17
+Jan 30, 2026
+-
+I have a problem with the following statement. It is very leftish. The GitHub has no rights to impose such limitations. You have to configure your repo and TTL of a PR:
+limited timeframe to delete a PR. Maybe a week in case of low activity
+Regarding the next statement, you can delete a PR when you close it. How different is
+close
+and
+delete
+?
+Next question, why you mentioned
+low-quality PRs
+? I hope you do not want to employ AI to determine what
+low quality
+means! We, maintainers, have to determine it.
+The ability to delete a PR from the UI - This provides maintainers with the ability to remove spam or low-quality PRs directly from the interface to improve repository organization.
+Who is an
+external contributor
+?
+Example, you mean a situation when XLibre developers are removed from Xorg?
+Restrict PRs to collaborators - This provides more granular access control, allowing contributions exclusively from existing collaborators while blocking external contributors.
+This would segregate the maintainers and we don't want it. We have flags on the PRs to indicate what to do with them.
+If the AI is leveraged to this job, we have segregated the maintainers again in the Open Source. But the rule is that we are all equal, and this might be a problem if one is notified and the second guy is not. You may not totally trust the AI due to finally the result may change without the second guy or the quality would be bad without his opinion since he does not attend the review.
+Improved triage tools - Potentially leveraging AI to evaluate contributions against project guidelines and standards to identify which contributions maintainers should focus on reviewing.
+Beta
+Was this translation helpful?
+Give feedback.
+1
+You must be logged in to vote
+👎
+13
+All reactions
+👎
+13
+6 replies
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+Tibor17
+Feb 1, 2026
+-
+It is very leftish. The GitHub has no rights to impose such limitations. Y
+Disagree. For the sake of openness and transparency, completely nuking a PR is not a good thing. If there are good reasons one could always contact support...
+Also WTF does it have to do with "leftish"?
+I don't understand what you are talking about. Nobody want's to get rid of PRs. Me either!
+PRs are the point of Open Source.
+Beta
+Was this translation helpful?
+Give feedback.
+All reactions
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+ThiefMaster
+Feb 1, 2026
+-
+This was about DELETING specific PRs. Not getting rid of PRs in general.
+Beta
+Was this translation helpful?
+Give feedback.
+All reactions
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+moraesc
+Feb 2, 2026
+Maintainer
+Author
+-
+Regarding the next statement, you can delete a PR when you close it. How different is close and delete?
+Hey
+@Tibor17
+, we've received numerous requests from maintainers who want the ability to delete PRs from their repos. I know "low-quality" means different things to different projects, so maintainers ideally should have flexibility to make that determination themselves. That being said, the most common patterns we've seen are spammy or abusive content, AI-generated contributions that don't align with project standards, or low-effort submissions like PRs with no description, failing tests, changes that don't address any actual issue, etc.. The goal is to give maintainers tools to curate their PR experience in a way that works for their project and community.
+Who is an external contributor?
+Example, you mean a situation when XLibre developers are removed from Xorg?
+Restrict PRs to collaborators - This provides more granular access control, allowing contributions exclusively from existing collaborators while blocking external contributors.
+"External contributors" is anyone without write access. All users with write access will still be able to contribute if this option is toggled on.
+This would segregate the maintainers and we don't want it. We have flags on the PRs to indicate what to do with them.
+If the AI is leveraged to this job, we have segregated the maintainers again in the Open Source. But the rule is that we are all equal, and this might be a problem if one is notified and the second guy is not. You may not totally trust the AI due to finally the result may change without the second guy or the quality would be bad without his opinion since he does not attend the review.
+If we were to implement something like this, it would be completely up to the maintainer if they want to use this in their repos or not. No repo would be required to use any triage tools. What do you think would be more useful for you to help triage and prioritize PRs?
+Beta
+Was this translation helpful?
+Give feedback.
+All reactions
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+djmattyg007
+Feb 3, 2026
+-
+PRs are the point of Open Source.
+"Open Source" misses the point.
+https://www.gnu.org/philosophy/open-source-misses-the-point.en.html
+Beta
+Was this translation helpful?
+Give feedback.
+All reactions
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+HeyBanditoz
+Feb 3, 2026
+-
+It is very leftish.
+What
+Anyways, in principle I agree with you. PRs are a good thing and
+should
+stay.
+However Github (see: Microsoft) really shot themselves in the foot here by arming everyone with these tools even if they didn't ask for it. The whole AI industry did, really.
+Beta
+Was this translation helpful?
+Give feedback.
+👍
+2
+All reactions
+👍
+2
+This comment was marked as spam.
+This comment was marked as spam.
+This comment was marked as spam.
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+edited
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+sirosen
+Jan 31, 2026
+-
+An option to limit new contributors to one open PR would be nice.
+Just today I had to batch-close several AI generated PRs which were all submitted around the same time.
+For this protection, defining "new contributor" is probably not possible to do perfectly. But anyone who has no interactions with a project prior to the last 48 hours seems like a good heuristic. The point is to catch such a user at submission time and limit the amount of maintainer attention they can take up.
+For a different type of problem, I'd like to be able to close PRs as "abandoned", similar to the issue close statuses. It's a clear UI signal to the contributor that their work isn't being rejected but I'm not going to finish it for them. Several of the low quality contributions I have handled, dating back to before the Slop Era but getting worse, are simply incomplete and need follow through.
+Beta
+Was this translation helpful?
+Give feedback.
+6
+You must be logged in to vote
+👍
+6
+👎
+1
+All reactions
+👍
+6
+👎
+1
+2 replies
+This comment was marked as off-topic.
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+sirosen
+Feb 2, 2026
+-
+@Tibor17
+, I don't think you actually read what I wrote. Also, calling my opinion "sick" is extraordinarily insulting, and as such I've reported your post.
+I'm not hurt by it, but, like,
+wow
+, that's a rude way to talk to someone! So rude, I feel that it will be worth my taking a minute to answer
+1
+your post.
+Abandoned PRs or automatically deleted PRs is very leftish.
+I don't know what this sentence means.
+Sometimes contributors submit a PR which is not of acceptable quality, e.g. no docs or tests. Then, they do not respond to review. Therefore, the PR is abandoned.
+That's just the definition. If we can't even acknowledge that that's a real thing, then there's really no point in discussing it further.
+I can't say that I know what "leftish" means, but if that's a mistake or stand-in for "leftist" (as in, socially progressive, standing against fascism, pro-human-rights, etc etc), then sure I guess. I'll happily accept a label of being "leftish". I don't really think my opinion about this topic, as voiced in the original post, has very much to do with my broader political views.
+2
+Who gives rights to the GitHub to close a PR after the weekend?
+I never said anything about closing PRs after any specific timeframe.
+Even if I had... If I run a project hosted on GitHub, I can close PRs whenever I damn well please. I can configure stalebot to close and lock all PRs and issues after a period of inactivity, if I so choose. It's my project, after all.
+If you are not able to communicate with people then you would simply discard their hard work.
+🤣
+Being told that I'm "not able to communicate with people" by someone who didn't even read the post they're replying to is very rich.
+The
+title
+of this discussion is about "Low-Quality Contributions". We're talking about a high-volume attack on FOSS maintainers' ability to concentrate, tend to their projects, and grow the surrounding communities. By definition, these are
+non-contribution
+contributions and net negative for the various projects and maintainers.
+It is a project maintainer's responsibility to decide when to reject contributions. If you can't reject work as being of unacceptably poor quality, you probably can't maintain a FOSS project.
+This is not fair!!!
+What is not fair, and to whom?
+If a "contributor" spends 5 minutes asking an LLM to make a PR against my project, and I have to spend 1 hour reviewing it and offering feedback, then I'm spending 12x more time and effort than the contributor. If I felt that 5 minutes of asking a chatbot to make a PR was a good way to advance my project
+I would have already done that.
+I could probably do it better than someone throwing YOLO PRs at random projects to see what sticks.
+My time on FOSS projects is voluntarily donated. That includes the time it takes to assess that a PR is total junk and close it. It's not unfair to dispose of spam emails -- those come from spammers. Similarly, it's not unfair to dispose of spam PRs -- those come from spammers.
+Footnotes
+systematically and mercilessly demolish
+↩
+My political views definitely have bearing on my technical ones. But I think it would be difficult to read those views into the text of the initial post.
+↩
+Beta
+Was this translation helpful?
+Give feedback.
+👍
+8
+😄
+1
+❤️
+2
+All reactions
+👍
+8
+😄
+1
+❤️
+2
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+dgoldman0
+Jan 31, 2026
+-
+For the long term horizon: Implement a reviewer LLM that first does an initial scoring of the PRs? Critique is far easier than creation of a correct result. That automated pre-moderation should give the edge needed to handle. Depending on whether you just use rich prompting or fine-tuning, you can even start building an "oracle vox" for your project, which acts as a reasonably informed, reasonably on point virtual representative for the project/organization.
+Beta
+Was this translation helpful?
+Give feedback.
+1
+You must be logged in to vote
+👎
+8
+All reactions
+👎
+8
+8 replies
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+dgoldman0
+Jan 31, 2026
+-
+That is your own delusions and paranoia speaking.
+Beta
+Was this translation helpful?
+Give feedback.
+👎
+5
+All reactions
+👎
+5
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+sirosen
+Feb 1, 2026
+-
+I think you do not understand why LLM generated PRs are harmful to maintainers.
+Review is time consuming labor that generally requires a higher level of expertise than contributing code. When I see a 10K SLOC commit which purports to fix 12 outstanding issues, it's unreviewable. I can't responsibly accept it even if every line is correct -- because I just have no way to assess it. Turning
+up
+the volume of content I need to review by adding a public chat between the contributor and some GitHub-run agent makes the information overload that much worse.
+And yes, I would need to read that whole chat, because I guarantee that there will be hallucinations in there and misinformation I need to correct. Adding Mr. Flattery The Always Wrong Bot to every conversation is not going to help.
+I don't want more. I want less, but better.
+Beta
+Was this translation helpful?
+Give feedback.
+👍
+6
+All reactions
+👍
+6
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+dgoldman0
+Feb 1, 2026
+-
+You are trying to manage manually what is no longer possible to do manually. People want to believe that enshittification is simply a decline in quality of information. The reality is that all information is shit if you do not have the resources to review it. Don't treat it as a god, an oracle, whatever. Treat it as a fairly entry level volunteer helper. If you would trust it to them, trust it to a properly built LLM framework. But hey, you do you. You can try to continue to do by hand that which is beyond manual capacity.
+Beta
+Was this translation helpful?
+Give feedback.
+👎
+7
+All reactions
+👎
+7
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+ThiefMaster
+Feb 1, 2026
+-
+Easy solution: Reject contributions you don't need/want. You are not required to review and merge everything. It's your project. And regardless of LLMs etc, if there is one huge commit fixing multiple unrelated bugs, that's not something most projects want, especially not from external/drive-by contributors.
+Beta
+Was this translation helpful?
+Give feedback.
+👍
+6
+All reactions
+👍
+6
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+dgoldman0
+Feb 1, 2026
+-
+Easy solution: Reject contributions you don't need/want.
+That assumes you have the resources to evaluate every contribution to determine if it is something you don't need/want. Even before the rise of generative AI, it was already getting to the point that there was simply too much content to make use of through manual means. All data is sh*t if it cannot be processed.
+Beta
+Was this translation helpful?
+Give feedback.
+👎
+2
+All reactions
+👎
+2
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+PraiseTechzw
+Feb 1, 2026
+-
+This is a very real problem, and I appreciate that it’s being treated as systemic rather than blaming maintainers or contributors individually.
+One concern I have with repo-level PR restrictions is that they may disproportionately impact first-time contributors who do want to engage meaningfully but don’t yet have collaborator status.
+Personally, I think the most promising direction here is criteria-based PR gating rather than blanket restrictions things like required checklist completion, passing CI, linked issues, or acknowledgement of contribution guidelines before a PR can be opened.
+On AI usage specifically, transparency feels more scalable than prohibition. Clear disclosure combined with automated guideline checks could help maintainers focus on high-intent contributions without discouraging responsible AI-assisted workflows.
+Looking forward to seeing how these ideas evolve especially solutions that preserve openness while respecting maintainer time.
+Beta
+Was this translation helpful?
+Give feedback.
+7
+You must be logged in to vote
+👍
+2
+All reactions
+👍
+2
+2 replies
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+moraesc
+Feb 2, 2026
+Maintainer
+Author
+-
+One concern I have with repo-level PR restrictions is that they may disproportionately impact first-time contributors who do want to engage meaningfully but don’t yet have collaborator status.
+Completely agree with this concern and just want to emphasize that this is just a starting point and not the final solution. The plan is to develop more tools and frameworks for both maintainers and contributors to help address the "slop" problem.
+Personally, I think the most promising direction here is criteria-based PR gating rather than blanket restrictions things like required checklist completion, passing CI, linked issues, or acknowledgement of contribution guidelines before a PR can be opened.
+Some other ideas we're exploring are requiring an issue to be created first before a user can open a PR or leveraging AI to validate a PR against rules defined in a CONTRIBUTING.md file or something similar. Any thoughts on that?
+Beta
+Was this translation helpful?
+Give feedback.
+👍
+1
+All reactions
+👍
+1
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+robmen
+Feb 2, 2026
+-
+Some other ideas we're exploring are requiring an issue to be created first before a user can open a PR
+Requiring that an issue be assigned to the user before they can post a PR would work well with our process. We already request that users who open a PR also open an issue so it can be triaged into the appropriate milestone. It would be great if GitHub had a way to normalize that workflow.
+Beta
+Was this translation helpful?
+Give feedback.
+👍
+2
+All reactions
+👍
+2
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+funnelfiasco
+Feb 1, 2026
+-
+Thinking along the lines of the
+discussion first approach
+that Ghostty uses, I think one way to create just enough friction would be to have an opt-in where a PR has to be linked to an open issue or discussion topic. So when an unprivileged (i.e. does not have elevated privileges on the repo) user tries to create a PR, there's a required field that takes an issue/discussion number. If that's not provided (or the corresponding issue/discussion is closed), then the PR can't be created.
+This could be trivially worked around by throwing in any old issue/discussion (or by creating one), but it may cause just enough friction to help. To guard against this, perhaps maintainers could set a "minimum age" for the issue/discussion (e.g. 12 hours) to prevent creating fake issues to support a spammy PR.
+Beta
+Was this translation helpful?
+Give feedback.
+4
+You must be logged in to vote
+All reactions
+4 replies
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+jamietanna
+Feb 1, 2026
+-
+Ghostty follows the Discussion first approach based on how we do it in
+@renovatebot
+, and I agree it's a good approach
+But
+sometimes it is better to have a PR raised without a Discussion or Issue - as noted
+here
+we find that additional friction requiring them isn't worth it, but at least making the author aware "I'm fully comfortable with the fact this could get closed" helps
+Beta
+Was this translation helpful?
+Give feedback.
+👍
+2
+🚀
+1
+All reactions
+👍
+2
+🚀
+1
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+funnelfiasco
+Feb 1, 2026
+-
+Yeah, there are definitely cases where even that low friction is too much. At the risk of overcomplicating it, maybe the settings could also include a "only apply to PRs above X lines" or "only for/exclude the following directories". Of course, maintainers who find the friction not worthwhile could also just not enable the setting.
+Beta
+Was this translation helpful?
+Give feedback.
+👍
+2
+All reactions
+👍
+2
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+moraesc
+Feb 2, 2026
+Maintainer
+Author
+-
+@jamietanna
+does the discussion-first approach that you follow require all users to create a discussion first, or only "non-collaborators" (users without write access) ?
+Beta
+Was this translation helpful?
+Give feedback.
+All reactions
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+jamietanna
+Feb 3, 2026
+-
+@moraesc
+generally non-collaborators. The maintainers and collaborators are able to create an Issue and remove the
+needs-discussion
+label that auto-closed an Issue raised by a non-collaborator
+That being said, non-collaborators will often go through the Discussion process, as it's pretty good at distilling what we want, and a place to work through ideas before they're in an Issue
+Beta
+Was this translation helpful?
+Give feedback.
+All reactions
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+njbrake
+Feb 1, 2026
+-
+At FOSDEM today,
+@abbycabs
+gave a great talk about "
+the Synthetic Senior
+" and some initial strategies to better handle contributions, which I found very insightful.
+She mentioned a few steps to improve submission quality such as AI attribution policies and requirements for discussion prior to PR filing: we've implemented many of these at mozilla.ai (
+https://blog.mozilla.ai/ai-generated-code-isnt-cheating-oss-needs-to-talk-about-it/
+) over the past months (and that I've been implementing in
+https://github.com/njbrake/agent-of-empires
+).
+At the end of her talk I asked this question, which she recommended I add here: how can github change the incentive structure so that contributors are incentivized to spend their time writing a great issue/feature description, not on submitting/prompting code via a PR?
+Especially for up and coming contributors I think there is some pride associated with saying "I am a contributor to xyz library". If all someone does is write a really great issue description or feature request, I don't think they get any official recognition unless the repository owner chooses to do something special outside of built-in Github features?
+But in the world of AI coding, my current thought is that a clear, well-thought out, concise description of the problem or feature is significantly more valuable than sending Claude Code off to write some code and create a PR so you can display that you're a contributor.
+Imo much of open-source is really at risk because of this: we need to figure out a way to encourage knowledge sharing to keep alive what makes open source and github so special: the community. 🙏
+Beta
+Was this translation helpful?
+Give feedback.
+5
+You must be logged in to vote
+👍
+10
+❤️
+3
+All reactions
+👍
+10
+❤️
+3
+2 replies
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+moraesc
+Feb 2, 2026
+Maintainer
+Author
+-
+Thanks for sharing this
+@njbrake
+!
+I really like the question that
+@abbycabs
+raised and it's one I've been thinking about a lot. It's definitely going to require rethinking both contributor and maintainer workflows. It's a tricky problem to solve, but I'm glad we're having these discussion and hearing different perspectives.
+I also think it's an exciting opportunity to potentially build even more powerful workflows and incentives that truly reflect the value of different types of contributions. We want contributors to feel encouraged to get involved and genuinely invested in projects, while also ensuring that being a "contributor" represents something meaningful.
+Really appreciate you bringing this perspective to the conversation and if you have any other thoughts around Abby's question or which solutions would be most useful for you please feel free to share in here.
+Beta
+Was this translation helpful?
+Give feedback.
+👍
+1
+All reactions
+👍
+1
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+njbrake
+Feb 2, 2026
+-
+Thanks! This is very much an un-tested solution, but something I put into my project today to give a try: I setup a "helpful contributions" leaderboard where maintainers can put the label "helpful contribution" on a github issue/discussion/PR, and then the author of the post is given a point on the
+contributors leaderboard
+for AoE. So basically it's an attempt to motivate people to write awesome descriptions for me, and not worry as much about filing real pull requests. This is probably not perfect final version, but I thought it would be interesting to try.
+Beta
+Was this translation helpful?
+Give feedback.
+👍
+1
+All reactions
+👍
+1
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+MuchuCAT
+Feb 2, 2026
+-
+Thanks for sharing this update this is a real & increasingly painful issue for maintainers.
+From a maintainer perspective, the problem isn’t AI itself, but
+asymmetry of cost
+: it’s now extremely cheap to generate contributions, while the cost of reviewing, triaging and communicating remains fully human.
+On short-term controls
+Repo-level PR restrictions and the ability to disable or limit PRs are absolutely necessary. Many projects today want to
+share code without running a public contribution funnel
+, and current workarounds (bots auto-closing PRs) are noisy & unfriendly.
+Being able to delete spam PRs directly from the UI would also significantly reduce cognitive overhead for maintainers.
+On longer-term solutions
+Granular PR gating feels like the right direction, especially :
+Defining preconditions before a PR can be opened (templates completed, checkboxes acknowledged, CI passing on forks, etc.)
+Differentiating between
+drive-by contributors
+and
+trusted external contributors
+without requiring full collaborator access
+For AI-assisted contributions, transparency is key, but attribution alone won’t solve quality issues. What would help maintainers most is :
+Clear signals about intent (is this exploratory, learning, production-ready ? )
+Early filtering that prioritizes PRs aligned with project goals and contribution guidelines
+One important thing to avoid is shifting more complexity onto maintainers. Any AI-based triage should aim to
+reduce decision fatigue
+, not introduce another system that needs constant tuning.
+Overall, giving maintainers more control over
+when
+&
+how
+contributions enter their workflow seems more valuable than trying to judge contributor intent after the fact.
+Appreciate the openness here , looking forward to seeing how these tools evolve.
+Beta
+Was this translation helpful?
+Give feedback.
+4
+You must be logged in to vote
+All reactions
+1 reply
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+moraesc
+Feb 2, 2026
+Maintainer
+Author
+-
+Thanks for the feedback
+@MuchuCAT
+! We'll keep your ideas in mind as we move forward.
+One important thing to avoid is shifting more complexity onto maintainers. Any AI-based triage should aim to reduce decision fatigue , not introduce another system that needs constant tuning.
+Overall, giving maintainers more control over when & how contributions enter their workflow seems more valuable than trying to judge contributor intent after the fact.
+I agree with these points and want to make sure we're not adding any more complexity to maintainers' workflow. I'll continue sharing updates / requesting feedback as we move forward to make sure we're implementing the most useful solutions.
+Beta
+Was this translation helpful?
+Give feedback.
+All reactions
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+shellybrone7
+Feb 2, 2026
+-
+Really glad GitHub is addressing this maintainers need better filters without shutting out genuine contributors. Clearer contribution criteria upfront could also reduce the
+download to earn
+style low-effort PRs that waste review time.
+Beta
+Was this translation helpful?
+Give feedback.
+1
+You must be logged in to vote
+👎
+1
+All reactions
+👎
+1
+1 reply
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+ThiefMaster
+Feb 2, 2026
+-
+fuck off with your spam shit
+Beta
+Was this translation helpful?
+Give feedback.
+👍
+3
+All reactions
+👍
+3
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+edited
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+duskwuff
+Feb 3, 2026
+-
+Regarding:
+Transparency in AI-assisted contributions - Improved visibility and attribution when AI tools are used throughout the PR lifecycle.
+One step you could make to build trust here would be to provide a way for repository owners to state their policy on AI-assisted contributions, and to automatically disable Copilot features in repositories whose AI policy prohibits its use. (Bonus points if you can coordinate with other AI vendors to have their tools respect those policies as well.)
+Beta
+Was this translation helpful?
+Give feedback.
+7
+You must be logged in to vote
+All reactions
+1 reply
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+clason
+Feb 3, 2026
+-
+I think a repo(!) setting for disabling Copilot (and ideally other agents, but I can see how this would be hard to enforce) access would already go a long way. (I would even go as far as this being an urgently required short-term step.)
+I don't want to read a novella "PR summary" that the contributor should have written themselves and more concisely; yet I cannot prevent contributors who (sometimes unknowingly!) have Copilot enabled on their personal(!) account triggering LLM reviews on PRs to my projects.
+Beta
+Was this translation helpful?
+Give feedback.
+All reactions
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+edited
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+kyrofa
+Feb 3, 2026
+-
+Ways for maintainers to define criteria that PRs must meet before they can be opened.
+This is the way. Consider this simple first step: allow maintainers to require CI to pass before a PR can even be opened. If you start there, maintainers can develop their own logic for "is this a PR I want to review" and put it in CI.
+My current solution is generally "I won't review PRs that don't pass CI." But it's hard to communicate that, and it still takes time.
+Beta
+Was this translation helpful?
+Give feedback.
+2
+You must be logged in to vote
+All reactions
+3 replies
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+jamietanna
+Feb 3, 2026
+-
+Also, unfortunately, this requires allowing CI to run by default, which is often not enabled due to security concerns 😅
+Beta
+Was this translation helpful?
+Give feedback.
+👍
+1
+🚀
+1
+All reactions
+👍
+1
+🚀
+1
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+edited
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+clason
+Feb 3, 2026
+-
+I dream of a workflow where a PR is first opened in "private mode" against the contributor's own fork, where they can run CI on the fork and, if desired, get automated code reviews from the LLM of their choice; only when CI passes (or they press a "halp I need an adult" button, which comes with a confirmation warning "are you sure? CI is not passing so your PR may be closed without looking at it") will a
+clean
+(i.e., stripped of bot comments) PR be opened on the source repo.
+Beta
+Was this translation helpful?
+Give feedback.
+👍
+2
+All reactions
+👍
+2
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+edited
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+chadlwilson
+Feb 3, 2026
+-
+Proper support from GitHub to mark ones project as "suitable for running checks/workflows via fork" and "non draft PR requires running PR against fork" - and the UX changes to make it happen - would be huge.
+It doesn't make much sense right now that the burden is on the maintainer to approve a workflow to run locally in the target repo's context, simply to get stronger signal of quality - while pushing additional security risk to open source projects. Especially when most projects' workflows can be run just fine on the contributor's fork first.
+Some contributors aren't even aware they can open a PR on their own fork before they open one to the target repo; and the UI makes this convoluted to do - and probably tough for beginners. Once approved by target repo (and failing), they oftem then iterate on the PR generating notification noise as they push more commits just to get actions to pass. That requires a new review and approval every time.
+The UX and capabilities definitely needs some nudge towards this kind of "run it yourself first, please" workflow.
+Beta
+Was this translation helpful?
+Give feedback.
+👍
+2
+All reactions
+👍
+2
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+pierotofy
+Feb 3, 2026
+-
+Repository-level PR controls
+I've been waiting for this for a long time, glad it's being considered.
+Beta
+Was this translation helpful?
+Give feedback.
+1
+You must be logged in to vote
+All reactions
+0 replies
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+sithlord48
+Feb 3, 2026
+-
+Restrict PRs to collaborators - This provides more granular access control, allowing contributions exclusively from existing collaborators while blocking external contributors.
+Personally i would rather this option be to allow previous contributors and only a single PR from "new" contributors. This way external contributors can still become contributors and not block them from drive by bug fixes.
+The ability to delete a PR from the UI - This provides maintainers with the ability to remove spam or low-quality PRs directly from the interface to improve repository organization.
+What is the point of delete ? Who really cares if you have 40 or 400 closed issues? One solution could be to provide more "ways" for a PR to be resolved currently a pr can be
+open
+,
+closed
+or
+merged
+. Any new ways could be used to filter the closed prs for anyone looking thru them.
+AI Disclosure
+I agree with what other have said about disclosure being the biggest thing. Provide us with some tools to enforce a minimum standards when creating PRS. For example i can ask in my pr template for users to disclose if they used AI but i can not really enforce them answering it.
+Beta
+Was this translation helpful?
+Give feedback.
+1
+You must be logged in to vote
+All reactions
+2 replies
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+clason
+Feb 3, 2026
+-
+What is the point of delete ? Who really cares if you have 40 or 400 closed issues?
+I
+care if I have to search through 400 closed spam issues/PRs when trying to find relevant prior discussions. Of course I can roll my own (semi-automated) labeling and filtering (and I do), but a one-time delete is simply much more efficient.
+Beta
+Was this translation helpful?
+Give feedback.
+All reactions
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+sithlord48
+Feb 3, 2026
+-
+Close would be fine if we had a "Close as Slop" option. Then when looking at your PR list it would be filtered out and when looking at the "closed" list they can also be filtered out, You only have to see them again if you look at the "Closed as Slop" List. This allows you to keep the history of the interactions and suggestions in case you need it for the future.
+The other suggestion was to allow PRs to be deleted only with in a time limit from creation (lets say 1 day or 1 week ). The issue i have with that is what if i don't look at my project for that time and now I'm stuck w/ a pr i can't delete of course ot having a time limit creates another problem where you can remove PR's that others were referring to if they have been around some time. And some PRS do have very long lives before being landed.
+Beta
+Was this translation helpful?
+Give feedback.
+👍
+1
+All reactions
+👍
+1
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+willibrandon
+Feb 3, 2026
+-
+A GitHub App that gates PRs (especially agentic ones) by scoring them (heuristics + optional LLM), enforcing a "Contribution Contract" and requiring a Build Sheet (intent, scope, test plan). Slop gets auto-closed/drafted/quarantined; only high-signal PRs reach maintainers.
+Beta
+Was this translation helpful?
+Give feedback.
+1
+You must be logged in to vote
+All reactions
+1 reply
+Comment options
+Uh oh!
+There was an error while loading.
+Please reload this page
+.
+Quote reply
+pabl
+
+[内容已截断...]

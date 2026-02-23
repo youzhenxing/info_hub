@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微信公众号日报 - {{ report.date.strftime('%Y-%m-%d') }}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0;
+            padding: 10px;
+        }
+        
+        /* 头部 - 紧凑 */
+        .header {
+            background: linear-gradient(135deg, #07c160 0%, #09bb07 100%);
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+        
+        .header h1 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .header .date {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+        
+        .header .stats {
+            margin-top: 8px;
+            font-size: 12px;
+            opacity: 0.85;
+        }
+        
+        /* 分区标题 */
+        .section-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #333;
+            margin: 0 0 10px 0;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #07c160;
+        }
+        
+        /* 文章卡片 */
+        .article-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .article-card .source {
+            font-size: 11px;
+            color: #07c160;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+        
+        .article-card h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        
+        .article-card h3 a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .article-card h3 a:hover {
+            color: #07c160;
+        }
+        
+        .article-card .summary {
+            background-color: #fff;
+            border-radius: 6px;
+            padding: 10px;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        /* 话题卡片 - 紧凑无边距 */
+        .topic-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .topic-card h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .topic-card .description {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .topic-card ul {
+            margin: 0 0 10px 0;
+            padding-left: 16px;
+        }
+        
+        .topic-card li {
+            font-size: 13px;
+            margin-bottom: 3px;
+        }
+        
+        .topic-card li a {
+            color: #555;
+            text-decoration: none;
+        }
+        
+        .topic-card li a:hover {
+            color: #07c160;
+        }
+        
+        .topic-card li .feed-name {
+            color: #999;
+            font-size: 10px;
+        }
+        
+        .topic-card .analysis {
+            background-color: #e8f5e9;
+            border-radius: 6px;
+            padding: 8px 10px;
+            font-size: 13px;
+            color: #2e7d32;
+        }
+        
+        /* 核心要点 - 醒目紧凑 */
+        .topic-card .highlight {
+            background: #fff5f5;
+            border-left: 3px solid #c62828;
+            border-radius: 0 6px 6px 0;
+            padding: 10px 12px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #c62828;
+            line-height: 1.5;
+        }
+        
+        /* 关键时间线 */
+        .topic-card .key-dates {
+            background-color: #f3f4f6;
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-bottom: 14px;
+        }
+        
+        .topic-card .key-dates-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .topic-card .date-item {
+            font-size: 13px;
+            color: #555;
+            padding: 4px 0;
+            border-left: 2px solid #07c160;
+            padding-left: 10px;
+            margin-left: 4px;
+            margin-bottom: 4px;
+        }
+        
+        /* 案例详解 */
+        .case-section {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 14px;
+        }
+        
+        .case-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+        }
+        
+        .case-subject {
+            font-size: 12px;
+            color: #07c160;
+            margin-bottom: 10px;
+        }
+        
+        .case-detail {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        
+        .case-source {
+            font-size: 12px;
+            color: #999;
+            font-style: italic;
+        }
+        
+        .case-source::before {
+            content: "📄 来源：";
+        }
+        
+        /* 信息提取区块 - 极简紧凑 */
+        .info-section {
+            margin-bottom: 10px;
+        }
+        
+        .info-section-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-section-title::before {
+            content: "";
+            display: inline-block;
+            width: 3px;
+            height: 12px;
+            border-radius: 1px;
+            margin-right: 6px;
+        }
+        
+        .info-section-title.data::before { background-color: #2196F3; }
+        .info-section-title.events::before { background-color: #4CAF50; }
+        .info-section-title.insights::before { background-color: #FF9800; }
+        
+        .info-item {
+            background-color: #fff;
+            border-radius: 6px;
+            padding: 8px 10px;
+            margin-bottom: 4px;
+            font-size: 13px;
+            line-height: 1.5;
+            border-left: 3px solid;
+        }
+        
+        .info-item.data { 
+            background-color: #f0f7ff; 
+            border-color: #2196F3;
+        }
+        .info-item.events { 
+            background-color: #f0fff4; 
+            border-color: #4CAF50;
+        }
+        .info-item.insights { 
+            background-color: #fff8f0; 
+            border-color: #FF9800;
+        }
+        
+        .info-content {
+            color: #333;
+            line-height: 1.5;
+        }
+        
+        /* 重点标红 */
+        .info-content strong,
+        .info-item.insights .info-content {
+            color: #c62828;
+        }
+        
+        .info-meta {
+            font-size: 10px;
+            color: #888;
+            margin-top: 4px;
+        }
+        
+        .info-meta .tag {
+            display: inline;
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-size: 10px;
+            background-color: rgba(0,0,0,0.04);
+            margin-right: 4px;
+        }
+        
+        .info-meta .tag.type { 
+            background-color: #eee;
+            color: #555;
+        }
+        .info-meta .tag.source { 
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        /* 来源引用 - 无边距紧凑 */
+        .sources-section {
+            background-color: #fff;
+            border-radius: 6px;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .sources-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .source-item {
+            background: #f9f9f9;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 6px;
+        }
+        
+        .source-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .source-header {
+            margin-bottom: 4px;
+        }
+        
+        .source-feed {
+            font-size: 10px;
+            color: #07c160;
+            background: #e8f5e9;
+            padding: 1px 5px;
+            border-radius: 3px;
+        }
+        
+        .source-article {
+            font-size: 13px;
+            color: #333;
+            font-weight: 500;
+            text-decoration: none;
+            display: block;
+            line-height: 1.4;
+        }
+        
+        .source-article:hover {
+            color: #07c160;
+        }
+        
+        .source-point {
+            font-size: 11px;
+            color: #888;
+            margin-top: 2px;
+        }
+        
+        .source-link-icon {
+            color: #07c160;
+            font-size: 10px;
+        }
+        
+        /* AI 分析摘要 - 完整展示 */
+        .source-ai-summary {
+            background: #fff;
+            border-left: 2px solid #07c160;
+            padding: 8px 10px;
+            margin-top: 6px;
+            font-size: 12px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        /* 完整文章列表 - 紧凑 */
+        .full-article-list {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 12px;
+        }
+        
+        .full-article-list h2 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #07c160;
+        }
+        
+        .full-article-item {
+            background: #fff;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 6px;
+        }
+        
+        .full-article-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .full-article-index {
+            display: inline-block;
+            min-width: 20px;
+            height: 20px;
+            background: #07c160;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            font-size: 10px;
+            color: #fff;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        
+        .full-article-content {
+            display: inline;
+        }
+        
+        .full-article-title {
+            font-size: 13px;
+            color: #333;
+            text-decoration: none;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+        
+        .full-article-title:hover {
+            color: #07c160;
+        }
+        
+        .full-article-meta {
+            font-size: 10px;
+            color: #999;
+            margin-top: 4px;
+        }
+        
+        .full-article-feed {
+            color: #07c160;
+            font-weight: 500;
+        }
+        
+        /* AI 摘要 - 完整显示 */
+        .full-article-summary {
+            font-size: 12px;
+            color: #555;
+            margin-top: 6px;
+            line-height: 1.6;
+            background: #f5f5f5;
+            padding: 8px 10px;
+            border-radius: 4px;
+            border-left: 2px solid #07c160;
+        }
+        
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            font-size: 11px;
+            color: #999;
+            padding: 16px 0;
+            margin-top: 12px;
+        }
+        
+        /* 空状态 */
+        .empty-state {
+            text-align: center;
+            padding: 30px 10px;
+            color: #999;
+        }
+        
+        /* 关键时间线 - 紧凑 */
+        .key-dates {
+            background-color: #f5f5f5;
+            border-radius: 6px;
+            padding: 8px 10px;
+            margin-bottom: 10px;
+        }
+        
+        .key-dates-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 6px;
+        }
+        
+        .date-item {
+            font-size: 12px;
+            color: #555;
+            padding: 2px 0 2px 8px;
+            border-left: 2px solid #07c160;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <h1>📱 微信公众号日报</h1>
+            <div class="date">{{ report.date.strftime('%Y年%m月%d日') }}</div>
+            <div class="stats">
+                共收录 {{ report.total_articles }} 篇文章 | 
+                重点 {{ report.critical_count }} 篇 | 
+                资讯 {{ report.normal_count }} 篇
+            </div>
+        </div>
+        
+        <!-- 第一类：重点文章 -->
+        {% if report.critical_articles %}
+        <section style="margin-bottom: 32px;">
+            <h2 class="section-title">🔥 重点文章</h2>
+            
+            {% for article in report.critical_articles %}
+            <div class="article-card">
+                <div class="source">{{ article.feed_name }}</div>
+                <h3>
+                    <a href="{{ article.url }}" target="_blank">{{ article.title }}</a>
+                </h3>
+                {% if article.ai_summary %}
+                <div class="summary">
+                    {{ article.ai_summary | safe }}
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </section>
+        {% endif %}
+        
+        <!-- 第二类：话题聚合 -->
+        {% if report.topics %}
+        <section style="margin-bottom: 32px;">
+            <h2 class="section-title">📰 今日话题</h2>
+            
+            {% for topic in report.topics %}
+            <div class="topic-card">
+                <h3>📌 {{ topic.name }}</h3>
+                
+                <!-- 今日要点高亮 -->
+                {% if topic.highlight %}
+                <div class="highlight">{{ topic.highlight }}</div>
+                {% endif %}
+                
+                <!-- 数据与数字 -->
+                {% if topic.data_numbers %}
+                <div class="info-section">
+                    <div class="info-section-title data">📊 数据与数字</div>
+                    {% for item in topic.data_numbers %}
+                    <div class="info-item data">
+                        <div class="info-content">{{ item.content }}</div>
+                        <div class="info-meta">
+                            {% if item.context %}<span class="tag type">{{ item.context }}</span>{% endif %}
+                            <span class="tag source">📄 {{ item.source }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                
+                <!-- 事件与动态 -->
+                {% if topic.events_news %}
+                <div class="info-section">
+                    <div class="info-section-title events">📰 事件与动态</div>
+                    {% for item in topic.events_news %}
+                    <div class="info-item events">
+                        <div class="info-content">{{ item.content }}</div>
+                        <div class="info-meta">
+                            {% if item.time %}<span class="tag type">🕐 {{ item.time }}</span>{% endif %}
+                            {% if item.parties %}<span class="tag type">👥 {{ item.parties }}</span>{% endif %}
+                            <span class="tag source">📄 {{ item.source }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                
+                <!-- 内幕与洞察 -->
+                {% if topic.insider_insights %}
+                <div class="info-section">
+                    <div class="info-section-title insights">💎 内幕与洞察</div>
+                    {% for item in topic.insider_insights %}
+                    <div class="info-item insights">
+                        <div class="info-content">{{ item.content }}</div>
+                        <div class="info-meta">
+                            {% if item.insight_type %}<span class="tag type">🏷️ {{ item.insight_type }}</span>{% endif %}
+                            <span class="tag source">📄 {{ item.source }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                
+                <!-- 兼容旧格式：关键时间线 -->
+                {% if topic.key_dates and not topic.data_numbers %}
+                <div class="key-dates">
+                    <div class="key-dates-title">⏱️ 关键时间</div>
+                    {% for date in topic.key_dates %}
+                    <div class="date-item">{{ date }}</div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                
+                <!-- 兼容旧格式：综合分析 -->
+                {% if topic.ai_analysis and not topic.insider_insights %}
+                <div class="analysis">
+                    <strong>📊 综合分析：</strong>{{ topic.ai_analysis }}
+                </div>
+                {% endif %}
+                
+                <!-- 来源引用（带AI分析） -->
+                {% if topic.articles %}
+                <div class="sources-section">
+                    <div class="sources-title">📚 相关文章（{{ topic.articles|length }}篇）</div>
+                    {% for article in topic.articles %}
+                    <div class="source-item">
+                        <div class="source-header">
+                            <span class="source-feed">{{ article.feed_name }}</span>
+                        </div>
+                        <a href="{{ article.url }}" target="_blank" class="source-article">
+                            {{ article.title }} <span class="source-link-icon">↗</span>
+                        </a>
+                        {% if article.ai_summary %}
+                        <div class="source-ai-summary">{{ article.ai_summary }}</div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% elif topic.sources %}
+                <div class="sources-section">
+                    <div class="sources-title">📚 相关来源</div>
+                    {% for source in topic.sources %}
+                    <div class="source-item">
+                        <div class="source-header">
+                            {% if source.feed_name %}
+                            <span class="source-feed">{{ source.feed_name }}</span>
+                            {% endif %}
+                        </div>
+                        {% if source.url %}
+                        <a href="{{ source.url }}" target="_blank" class="source-article">
+                            {{ source.title }} <span class="source-link-icon">↗</span>
+                        </a>
+                        {% else %}
+                        <div class="source-article">{{ source.title }}</div>
+                        {% endif %}
+                        {% if source.key_contribution %}
+                        <div class="source-point">{{ source.key_contribution }}</div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </section>
+        {% endif %}
+        
+        <!-- 完整文章列表 -->
+        {% if all_articles %}
+        <div class="full-article-list">
+            <h2>📋 完整文章列表（{{ all_articles|length }}篇）</h2>
+            {% for article in all_articles %}
+            <div class="full-article-item">
+                <span class="full-article-index">{{ loop.index }}</span>
+                <a href="{{ article.url }}" target="_blank" class="full-article-title">{{ article.title }}</a>
+                <div class="full-article-meta">
+                    <span class="full-article-feed">{{ article.feed_name }}</span>{% if article.published_at %} · {{ article.published_at.strftime('%H:%M') }}{% endif %}
+                </div>
+                {% if article.ai_summary %}
+                <div class="full-article-summary">{{ article.ai_summary }}</div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        
+        <!-- 空状态 -->
+        {% if not report.critical_articles and not report.topics and not all_articles %}
+        <div class="empty-state">
+            <p>今日暂无新文章</p>
+        </div>
+        {% endif %}
+        
+        <!-- 页脚 -->
+        <div class="footer">
+            由微信公众号订阅服务自动生成<br>
+            {{ now.strftime('%Y-%m-%d %H:%M:%S') }}
+        </div>
+    </div>
+</body>
+</html>

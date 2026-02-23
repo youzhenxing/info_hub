@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ module_name }} - TrendRadar</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-blue: #58a6ff;
+            --accent-green: #3fb950;
+            --accent-yellow: #d29922;
+            --accent-red: #f85149;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .header {
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        nav {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        
+        nav a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 28px;
+            font-weight: 600;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+        
+        .success { color: var(--accent-green); }
+        .failed { color: var(--accent-red); }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        
+        td {
+            font-size: 14px;
+        }
+        
+        .status-success { color: var(--accent-green); }
+        .status-failed { color: var(--accent-red); }
+        .status-timeout { color: var(--accent-yellow); }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📦 {{ module_name }}</h1>
+    </div>
+    
+    <nav>
+        <a href="/">← 返回仪表板</a>
+    </nav>
+    
+    <!-- 统计概览 -->
+    <div class="card">
+        <h2 class="card-title">统计概览</h2>
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value">{{ status.run_count if status else 0 }}</div>
+                <div class="stat-label">总执行次数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value success">{{ status.success_count if status else 0 }}</div>
+                <div class="stat-label">成功</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value failed">{{ status.fail_count if status else 0 }}</div>
+                <div class="stat-label">失败</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">
+                    {% if status and status.run_count > 0 %}
+                    {{ '%.1f'|format(status.success_count / status.run_count * 100) }}%
+                    {% else %}
+                    -
+                    {% endif %}
+                </div>
+                <div class="stat-label">成功率</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 执行历史 -->
+    <div class="card">
+        <h2 class="card-title">执行历史（最近7天）</h2>
+        {% if history %}
+        <table>
+            <thead>
+                <tr>
+                    <th>时间</th>
+                    <th>状态</th>
+                    <th>消息</th>
+                    <th>耗时</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for run in history %}
+                <tr>
+                    <td>{{ run.started_at[:16].replace('T', ' ') if run.started_at else '-' }}</td>
+                    <td class="status-{{ run.status }}">
+                        {% if run.status == 'success' %}✓{% elif run.status == 'failed' %}✗{% else %}⚠{% endif %}
+                        {{ run.status }}
+                    </td>
+                    <td>{{ run.message or '-' }}</td>
+                    <td>{{ '%.1f'|format(run.duration_seconds or 0) }}s</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p style="color: var(--text-secondary);">暂无执行记录</p>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+URL: https://www.reddit.com/r/MachineLearning/comments/1qttn5c/project_tensorseal_a_tool_to_deploy_tflite_models/
+Title: Reddit - The heart of the internet
+Time: 2026-02-03T12:14:51.711198
+Go to MachineLearning
+r/MachineLearning
+•
+orcnozyrt
+[Project] TensorSeal: A tool to deploy TFLite models on Android without exposing the .tflite file
+Note: I posted this on
+r/androiddev
+but thought the deployment side might interest this sub.
+One of the biggest pains in mobile ML deployment is that your trained model usually sits unencrypted in the APK. If you spent $50k fine-tuning a model, that's a liability.
+I open-sourced a tool called
+TensorSeal
+that handles the encryption/decryption pipeline for Android.
+It ensures the model is only decrypted in memory (RAM) right before inference, keeping the disk footprint encrypted. It uses the TFLite C API to load directly from the buffer.
+Hope it helps anyone deploying custom models to edge devices.
+GitHub:
+https://github.com/NerdzHub/TensorSeal_Android
+Read more
+Share

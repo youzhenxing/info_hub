@@ -1,0 +1,20 @@
+URL: https://www.reddit.com/r/robotics/comments/1qtoqrc/robot_camera_with_depth_sensing_rgb_imu_global/
+Title: Reddit - The heart of the internet
+Time: 2026-02-03T10:28:56.667696
+Go to robotics
+r/robotics
+•
+ssmec
+Robot camera with depth sensing + RGB, IMU, global shutter, RGB, IR for Jetson SDK
+r/robotics
+•
+Robot camera with depth sensing + RGB, IMU, global shutter, RGB, IR for Jetson SDK
+Hey folks,
+what cameras do you use these days for robots that have depth sensing + RGB, IMU, global shutter, RGB, IR, and work with Jetson SDK?
+I was looking at D455, but is hard to find, and not sure if this is still going to be in business in 6m or so. The OAK-D and ZED seem next choices, but don't know about them, since are small companies.
+Please advice. Thanks in advance.
+Read more
+upvote
+·
+comments
+Share

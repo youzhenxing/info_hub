@@ -1,0 +1,20 @@
+URL: https://www.reddit.com/r/robotics/comments/1qu8rug/best_tech_design_software_to_use_for_marine/
+Title: Reddit - The heart of the internet
+Time: 2026-02-03T10:23:08.517749
+Go to robotics
+r/robotics
+•
+Capital-Reach-6669
+Best tech design software to use for marine robotics/mechatronics?
+Hi everyone I am currently in Grade 11 and taking a tech design course. My teacher is very lenient on which software we use. I want to use one that will be helpful for me in the future as I plan to go into Mechatronics/Marine Robotics. I also have a MacBook (I know that complicates things a bit) but my teacher also provides us with Windows laptops if need be. I’ve had some experience with OnShape in the past but I am definitely not a pro. Through my school board we also get the free versions of Fusion, AutoCAD, Inventor, and Revit. Below is the list of softwares we can choose from:
+- OnShape
+- Fusion (free)
+- AutoCAD (free)
+- Inventor (free)
+- Revit (free)
+- SketchUP
+- Mastercam
+- TinkerCAD
+I am currently deciding between Fusion and OnShape but let me know what you think is best!
+Read more
+Share

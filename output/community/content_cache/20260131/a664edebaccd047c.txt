@@ -1,0 +1,84 @@
+URL: https://peerweb.lol/
+Title: PeerWeb - Decentralized Website Hosting
+Time: 2026-01-31T21:33:10.938896
+🤔 What is PeerWeb?
+PeerWeb is a revolutionary way to host and share websites using WebTorrent technology. Instead
+ of relying on centralized servers, websites are distributed across a peer-to-peer network,
+ making them censorship-resistant and always available. 🌍✨
+📤 Quick Upload
+📁
+Drag & Drop Your Website
+Drop a folder with your website files
+📁 Select Folder
+Processing files...
+✅ Website Ready!
+Hash:
+PeerWeb URL:
+🚀 Open Site
+📋 Copy Link
+💾 Download .torrent
+🌍 Hosting Notice
+Keep this PeerWeb tab open to host your site!
+As long as this
+ tab remains open, your website will be available to others through the
+ peer-to-peer network.
+💡
+Alternative:
+Download our desktop client for permanent
+ hosting without keeping browser tabs open:
+🪟 Windows
+🍎 macOS
+🐧 Linux
+📚 How to Use PeerWeb
+🎨 Create your website - Build a static website with HTML, CSS, JavaScript, and assets
+📤 Upload via drag & drop - Simply drag your website folder to the upload area above
+🔗 Share the link - Your site gets a unique PeerWeb link that works anywhere
+🌍 Keep hosting - Leave this tab open or use our desktop client for permanent hosting
+💡 Load Existing Site
+To load a website from a torrent hash, enter it below:
+Load Site
+🎯 Just the hash! PeerWeb automatically adds the magnet link prefix and trackers.
+🧪 Demos
+Functionality test page:
+https://peerweb.lol/?orc=90c020bd252639622a14895a0fad713b91e0130c
+SomaFM on PeerWeb:
+https://peerweb.lol/?orc=908d19242ae1461f333a516d1f8b89c13ef2d259
+Chess on PeerWeb:
+https://peerweb.lol/?orc=1e14b1ba7fcd03e5f165d53ed8223a333349db04
+Text Editor app on PeerWeb:
+https://peerweb.lol/?orc=4e5f1204dcec68195bfcc89f9410a0b70a0ddfac
+🐛 Debug Mode
+For developers and troubleshooting, add &debug=true to see detailed progress:
+https://peerweb.lol?orc=ABC123DEF456...&debug=true
+🚀 Advanced Options
+🗑️ Clear Cache
+📦 Advanced Torrent Creator
+💾 Smart Caching
+PeerWeb caches visited sites for lightning-fast loading! 🚀
+🏃‍♂️ Instant Loading - Cached sites load immediately
+💽 IndexedDB Storage - Persistent across browser sessions
+🧹 Auto Cleanup - Old cache expires after 7 days
+🔒 Secure Storage - Only cached after DOMPurify sanitization
+🛡️ Security Features
+Enhanced security with DOMPurify integration! 🔒
+🧼 XSS Protection - All HTML sanitized with DOMPurify
+🚫 Malicious Code Removal - Dangerous tags and attributes filtered
+📦 Sandboxed Execution - Sites run in isolated iframe environment
+🔍 Content Validation - All resources validated before display
+📋 Requirements for PeerWeb Sites
+📄 Must contain an index.html file (in root or subfolder)
+🔗 All resources should use relative paths
+⚡ Only static content (HTML, CSS, JS, images, fonts, etc.)
+🔒 Files are served in a sandboxed environment for security
+📱 Responsive design recommended for best experience
+🧹 Content is automatically sanitized for security
+✨ Benefits
+🚫 Censorship Resistant - No central point of failure
+💰 Cost Effective - No hosting fees ever
+🌍 Global Distribution - Automatically distributed worldwide
+📱 Always Available - Works as long as peers are online
+🔒 Secure - Sandboxed execution with XSS protection
+📈 Real-time Progress - See download progress and peer statistics
+⚡ Fast Loading - Smart caching for instant repeat visits
+🎯 Simple URLs - Just add the torrent hash to any PeerWeb site
+💾 Offline Ready - Cached sites work without internet

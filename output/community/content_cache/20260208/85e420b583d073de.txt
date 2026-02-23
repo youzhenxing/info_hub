@@ -1,0 +1,25 @@
+URL: https://amit.prasad.me/blog/rip-good-code
+Title: The silent death of Good Code | Amit's Blog
+Time: 2026-02-08T09:51:16.046170
+>
+The silent death of Good Code
+_
+February 7, 2026 ·
+Amit Prasad
+I’ve been passionate about writing “Good Code™” since before I started my career, beginning way back when I was still a kid in middle school.
+What is “Good Code™“?
+Good Question™ :)
+Good Code is code that is easy to read and understand. Good Code is code that is pleasing to develop with and maintain. Good Code is code that exists for a specific reason, and no more. Good Code is a product of the rare combination of talent, experience, passion, and the investment of time that may not be immediately useful for the business. And most unfortunately, Good Code is rare.
+That being said, by trade, I am a Software Engineer. Not a “Computer Programmer”, nor a “Coder”, nor any other title that implies that my job is to “write good code”. In fact, nothing about my job title necessitates that I read or write code at all! My job is to create useful software that solves real problems.
+Recently, a colleague of mine at
+Modal
+rewrote an external system that integrated deeply with the Linux kernel. The initial rewrite was a simple translation of a C codebase to a Rust one, in preparation for some custom feature work. The resulting code wasn’t bad, nor was it un-idiomatic Rust. What it also wasn’t was Good Code. It was hard to read and understand, would have been difficult to extend and maintain, and it wasn’t even clear to us why we’d taken the burden of rewriting and maintaining this extra system.
+The initial rewrite also relied heavily on coding agents.
+This same colleague then invested time into understanding the kernel subsystem, the exact reasons why the original C program was written how it was, and rewrote the Rust translation himself. The difference was night and day; the code flowed naturally, explained itself and the underlying subsystems, and may genuinely be some of the nicest parts of the entire codebase. Better, I think, than even the original C, despite this type of program being arguably one of the best places to use C over Rust.
+It was the first time in weeks, maybe months, that I’d felt something that used to be common in my day-to-day: excitement about the lines of code in front of me. I used to write (approximations of) Good Code most days. Somewhere along the way, everything changed. Nowadays I don’t even write the first version of most of the code I commit. I’m definitely far more productive with an agent at my side. They’re not at all
+horrible
+at this coding stuff, just not truly
+great
+at it. At the end of the day, the code they spit out is… acceptable. It gets the job done, it passes my litmus tests, but it certainly isn’t Good Code.
+Perhaps the age of caring about these lines of code is over. I’m sure that there were folks passionate about Good Assembly or Good Circuits whose passions have quietly faded into the echoes of “how things used to be,” forgotten as they and their fields evolved. From my (biased) perspective, the change in Software Engineering feels uniquely sudden, and I can’t help but mourn the silent death of Good Code.
+← Back

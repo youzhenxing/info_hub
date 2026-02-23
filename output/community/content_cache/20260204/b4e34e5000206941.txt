@@ -1,0 +1,16 @@
+URL: https://www.reddit.com/r/MachineLearning/comments/1qv07mw/p_we_added_semantic_caching_to_bifrost_and_its/
+Title: Reddit - The heart of the internet
+Time: 2026-02-04T08:39:41.013200
+Go to MachineLearning
+r/MachineLearning
+•
+dinkinflika0
+[P] We added semantic caching to Bifrost and it's cutting API costs by 60-70%
+Building Bifrost and one feature that's been really effective is semantic caching. Instead of just exact string matching, we use embeddings to catch when users ask the same thing in different ways.
+How it works: when a request comes in, we generate an embedding and check if anything semantically similar exists in the cache. You can tune the similarity threshold - we default to 0.8 but you can go stricter (0.9+) or looser (0.7) depending on your use case.
+The part that took some iteration was conversation awareness. Long conversations have topic drift, so we automatically skip caching when conversations exceed a configurable threshold. Prevents false positives where the cache returns something from an earlier, unrelated part of the conversation.
+Been running this in production and seeing 60-70% cost reduction for apps with repetitive query patterns - customer support, documentation Q&A, common research questions. Cache hit rates usually land around 85-90% once it's warmed up.
+We're using Weaviate for vector storage. TTL is configurable per use case - maybe 5 minutes for dynamic stuff, hours for stable documentation.
+Anyone else using semantic caching in production? What similarity thresholds are you running?
+Read more
+Share

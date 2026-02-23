@@ -1,0 +1,180 @@
+URL: https://github.com/nekocode/agent-worktree
+Title: nekocode/agent-worktree
+Time: 2026-02-08T09:10:30.471753
+# nekocode/agent-worktree
+
+**描述**: A Git worktree workflow tool for AI coding agents. Enables parallel development with isolated environments.
+**Stars**: 51
+**Forks**: 2
+**语言**: Rust
+**创建时间**: 2026-02-05T03:46:15Z
+**最后更新**: 2026-02-08T00:53:37Z
+**标签**: agent, ai, git, worktree
+
+
+---
+
+## README
+
+# agent-worktree
+
+A Git worktree workflow tool for AI coding agents. Enables parallel development with isolated environments.
+
+[中文文档](README.zh-CN.md)
+
+![Cover](cover.jpg)
+
+## Why
+
+AI coding agents work best with isolated environments:
+
+- **Parallel execution**: Run multiple agents simultaneously without interference
+- **Clean separation**: Each feature gets its own working directory
+- **Snap mode**: "Use and discard" workflow — create worktree, run agent, merge, cleanup
+
+## Install
+
+```bash
+npm install -g agent-worktree
+```
+
+Update to the latest version:
+
+```bash
+wt update
+```
+
+Shell integration is installed automatically. To reinstall manually:
+
+```bash
+wt setup
+```
+
+Supported shells: bash, zsh, fish, PowerShell
+
+## Quick Start
+
+```bash
+# Create a worktree and enter it
+wt new feature-x
+
+# ... develop, commit ...
+
+# Merge back to trunk and cleanup
+wt merge
+```
+
+Other useful commands:
+
+```bash
+wt ls              # List all worktrees
+wt cd feature-y    # Switch to another worktree
+wt main            # Return to main repository
+```
+
+## Snap Mode
+
+One-liner for AI agent workflows:
+
+```bash
+wt new -s claude           # Random branch name
+wt new fix-bug -s cursor   # Specified branch name
+wt new -s "aider --model sonnet"  # Command with arguments
+```
+
+Flow: Create worktree → Enter → Run agent → [Develop] → Agent exits → Check changes → Merge → Cleanup
+
+When the agent exits normally:
+
+- **No changes**: Worktree cleaned up automatically
+- **Only commits** (nothing uncommitted):
+  ```
+  [m] Merge into trunk
+  [q] Exit snap mode
+  ```
+- **Uncommitted changes**:
+  ```
+  [r] Reopen agent (let agent commit)
+  [q] Exit snap mode (commit manually)
+  ```
+
+## Commands
+
+### Worktree Management
+
+| Command | Description |
+|---------|-------------|
+| `wt new [branch]` | Create worktree (random name if omitted) |
+| `wt new --base <ref>` | Create from specific commit/branch |
+| `wt new -s <cmd>` | Create + snap mode |
+| `wt cd <branch>` | Switch to worktree |
+| `wt ls` | List worktrees |
+| `wt main` | Return to main repository |
+| `wt mv <old> <new>` | Rename worktree (use `.` for current) |
+| `wt rm <branch>` | Remove worktree (use `.` for current) |
+| `wt rm -f <branch>` | Force remove with uncommitted changes |
+| `wt clean` | Remove worktrees with no diff from trunk |
+
+### Workflow
+
+| Command | Description |
+|---------|-------------|
+| `wt merge` | Merge current worktree to trunk |
+| `wt merge -s <strategy>` | Merge with strategy (squash/merge/rebase) |
+| `wt merge --into <branch>` | Merge to specific branch |
+| `wt merge -k` | Keep worktree after merge |
+| `wt merge --continue` | Continue after resolving conflicts |
+| `wt merge --abort` | Abort merge |
+| `wt sync` | Sync updates from trunk (rebase) |
+| `wt sync -s merge` | Sync with merge strategy |
+| `wt sync --continue` | Continue after resolving conflicts |
+| `wt sync --abort` | Abort sync |
+
+### Configuration
+
+| Command | Description |
+|---------|-------------|
+| `wt setup` | Install shell integration (auto-detect) |
+| `wt setup --shell zsh` | Install for specific shell |
+| `wt init` | Initialize project config |
+| `wt init --trunk <branch>` | Initialize with specific trunk branch |
+
+## Configuration
+
+### Global Config `~/.agent-worktree/config.toml`
+
+```toml
+[general]
+merge_strategy = "squash"  # squash | merge | rebase
+trunk = "main"  # Trunk branch (auto-detected if omitted)
+copy_files = [".env", ".env.*"]  # Gitignore-style patterns for files to copy
+
+[hooks]
+post_create = ["pnpm install"]
+pre_merge = ["pnpm test", "pnpm lint"]
+post_merge = []
+```
+
+### Project Config `.agent-worktree.toml`
+
+```toml
+[general]
+copy_files = ["*.secret.*"]
+# ...
+```
+
+## Storage Layout
+
+```
+~/.agent-worktree/
+├── config.toml                    # Global config
+└── workspaces/
+    └── {project}/
+        ├── swift-fox.status.toml  # Worktree metadata
+        ├── swift-fox/             # Worktree directory
+        └── ...
+```
+
+## License
+
+MIT

@@ -1,0 +1,29 @@
+URL: https://www.reddit.com/r/MachineLearning/comments/1quehcc/d_where_is_modern_geometry_actually_useful_in/
+Title: Reddit - The heart of the internet
+Time: 2026-02-04T08:37:12.090293
+Go to MachineLearning
+r/MachineLearning
+•
+ternausX
+Français
+Deutsch
+Filipino
+[D] Where is modern geometry actually useful in machine learning? (data, architectures, optimization)
+From April 2025 to January 2026, I worked through
+Frankel’s "The Geometry of Physics".
+The goal wasn’t to “relearn physics”, but to rebuild a modern geometric toolbox and see which mature ideas from geometry and topology might still be underused in machine learning.
+The book develops a large amount of machinery—manifolds, differential forms, connections and curvature, Lie groups and algebras, bundles, gauge theory, variational principles, topology—and shows how these arise naturally across classical mechanics, electromagnetism, relativity, and quantum theory.
+A pattern that kept reappearing was:
+structure → symmetry → invariance → dynamics → observables
+Physics was forced into coordinate-free and global formulations because local, naive approaches stopped working. In ML, we often encounter similar issues—parameters with symmetries, non-Euclidean spaces, data living on manifolds, generalization effects that feel global rather than local—but we usually address them heuristically rather than structurally.
+I’m not claiming that abstract math automatically leads to better models. Most ideas don’t survive contact with practice. But when some do, they often enable qualitatively different behavior rather than incremental improvements.
+I’m now trying to move closer to ML-adjacent geometry: geometric deep learning beyond graphs, Riemannian optimization, symmetry and equivariance, topology-aware learning.
+I’d be very interested in pointers to work (books, lecture notes, papers, or practical case studies) that sits between
+modern geometry/topology and modern ML
+, especially answers to questions like:
+which geometric ideas have actually influenced model or optimizer design beyond toy settings?
+where does Riemannian or manifold-aware optimization help in practice, and where is it mostly cosmetic?
+which topological ideas seem fundamentally incompatible with SGD-style training?
+Pointers and critical perspectives are very welcome.
+Read more
+Share

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}TrendRadar 报告{% endblock %}</title>
+
+    <style>
+        /* 内联 CSS 以确保邮件客户端兼容 */
+        /* 统一样式表 */
+        {% include 'base/styles.css' %}
+
+        /* 模块特定样式 */
+        {% block extra_css %}{% endblock %}
+    </style>
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+    <div class="container">
+        <!-- 头部区域 -->
+        {% block header %}
+        <div class="header">
+            <h1>{% block header_title %}📊 TrendRadar{% endblock %}</h1>
+            {% block header_meta %}{% endblock %}
+        </div>
+        {% endblock %}
+
+        <!-- 主要内容区域 -->
+        {% block content %}{% endblock %}
+
+        <!-- 页脚区域 -->
+        {% block footer %}
+        <div class="footer">
+            <p>由 TrendRadar 自动生成</p>
+            <p>生成时间: {{ now|format_date }}</p>
+        </div>
+        {% endblock %}
+    </div>
+</body>
+</html>

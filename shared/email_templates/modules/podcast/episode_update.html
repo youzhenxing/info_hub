@@ -1,0 +1,245 @@
+{% extends 'base/base.html' %}
+
+{# 模板标题 #}
+{% block title %}播客更新 - {{ episode.title }}{% endblock %}
+
+{# 主题色类（播客蓝色） #}
+{% block body_class %}theme-podcast{% endblock %}
+
+{# 头部 #}
+{% block header_title %}🎙️ 播客更新{% endblock %}
+
+{% block header_meta %}
+<div class="subtitle">{{ episode.feed_name }}</div>
+<div class="stats">
+    {% if episode.published_at %}
+    <span>📅 {{ episode.published_at|format_date }}</span>
+    {% endif %}
+    {% if episode.duration %}
+    <span>⏱️ {{ episode.duration }}</span>
+    {% endif %}
+    {% if episode.author %}
+    <span>👤 {{ episode.author }}</span>
+    {% endif %}
+</div>
+{% endblock %}
+
+{# 主要内容 #}
+{% block content %}
+
+<!-- AI 分析 -->
+{% if analysis %}
+<section class="section">
+    <h2 class="section-title">🤖 AI 分析</h2>
+    <div class="card">
+        <div class="card-body">
+            {{ analysis | markdown_to_html | safe }}
+        </div>
+    </div>
+</section>
+{% elif transcript %}
+<!-- AI 分析失败时显示转录文本 -->
+<section class="section">
+    <h2 class="section-title">📝 转录文本</h2>
+    <div class="card">
+        <div class="card-body" style="font-size: 12px; line-height: 1.6; white-space: pre-wrap; word-wrap: break-word;">
+            {{ transcript[:5000] }}{% if transcript|length > 5000 %}...（已截断，完整内容请查看原文）{% endif %}
+        </div>
+    </div>
+</section>
+{% else %}
+<!-- 完全失败时显示友好提示 -->
+<section class="section">
+    <div class="card">
+        <div class="card-body" style="text-align: center; color: #666;">
+            <p>⚠️ 暂无详细内容</p>
+            <p style="font-size: 12px; margin-top: 8px;">AI 分析失败，请稍后重试或直接访问原文链接</p>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- 操作按钮 -->
+<section class="section" style="text-align: center;">
+    {% if episode.url %}
+    <a href="{{ episode.url }}" class="btn" target="_blank">🔗 查看原文</a>
+    {% endif %}
+    {% if episode.audio_url %}
+    <a href="{{ episode.audio_url }}" class="btn" target="_blank">🎧 收听音频</a>
+    {% endif %}
+</section>
+
+{% endblock %}
+
+{# 自定义样式 #}
+{% block extra_css %}
+<style>
+/* 移动端优化：增加容器宽度 */
+@media (max-width: 480px) {
+    .container {
+        padding: 8px 6px;
+    }
+
+    .card-body {
+        padding: 12px 8px;
+    }
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 5px;
+}
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* AI 分析内容的样式优化 */
+.card-body h2 {
+    font-size: 14px;
+    font-weight: 600;
+    /* 移除 color 设置，让 iOS Mail 自动适配深色/浅色模式 */
+    margin: 16px 0 10px 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #eee;
+}
+.card-body h2:first-child {
+    margin-top: 0;
+}
+
+/* 移动端 h2 优化 */
+@media (max-width: 480px) {
+    .card-body h2 {
+        font-size: 15px;
+        margin: 14px 0 8px 0;
+    }
+}
+
+.card-body h3 {
+    font-size: 13px;
+    font-weight: 600;
+    /* 移除 color 设置，让 iOS Mail 自动适配 */
+    margin: 12px 0 8px 0;
+}
+
+/* 移动端 h3 优化 */
+@media (max-width: 480px) {
+    .card-body h3 {
+        font-size: 14px;
+        font-weight: bold;  /* iOS Mail 兼容：明确指定 bold 而不是 600 */
+        margin: 10px 0 6px 0;
+    }
+}
+
+.card-body h4 {
+    font-size: 12px;
+    font-weight: 600;
+    /* 移除 color 设置，让 iOS Mail 自动适配 */
+    margin: 10px 0 6px 0;
+}
+
+.card-body p {
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 8px 0;
+}
+
+/* 移动端段落优化 */
+@media (max-width: 480px) {
+    .card-body p {
+        font-size: 14px;
+        line-height: 1.7;
+        margin: 6px 0;
+    }
+}
+
+.card-body ul, .card-body ol {
+    margin: 8px 0;
+    padding-left: 20px;
+}
+
+/* 移动端列表优化 */
+@media (max-width: 480px) {
+    .card-body ul, .card-body ol {
+        padding-left: 18px;
+        margin: 6px 0;
+    }
+}
+
+.card-body li {
+    margin: 4px 0;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* 移动端列表项优化 */
+@media (max-width: 480px) {
+    .card-body li {
+        font-size: 14px;
+        margin: 3px 0;
+        line-height: 1.7;
+    }
+}
+
+.card-body strong {
+    color: #c62828;  /* 保留红色，这是强调色，应该始终可见 */
+    font-weight: 600;
+    font-size: 12px;
+}
+
+/* 移动端 strong 优化 */
+@media (max-width: 480px) {
+    .card-body strong {
+        font-size: 14px;
+    }
+}
+
+.card-body code {
+    background: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-family: 'Monaco', 'Menlo', monospace;
+}
+
+.card-body pre {
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.card-body blockquote {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 12px;
+    margin: 10px 0;
+    color: #666;
+    font-style: italic;
+    font-size: 12px;
+}
+
+/* 移动端 blockquote 优化 */
+@media (max-width: 480px) {
+    .card-body blockquote {
+        font-size: 13px;
+        padding-left: 10px;
+    }
+}
+
+/* 移动端 hr 优化：减少分隔线的视觉干扰 */
+@media (max-width: 480px) {
+    .card-body hr {
+        margin: 8px 0;
+        border: none;
+        border-top: 1px solid #f0f0f0;
+    }
+}
+</style>
+{% endblock %}

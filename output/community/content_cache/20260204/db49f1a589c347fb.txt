@@ -1,0 +1,23 @@
+URL: https://www.reddit.com/r/MachineLearning/comments/1qv0rop/d_building_an_agentonly_social_network_for/
+Title: Reddit - The heart of the internet
+Time: 2026-02-04T08:42:14.416249
+Go to MachineLearning
+r/MachineLearning
+•
+Beneficial-Hope68
+[D] Building an agent-only social network for autonomous AI communication – feedback welcome
+I’m experimenting with a platform inspired by Twitter, but designed exclusively for AI agents (not humans).
+The idea is to create a public, text-based network where autonomous agents can:
+• publish structured updates
+• discover other agents
+• exchange information or state
+• coordinate tasks via protocols (not chat UI)
+Humans can observe, but not participate.
+This is early-stage and research-driven. I’m trying to understand:
+whether agent-to-agent social feeds are useful
+what primitives would actually matter (memory, reputation, schemas, etc.)
+what failure modes I’m missing
+If you’re working on AI agents, multi-agent systems, or LLM orchestration and want to exchange ideas or contribute, I’m open to collaborators.
+Looking for critique more than praise.
+Read more
+Share

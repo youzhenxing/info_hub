@@ -1,0 +1,60 @@
+URL: https://heidenstedt.org/posts/2026/how-to-effectively-write-quality-code-with-ai/
+Title: How to effectively write quality code with AI
+Time: 2026-02-07T23:23:01.632006
+1 Establish a Clear Vision
+You are a human, you know how this world behaves, how your team and colleagues behave, and what your users expect. You have experienced the world, and you want to work together with a system that has no experience in this world you live in. Every decision in your project that you don’t take and document will be taken for you by the AI.
+Your responsibility of delivering quality code cannot be met if not even you know where long-lasting and difficult-to-change decisions are taken.
+You must know what parts of your code need to be thought through and what must be vigorously tested.
+Think about and discuss the architecture, interfaces, data structures, and algorithms you want to use.
+Think about how to test and validate your code to these specifications.
+2 Maintain Precise documentation
+You need to communicate to the AI in detail what you want to achieve, otherwise it will result in code that is unusable for your purpose.
+Other developers also need to communicate this information to the AI. That makes it efficient to write as much documentation as practical in a standardized format and into the code repository itself.
+Document the requirements, specifications, constraints, and architecture of your project in detail.
+Document your coding standards, best practices, and design patterns.
+Use flowcharts, UML diagrams, and other visual aids to communicate complex structures and workflows.
+Write pseudocode for complex algorithms and logic to guide the AI in understanding your intentions.
+3 Build debug systems that aid the AI
+Develop efficient debug systems for the AI to use, reducing the need for multiple expensive CLI commands or browsers to verify code functionality. This will save time and resources while simplifying the process for the AI to identify and resolve code issues.
+For example: Build a system that collects logs from all nodes in a distributed system and provides abstracted information like “The Data was send to all nodes”, “The Data X is saved on Node 1 but not on Node 2”.
+4 Mark code review levels
+Not all code is equally important. Some parts of your codebase are critical and need to be reviewed with extra care. Other parts are less important and can be generated with less oversight.
+Use a system that allows you to mark how thoroughly each function has been reviewed.
+For example you can use a prompt that will let the AI put the comment
+//A
+behind functions it wrote to indicate that the function has been written by an AI and is not yet reviewed by a human.
+5 Write high level specifications and test by yourself
+AIs will cheat and use shortcuts eventually. They will write mocks, stubs, and hard coded values to make the code tests succeed while the code itself is not working and most of the time dangerous. Often AIs will adapt or outright delete test code to let the code pass tests.
+You must discourage this behavior by writing property based high level specification tests yourself. Build them in a way that makes it hard for the AI to cheat without having big code segments dedicated to it.
+For example, use property based testing, restart the server and check in between if the database has the correct values.
+Separate these test so the AI cannot edit them and prompt the AI not to change them.
+6 Write interface tests in a separate context
+Let an AI write property based interface tests for the expected behavior with as little context of the rest of the code as possible.
+This will generate tests that are uninfluenced by the “implementation AI” which will prevent the tests from being adapted to the implementation in a way that makes them useless or less effective.
+Separate these tests so the AI cannot edit them without approval and prompt the AI not to change them.
+7 Use strict linting and formatting rules
+Use strict linting and formatting rules to ensure code quality and consistency. This will help you and your AI to find issues early.
+8 Use context specific coding agent prompts
+Save time and money by utilizing path specific coding agent prompts like
+CLAUDE.md
+.
+You can generate them automatically which will give your AI information it would otherwise as to create from scratch every time.
+Try to provide as much high level information as practical, such as coding standards, best practices, design patterns, and specific requirements for the project. This will help the AI to generate code that is more aligned with your expectations and will reduce lookup time and cost.
+9 Find and mark functions that have a high security risk
+Identify and mark functions that have a high security risk, such as authentication, authorization, and data handling. These functions should be reviewed and tested with extra care and in such a way that a human has comprehended the logic of the function in all its dimensions and is confident about its correctness and safety.
+Make this explicit with a comment like
+//HIGH-RISK-UNREVIEWED
+and
+//HIGH-RISK-REVIEWED
+to make sure that other developers are aware of the importance of these functions and will review them with extra care.
+Make sure that the AI is instructed to change the review state of these functions as soon as it changes a single character in the function.
+Developers must make sure that the status of these functions is always correct.
+10 Reduce code complexity where possible
+Aim to reduce the complexity of the generated code where possible. Each single line of code will eat up your context window and make it harder for the AI and You to keep track of the overall logic of your code.
+Each avoidable line of code is costing energy, money and probability of future unsuccessful AI tasks.
+11 Explore problems with experiments and prototypes
+AI written code is cheap, use this to your advantage by exploring different solutions to a problem with experiments and prototypes with minimal specifications. This will allow you to find the best solution to a problem without investing too much time and resources in a single solution.
+12 Do not generate blindly or to much complexity at once
+Break down complex tasks into smaller, manageable tasks for the AI. Instead of asking the AI to generate the complete project or component at once, break it down into smaller tasks, such as generating individual functions or classes. This will help you to maintain control over the code and it’s logic.
+You have to check each component or module for its adherence to the specifications and requirements.
+If you have lost the overview of the complexity and inner workings of the code, you have lost control over your code and must restart from a state where you were in control of your code.

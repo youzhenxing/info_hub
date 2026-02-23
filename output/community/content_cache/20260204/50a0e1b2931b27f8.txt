@@ -1,0 +1,52 @@
+URL: https://www.apple.com/newsroom/2026/02/xcode-26-point-3-unlocks-the-power-of-agentic-coding/
+Title: Xcode 26.3 unlocks the power of agentic coding - Apple
+Time: 2026-02-04T08:29:40.053980
+UPDATE
+February 3, 2026
+Xcode 26.3 unlocks the power of agentic coding
+Developers can leverage coding agents, including Anthropic’s Claude Agent and OpenAI’s Codex, directly in Xcode to tackle complex tasks autonomously, helping them develop apps faster than ever
+Xcode 26.3 unlocks agentic coding, allowing developers to harness agents like Anthropic’s Claude Agent and OpenAI’s Codex directly in Xcode.
+Xcode 26.3 introduces support for agentic coding, a new way in Xcode for developers to build apps using coding agents such as Anthropic’s Claude Agent and OpenAI’s Codex. With agentic coding, Xcode can work with greater autonomy toward a developer’s goals — from breaking down tasks to making decisions based on the project architecture and using built-in tools.
+Expanding on the intelligence features introduced in Xcode 26, which brought a brand-new coding assistant for writing and editing in Swift, this release gives coding agents access to even more of Xcode’s capabilities. Agents like Claude Agent and Codex can now collaborate throughout the entire development life cycle, giving developers the power to streamline workflows, iterate faster, and bring ideas to life like never before. Agents can search documentation, explore file structures, update project settings, and verify their work visually by capturing Xcode Previews and iterating through builds and fixes.
+“At Apple, our goal is to make tools that put industry-leading technologies directly in developers’ hands so they can build the very best apps,” said Susan Prescott, Apple’s vice president of Worldwide Developer Relations. “Agentic coding supercharges productivity and creativity, streamlining the development workflow so developers can focus on innovation.”
+With seamless access to Anthropic’s Claude Agent (pictured) and OpenAI’s Codex, developers can bring the advanced reasoning of powerful models directly into their app-building workflow.
+With seamless access to Anthropic’s Claude Agent and OpenAI’s Codex (pictured), developers can bring the advanced reasoning of powerful models directly into their app-building workflow.
+With seamless access to Claude Agent and Codex, developers can bring the advanced reasoning of these models directly into their app-building workflow.
+1
+This connection combines the power of these agents with Xcode’s native capabilities to provide the best results when developing for Apple platforms, giving developers the flexibility to work with the model that best fits their project.
+In addition to these built-in integrations, Xcode 26.3 makes its capabilities available through the Model Context Protocol, an open standard that gives developers the flexibility to use any compatible agent or tool with Xcode.
+Availability
+Xcode 26.3 is available as a release candidate for all members of the Apple Developer Program starting today, with a release coming soon on the App Store.
+Share article
+Media
+Text of this article
+February 3, 2026
+UPDATE
+Xcode 26.3 unlocks the power of agentic coding
+Developers can leverage coding agents, including Anthropic’s Claude Agent and OpenAI’s Codex, directly in Xcode to tackle complex tasks autonomously, helping them develop apps faster than ever
+Xcode 26.3 introduces support for agentic coding, a new way in Xcode for developers to build apps using coding agents such as Anthropic’s Claude Agent and OpenAI’s Codex. With agentic coding, Xcode can work with greater autonomy toward a developer’s goals — from breaking down tasks to making decisions based on the project architecture and using built-in tools.
+Expanding on the intelligence features introduced in Xcode 26, which brought a brand-new coding assistant for writing and editing in Swift, this release gives coding agents access to even more of Xcode’s capabilities. Agents like Claude Agent and Codex can now collaborate throughout the entire development life cycle, giving developers the power to streamline workflows, iterate faster, and bring ideas to life like never before. Agents can search documentation, explore file structures, update project settings, and verify their work visually by capturing Xcode Previews and iterating through builds and fixes.
+“At Apple, our goal is to make tools that put industry-leading technologies directly in developers’ hands so they can build the very best apps,” said Susan Prescott, Apple’s vice president of Worldwide Developer Relations. “Agentic coding supercharges productivity and creativity, streamlining the development workflow so developers can focus on innovation.”
+With seamless access to Claude Agent and Codex, developers can bring the advanced reasoning of these models directly into their app-building workflow.
+1
+This connection combines the power of these agents with Xcode’s native capabilities to provide the best results when developing for Apple platforms, giving developers the flexibility to work with the model that best fits their project.
+In addition to these built-in integrations, Xcode 26.3 makes its capabilities available through the Model Context Protocol, an open standard that gives developers the flexibility to use any compatible agent or tool with Xcode.
+Availability
+Xcode 26.3 is available as a release candidate for all members of the Apple Developer Program starting today, with a release coming soon on the App Store.
+Anthropic and OpenAI’s terms of service may apply.
+Press Contacts
+Adam Dema
+Apple
+AdamDema@apple.com
+Apple Media Helpline
+media.help@apple.com
+Copy text
+Images in this article
+Download all images
+Anthropic and OpenAI’s terms of service may apply.
+Press Contacts
+Adam Dema
+Apple
+AdamDema@apple.com
+Apple Media Helpline
+media.help@apple.com

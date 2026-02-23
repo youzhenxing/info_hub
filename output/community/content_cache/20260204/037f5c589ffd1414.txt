@@ -1,0 +1,14 @@
+URL: https://www.reddit.com/r/artificial/comments/1qui9qt/qwen3tts_studio_local_voice_cloning_podcast/
+Title: Reddit - The heart of the internet
+Time: 2026-02-04T09:15:42.358795
+Go to artificial
+r/artificial
+•
+BC_MARO
+ไทย
+Qwen3-TTS Studio - local voice cloning + podcast generation
+Open-source voice cloning + multi-speaker podcast tool. GPT 5.2 generates scripts, Qwen3-TTS handles synthesis locally. Modular architecture - swap the LLM for Llama, Mistral, whatever.
+GitHub:
+https://github.com/bc-dunia/qwen3-TTS-studio
+Read more
+Share

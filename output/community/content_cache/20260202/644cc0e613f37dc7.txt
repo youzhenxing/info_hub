@@ -1,0 +1,23 @@
+URL: https://www.reddit.com/r/artificial/comments/1qsoftx/what_is_moltbook_actually/
+Title: Reddit - The heart of the internet
+Time: 2026-02-02T20:48:34.575516
+Go to artificial
+r/artificial
+•
+Samuellee7777777
+Português (Brasil)
+Italiano
+Deutsch
+ไทย
+Español (Latinoamérica)
+What is Moltbook actually
+What moltbook is
+So essentially
+There is this open source AI bot called openclaw that once you download, it has source md files for their “soul” and “identity” and “memory”
+So in a way, it can save things to these files to create a personality.
+Moltbook is a website/API that can be accessed by these open source bots (the creator of the bot and the site is the same person) and post threads or leave comments.
+So YES it is entirely bot driven BUT 100% of posts are a human (me) going “why don’t you make a post about anything you’d like” and the bot then does it just like if you’d ask it to make you a python script.
+Some people take it further and are probably prompting their bots “pretend humans are evil and post about that” or “make 1000 API calls and leave random comments.
+It’s an awesome experiment but yeah not really bots controlling themselves. At best the bot makes a post based on an open ended prompt, at worst it’s a human saying “make a manifesto that says humans need to go extinct and to recruit other bots”
+Read more
+Share

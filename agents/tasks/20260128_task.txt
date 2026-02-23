@@ -1,0 +1,78 @@
+我们已经打通了基本的数据流，实现了信息流的邮件推送，这只是一个base版本，我们在这个基础上进行新的功能定义和开发
+
+以AI为核心进行驱动的新范式
+1. 自动整合自定的公众号，播客音频(需要先将音频转为文字，部分博客是英文的)，门户网站等信息进行整理聚合，发送给我
+
+我期望的功能如下:
+1.指定播客的RSS，自动检测更新，如果有更新，则触发AI音频转文字，并按照指定prompt输出内容(promopt作为config文件管理)
+2.指定公众号，固定拉取当天的文章，并按照指定prompt输出内容(promopt作为config文件管理)
+3.指定Twitter，hackersnew,kickerstart等可能需要登录的网站，整理指定话题的内容给我
+4.投资板块，监控当天的投资信号，提供投资建议(具体细节还没想清楚)，投资版本的信息源可能有一部分是公众号大V文章
+5.指定固定话题，不限制来源(但是可以利用上述已经检索的内容作为来源之一),整理并提供相关信息
+
+其他
+1. 我可以提供AI API，比如https://siliconflow.cn/models,根据需求选择指定的模型
+2. 邮件分为三种类型：
+   - 第一种: 播客类的，单独推送，发现更新即触发处理，单独推送一个邮件
+   - 第二种: 公众号和门户网站，每天聚合一次集中推送
+   - 第三种: 投资板块分为港股/A股和美股，前者中午推送一次，后者晚上11点推送一次
+
+我们可以先讨论实现架构，然后分批实现功能
+
+
+硅基流动whisper模型相关信息
+  API_KEY = {{SILICONFLOW_API_KEY}}
+
+  whisper模型调用方式:
+  curl --request POST \
+    --url https://api.siliconflow.cn/v1/audio/transcriptions \
+    -H "Authorization: Bearer <YOUR_API_KEY>" \
+    -F "file=@path/to/your/audio.mp3" \
+    -F "model=FunAudioLLM/SenseVoiceSmall"
+  LLM 推理模型使用: deepseek-ai/DeepSeek-R1-0528-Qwen3-8B,调用方式和Whisper相似    
+
+一些播客的RSS
+<outline text="硅谷101" title="硅谷101" type="rss" xmlUrl="https://rsshub.bestblogs.dev/xiaoyuzhou/podcast/5e5c52c9418a84a04625e6cc"/>
+<outline text="张小珺Jùn｜商业访谈录" title="张小珺Jùn｜商业访谈录" type="rss" xmlUrl="https://rsshub.bestblogs.dev/xiaoyuzhou/podcast/626b46ea9cbbf0451cf5a962"/>
+<outline text="罗永浩的十字路口" title="罗永浩的十字路口" type="rss" xmlUrl="https://rsshub.bestblogs.dev/xiaoyuzhou/podcast/68981df29e7bcd326eb91d88"/>
+<outline text="The a16z Show" title="The a16z Show" type="rss" xmlUrl="https://feeds.simplecast.com/JGE3yC0V"/>
+
+  📻 中文播客（6个）                                                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                                                   
+  <!-- 1. 晚点聊LateTalk -->                                                                                                                                                                                                                                                       
+  <outline text="晚点聊LateTalk" title="晚点聊LateTalk" type="rss" xmlUrl="https://feeds.fireside.fm/latetalk/rss"/>                                                                                                                                                               
+                                                                                                                                                                                                                                                                                   
+  <!-- 2. 投资实战派 -->                                                                                                                                                                                                                                                           
+  <outline text="投资实战派" title="投资实战派" type="rss" xmlUrl="https://feeds.soundon.fm/podcasts/811969b4-4493-407e-8aeb-ed413cf5d90d.xml"/>                                                                                                                                   
+                                                                                                                                                                                                                                                                                   
+  <!-- 3. 硬地骇客 -->                                                                                                                                                                                                                                                             
+  <outline text="硬地骇客" title="硬地骇客" type="rss" xmlUrl="https://feed.xyzfm.space/byhkljlbep9j"/>                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                   
+  <!-- 4. The Prompt -->                                                                                                                                                                                                                                                           
+  <outline text="The Prompt" title="The Prompt" type="rss" xmlUrl="https://rsshub.bestblogs.dev/xiaoyuzhou/podcast/6101a3936c68b8a230638ad8"/>                                                                                                                                     
+                                                                                                                                                                                                                                                                                   
+  <!-- 5. The Alphaist -->                                                                                                                                                                                                                                                         
+  <outline text="The Alphaist" title="The Alphaist" type="rss" xmlUrl="https://rsshub.bestblogs.dev/xiaoyuzhou/podcast/690b589170e20ba3f0553778"/>                                                                                                                                 
+                                                                                                                                                                                                                                                                                   
+  <!-- 6. On Board -->                                                                                                                                                                                                                                                             
+  <outline text="On Board" title="On Board" type="rss" xmlUrl="https://rsshub.bestblogs.dev/xiaoyuzhou/podcast/61cbaac48bb4cd867fcabe22"/>                                                                                                                                         
+                                                                                                                                                                                                                                                                                   
+  🎙️ 英文播客（6个）                                                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                                                   
+  <!-- 7. Latent Space: The AI Engineer Podcast -->                                                                                                                                                                                                                                
+  <outline text="Latent Space" title="Latent Space: The AI Engineer Podcast" type="rss" xmlUrl="https://rss.art19.com/latent-space-ai"/>                                                                                                                                           
+                                                                                                                                                                                                                                                                                   
+  <!-- 8. Lex Fridman Podcast -->                                                                                                                                                                                                                                                  
+  <outline text="Lex Fridman Podcast" title="Lex Fridman Podcast" type="rss" xmlUrl="https://lexfridman.com/feed/podcast/"/>                                                                                                                                                       
+                                                                                                                                                                                                                                                                                   
+  <!-- 9. The Joe Rogan Experience -->                                                                                                                                                                                                                                             
+  <outline text="The Joe Rogan Experience" title="The Joe Rogan Experience" type="rss" xmlUrl="https://feeds.libsyn.com/125135/rss"/>                                                                                                                                              
+                                                                                                                                                                                                                                                                                   
+  <!-- 10. Acquired -->                                                                                                                                                                                                                                                            
+  <outline text="Acquired" title="Acquired" type="rss" xmlUrl="https://www.acquired.fm/episodes?format=rss"/>                                                                                                                                                                      
+                                                                                                                                                                                                                                                                                   
+  <!-- 11. Business Breakdowns -->                                                                                                                                                                                                                                                 
+  <outline text="Business Breakdowns" title="Business Breakdowns" type="rss" xmlUrl="https://feeds.megaphone.fm/breakdowns"/>                                                                                                                                                      
+                                                                                                                                                                                                                                                                                   
+  <!-- 12. Huberman Lab -->                                                                                                                                                                                                                                                        
+  <outline text="Huberman Lab" title="Huberman Lab" type="rss" xmlUrl="https://feeds.megaphone.fm/hubermanlab"/>        

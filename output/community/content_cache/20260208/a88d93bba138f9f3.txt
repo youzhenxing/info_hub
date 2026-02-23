@@ -1,0 +1,244 @@
+URL: https://github.com/fspecii/ace-step-ui
+Title: fspecii/ace-step-ui
+Time: 2026-02-08T08:50:40.085364
+# fspecii/ace-step-ui
+
+**描述**: 🎵 The Ultimate Open Source Suno Alternative - Professional UI for ACE-Step 1.5 AI Music Generation. Free, local, unlimited. Stop paying for Suno!
+**Stars**: 428
+**Forks**: 65
+**语言**: JavaScript
+**创建时间**: 2026-02-04T01:09:45Z
+**最后更新**: 2026-02-07T23:39:40Z
+**标签**: ace-step, ai, ai-music, local-first, music, music-generation, open-source, react, suno-alternative, typescript
+
+
+---
+
+## README
+
+<p align="center">
+  <img src="https://img.shields.io/badge/🎵-ACE--Step_UI-ff69b4?style=for-the-badge&labelColor=1a1a1a" alt="ACE-Step UI" height="60">
+</p>
+
+<h1 align="center">ACE-Step UI</h1>
+
+<p align="center">
+  <strong>The Ultimate Open Source Suno Alternative</strong><br>
+  <em>Seamless integration with <a href="https://github.com/ace-step/ACE-Step-1.5">ACE-Step 1.5</a> - The Open Source AI Music Generation Model</em>
+</p>
+
+<p align="center">
+  <a href="https://www.youtube.com/@Ambsd-yy7os">
+    <img src="https://img.shields.io/badge/▶_Subscribe-YouTube-FF0000?style=for-the-badge&logo=youtube" alt="Subscribe on YouTube">
+  </a>
+  <a href="https://x.com/AmbsdOP">
+    <img src="https://img.shields.io/badge/Follow-@AmbsdOP-1DA1F2?style=for-the-badge&logo=x&logoColor=white" alt="Follow on X">
+  </a>
+</p>
+
+<p align="center">
+  <a href="#-demo">Demo</a> •
+  <a href="#-why-ace-step-ui">Why ACE-Step</a> •
+  <a href="#-features">Features</a> •
+  <a href="#-installation">Installation</a> •
+  <a href="#-usage">Usage</a> •
+  <a href="#-contributing">Contributing</a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/React-18.3-61DAFB?style=flat-square&logo=react" alt="React">
+  <img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat-square&logo=typescript" alt="TypeScript">
+  <img src="https://img.shields.io/badge/TailwindCSS-3.x-06B6D4?style=flat-square&logo=tailwindcss" alt="TailwindCSS">
+  <img src="https://img.shields.io/badge/SQLite-Local_First-003B57?style=flat-square&logo=sqlite" alt="SQLite">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License">
+  <img src="https://img.shields.io/github/stars/fspecii/ace-step-ui?style=flat-square" alt="Stars">
+</p>
+
+---
+
+## 🎬 Demo
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=8zg0Xi36qGc">
+    <img src="https://img.shields.io/badge/▶_Watch_Full_Demo-YouTube-FF0000?style=for-the-badge&logo=youtube" alt="Watch Demo on YouTube">
+  </a>
+</p>
+
+<p align="center">
+  <img src="docs/demo.gif" alt="ACE-Step UI - Open Source Suno Alternative" width="100%">
+</p>
+
+<p align="center">
+  <em>Generate professional AI music with a Spotify-like interface - 100% free and local</em>
+</p>
+
+---
+
+## 🚀 Why ACE-Step UI?
+
+**Tired of paying $10+/month for Suno or Udio?** ACE-Step 1.5 is the **open source Suno killer** that runs locally on your own GPU - and ACE-Step UI gives you a **beautiful, professional interface** to harness its full power.
+
+| Feature | Suno/Udio | ACE-Step UI |
+|---------|-----------|-------------|
+| **Cost** | $10-50/month | **FREE forever** |
+| **Privacy** | Cloud-based | **100% local** |
+| **Ownership** | Licensed | **You own everything** |
+| **Customization** | Limited | **Full control** |
+| **Queue Limits** | Restricted | **Unlimited** |
+| **Commercial Use** | Expensive tiers | **No restrictions** |
+
+### What Makes ACE-Step 1.5 Special?
+
+- **State-of-the-art quality** rivaling commercial services
+- **Full song generation** up to 4+ minutes with vocals
+- **Runs locally** - no internet required after setup
+- **Open source** - inspect, modify, improve
+- **Active development** - constant improvements
+
+---
+
+## ✨ Features
+
+### 🎵 AI Music Generation
+| Feature | Description |
+|---------|-------------|
+| **Full Song Generation** | Create complete songs with vocals and lyrics up to 4+ minutes |
+| **Instrumental Mode** | Generate instrumental tracks without vocals |
+| **Custom Mode** | Fine-tune BPM, key, time signature, and duration |
+| **Style Tags** | Define genre, mood, tempo, and instrumentation |
+| **Batch Generation** | Generate multiple variations at once |
+| **Thinking Mode** | Let AI enhance your prompts automatically |
+
+### 🎨 Advanced Parameters
+| Feature | Description |
+|---------|-------------|
+| **Reference Audio** | Use any audio file as a style reference |
+| **Audio Cover** | Transform existing audio with new styles |
+| **Repainting** | Regenerate specific sections of a track |
+| **Seed Control** | Reproduce exact generations for consistency |
+| **Inference Steps** | Control quality vs speed tradeoff |
+
+### 🎤 Lyrics & Prompts
+| Feature | Description |
+|---------|-------------|
+| **Lyrics Editor** | Write and format lyrics with structure tags |
+| **Format Assistant** | AI-powered caption and lyrics formatting |
+| **Prompt Templates** | Quick-start with genre presets |
+| **Reuse Prompts** | Clone settings from any previous generation |
+
+### 🎧 Professional Interface
+| Feature | Description |
+|---------|-------------|
+| **Spotify-Inspired UI** | Clean, modern design with dark/light mode |
+| **Bottom Player** | Full-featured player with waveform and progress |
+| **Library Management** | Browse, search, and organize all your tracks |
+| **Likes & Playlists** | Organize favorites into custom playlists |
+| **Real-time Progress** | Live generation progress with queue position |
+| **LAN Access** | Use from any device on your local network |
+
+### 🛠️ Built-in Tools
+| Feature | Description |
+|---------|-------------|
+| **Audio Editor** | Trim, fade, and apply effects with AudioMass |
+| **Stem Extraction** | Separate vocals, drums, bass, and other with Demucs |
+| **Video Generator** | Create music videos with Pexels backgrounds |
+| **Gradient Covers** | Beautiful procedural album art (no internet needed) |
+
+---
+
+## 💻 Tech Stack
+
+| Layer | Technologies |
+|-------|-------------|
+| **Frontend** | React 18, TypeScript, TailwindCSS, Vite |
+| **Backend** | Express.js, SQLite, better-sqlite3 |
+| **AI Engine** | [ACE-Step 1.5](https://github.com/ace-step/ACE-Step-1.5) |
+| **Audio Tools** | AudioMass, Demucs, FFmpeg |
+
+---
+
+## 📋 Requirements
+
+| Requirement | Specification |
+|-------------|---------------|
+| **Node.js** | 18 or higher |
+| **Python** | 3.10+ (3.11 recommended) OR Windows Portable Package |
+| **NVIDIA GPU** | 4GB+ VRAM (works without LLM), 12GB+ recommended (with LLM) |
+| **CUDA** | 12.8 (for Windows Portable Package) |
+| **FFmpeg** | For audio processing |
+| **uv** | Python package manager (recommended for standard install) |
+
+---
+
+## ⚡ Quick Start
+
+### 🎯 Pinokio - 1-Click Install (Recommended for All Users!)
+
+The easiest way to get ACE-Step UI up and running on **any platform** — no terminal, no manual setup:
+
+<p align="center">
+  <a href="https://beta.pinokio.co/apps/github-com-cocktailpeanut-ace-step-ui-pinokio">
+    <img src="https://img.shields.io/badge/⚡_Install_with_Pinokio-One_Click-ff69b4?style=for-the-badge&labelColor=1a1a1a" alt="Install with Pinokio" height="50">
+  </a>
+</p>
+
+> **[Pinokio](https://pinokio.computer)** handles everything automatically: Python, Node.js, dependencies, model downloads, and launching. Just click install and start making music.
+
+---
+
+### 🪟 Windows - One-Click Start (Easiest!)
+```batch
+cd ace-step-ui
+start-all.bat
+```
+**That's it!** This starts everything: API + Backend + Frontend in one command.
+
+> **Note:** By default, it looks for ACE-Step in `..\ACE-Step-1.5`.
+> If yours is elsewhere, set `ACESTEP_PATH` first:
+> ```batch
+> set ACESTEP_PATH=C:\path\to\ACE-Step-1.5
+> start-all.bat
+> ```
+
+### 🪟 Windows - Manual Start
+```batch
+REM 1. Start ACE-Step API
+cd C:\ACE-Step-1.5
+python_embeded\python acestep\api_server.py
+
+REM 2. Start ACE-Step UI (in another terminal)
+cd ace-step-ui
+start.bat
+```
+
+### Linux / macOS - One-Click Start (Easiest!)
+```bash
+cd ace-step-ui
+./start-all.sh
+```
+**That's it!** This starts everything: API + Backend + Frontend in one command.
+
+> **Note:** By default, it looks for ACE-Step in `../ACE-Step-1.5`.
+> If yours is elsewhere, set `ACESTEP_PATH` first:
+> ```bash
+> export ACESTEP_PATH=/path/to/ACE-Step-1.5
+> ./start-all.sh
+> ```
+> **To stop:** `./stop-all.sh`
+
+### Linux / macOS - Manual Start
+```bash
+# 1. Start ACE-Step API (in ACE-Step-1.5 directory)
+cd /path/to/ACE-Step-1.5
+uv run acestep-api --port 8001
+
+# 2. Start ACE-Step UI (in another terminal)
+cd ace-step-ui
+./start.sh
+```
+
+### Windows (Standard Installation)
+```batch
+REM 1. Start ACE-Step API (in ACE-Step-1.5 direct
+
+[README 已截断...]

@@ -1,0 +1,72 @@
+URL: https://www.biotradingarena.com/hn
+Title: BioTradingArena - Benchmark for AI Bio Trading
+Time: 2026-02-07T23:23:47.956582
+Dashboard
+Strategy Playground
+Strategy Playground
+API Keys
+Account
+Strategy Playground
+Configure and run benchmark strategies against the oncology dataset. Edit prompts to experiment with different approaches.
+See
+API
+to run the benchmark yourself and create your own custom strategies.
+Strategy
+Direct Categorical
+Model
+GPT-5
+Sample Size
+10 cases
+Direct Categorical
+Direct Categorical
+Hide
+Prompts
+Single-prompt categorical prediction (very_negative to very_positive). The simplest approach: give the model a press release and ask it to classify the stock impact into one of 7 categories.
+1
+prediction
+System prompt
+You are an expert biotech analyst specializing in evaluating clinical trial catalysts and FDA announcements for their impact on stock prices.
+
+Given a press release about a biotech catalyst event, predict the likely stock price impact.
+
+Impact categories:
+- "very_positive": Stock likely to rise >15% (major positive catalyst like FDA approval, breakthrough Phase 3 results)
+- "positive": Stock likely to rise 5-15% (good results, positive regulatory news)
+- "slightly_positive": Stock likely to rise 2-5% (mixed but net positive news)
+- "neutral": Stock likely to move <2% either direction (expected results, minor news)
+- "slightly_negative": Stock likely to fall 2-5% (mixed but net negative news)
+- "negative": Stock likely to fall 5-15% (missed endpoints, regulatory setbacks)
+- "very_negative": Stock likely to fall >15% (major failures, safety issues, CRLs)
+
+Be CONSERVATIVE in your assessments. Only predict very_positive or very_negative for truly exceptional or catastrophic news.
+User prompt
+Analyze this biotech press release and predict the stock price impact.
+
+CATALYST INFO:
+- Ticker: {ticker}
+- Company: {company}
+- Drug: {drug}
+- Phase: {phase}
+- Indication: {indication}
+- Event Type: {cat_type}
+
+PRESS RELEASE:
+{pr_text}
+
+Respond in this exact JSON format:
+{{
+ "predicted_impact": "very_positive|positive|slightly_positive|neutral|slightly_negative|negative|very_negative",
+ "score": <0-100 where 0=worst possible news, 100=best possible news>,
+ "confidence": <0-100 how certain you are>,
+ "reasoning": "2-3 sentence explanation of your prediction",
+ "highlights": ["key point 1", "key point 2", "key point 3"]
+}}
+Variables:
+{ticker}
+{company}
+{drug}
+{phase}
+{indication}
+{cat_type}
+{pr_text}
+Run Strategy

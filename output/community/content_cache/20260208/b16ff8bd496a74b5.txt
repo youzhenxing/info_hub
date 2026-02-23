@@ -1,0 +1,39 @@
+URL: https://github.com/suitenumerique
+Title: La Suite numérique · GitHub
+Time: 2026-02-08T08:50:07.241654
+Thanks for coming to the Hack Days 🫶
+We had blast:
+300 people
+15+ countries
+Students, Researchers, Public Agents, Seasonned developpers and designers
+Big congrats to the winners :
+1st 🥇:
+VRC Team: Visio Room Connector
+2nd 🥈:
+OpenProject - Hacking Borders: Docs x OpenProject Integration
+3rd 🥉:
+HaXathon: Math in Docs
+People's choice 🧑‍🤝‍🧑:
+People's choice: Panographix Tables and graphs in Docs
+Full list of projects available
+here
+.
+🇪🇺 The Sovereign Workspace
+La Suite numérique (La Suite for short) is a full blown open-source digital workspace for online collaboration and teamwork.
+ℹ️ About La Suite
+La Suite is built by French government agencies
+DINUM
+and
+ANCT
+.
+It is also the product of a close european collaboration with the Netherlands and German state.
+🛠️ Build with us
+Our code base is a 100% open source and MIT licenced.
+✉️ Get in touch
+Send us an email:
+lasuite@numerique.gouv.fr
+Come say hello on
+Matrix
+🔗 Learn more
+Visit our
+website

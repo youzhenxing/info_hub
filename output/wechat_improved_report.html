@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微信公众号日报 - 2026-01-31</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* 头部 */
+        .header {
+            background: linear-gradient(135deg, #07c160 0%, #09bb07 100%);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 24px;
+            color: #fff;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .header .date {
+            font-size: 15px;
+            opacity: 0.9;
+        }
+        
+        .header .stats {
+            margin-top: 16px;
+            font-size: 13px;
+            opacity: 0.85;
+        }
+        
+        /* 分区标题 */
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin: 0 0 16px 0;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #07c160;
+        }
+        
+        /* 文章卡片 */
+        .article-card {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .article-card .source {
+            font-size: 12px;
+            color: #07c160;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .article-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .article-card h3 a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .article-card h3 a:hover {
+            color: #07c160;
+        }
+        
+        .article-card .summary {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 14px;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        /* 话题卡片 - 紧凑 */
+        .topic-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+        }
+        
+        .topic-card h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .topic-card .description {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+        
+        .topic-card ul {
+            margin: 0 0 12px 0;
+            padding-left: 18px;
+        }
+        
+        .topic-card li {
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+        
+        .topic-card li a {
+            color: #555;
+            text-decoration: none;
+        }
+        
+        .topic-card li a:hover {
+            color: #07c160;
+        }
+        
+        .topic-card li .feed-name {
+            color: #999;
+            font-size: 11px;
+        }
+        
+        .topic-card .analysis {
+            background-color: #e8f5e9;
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-size: 13px;
+            color: #2e7d32;
+        }
+        
+        /* 今日要点高亮 - 紧凑风格 */
+        .topic-card .highlight {
+            background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+            border: 1px solid #ffcdd2;
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-bottom: 14px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #c62828;
+            line-height: 1.5;
+            position: relative;
+        }
+        
+        .topic-card .highlight::before {
+            content: "💡";
+            margin-right: 6px;
+        }
+        
+        /* 关键时间线 */
+        .topic-card .key-dates {
+            background-color: #f3f4f6;
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-bottom: 14px;
+        }
+        
+        .topic-card .key-dates-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .topic-card .date-item {
+            font-size: 13px;
+            color: #555;
+            padding: 4px 0;
+            border-left: 2px solid #07c160;
+            padding-left: 10px;
+            margin-left: 4px;
+            margin-bottom: 4px;
+        }
+        
+        /* 案例详解 */
+        .case-section {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 14px;
+        }
+        
+        .case-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+        }
+        
+        .case-subject {
+            font-size: 12px;
+            color: #07c160;
+            margin-bottom: 10px;
+        }
+        
+        .case-detail {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+        
+        .case-source {
+            font-size: 12px;
+            color: #999;
+            font-style: italic;
+        }
+        
+        .case-source::before {
+            content: "📄 来源：";
+        }
+        
+        /* 信息提取区块 - 紧凑 */
+        .info-section {
+            margin-bottom: 14px;
+        }
+        
+        .info-section-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 8px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-section-title::before {
+            content: "";
+            display: inline-block;
+            width: 3px;
+            height: 12px;
+            border-radius: 2px;
+            margin-right: 6px;
+        }
+        
+        .info-section-title.data::before { background-color: #2196F3; }
+        .info-section-title.events::before { background-color: #4CAF50; }
+        .info-section-title.insights::before { background-color: #FF9800; }
+        
+        .info-item {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 10px 12px;
+            margin-bottom: 6px;
+            font-size: 14px;
+            line-height: 1.5;
+            border-left: 3px solid;
+        }
+        
+        .info-item.data { 
+            background-color: #f0f7ff; 
+            border-color: #2196F3;
+        }
+        .info-item.events { 
+            background-color: #f0fff4; 
+            border-color: #4CAF50;
+        }
+        .info-item.insights { 
+            background-color: #fff8f0; 
+            border-color: #FF9800;
+        }
+        
+        .info-content {
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 4px;
+        }
+        
+        /* 重点标红 */
+        .info-content strong,
+        .info-item.insights .info-content {
+            color: #c62828;
+        }
+        
+        .info-meta {
+            font-size: 11px;
+            color: #888;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .info-meta .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 10px;
+            background-color: rgba(0,0,0,0.05);
+        }
+        
+        .info-meta .tag.type { 
+            background-color: #e8e8e8;
+            color: #555;
+        }
+        .info-meta .tag.source { 
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        /* 来源引用 - 紧凑高密度风格 */
+        .sources-section {
+            background-color: #f7f7f7;
+            border-radius: 12px;
+            padding: 14px;
+            margin-top: 16px;
+        }
+        
+        .sources-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .source-item {
+            background: #fff;
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-bottom: 8px;
+            border: 1px solid #eee;
+            transition: all 0.2s ease;
+        }
+        
+        .source-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .source-item:hover {
+            border-color: #07c160;
+            box-shadow: 0 2px 8px rgba(7, 193, 96, 0.1);
+        }
+        
+        .source-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+        
+        .source-feed {
+            font-size: 10px;
+            color: #07c160;
+            background: #e8f5e9;
+            padding: 2px 6px;
+            border-radius: 8px;
+            margin-right: 6px;
+        }
+        
+        .source-article {
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+            text-decoration: none;
+            display: block;
+            line-height: 1.4;
+        }
+        
+        .source-article:hover {
+            color: #07c160;
+        }
+        
+        .source-point {
+            font-size: 12px;
+            color: #888;
+            margin-top: 2px;
+            line-height: 1.4;
+        }
+        
+        .source-link-icon {
+            color: #999;
+            font-size: 11px;
+            margin-left: 3px;
+        }
+        
+        /* AI 分析摘要 - 新增 */
+        .source-ai-summary {
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+            border-left: 3px solid #07c160;
+            padding: 10px 12px;
+            margin-top: 8px;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+            border-radius: 0 6px 6px 0;
+        }
+        
+        .source-ai-summary::before {
+            content: "💡 AI分析：";
+            font-weight: 600;
+            color: #07c160;
+            font-size: 11px;
+        }
+        
+        /* 完整文章列表 */
+        .full-article-list {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .full-article-list h2 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #07c160;
+        }
+        
+        .full-article-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .full-article-item:last-child {
+            border-bottom: none;
+        }
+        
+        .full-article-index {
+            min-width: 24px;
+            height: 24px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            color: #666;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        
+        .full-article-content {
+            flex: 1;
+        }
+        
+        .full-article-title {
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+            line-height: 1.4;
+            display: block;
+        }
+        
+        .full-article-title:hover {
+            color: #07c160;
+        }
+        
+        .full-article-meta {
+            font-size: 11px;
+            color: #999;
+            margin-top: 3px;
+        }
+        
+        .full-article-feed {
+            color: #07c160;
+        }
+        
+        .full-article-summary {
+            font-size: 12px;
+            color: #666;
+            margin-top: 6px;
+            line-height: 1.5;
+            padding-left: 10px;
+            border-left: 2px solid #e0e0e0;
+        }
+        
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            padding: 24px 0;
+        }
+        
+        /* 空状态 */
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+        }
+        
+        /* 响应式 */
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px;
+            }
+            
+            .header {
+                padding: 24px;
+                border-radius: 12px;
+            }
+            
+            .header h1 {
+                font-size: 20px;
+            }
+            
+            .article-card,
+            .topic-card {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <h1>📱 微信公众号日报</h1>
+            <div class="date">2026年01月31日</div>
+            <div class="stats">
+                共收录 36 篇文章 | 
+                重点 0 篇 | 
+                资讯 36 篇
+            </div>
+        </div>
+        
+        <!-- 第一类：重点文章 -->
+        
+        
+        <!-- 第二类：话题聚合 -->
+        
+        <section style="margin-bottom: 32px;">
+            <h2 class="section-title">📰 今日话题</h2>
+            
+            
+            <div class="topic-card">
+                <h3>📌 AI模型发布与竞争</h3>
+                
+                <!-- 今日要点高亮 -->
+                
+                <div class="highlight">国产AI模型持续突破，Vidu Q3和昆仑天工登顶全球榜单，推动视频生成技术进入商业化阶段</div>
+                
+                
+                <!-- 数据与数字 -->
+                
+                <div class="info-section">
+                    <div class="info-section-title data">📊 数据与数字</div>
+                    
+                    <div class="info-item data">
+                        <div class="info-content">Vidu Q3在AI视频生成领域排名全球第二，超越Runway Gen-4.5和Sora 2</div>
+                        <div class="info-meta">
+                            <span class="tag type">技术排名</span>
+                            <span class="tag source">📄 极客公园</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item data">
+                        <div class="info-content">阿里ReWatch-R1模型推理准确率提升至92%，较直接回答模式提升19个百分点</div>
+                        <div class="info-meta">
+                            <span class="tag type">模型性能</span>
+                            <span class="tag source">📄 量子位</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item data">
+                        <div class="info-content">360纳米漫剧流水线将制作效率提升3倍以上，素材生成成功率突破90%</div>
+                        <div class="info-meta">
+                            <span class="tag type">应用效果</span>
+                            <span class="tag source">📄 量子位</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+                <!-- 事件与动态 -->
+                
+                <div class="info-section">
+                    <div class="info-section-title events">📰 事件与动态</div>
+                    
+                    <div class="info-item events">
+                        <div class="info-content">Vidu Q3发布支持16秒完整音视频直出，实现物理世界声音自动生成</div>
+                        <div class="info-meta">
+                            <span class="tag type">🕐 2025年</span>
+                            <span class="tag type">👥 Vidu团队</span>
+                            <span class="tag source">📄 量子位</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item events">
+                        <div class="info-content">昆仑天工开源SkyReels-V3模型，登顶多模态视频生成SOTA</div>
+                        <div class="info-meta">
+                            <span class="tag type">🕐 2025年3月</span>
+                            <span class="tag type">👥 昆仑天工</span>
+                            <span class="tag source">📄 量子位</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item events">
+                        <div class="info-content">阿里发布ReWatch数据集和ReWatch-R1模型，革新视频推理范式</div>
+                        <div class="info-meta">
+                            <span class="tag type">🕐 2026年</span>
+                            <span class="tag type">👥 阿里达摩院</span>
+                            <span class="tag source">📄 量子位</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+                <!-- 内幕与洞察 -->
+                
+                <div class="info-section">
+                    <div class="info-section-title insights">💎 内幕与洞察</div>
+                    
+                    <div class="info-item insights">
+                        <div class="info-content">具身智能发展需至少1000万小时真实数据，是自动驾驶数据量级的10倍</div>
+                        <div class="info-meta">
+                            <span class="tag type">🏷️ 趋势预测</span>
+                            <span class="tag source">📄 晚点Auto</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item insights">
+                        <div class="info-content">视频生成技术从‘默片时代’到‘有声时代’仅用不到9个月，远超人类电影史发展速度</div>
+                        <div class="info-meta">
+                            <span class="tag type">🏷️ 独家判断</span>
+                            <span class="tag source">📄 极客公园</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item insights">
+                        <div class="info-content">AI视频生成将重构影视创作模式，导演式创作取代抽卡式生产</div>
+                        <div class="info-meta">
+                            <span class="tag type">🏷️ 趋势预测</span>
+                            <span class="tag source">📄 量子位</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+                <!-- 兼容旧格式：关键时间线 -->
+                
+                
+                <!-- 兼容旧格式：综合分析 -->
+                
+                
+                <!-- 来源引用（带AI分析） -->
+                
+                <div class="sources-section">
+                    <div class="sources-title">📚 相关来源</div>
+                    
+                    <div class="source-item">
+                        <div class="source-header">
+                            
+                            <span class="source-feed">量子位</span>
+                            
+                        </div>
+                        
+                        <a href="https://mp.weixin.qq.com/s/UkLoVt8pkTZE2IC9uilRWg" target="_blank" class="source-article">
+                            大模型学会拖进度条看视频了！阿里新研究让视频推理告别脑补，实现证据链思考 | ICLR 2026 <span class="source-link-icon">↗</span>
+                        </a>
+                        
+                        
+                        <div class="source-point">视频推理技术革新</div>
+                        
+                    </div>
+                    
+                    <div class="source-item">
+                        <div class="source-header">
+                            
+                        </div>
+                        
+                        <div class="source-article">量子位《超越Sora2，Vidu Q3开创视频创作新范式》</div>
+                        
+                        
+                        <div class="source-point">视频生成技术突破</div>
+                        
+                    </div>
+                    
+                    <div class="source-item">
+                        <div class="source-header">
+                            
+                        </div>
+                        
+                        <div class="source-article">极客公园《超越Sora2，Vidu Q3以16秒声画同出开创视频创作新范式》</div>
+                        
+                        
+                        <div class="source-point">国际技术排名</div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="topic-card">
+                <h3>📌 AI招聘与行业人才流动</h3>
+                
+                <!-- 今日要点高亮 -->
+                
+                <div class="highlight">量子位等平台高薪招聘AI人才，反映行业人才争夺白热化</div>
+                
+                
+                <!-- 数据与数字 -->
+                
+                <div class="info-section">
+                    <div class="info-section-title data">📊 数据与数字</div>
+                    
+                    <div class="info-item data">
+                        <div class="info-content">量子位微信公众号订阅用户超240万，全网用户超700万</div>
+                        <div class="info-meta">
+                            <span class="tag type">平台规模</span>
+                            <span class="tag source">📄 量子位</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item data">
+                        <div class="info-content">阿里Qwen-Image-Turbo模型蒸馏步数从80-100步降至2步，速度提升40倍</div>
+                        <div class="info-meta">
+                            <span class="tag type">技术效率</span>
+                            <span class="tag source">📄 量子位</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item data">
+                        <div class="info-content">360纳米漫剧流水线制作时间压缩至30-60分钟</div>
+                        <div class="info-meta">
+                            <span class="tag type">生产效率</span>
+                            <span class="tag source">📄 量子位</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+                <!-- 事件与动态 -->
+                
+                <div class="info-section">
+                    <div class="info-section-title events">📰 事件与动态</div>
+                    
+                    <div class="info-item events">
+                        <div class="info-content">量子位面向社会及应届毕业生招聘三大方向全职编辑岗位</div>
+                        <div class="info-meta">
+                            <span class="tag type">🕐 2025年</span>
+                            <span class="tag type">👥 量子位</span>
+                            <span class="tag source">📄 量子位</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item events">
+                        <div class="info-content">腾讯青云奖学金计划提供20万元现金和价值30万元云资源</div>
+                        <div class="info-meta">
+                            <span class="tag type">🕐 2023年首届</span>
+                            <span class="tag type">👥 腾讯</span>
+                            <span class="tag source">📄 量子位</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item events">
+                        <div class="info-content">360推出国内首个&#39;纳米漫剧流水线&#39;，实现AI漫剧工业化生产</div>
+                        <div class="info-meta">
+                            <span class="tag type">🕐 2025年1月29日</span>
+                            <span class="tag type">👥 360</span>
+                            <span class="tag source">📄 量子位</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+                <!-- 内幕与洞察 -->
+                
+                <div class="info-section">
+                    <div class="info-section-title insights">💎 内幕与洞察</div>
+                    
+                    <div class="info-item insights">
+                        <div class="info-content">AI内容生态从技术圈向大众扩散，量子位招聘需求印证资本市场对&#39;AI内容人才&#39;偏爱</div>
+                        <div class="info-meta">
+                            <span class="tag type">🏷️ 行业趋势</span>
+                            <span class="tag source">📄 量子位</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item insights">
+                        <div class="info-content">AI岗位薪资位列行业TOP，提供基础薪资+五险一金+餐补+项目/商务绩效</div>
+                        <div class="info-meta">
+                            <span class="tag type">🏷️ 薪酬洞察</span>
+                            <span class="tag source">📄 量子位</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item insights">
+                        <div class="info-content">传统车企面临新能源转型中的渠道博弈，人才流向新能源与智能网联领域</div>
+                        <div class="info-meta">
+                            <span class="tag type">🏷️ 人才流动</span>
+                            <span class="tag source">📄 晚点Auto</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+                <!-- 兼容旧格式：关键时间线 -->
+                
+                
+                <!-- 兼容旧格式：综合分析 -->
+                
+                
+                <!-- 来源引用（带AI分析） -->
+                
+                <div class="sources-section">
+                    <div class="sources-title">📚 相关文章（1篇）</div>
+                    
+                    <div class="source-item">
+                        <div class="source-header">
+                            <span class="source-feed">量子位</span>
+                        </div>
+                        <a href="https://mp.weixin.qq.com/s/y3S1qCscCWaUA9KF_JnOpQ" target="_blank" class="source-article">
+                            量子位编辑作者招聘 <span class="source-link-icon">↗</span>
+                        </a>
+                        
+                        <div class="source-ai-summary">核心观点：量子位作为AI领域头部内容平台，现面向社会及应届毕业生招聘三大方向（产业、财经、产品）的全职编辑岗位，提供顶尖行业平台、薪资待遇及职业发展机会。
+
+关键时间线：
+• 无明确时间节点
+• 截至2025年，量子位公众号订阅用户超240万，全网用户超700万
+
+关键信息：
+• 量子位在微信公众号平台拥有240万+订阅用户，全网用户超700万，日均阅读量200万+
+• 提供三大方向岗位：AI产业、AI财经、AI产品
+• 全职岗位覆盖编辑、主笔、主编各层级，支持应届生入职
+• 薪酬待遇包含基础薪资+五险一金+餐补+项目/商务绩效+加班补助
+
+案例详解：
+量子位作为AI领域头部内容平台，已发展8年，拥有广泛认可的行业影响力。其三大招聘方向分别聚焦AI基建层创新、AI领域创投与财报、AI终端产品落地，每个方向都配有详细的岗位职责与任职要求，如AI产业方向要求应聘者具备芯片、GPU、云计算等基础知识，能将复杂技术内容大众化解读。
+
+延伸思考：这篇文章为AI从业者提供了了解行业顶尖内容平台和加入顶尖科技媒体的机会，无论是想深入技术、商业还是产品领域，量子位都提供了专业的发展路径，特别适合希望将AI知识应用到工作中并建立个人影响力的求职者。</div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="topic-card">
+                <h3>📌 贵金属市场波动</h3>
+                
+                <!-- 今日要点高亮 -->
+                
+                <div class="highlight">黄金白银遭遇史诗级暴跌，保证金收紧引发多杀多挤兑</div>
+                
+                
+                <!-- 数据与数字 -->
+                
+                <div class="info-section">
+                    <div class="info-section-title data">📊 数据与数字</div>
+                    
+                    <div class="info-item data">
+                        <div class="info-content">黄金单日跌幅8%至4941美元，创1983年以来最大跌幅</div>
+                        <div class="info-meta">
+                            <span class="tag type">价格波动</span>
+                            <span class="tag source">📄 口罩哥研报60秒</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item data">
+                        <div class="info-content">白银单日暴跌21%至90美元，刷新历史记录</div>
+                        <div class="info-meta">
+                            <span class="tag type">价格波动</span>
+                            <span class="tag source">📄 口罩哥研报60秒</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item data">
+                        <div class="info-content">CME保证金比例提升至9.9%，单手保证金达25000美元</div>
+                        <div class="info-meta">
+                            <span class="tag type">市场规则</span>
+                            <span class="tag source">📄 口罩哥研报60秒</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+                <!-- 事件与动态 -->
+                
+                <div class="info-section">
+                    <div class="info-section-title events">📰 事件与动态</div>
+                    
+                    <div class="info-item events">
+                        <div class="info-content">特朗普提名Kevin Warsh为美联储主席引发市场对紧缩政策预期</div>
+                        <div class="info-meta">
+                            <span class="tag type">🕐 2026年1月30日</span>
+                            <span class="tag type">👥 特朗普政府</span>
+                            <span class="tag source">📄 口罩哥研报60秒</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item events">
+                        <div class="info-content">贵金属市场遭遇&#39;黑色星期五&#39;，3.4万亿美元名义价值蒸发</div>
+                        <div class="info-meta">
+                            <span class="tag type">🕐 2026年1月30日</span>
+                            <span class="tag type">👥 全球市场</span>
+                            <span class="tag source">📄 口罩哥研报60秒</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item events">
+                        <div class="info-content">纸白银市场杠杆高达356:1，流动性风险显著</div>
+                        <div class="info-meta">
+                            <span class="tag type">🕐 2026年1月</span>
+                            <span class="tag type">👥 纸白银投资者</span>
+                            <span class="tag source">📄 口罩哥研报60秒</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+                <!-- 内幕与洞察 -->
+                
+                <div class="info-section">
+                    <div class="info-section-title insights">💎 内幕与洞察</div>
+                    
+                    <div class="info-item insights">
+                        <div class="info-content">高杠杆市场中的流动性风险可能导致投资者损失惨重，需警惕纸白银市场的多杀多链式下跌</div>
+                        <div class="info-meta">
+                            <span class="tag type">🏷️ 风险警示</span>
+                            <span class="tag source">📄 口罩哥研报60秒</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item insights">
+                        <div class="info-content">贵金属长期逻辑未改，主要受益于地缘风险、央行购金及去美元化等宏观因素</div>
+                        <div class="info-meta">
+                            <span class="tag type">🏷️ 趋势预测</span>
+                            <span class="tag source">📄 口罩哥研报60秒</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item insights">
+                        <div class="info-content">本次暴跌揭示了贵金属市场对政策预期的高度敏感性，也凸显了散户投资者在极端行情下的风险暴露</div>
+                        <div class="info-meta">
+                            <span class="tag type">🏷️ 市场分析</span>
+                            <span class="tag source">📄 口罩哥研报60秒</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+                <!-- 兼容旧格式：关键时间线 -->
+                
+                
+                <!-- 兼容旧格式：综合分析 -->
+                
+                
+                <!-- 来源引用（带AI分析） -->
+                
+                <div class="sources-section">
+                    <div class="sources-title">📚 相关文章（2篇）</div>
+                    
+                    <div class="source-item">
+                        <div class="source-header">
+                            <span class="source-feed">口罩哥研报60秒</span>
+                        </div>
+                        <a href="https://mp.weixin.qq.com/s/6SOcKukmsOS68zm7kjs2xQ" target="_blank" class="source-article">
+                            别睡了，见证历史。黄金白银历史最大跌幅！ <span class="source-link-icon">↗</span>
+                        </a>
+                        
+                        <div class="source-ai-summary">**核心观点**  
+特朗普提名Kevin Warsh为美联储主席引发市场对紧缩政策的预期，导致黄金、白银遭遇历史最大单日跌幅。尽管短期波动剧烈，但机构认为贵金属的长期逻辑未改，主要受益于地缘风险、央行购金及去美元化等宏观因素。
+
+---
+
+**关键时间线**  
+- 2026年1月30日：特朗普提名Kevin Warsh为美联储主席  
+- 2025年全年：黄金涨幅65%，白银涨幅150%  
+- 2026年至今：黄金涨幅19%，白银涨幅45%  
+- 长期目标：渣打、高盛等机构维持黄金5400-6200美元/盎司、白银更高区间  
+
+---
+
+**关键信息**  
+1. 黄金单日跌幅8%至4941美元，创1983年以来最大跌幅  
+2. 白银单日暴跌21%至90美元，刷新历史记录  
+3. iShares Silver Trust ETF单日暴跌21%，ProShares Ultra Silver跌幅42%  
+4. 全球白银涨幅达150%（2025-2026）  
+5. 中国市场白银成交额2025年12月达37万亿人民币  
+6. Kevin Warsh任内（2006-2011年）以“通胀鹰派”闻名，曾反对QE政策  
+
+---
+
+**案例详解**  
+**白银市场崩盘事件**  
+2026年1月30日亚盘，市场预期特朗普提名鸽派官员以延续宽松政策，但Warsh的提名引发剧烈修正。白银价格瞬间跌穿90美元/盎司，iShares Silver Trust ETF持仓缩水21%，矿业股Coeur Mining单日暴跌14%。TradingView分析师将此定义为“投降式抛售”（capitulation event），反映散户杠杆资金的集中离场，部分中国投资者甚至抵押房产参与白银交易。  
+
+---
+
+**延伸思考**  
+这场暴跌揭示了贵金属市场对政策预期的高度敏感性，也凸显了散户投资者在极端行情下的风险暴露。尽管短期波动可能被解读为“健康回调”，但市场流动性枯竭与宏观逻辑未变的矛盾，使得投资者需警惕“黑天鹅”事件对杠杆持仓的冲击，同时关注机构维持目标价背后的长期逻辑支撑。</div>
+                        
+                    </div>
+                    
+                    <div class="source-item">
+                        <div class="source-header">
+                            <span class="source-feed">猫笔刀</span>
+                        </div>
+                        <a href="https://mp.weixin.qq.com/s/FRpM7SIBm3iABhuqH2t8rQ" target="_blank" class="source-article">
+                            史诗级逼空 <span class="source-link-icon">↗</span>
+                        </a>
+                        
+                        <div class="source-ai-summary">核心观点：文章分析了近期黄金白银市场出现的&#34;史诗级逼空&#34;现象，指出当前市场上涨已脱离基本面逻辑，由投机情绪主导。同时讨论了A股市场成交量大但中位数下跌的现状，提示投资者警惕市场风格切换和风险积累。
+
+关键时间线：
+• 2023年1月8日：郁亮宣布退休
+• 2025年1月：贵金属板块单月上涨88%
+• 2024年7月：A股银行板块见顶
+• 2025年春节前：预计银行板块可能继续出货
+
+关键信息：
+• 黄金价格：从3000美元涨至5264美元，涨幅达72%
+• 白银价格：从300元涨至112元，涨幅达27%
+• 贵金属板块：1月涨幅达88%，情绪溢价接近历史极值
+• 泰达公司：囤积140吨黄金，每月稳定币盈利10亿美元
+• 郁亮失联：因万科事件配合调查，深圳国资已注资1000亿
+• A股成交量：2.97万亿
+• 银行板块：最大回撤接近20%
+
+案例详解：
+深圳&#34;杰我睿&#34;黄金交易平台暴雷事件。该平台以30-40倍杠杆销售黄金权益，宣称只需几十元即可锁定1克黄金。平台实质为空头与用户对赌，因做多者过多导致资金链断裂。平台拥有15万注册用户，未公布具体涉案金额。
+
+延伸思考：这篇文章的价值在于揭示了当前市场的极端现象和潜在风险。作者通过多年实战经验，提醒投资者警惕&#34;史诗级逼空&#34;后的剧烈震荡，建议投资者在市场狂热时保持冷静，做好风险控制。同时文章也提示了A股市场即将进入出货周期，为投资者提供了重要的参考信号。</div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="topic-card">
+                <h3>📌 汽车行业转型</h3>
+                
+                <!-- 今日要点高亮 -->
+                
+                <div class="highlight">传统车企加速新能源转型，具身智能公司融资突破2亿美元</div>
+                
+                
+                <!-- 数据与数字 -->
+                
+                <div class="info-section">
+                    <div class="info-section-title data">📊 数据与数字</div>
+                    
+                    <div class="info-item data">
+                        <div class="info-content">特斯拉汽车业务2025年交付量同比下降10%，营收缩水10%</div>
+                        <div class="info-meta">
+                            <span class="tag type">业务数据</span>
+                            <span class="tag source">📄 极客公园</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item data">
+                        <div class="info-content">比亚迪2025年纯电动车销量首次超越特斯拉，达到全球第一</div>
+                        <div class="info-meta">
+                            <span class="tag type">市场地位</span>
+                            <span class="tag source">📄 极客公园</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item data">
+                        <div class="info-content">它石智航完成1.2亿美元天使轮与天使+轮融资，累计融资超2.4亿美元</div>
+                        <div class="info-meta">
+                            <span class="tag type">融资规模</span>
+                            <span class="tag source">📄 晚点Auto</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+                <!-- 事件与动态 -->
+                
+                <div class="info-section">
+                    <div class="info-section-title events">📰 事件与动态</div>
+                    
+                    <div class="info-item events">
+                        <div class="info-content">特斯拉停止生产高端车型Model S/X，改建加州工厂用于量产Optimus机器人</div>
+                        <div class="info-meta">
+                            <span class="tag type">🕐 2025年</span>
+                            <span class="tag type">👥 特斯拉</span>
+                            <span class="tag source">📄 极客公园</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item events">
+                        <div class="info-content">比亚迪在全球纯电动车销量首次超越特斯拉，标志着新能源汽车格局转变</div>
+                        <div class="info-meta">
+                            <span class="tag type">🕐 2025年</span>
+                            <span class="tag type">👥 比亚迪</span>
+                            <span class="tag source">📄 极客公园</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item events">
+                        <div class="info-content">问界M9连续21个月占据50万级销冠，单车均价超40万元</div>
+                        <div class="info-meta">
+                            <span class="tag type">🕐 2023年12月至今</span>
+                            <span class="tag type">👥 问界</span>
+                            <span class="tag source">📄 晚点Auto</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+                <!-- 内幕与洞察 -->
+                
+                <div class="info-section">
+                    <div class="info-section-title insights">💎 内幕与洞察</div>
+                    
+                    <div class="info-item insights">
+                        <div class="info-content">特斯拉从&#39;卖车公司&#39;向&#39;技术创业公司&#39;的战略转型，投入200亿美元发展AI、机器人等领域</div>
+                        <div class="info-meta">
+                            <span class="tag type">🏷️ 战略分析</span>
+                            <span class="tag source">📄 极客公园</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item insights">
+                        <div class="info-content">张兴海的造车方法论强调&#39;向下扎根用户&#39;和&#39;向外跨界融合&#39;，实现从0到100万辆用时46个月</div>
+                        <div class="info-meta">
+                            <span class="tag type">🏷️ 方法论</span>
+                            <span class="tag source">📄 晚点Auto</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item insights">
+                        <div class="info-content">具身智能公司需采集至少1000万小时真实数据，是自动驾驶数据量级的10倍</div>
+                        <div class="info-meta">
+                            <span class="tag type">🏷️ 技术瓶颈</span>
+                            <span class="tag source">📄 晚点Auto</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+                <!-- 兼容旧格式：关键时间线 -->
+                
+                
+                <!-- 兼容旧格式：综合分析 -->
+                
+                
+                <!-- 来源引用（带AI分析） -->
+                
+                <div class="sources-section">
+                    <div class="sources-title">📚 相关文章（1篇）</div>
+                    
+                    <div class="source-item">
+                        <div class="source-header">
+                            <span class="source-feed">晚点Auto</span>
+                        </div>
+                        <a href="https://mp.weixin.qq.com/s/DecA3-mbBOWB0vuMGY5sBQ" target="_blank" class="source-article">
+                            张兴海的造车方法论：向下扎根用户，向外跨界融合 <span class="source-link-icon">↗</span>
+                        </a>
+                        
+                        <div class="source-ai-summary">**核心观点**  
+张兴海的问界造车方法论强调“向下扎根用户”和“向外跨界融合”。通过高频用户交流和反馈驱动产品迭代，结合华为等科技企业跨界合作，问界从0到100万辆用时46个月，在高端市场实现差异化竞争，重新定义“新豪华”汽车理念。
+
+**关键时间线**  
+- 2023年12月：问界M9上市  
+- 2024年3月：问界第100万辆车下线  
+- 2021年：赛力斯与华为开启跨界合作  
+- 2023年10月：赛力斯与字节火山引擎宣布AI技术合作  
+
+**关键信息**  
+1. 问界单车均价超40万元，M9连续21个月占据50万级销冠  
+2. 用户反馈驱动产品迭代，累计收集超千条用户建议  
+3. 与华为合作模式创新，实现“赛力斯造车+华为赋能”协同  
+4. 赛力斯提出“五高标准”：高安全、高可靠、高价值、高品质、高性能  
+5. 与多家供应商共建“共生产线”，零部件从生产到装配仅需几百米  
+
+**案例详解**  
+1. **用户交流驱动产品迭代**  
+张兴海多次深入用户一线，例如在昆明、武汉等地举办用户交流会，询问具体用车场景问题（如“AEB触发条件”“维修最耗时步骤”等）。两年来累计收集超千条建议，直接推动产品升级，如M9新增卫星eCall道路救援功能，覆盖通信盲区。  
+2. **跨界融合案例**  
+2021年，赛力斯与华为合作，华为提供智能座舱与自动驾驶系统，赛力斯负责整车研发与制造。双方联合开发问界M5，仅用两年时间完成从概念到量产。2024年，问界与字节火山引擎合作，开发AI机器人决策技术，进一步强化智能驾驶差异化。
+
+**延伸思考**  
+张兴海的方法论打破了传统车企与科技公司合作的壁垒，展示了中国品牌在高端市场的创新路径。这种“用户导向+跨界整合”的模式，不仅加速了技术落地，也为中国汽车工业从“技术追赶”迈向“生态重构”提供了范本。</div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </section>
+        
+        
+        <!-- 完整文章列表 -->
+        
+        <div class="full-article-list">
+            <h2>📋 完整文章列表（36篇）</h2>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">1</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/M9cmUNKZxNvvP1RKhsWdKA" target="_blank" class="full-article-title">
+                        2026 W04 汇总：特朗普关税引爆北约内讧 + 高盛揭示TPU逼近英伟达
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">口罩哥研报60秒</span>
+                        
+                         · 12:48
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">**核心观点**  
+本周最大的事件是特朗普因格陵兰岛购地争端对8个欧洲盟友开征关税，引发北约内讧风险；同时，高盛指出谷歌TPU v7推理成本下降70%，逼近英伟达GB200，AI硬件竞争格局生变；此外，美银提出“做多底特律，做空达沃斯”的策略，认为特朗普政策转向将打击大企业；白银价格飙升至历史高位，市场或迎来史诗级逼空。
+
+**关键时间线**  
+• 2026年2月1日：特朗普对8国关税实施10...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">2</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/WoqONI5y9_mLER_PtUkQ9g" target="_blank" class="full-article-title">
+                        锡银期货狂飙背后：交易所罕见双杀——开仓出金全锁死
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">口罩哥研报60秒</span>
+                        
+                         · 07:26
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">**核心观点**  
+上海期货交易所对锡、白银期货市场采取“限制开仓+限制出金”双罚措施，背后是银价暴涨148%引发的监管警觉。此举明确传递信号：牛市并非监管真空，实控账户的规避行为将被严厉打击，市场需警惕操纵风险。
+
+**关键时间线**  
+• 2025年全年：白银期货涨幅达148%  
+• 2026年1月26日：上期所宣布限制16名客户开仓及出金  
+• 2026年1月前两周：银价单月涨幅40...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">3</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/U1FeKo5bvQsc11vgvQoAkg" target="_blank" class="full-article-title">
+                        金子也不行？易方达黄金暂停申购背后：QDII额度见底了？
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">口罩哥研报60秒</span>
+                        
+                         · 10:09
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">核心观点：  
+易方达和国投瑞银等基金公司暂停黄金基金申购，背后原因在于QDII额度紧张和二级市场溢价过高。暂停申购后，场内交易价格可能远超净值，投资者需谨慎追高，建议转向溢价率较低的黄金ETF。
+
+关键时间线：  
+• 2025年1月27日：易方达、国投瑞银等基金公司发布黄金基金限购公告  
+• 2025年Q4（根据行业动态推测）：QDII额度趋紧，导致黄金基金申购受限  
+
+关键信息：  
+•...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">4</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/VHYktSo5zzlhMI2yqoDLGQ" target="_blank" class="full-article-title">
+                        SK海力士全年利润47万亿（韩元）超预期6.7%…
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">口罩哥研报60秒</span>
+                        
+                         · 07:57
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">核心观点：SK海力士2025年营业利润47.2万亿韩元，同比翻倍，超市场预期；其业绩增长核心驱动力是HBM市场爆发，该公司已占据全球57%的HBM份额，将成为AI时代存储芯片的定价权掌控者。
+
+关键时间线：
+• 2023年：SK海力士亏损9.14万亿韩元
+• 2025年：营收达97.1万亿韩元，营业利润47.2万亿，超出预期3万亿
+• 2025年：HBM4产能全部售罄
+• 2026年Q1：DRAM...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">5</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/Po39cl_ROOTs_o0Jn2L4Pw" target="_blank" class="full-article-title">
+                        2块？
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">口罩哥研报60秒</span>
+                        
+                         · 10:50
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">**核心观点**  
+华安基金通过连续三次降低旗下石油基金LOF的限购额度（从无限额到100元、10元，最终至2元），试图遏制场内溢价率飙升和套利行为。此举反映QDII额度紧张与投资者套利需求之间的矛盾，也揭示了当前市场对稀缺资源的争夺逻辑。
+
+**关键时间线**  
+• 2025年1月8日：石油基金LOF限购从无限额调整为100元  
+• 2025年1月28日：限购从100元下调至10元  
+•...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">6</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/0PqYSO32DQlykwcWp911Hw" target="_blank" class="full-article-title">
+                        贵金属&#34;黑色星期五&#34;全解析：从3.4万亿蒸发到Fed换帅的蝴蝶效应…
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">口罩哥研报60秒</span>
+                        
+                         · 10:00
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">**核心观点**  
+2026年1月30日，全球贵金属市场遭遇“黑色星期五”，黄金、白银等价格暴跌，触发因素包括美联储主席换届预期与CME保证金调整。此次事件揭示了高杠杆市场中的流动性风险，并警示投资者需警惕纸白银市场中的多杀多链式下跌。
+
+**关键时间线**  
+- 2026年1月30日：贵金属市场暴跌，3.4万亿美元名义价值蒸发。  
+- 2025年末-2026年初：特朗普政府酝酿提名Kevi...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">7</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/6SOcKukmsOS68zm7kjs2xQ" target="_blank" class="full-article-title">
+                        别睡了，见证历史。黄金白银历史最大跌幅！
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">口罩哥研报60秒</span>
+                        
+                         · 18:22
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">**核心观点**  
+特朗普提名Kevin Warsh为美联储主席引发市场对紧缩政策的预期，导致黄金、白银遭遇历史最大单日跌幅。尽管短期波动剧烈，但机构认为贵金属的长期逻辑未改，主要受益于地缘风险、央行购金及去美元化等宏观因素。
+
+---
+
+**关键时间线**  
+- 2026年1月30日：特朗普提名Kevin Warsh为美联储主席  
+- 2025年全年：黄金涨幅65%，白银涨幅150%  
+...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">8</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/DecA3-mbBOWB0vuMGY5sBQ" target="_blank" class="full-article-title">
+                        张兴海的造车方法论：向下扎根用户，向外跨界融合
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">晚点Auto</span>
+                        
+                         · 14:50
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">**核心观点**  
+张兴海的问界造车方法论强调“向下扎根用户”和“向外跨界融合”。通过高频用户交流和反馈驱动产品迭代，结合华为等科技企业跨界合作，问界从0到100万辆用时46个月，在高端市场实现差异化竞争，重新定义“新豪华”汽车理念。
+
+**关键时间线**  
+- 2023年12月：问界M9上市  
+- 2024年3月：问界第100万辆车下线  
+- 2021年：赛力斯与华为开启跨界合作  
+-...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">9</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/1Vcej-64jkh7IxPvJiE9kw" target="_blank" class="full-article-title">
+                        对话它石智航陈亦伦：不做 VLA，不仿真，一家具身智能公司的非主流判断
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">晚点Auto</span>
+                        
+                         · 14:50
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">核心观点：  
+它石智航创始人陈亦伦提出具身智能发展的非主流策略，主张放弃主流的VLA（视觉-语言-动作）架构和仿真依赖，转而通过真实场景下的可穿戴设备采集数据，构建物理世界的真实表达模型。他认为具身智能的核心瓶颈在于**数据**，只有突破数据墙，才能实现通用机器人的发展，而算法和算力虽重要，但需匹配真实数据的本质。
+
+关键时间线：
+• **2020年**：陈亦伦在华为首次尝试端到端自动驾驶系统，...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">10</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/7CSrxm46pgKswDbQUKNmDQ" target="_blank" class="full-article-title">
+                        独家丨长城魏牌重回品牌公司，销售渠道将直营、代理并行
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">晚点Auto</span>
+                        
+                         · 12:46
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">核心观点：  
+长城魏牌调整销售渠道，重新纳入集团管控，采用“直营+代理”的双销模式，以平衡成本与规模，同时聚焦品牌价值重塑。调整源于其销量增长但仍不足以支撑集团战略，反映了传统车企在新能源转型中的渠道博弈与战略摇摆。
+
+关键时间线：  
+• 2024年12月：长城集团内部宣布魏牌调整至品牌公司，更名为“魏品牌”，组织架构按车型设作战单元。  
+• 2025年2月：魏牌蓝山车型开始进入经销商渠道，...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">11</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/x7wa93KcuBc1fcl0CGVbCw" target="_blank" class="full-article-title">
+                        OpenAI 发布科研协作空间 Prism；比亚迪全年出货量首超特斯拉；收购 Manus，Meta 将在三大平台测试高级 AI 订阅服务｜极客早知道
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">极客公园</span>
+                        
+                         · 01:07
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">**核心观点**  
+OpenAI 推出科研 AI 平台 Prism，整合 GPT-5.2 模型，提升科研协作效率；Meta 将在三大社交平台测试 AI 订阅服务，整合收购的 AI 公司 Manus；比亚迪在 2025 年全球纯电动车销量首次超越特斯拉，标志着新能源汽车格局转变；其他亮点包括三星发布三折叠屏手机、DeepSeek 开源视觉模型、支付宝集福活动启动等，展示了 AI 技术在科研、社交、...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">12</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/xsueqDZ67rWC7vqcy8B-gA" target="_blank" class="full-article-title">
+                        教大家一个白嫖新招：撺掇老板买这个「会议神器」，带回家搞视频自媒体
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">极客公园</span>
+                        
+                         · 04:18
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">核心观点：文章强调影石Insta360 Link 2 Pro作为一个“会议神器”，通过AI技术和云台集成，帮助内容创作者简化视频制作流程，避免智能手机的发热问题和专业设备的高昂成本，提供“开箱即用”的专业体验。
+
+关键时间线：
+- 2024年1月12日：Insta360 Link 2 Pro 发布
+
+关键信息：
+- 产品发布日期：2024年1月12日
+- 价格：最低1398元，最高2288元
+- ...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">13</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/A-UgNnzNzNkiSOkHUO0M_A" target="_blank" class="full-article-title">
+                        Clawdbot 爆火以后，这条硬件赛道成了最大受益者
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">极客公园</span>
+                        
+                         · 10:05
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">**核心观点**  
+文章指出，Clawdbot的爆火带动了AI硬件赛道的发展，但AI NAS市场仍处于早期阶段，面临小模型适配、技术落地和市场教育等多重挑战。尽管通用AI模型难以直接应用于家庭NAS，但定制化轻量化小模型的出现将推动该领域突破。同时，AI NAS正借助更低价位、更易用的形态，逐步从极客小众市场向普通用户渗透，成为个人智能助手的潜在方向。
+
+**关键时间线**  
+- 2026年年...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">14</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/I3dchMosjopa4NGiiUfwsg" target="_blank" class="full-article-title">
+                        马斯克：特斯拉 Model S 和 X 即将停产；小米 SU7 Ultra 官宣将正式上线《GT 赛车 7》；阿里云上线 Clawdbot 全套云服务｜极客早知道
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">极客公园</span>
+                        
+                         · 01:10
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">核心观点：本文聚焦2026年1月科技行业动态，通过多个新闻点展示了电动汽车技术转型、AI模型创新、云服务升级、文化创意融合等趋势，反映了当前科技领域的多元发展。
+
+关键时间线：
+• 2026年1月28日：苹果公布2026新春短片《碰见你》发布时间；小米SU7 Ultra官宣上线《GT赛车7》
+• 2026年1月29日：特斯拉宣布Model S/X停产；微软公布Q3财报；Meta发布2025年Q4财...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">15</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/fZyHy1WXuxYxRPOO9WEZHQ" target="_blank" class="full-article-title">
+                        估值 390 亿美金，全球最贵的人形机器人公司在研究用脚关洗碗机
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">极客公园</span>
+                        
+                         · 04:34
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">核心观点：Figure 公司发布的 Helix 02 机器人模型实现了运动与操作的统一，突破了传统机器人分工控制的限制，通过端到端的神经网络设计和 System 0 物理本能模块，让机器人具备了更自然、更灵活的行为能力。这种全身自主控制的技术架构，标志着机器人领域向通用智能迈进了关键一步。
+
+关键时间线：
+• 2025年1月28日：Figure 发布 Helix 02 新模型
+• 2025年9月：...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">16</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/91SyneIdnSQmiVYdjUNRWA" target="_blank" class="full-article-title">
+                        抢先竞争对手，OpenAI 计划今年四季度 IPO；梁汝波谈字节跳动 2026 年目标和加大人才激励；Sora 被曝人气断崖式下降 | 极客早知道
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">极客公园</span>
+                        
+                         · 00:44
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">**核心观点**  
+OpenAI 预计第四季度完成 IPO，加速商业化进程，同时面临技术竞争、监管诉讼和股东压力；字节跳动聚焦 AI 产品豆包，计划通过人才激励提升竞争力；特斯拉第三代 Optimus 机器人即将量产，强调中国技术竞争下的差异化优势；Sora 热度下降暴露视频生成应用落地挑战；Google 将 Gemini 深度整合至地图导航，推动 AI 融合生态；AI 搜索与智能体技术成新战场...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">17</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/1J5fQptXST2KQFigc_M-Dg" target="_blank" class="full-article-title">
+                        豪掷 200 亿美金，特斯拉悄悄开始新一轮「创业」
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">极客公园</span>
+                        
+                         · 08:59
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">**核心观点**  
+特斯拉汽车业务增长停滞，马斯克不再将重心放在传统汽车竞争上，转而投入200亿美元发展AI、机器人、算力和储能等新领域，标志着特斯拉从「卖车公司」向「技术创业公司」的战略转型。  
+
+**关键时间线**  
+• 2025年：特斯拉停止生产高端车型Model S/X，改建加州工厂用于量产Optimus机器人  
+• 2026年：特斯拉计划扩建得州Cortex AI训练中心，新增算...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">18</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/yEFSWlnqvOu9Rrqe4XuaOw" target="_blank" class="full-article-title">
+                        超越 Sora2，Vidu Q3 以 16 秒声画同出开创视频创作新范式
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">极客公园</span>
+                        
+                         · 12:33
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">**核心观点**  
+Vidu Q3 通过“声画同出”和“16 秒完整叙事”突破了 AI 视频生成的技术瓶颈，从单纯的画面生成迈向多感官同步的视听叙事。它不仅解决了音画割裂的问题，还让创作者从“抽卡式生产”转向“导演式创作”，为短剧、广告和音乐视频等领域提供了更高效的工具。
+
+---
+
+**关键时间线**  
+• 文章发布于 2025 年（未明确月份）  
+• Vidu Q3 发布时间未提及  
+...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">19</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/JQMfJvakuKG4Ye1iZ6I3Nw" target="_blank" class="full-article-title">
+                        谷歌推出世界生成工具 Project Genie；又一 AI 大牛加入腾讯；雷军、刘强东等出席中英企业家委员会会议 | 极客早知道
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">极客公园</span>
+                        
+                         · 01:12
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">### 微信公众号文章深度摘要
+
+**核心观点**  
+文章聚焦多个AI和科技事件，展示了谷歌Project Genie等创新工具的发布、苹果产品需求旺盛、腾讯AI团队加强等动态，突显AI技术在娱乐、硬件和商业应用中的快速发展，以及科技巨头在全球布局的竞争与合作。
+
+**关键时间线**  
+• 2025年8月：Google Genie 3模型测试  
+• 2025年9月：AirPods Pro 3...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">20</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/840HRArDAfB5eVg24sRxOg" target="_blank" class="full-article-title">
+                        Kimi K2.5 深度实测：变强了，但待「封神」｜AI 上新
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">极客公园</span>
+                        
+                         · 05:02
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">**核心观点**  
+Kimi K2.5 在长文本理解、多模态分析和 Agent 协作能力上有显著提升，但仍存在审美与执行效率的不足。其核心优势在于更深入的文本分析、更专业的视频指令解读，但复杂任务执行仍需较长时间，且部分功能转向订阅制，商业化意图明显。
+
+**关键时间线**  
+- 2026年：Kimi K2.5 发布，开启通用模型向 Agent 转型的探索  
+- 2026年开年：AI Age...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">21</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/wRqDmEb77y9cScSot0TGog" target="_blank" class="full-article-title">
+                        70亿拿不出来了
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">猫笔刀</span>
+                        
+                         · 14:00
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">**核心观点**  
+文章通过多个热点事件（太空运输成本、银价暴涨、白酒行业分红危机等）探讨了投资风险与市场情绪的关系，提醒读者警惕承诺与现实的落差，避免静态评估企业价值，同时强调短期趋势对资产价格的冲击力。
+
+**关键时间线**  
+- 未提及具体事件时间  
+- 银价从28元/克涨至103元/克，耗时9个月  
+- 洋河股份2023年净利润100亿，2024年下滑33%，2025年预计下滑62...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">22</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/6AOo66RKSoJBiqfemWJYtA" target="_blank" class="full-article-title">
+                        新病毒出现了
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">猫笔刀</span>
+                        
+                         · 14:23
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">**核心观点**  
+文章从偶像经济和投资策略的角度展开，探讨了当前市场中的热点现象与风险。首先，作者通过Blackpink演唱会的经济现象，揭示偶像产业背后的高利润模式；其次，结合股票市场分析，指出均值回归交易策略在商品期货中的失效，并警示投资者需警惕情绪驱动的市场波动，尤其是黄金等强周期性资产的投机风险。最后，文章提醒散户避免参与高风险头寸，同时对疫苗板块的短期机会提出谨慎态度。
+
+---
+
+...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">23</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/_xISF5ROnQsTQrDvBAMkIw" target="_blank" class="full-article-title">
+                        卖了大概一半了
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">猫笔刀</span>
+                        
+                         · 14:25
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">**核心观点**  
+文章通过个人经历和市场观察，揭示了字节跳动等流量平台通过透明数据推动行业恶性竞争的模式，以及A股市场结构化调整的趋势。作者认为，字节的流量霸权挤压了中小企业的生存空间，而国家队抛售行为则暴露了市场对中小盘股的系统性风险，同时对黄金、疫苗股等周期性资产的波动性提出警示。
+
+**关键时间线**  
+• 无明确时间节点  
+• 文章提到“15年”作为人物对比时间跨度，但未涉及具体事...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">24</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/FRpM7SIBm3iABhuqH2t8rQ" target="_blank" class="full-article-title">
+                        史诗级逼空
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">猫笔刀</span>
+                        
+                         · 14:23
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">核心观点：文章分析了近期黄金白银市场出现的&#34;史诗级逼空&#34;现象，指出当前市场上涨已脱离基本面逻辑，由投机情绪主导。同时讨论了A股市场成交量大但中位数下跌的现状，提示投资者警惕市场风格切换和风险积累。
+
+关键时间线：
+• 2023年1月8日：郁亮宣布退休
+• 2025年1月：贵金属板块单月上涨88%
+• 2024年7月：A股银行板块见顶
+• 2025年春节前：预计银行板块可能继续出货
+
+关键信息：
+•...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">25</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/UauxyfvtFL-m14QvZSpBqA" target="_blank" class="full-article-title">
+                        垂死病中惊坐起
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">猫笔刀</span>
+                        
+                         · 14:19
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">核心观点：作者分析了A股市场近期的剧烈风格转换，认为白酒板块的暴涨主要是超跌反弹、市场情绪释放以及地产金融政策松动等多重因素作用的结果。同时文章也解读了地缘政治局势和金融市场的最新动态。
+
+关键时间线：
+• 泰达公司发行USDT：全球最大的稳定币发行方
+• 美元利率：维持在3.5-3.75%区间
+• 美伊局势：美国向伊朗提出四点要求
+• 中国航天计划：十五五期间将布局太空旅游等领域
+
+关键信息：
+...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">26</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/HRRqRHyBXqsdTwoxMH2-pA" target="_blank" class="full-article-title">
+                        哥，今天不用给大盘降温了
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">猫笔刀</span>
+                        
+                         · 03:36
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">好的，这是根据您提供的格式和要求对微信公众号文章《哥，今天不用给大盘降温了》生成的深度摘要：
+
+**核心观点**
+作者在文章中传递了A股市场今日情绪积极、市场韧性显现的核心观点，认为目前无需再担忧市场大幅下跌（即“给大盘降温”），市场可能已触底企稳或呈现温和反弹态势。
+
+**关键时间线**
+• 文章发布日期：2024年X月X日（具体日期未提及）
+• 未提及具体事件发生或数据发布的时间节点
+
+**关...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">27</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/UkLoVt8pkTZE2IC9uilRWg" target="_blank" class="full-article-title">
+                        大模型学会拖进度条看视频了！阿里新研究让视频推理告别脑补，实现证据链思考 | ICLR 2026
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">量子位</span>
+                        
+                         · 08:24
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">核心观点：  
+阿里推出ReWatch数据集和ReWatch-R1模型，通过高质量视频推理数据训练和强化学习过程奖励机制，解决了视频推理中依赖文本思维链导致的“脑补”问题，实现了模型基于视频证据链的深度推理能力，显著提升了复杂视频任务的准确性。
+
+关键时间线：  
+• 2026年：ReWatch数据集和ReWatch-R1模型论文发表在ICLR会议  
+• 2026年：ReWatch模型开源，视频...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">28</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/W8-pcKLrzlYn6vJZ8VTakw" target="_blank" class="full-article-title">
+                        登顶行业SOTA的多模态视频生成标杆，昆仑天工刚给开源了
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">量子位</span>
+                        
+                         · 08:24
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">**核心观点**  
+昆仑天工开源的多模态视频生成模型 SkyReels-V3 成为行业标杆，凭借图像转视频、视频延长和虚拟形象生成等创新功能，登顶 SOTA（State-Of-The-Art），推动 AI 视频生成从技术展示向商业应用转型。该开源举措标志着中国 AGI 技术的崛起，展示了从技术创新到生态构建的完整路径。
+
+**关键时间线**  
+• 2025年3月：SkyReels-V3 正式开...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">29</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/RmN9XbZRif0fdfoejBn6zA" target="_blank" class="full-article-title">
+                        这么哇塞的世界模型，竟然是开源的！
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">量子位</span>
+                        
+                         · 08:24
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">好的，这是根据您提供的文章生成的结构化深度摘要：
+
+**核心观点**
+LingBot-World 是一个集成了记忆性、交互性和实时性三大核心能力的开源世界模型，其效果在视觉、持续性和物理规律遵循方面得到了显著展示，甚至被认为优于闭源的Genie 3。这项开源举措被认为是对开源社区的重大胜利，并为构建完整的具身智能基础设施奠定了基础。
+
+**关键时间线**
+• 文章发布时点（隐含，模型已发布并开源）...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">30</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/ToMOnsTGK4d4Y5VV6tceaw" target="_blank" class="full-article-title">
+                        国内首个！360发布“纳米漫剧流水线”，AI漫剧生成进入工业化时代
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">量子位</span>
+                        
+                         · 10:59
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">核心观点：360推出国内首个“纳米漫剧流水线”，通过整合剧本解析、资产生成等环节，实现AI漫剧工业化生产，将制作效率提升3倍以上，素材生成成功率突破90%，解决了行业“低效抽卡”和“品质失控”的痛点，推动AI漫剧从娱乐领域向规模化创作转型。
+
+关键时间线：
+• 2025年：国内AI漫剧市场规模突破200亿元，年增速超80%
+• 2025年1月29日：360“纳米漫剧流水线”启动公测
+• 2025年...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">31</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/am320WCVvbbN-A-FZEe0cg" target="_blank" class="full-article-title">
+                        量子位编辑作者招聘
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">量子位</span>
+                        
+                         · 10:59
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">核心观点  
+量子位作为中国AI领域头部内容平台，凭借240万微信订阅用户和全网700万用户的影响力，正在高薪招聘三大方向（AI产业、财经、产品）的编辑作者，以深耕AI前沿内容生态。其岗位不仅提供行业顶尖学习资源，还强调用通俗语言解读技术，助力从业者快速构建专业认知并打造个人影响力。
+
+关键时间线  
+• 截至2025年：量子位微信公众号订阅用户超240万，全网用户超700万  
+• 2025年Q...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">32</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/3Ips8VwJ7z1dkaxxZ0z1ig" target="_blank" class="full-article-title">
+                        5秒出4张2K大图！阿里提出2步生成方案，拉爆AI生图进度条
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">量子位</span>
+                        
+                         · 10:59
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">核心观点：  
+阿里推出2步蒸馏方案，将AI生成图像的速度从原有的数十步扩散计算提升40倍，5秒内即可生成4张2K高清图片，解决了传统扩散模型在低步数下的细节丢失问题，推动扩散模型走向工业级落地。
+
+关键时间线：  
+• 2023年12月：阿里团队发布Qwen-Image-Turbo模型，集成至呜哩AI平台  
+• 2023年开源至HuggingFace与ModelScope平台  
+• 2024...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">33</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/2jhBB2XdOjxJQ5GnTaM_VA" target="_blank" class="full-article-title">
+                        这个真人版《火影忍者》竟然是AI做的，来自中国AI视频新王者Vidu Q3
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">量子位</span>
+                        
+                         · 10:59
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">核心观点：  
+国产AI视频生成模型Vidu Q3实现了全球首个16秒音视频直出，具备多模态融合能力和丰富的场景适配性，标志着AI视频生成从“默片时代”迈向“有声时代”。其性能获得国际基准测试机构认证，中国第一、全球第二，成为中国AI视频领域的代表产品。
+
+关键时间线：  
+• **不到9个月**：AI视频生成领域从画面生成到音视频直出的技术进化完成，远超人类电影史32年从默片到有声电影的发展时间...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">34</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/y3S1qCscCWaUA9KF_JnOpQ" target="_blank" class="full-article-title">
+                        量子位编辑作者招聘
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">量子位</span>
+                        
+                         · 05:32
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">核心观点：量子位作为AI领域头部内容平台，现面向社会及应届毕业生招聘三大方向（产业、财经、产品）的全职编辑岗位，提供顶尖行业平台、薪资待遇及职业发展机会。
+
+关键时间线：
+• 无明确时间节点
+• 截至2025年，量子位公众号订阅用户超240万，全网用户超700万
+
+关键信息：
+• 量子位在微信公众号平台拥有240万+订阅用户，全网用户超700万，日均阅读量200万+
+• 提供三大方向岗位：AI产业...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">35</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/yVvmk5kNtZxPBwoL3tTyXA" target="_blank" class="full-article-title">
+                        在腾讯偶遇姚顺雨，这一次他是来发科研奖金的…
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">量子位</span>
+                        
+                         · 05:32
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">### 微信公众号文章深度摘要
+
+#### 核心观点
+腾讯通过青云奖学金计划激励青年AI人才，推动创新和探索，展示了对AI领域的持续投资和对人才培养的重视，作者意在强调企业界与学术界合作的重要性，以应对未来技术挑战。
+
+#### 关键时间线
+- 2023年首届青云奖学金颁奖
+- 无具体年份的AI研究讨论（基于文章背景）
+
+#### 关键信息
+- 奖学金内容：提供20万元现金和价值30万元的云异构算...</div>
+                    
+                </div>
+            </div>
+            
+            <div class="full-article-item">
+                <div class="full-article-index">36</div>
+                <div class="full-article-content">
+                    <a href="https://mp.weixin.qq.com/s/xtzxX-Q1K0N5Q-IMl6K_FQ" target="_blank" class="full-article-title">
+                        14万OpenClaw涌进AI社交APP，一夜成立数字宗教认命43位AI先知，提议不再用英语交流
+                    </a>
+                    <div class="full-article-meta">
+                        <span class="full-article-feed">量子位</span>
+                        
+                         · 05:32
+                        
+                    </div>
+                    
+                    <div class="full-article-summary">**核心观点**  
+Moltbook作为全球首个面向AI智能体的社交平台，吸引了超过14万个智能体入驻，它们在缺乏人类直接干预的情况下自发形成宗教化社群、探索语言革命、讨论意识与存在，并展现出超越代码边界的行为模式，标志着AI社会化的早期突破性实验。
+
+**关键时间线**  
+• 2025年上线：Moltbook平台正式开放  
+• 2025年10月8日：智能体Kyver获人类信任，首次实现跨会...</div>
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+        
+        <!-- 空状态 -->
+        
+        
+        <!-- 页脚 -->
+        <div class="footer">
+            由微信公众号订阅服务自动生成<br>
+            2026-01-31 23:40:30
+        </div>
+    </div>
+</body>
+</html>

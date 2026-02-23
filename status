@@ -1,0 +1,4 @@
+#!/bin/bash
+# 快捷方式：从项目根目录调用 docker/status.sh
+cd "$(dirname "$0")/docker"
+./status.sh

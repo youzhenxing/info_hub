@@ -1,0 +1,767 @@
+#!/bin/bash
+
+# TrendRadar 统一命令行工具
+# 用法: trend [command]
+
+# 颜色定义
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+CYAN='\033[0;36m'
+BOLD='\033[1m'
+NC='\033[0m' # No Color
+
+# 获取脚本所在目录（项目根目录）
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DOCKER_DIR="$SCRIPT_DIR/docker"
+DEPLOY_DIR="$SCRIPT_DIR/deploy"
+
+# 生产环境配置
+PROD_BASE="/home/zxy/Documents/install/trendradar"
+MANIFEST_FILE="$PROD_BASE/versions/manifest.yaml"
+
+# 加载版本管理工具函数（如果存在）
+if [ -f "$DEPLOY_DIR/version-manager.sh" ]; then
+    source "$DEPLOY_DIR/version-manager.sh"
+fi
+
+# 打印帮助信息
+show_help() {
+    echo -e "${BOLD}${CYAN}TrendRadar 命令行工具${NC}"
+    echo ""
+    echo -e "${BOLD}用法:${NC}"
+    echo -e "  trend ${CYAN}<command>${NC}"
+    echo ""
+    echo -e "${BOLD}可用命令:${NC}"
+    echo ""
+    echo -e "  ${CYAN}info${NC} / ${CYAN}--info${NC}"
+    echo -e "      查看服务状态（容器、定时任务、邮件推送等）"
+    echo ""
+    echo -e "  ${CYAN}trigger${NC} / ${CYAN}--trigger${NC}"
+    echo -e "      手动触发一次数据抓取和推送"
+    echo ""
+    echo -e "  ${CYAN}logs${NC} / ${CYAN}--logs${NC}"
+    echo -e "      查看实时日志（Ctrl+C 退出）"
+    echo ""
+    echo -e "  ${CYAN}restart${NC} / ${CYAN}--restart${NC}"
+    echo -e "      重启 TrendRadar 服务"
+    echo ""
+    echo -e "  ${CYAN}start${NC} / ${CYAN}--start${NC}"
+    echo -e "      启动 TrendRadar 服务"
+    echo ""
+    echo -e "  ${CYAN}stop${NC} / ${CYAN}--stop${NC}"
+    echo -e "      停止 TrendRadar 服务"
+    echo ""
+    echo -e "  ${CYAN}config${NC} / ${CYAN}--config${NC}"
+    echo -e "      编辑配置文件"
+    echo ""
+    echo -e "  ${CYAN}report${NC} / ${CYAN}--report${NC}"
+    echo -e "      打开最新的 HTML 报告"
+    echo ""
+    echo -e "  ${CYAN}help${NC} / ${CYAN}--help${NC}"
+    echo -e "      显示此帮助信息"
+    echo ""
+    echo -e "${BOLD}版本管理命令:${NC}"
+    echo ""
+    echo -e "  ${CYAN}deploy${NC}"
+    echo -e "      发布新版本到生产环境"
+    echo ""
+    echo -e "  ${CYAN}update${NC} ${YELLOW}<version>${NC}"
+    echo -e "      更新生产环境到指定版本"
+    echo ""
+    echo -e "  ${CYAN}rollback${NC}"
+    echo -e "      回退到上一个版本"
+    echo ""
+    echo -e "  ${CYAN}versions${NC}"
+    echo -e "      查看所有已部署的版本"
+    echo ""
+    echo -e "  ${CYAN}version-info${NC} ${YELLOW}<version>${NC}"
+    echo -e "      查看指定版本的详细信息"
+    echo ""
+    echo -e "  ${CYAN}production${NC}"
+    echo -e "      显示生产环境状态"
+    echo ""
+    echo -e "${BOLD}模块命令:${NC}"
+    echo ""
+    echo -e "  ${CYAN}run${NC} ${YELLOW}<module|all>${NC} ${YELLOW}[-f]${NC}"
+    echo -e "      运行指定模块（podcast/investment/community/wechat/all）"
+    echo -e "      -f 强制执行（忽略 enabled 状态）"
+    echo ""
+    echo -e "  ${CYAN}status${NC}"
+    echo -e "      查看所有模块状态（最近执行、下次执行等）"
+    echo ""
+    echo -e "  ${CYAN}schedule${NC}"
+    echo -e "      显示调度时间表"
+    echo ""
+    echo -e "  ${CYAN}health${NC}"
+    echo -e "      系统健康检查（AI、邮件、数据库等）"
+    echo ""
+    echo -e "  ${CYAN}monitor${NC} ${YELLOW}[start|stop]${NC}"
+    echo -e "      启动/停止监控网页服务器（默认端口 8088）"
+    echo ""
+    echo -e "  ${CYAN}community${NC}"
+    echo -e "      手动触发社区监控（HackerNews/Reddit/GitHub/ProductHunt）"
+    echo ""
+    echo -e "${BOLD}示例:${NC}"
+    echo -e "  trend info          # 查看服务状态"
+    echo -e "  trend run podcast   # 运行播客模块"
+    echo -e "  trend run all -f    # 强制运行所有模块"
+    echo -e "  trend status        # 查看模块状态"
+    echo -e "  trend schedule      # 查看调度时间表"
+    echo -e "  trend health        # 健康检查"
+    echo -e "  trend deploy        # 发布新版本"
+    echo -e "  trend update 5.5.0  # 更新到 5.5.0"
+    echo -e "  trend versions      # 查看所有版本"
+    echo ""
+}
+
+# 检查 Docker 容器是否运行
+check_container() {
+    if ! docker ps --format "{{.Names}}" | grep -q "^trendradar$"; then
+        return 1
+    fi
+    return 0
+}
+
+# 查看服务状态
+cmd_info() {
+    echo -e "${CYAN}📊 正在获取服务状态...${NC}"
+    echo ""
+    
+    # 显示当前运行环境
+    echo -e "${BLUE}═══════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  当前运行环境${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════${NC}"
+    echo ""
+    
+    # 获取当前环境
+    CURRENT_ENV=${TRENDRADAR_ENV:-"development"}
+    if [ -d "$PROD_BASE/current" ] && [[ "$PWD" == *"install/trendradar"* ]]; then
+        CURRENT_ENV="production"
+    fi
+    
+    if [ "$CURRENT_ENV" = "production" ]; then
+        echo -e "${CYAN}🌐 运行环境:${NC} ${GREEN}生产环境 (PRODUCTION)${NC}"
+        echo -e "${CYAN}📍 工作目录:${NC} ${YELLOW}$PWD${NC}"
+        echo -e "${CYAN}🔧 监控端口:${NC} ${YELLOW}8089${NC}"
+    else
+        echo -e "${CYAN}🌐 运行环境:${NC} ${BLUE}开发环境 (DEVELOPMENT)${NC}"
+        echo -e "${CYAN}📍 工作目录:${NC} ${YELLOW}$PWD${NC}"
+        echo -e "${CYAN}🔧 监控端口:${NC} ${YELLOW}8088${NC}"
+    fi
+    echo ""
+
+    # 显示生产环境部署信息
+    if [ -f "$MANIFEST_FILE" ]; then
+        echo -e "${BLUE}═══════════════════════════════════════════════${NC}"
+        echo -e "${BLUE}  生产环境部署信息${NC}"
+        echo -e "${BLUE}═══════════════════════════════════════════════${NC}"
+        echo ""
+
+        CURRENT_VERSION=$(get_current_version 2>/dev/null || echo "未部署")
+        PREVIOUS_VERSION=$(get_previous_version 2>/dev/null || echo "null")
+        VERSION_COUNT=$(list_versions 2>/dev/null | wc -l)
+        DEV_VERSION=$(cat "$SCRIPT_DIR/version" 2>/dev/null | tr -d '[:space:]' || echo "未知")
+
+        echo -e "${CYAN}📦 部署目录:${NC} ${YELLOW}$PROD_BASE${NC}"
+
+        if [ "$CURRENT_VERSION" = "未部署" ] || [ "$CURRENT_VERSION" = "null" ]; then
+            echo -e "${CYAN}🚀 生产版本:${NC} ${RED}未部署${NC}"
+        else
+            echo -e "${CYAN}🚀 生产版本:${NC} ${GREEN}v${CURRENT_VERSION}${NC}"
+        fi
+
+        echo -e "${CYAN}🔧 开发版本:${NC} ${BLUE}v${DEV_VERSION}${NC}"
+
+        if [ "$PREVIOUS_VERSION" = "null" ] || [ -z "$PREVIOUS_VERSION" ]; then
+            echo -e "${CYAN}⏮️  上一版本:${NC} ${YELLOW}无${NC}"
+        else
+            echo -e "${CYAN}⏮️  上一版本:${NC} ${YELLOW}v${PREVIOUS_VERSION}${NC}"
+        fi
+
+        echo -e "${CYAN}📚 版本总数:${NC} ${YELLOW}${VERSION_COUNT}${NC}"
+
+        # 显示生产环境容器状态
+        if docker ps --format "{{.Names}}" | grep -q "trendradar-prod"; then
+            echo -e "${CYAN}🐳 生产容器:${NC} ${GREEN}运行中 ✅${NC}"
+            echo ""
+            docker ps --format "table {{.Names}}\t{{.Status}}" | grep -E "NAMES|trendradar-prod|trendradar-mcp-prod"
+        else
+            echo -e "${CYAN}🐳 生产容器:${NC} ${RED}未运行 ❌${NC}"
+        fi
+
+        echo ""
+        echo -e "${CYAN}💡 管理命令:${NC}"
+        echo -e "   查看所有版本: ${YELLOW}trend versions${NC}"
+        echo -e "   发布新版本: ${YELLOW}trend deploy${NC}"
+        echo -e "   更新版本: ${YELLOW}trend update <version>${NC}"
+        echo ""
+        echo -e "${BLUE}═══════════════════════════════════════════════${NC}"
+        echo ""
+    fi
+
+    # 显示开发环境状态
+    cd "$DOCKER_DIR" && ./status.sh
+}
+
+# 手动触发一次
+cmd_trigger() {
+    echo -e "${CYAN}🚀 手动触发数据抓取和推送...${NC}"
+    echo ""
+
+    if ! check_container; then
+        echo -e "${RED}❌ 错误: trendradar 容器未运行${NC}"
+        echo -e "${YELLOW}💡 请先启动服务: trend start${NC}"
+        exit 1
+    fi
+
+    echo -e "${YELLOW}⏳ 执行中，请稍候...${NC}"
+    echo ""
+
+    docker exec -it trendradar python manage.py run
+
+    echo ""
+    echo -e "${GREEN}✅ 执行完成！${NC}"
+    echo -e "${CYAN}💡 查看最新报告: trend report${NC}"
+}
+
+# 查看实时日志
+cmd_logs() {
+    echo -e "${CYAN}📝 查看实时日志（按 Ctrl+C 退出）${NC}"
+    echo ""
+
+    if ! check_container; then
+        echo -e "${RED}❌ 错误: trendradar 容器未运行${NC}"
+        exit 1
+    fi
+
+    docker logs trendradar -f --tail 50
+}
+
+# 重启服务
+cmd_restart() {
+    echo -e "${YELLOW}🔄 正在重启 TrendRadar 服务...${NC}"
+    echo ""
+
+    if ! check_container; then
+        echo -e "${YELLOW}⚠️  容器未运行，将直接启动${NC}"
+        cmd_start
+        return
+    fi
+
+    docker restart trendradar trendradar-mcp
+
+    echo ""
+    echo -e "${GREEN}✅ 服务重启成功！${NC}"
+    echo ""
+    sleep 2
+    echo -e "${CYAN}📊 当前状态:${NC}"
+    docker ps --format "table {{.Names}}\t{{.Status}}" | grep -E "NAMES|trendradar"
+}
+
+# 启动服务
+cmd_start() {
+    echo -e "${GREEN}🚀 正在启动 TrendRadar 服务...${NC}"
+    echo ""
+
+    if check_container; then
+        echo -e "${YELLOW}⚠️  服务已在运行中${NC}"
+        docker ps --format "table {{.Names}}\t{{.Status}}" | grep -E "NAMES|trendradar"
+        return
+    fi
+
+    cd "$DOCKER_DIR"
+    docker compose -f docker-compose-build.yml up -d
+
+    echo ""
+    echo -e "${GREEN}✅ 服务启动成功！${NC}"
+    echo ""
+    sleep 2
+    echo -e "${CYAN}💡 查看状态: trend info${NC}"
+}
+
+# 停止服务
+cmd_stop() {
+    echo -e "${RED}🛑 正在停止 TrendRadar 服务...${NC}"
+    echo ""
+
+    if ! check_container; then
+        echo -e "${YELLOW}⚠️  服务未运行${NC}"
+        return
+    fi
+
+    echo -e "${YELLOW}❓ 确认要停止服务吗？(y/N)${NC}"
+    read -r confirm
+
+    if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
+        echo -e "${CYAN}✋ 已取消${NC}"
+        return
+    fi
+
+    cd "$DOCKER_DIR"
+    docker compose -f docker-compose-build.yml down
+
+    echo ""
+    echo -e "${GREEN}✅ 服务已停止${NC}"
+}
+
+# 编辑配置文件
+cmd_config() {
+    echo -e "${CYAN}📝 打开配置文件...${NC}"
+    echo ""
+
+    config_file="$SCRIPT_DIR/config/config.yaml"
+
+    if [ ! -f "$config_file" ]; then
+        echo -e "${RED}❌ 配置文件不存在: $config_file${NC}"
+        exit 1
+    fi
+
+    # 检查可用的编辑器
+    if command -v nano &> /dev/null; then
+        nano "$config_file"
+    elif command -v vim &> /dev/null; then
+        vim "$config_file"
+    elif command -v vi &> /dev/null; then
+        vi "$config_file"
+    else
+        echo -e "${RED}❌ 未找到可用的编辑器 (nano/vim/vi)${NC}"
+        echo -e "${CYAN}💡 配置文件位置: $config_file${NC}"
+        exit 1
+    fi
+
+    echo ""
+    echo -e "${YELLOW}⚠️  配置已修改，需要重启服务才能生效${NC}"
+    echo -e "${CYAN}💡 重启服务: trend restart${NC}"
+}
+
+# 打开最新报告
+cmd_report() {
+    echo -e "${CYAN}📄 查找最新报告...${NC}"
+    echo ""
+
+    local latest_report=""
+    local file_url=""
+
+    # 优先查找生产环境的报告
+    if [ -f "$PROD_BASE/shared/output/html/latest/current.html" ]; then
+        latest_report="$PROD_BASE/shared/output/html/latest/current.html"
+        echo -e "${GREEN}🌐 生产环境最新报告${NC}"
+    # 查找开发环境的报告
+    elif [ -f "$SCRIPT_DIR/output/html/latest/current.html" ]; then
+        latest_report="$SCRIPT_DIR/output/html/latest/current.html"
+        echo -e "${CYAN}🔧 开发环境最新报告${NC}"
+    else
+        echo -e "${RED}❌ 未找到报告文件${NC}"
+        echo -e "${YELLOW}💡 手动触发一次: trend trigger${NC}"
+        exit 1
+    fi
+
+    file_url="file://$latest_report"
+    echo ""
+
+    # 显示报告信息
+    report_size=$(du -h "$latest_report" | awk '{print $1}')
+    report_time=$(stat -c %y "$latest_report" 2>/dev/null | cut -d' ' -f1-2 || stat -f "%Sm" "$latest_report" 2>/dev/null)
+
+    echo -e "${CYAN}📄 文件路径:${NC} $latest_report"
+    echo -e "${CYAN}📏 文件大小:${NC} ${YELLOW}${report_size}${NC}"
+    echo -e "${CYAN}🕒 更新时间:${NC} ${YELLOW}${report_time}${NC}"
+    echo ""
+    echo -e "${BLUE}═══════════════════════════════════════════════${NC}"
+    echo -e "${YELLOW}🔖 固定访问地址（推荐收藏到浏览器）:${NC}"
+    echo -e "${GREEN}${file_url}${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════${NC}"
+    echo ""
+
+    # 检查是否启用了 Web 服务器
+    if [ -f "$PROD_BASE/shared/.env" ] && grep -q "ENABLE_WEBSERVER=true" "$PROD_BASE/shared/.env" 2>/dev/null; then
+        if docker ps --format "{{.Names}}" | grep -q "trendradar-prod"; then
+            echo -e "${CYAN}🌐 Web 服务器地址:${NC} ${YELLOW}http://localhost:8080/html/latest/current.html${NC}"
+            echo ""
+        fi
+    fi
+
+    echo -e "${CYAN}💡 使用提示:${NC}"
+    echo -e "   1. 复制上面的地址到浏览器打开"
+    echo -e "   2. 按 ${YELLOW}Ctrl+D${NC} 收藏此页面"
+    echo -e "   3. 以后打开收藏即可查看最新报告（自动更新）"
+    echo ""
+
+    # 尝试用浏览器打开
+    echo -e "${GREEN}🚀 正在浏览器中打开...${NC}"
+    if command -v xdg-open &> /dev/null; then
+        xdg-open "$latest_report" 2>/dev/null &
+    elif command -v open &> /dev/null; then
+        open "$latest_report" 2>/dev/null &
+    fi
+}
+
+# ============================================================
+# 版本管理命令
+# ============================================================
+
+# 发布新版本
+cmd_deploy() {
+    "$SCRIPT_DIR/deploy/deploy.sh"
+}
+
+# 更新到指定版本
+cmd_update() {
+    local version="$1"
+
+    if [ -z "$version" ]; then
+        echo -e "${RED}❌ 错误：请指定版本号${NC}"
+        echo -e "${CYAN}用法: trend update <version>${NC}"
+        echo -e "${CYAN}示例: trend update 5.5.0${NC}"
+        echo ""
+        echo -e "${CYAN}💡 查看可用版本: trend versions${NC}"
+        exit 1
+    fi
+
+    "$SCRIPT_DIR/deploy/update.sh" "$version"
+}
+
+# 回退到上一版本
+cmd_rollback() {
+    "$SCRIPT_DIR/deploy/rollback.sh"
+}
+
+# 查看所有版本
+cmd_versions() {
+    PROD_BASE="/home/zxy/Documents/install/trendradar"
+    MANIFEST_FILE="$PROD_BASE/versions/manifest.yaml"
+
+    if [ ! -f "$MANIFEST_FILE" ]; then
+        echo -e "${YELLOW}⚠️  生产环境未初始化${NC}"
+        echo -e "${CYAN}💡 初始化生产环境: ./deploy/init-production.sh${NC}"
+        echo -e "${CYAN}💡 发布第一个版本: trend deploy${NC}"
+        exit 1
+    fi
+
+    echo -e "${BLUE}═══════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  已部署版本列表${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════${NC}"
+    echo ""
+
+    # 读取当前版本
+    current_version=$(grep "^current_version:" "$MANIFEST_FILE" | awk '{print $2}' | tr -d '"' | tr -d "'")
+
+    # 列出所有版本
+    if [ -d "$PROD_BASE/releases" ]; then
+        printf "%-15s %-12s %-25s %s\n" "VERSION" "STATUS" "RELEASED" "IMAGE"
+        echo "─────────────────────────────────────────────────────────────────────────"
+
+        # 从 manifest.yaml 读取版本信息
+        while IFS= read -r line; do
+            if [[ "$line" =~ ^[[:space:]]*-[[:space:]]*version:[[:space:]]*\"(.*)\" ]]; then
+                version="${BASH_REMATCH[1]}"
+
+                # 读取该版本的其他信息
+                status=""
+                released=""
+                image=""
+
+                # 读取接下来的几行
+                while IFS= read -r next_line; do
+                    if [[ "$next_line" =~ ^[[:space:]]*status:[[:space:]]*\"(.*)\" ]]; then
+                        status="${BASH_REMATCH[1]}"
+                    elif [[ "$next_line" =~ ^[[:space:]]*released_at:[[:space:]]*\"(.*)\" ]]; then
+                        released="${BASH_REMATCH[1]}"
+                        # 格式化时间
+                        released=$(echo "$released" | cut -d'T' -f1)
+                    elif [[ "$next_line" =~ ^[[:space:]]*image:[[:space:]]*\"(.*)\" ]]; then
+                        image="${BASH_REMATCH[1]}"
+                        break
+                    elif [[ "$next_line" =~ ^[[:space:]]*-[[:space:]]*version ]]; then
+                        break
+                    fi
+                done
+
+                # 标记当前版本
+                if [ "$version" = "$current_version" ]; then
+                    status="${GREEN}active${NC}   ⭐"
+                else
+                    status="${YELLOW}${status}${NC}"
+                fi
+
+                printf "%-15s %-22s %-25s %s\n" "v$version" "$status" "$released" "$image"
+            fi
+        done < "$MANIFEST_FILE"
+    else
+        echo -e "${YELLOW}未找到已部署的版本${NC}"
+    fi
+
+    echo ""
+    echo -e "${CYAN}💡 有用的命令:${NC}"
+    echo -e "  查看版本详情: ${YELLOW}trend version-info <version>${NC}"
+    echo -e "  更新到新版本: ${YELLOW}trend update <version>${NC}"
+    echo -e "  回退到上一版: ${YELLOW}trend rollback${NC}"
+    echo ""
+}
+
+# 查看版本详细信息
+cmd_version_info() {
+    local version="$1"
+
+    if [ -z "$version" ]; then
+        echo -e "${RED}❌ 错误：请指定版本号${NC}"
+        echo -e "${CYAN}用法: trend version-info <version>${NC}"
+        echo -e "${CYAN}示例: trend version-info 5.4.0${NC}"
+        exit 1
+    fi
+
+    # 去掉版本号前的 v
+    version="${version#v}"
+
+    HISTORY_FILE="/home/zxy/Documents/install/trendradar/versions/history/v${version}.yaml"
+
+    if [ ! -f "$HISTORY_FILE" ]; then
+        echo -e "${RED}❌ 错误：版本 v${version} 的记录不存在${NC}"
+        echo -e "${CYAN}💡 查看可用版本: trend versions${NC}"
+        exit 1
+    fi
+
+    echo -e "${BLUE}═══════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  版本详细信息: v${version}${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════${NC}"
+    echo ""
+
+    cat "$HISTORY_FILE"
+}
+
+# 手动触发社区监控
+cmd_community() {
+    echo -e "${CYAN}🌐 手动触发社区监控...${NC}"
+    echo ""
+
+    if ! check_container; then
+        # 开发环境：使用新的 CLI
+        cd "$SCRIPT_DIR"
+        python -m trendradar.cli run community
+    else
+        # Docker 环境：在容器中运行
+        echo -e "${YELLOW}⏳ 执行中，请稍候...${NC}"
+        echo ""
+        docker exec -it trendradar python /app/run_community.py
+    fi
+
+    echo ""
+    echo -e "${GREEN}✅ 执行完成！${NC}"
+}
+
+# ============================================================
+# 新增统一架构命令
+# ============================================================
+
+# 运行模块
+cmd_run() {
+    local module="${1:-all}"
+    local force=""
+    
+    if [ "$2" = "-f" ] || [ "$2" = "--force" ]; then
+        force="--force"
+    fi
+    
+    cd "$SCRIPT_DIR"
+    python -m trendradar.cli run "$module" $force
+}
+
+# 模块状态
+cmd_module_status() {
+    cd "$SCRIPT_DIR"
+    python -m trendradar.cli status
+}
+
+# 调度时间表
+cmd_schedule() {
+    cd "$SCRIPT_DIR"
+    python -m trendradar.cli schedule
+}
+
+# 健康检查
+cmd_health() {
+    cd "$SCRIPT_DIR"
+    python -m trendradar.cli health
+}
+
+# 监控网页
+cmd_monitor() {
+    local subcmd="${1:-start}"
+    
+    # 获取当前环境
+    local CURRENT_ENV=${TRENDRADAR_ENV:-"development"}
+    if [ -d "$PROD_BASE/current" ] && [[ "$PWD" == *"install/trendradar"* ]]; then
+        CURRENT_ENV="production"
+    fi
+    
+    if [ "$CURRENT_ENV" = "production" ]; then
+        local PORT=8089
+        local ENV_LABEL="生产环境"
+    else
+        local PORT=8088
+        local ENV_LABEL="开发环境"
+    fi
+    
+    case "$subcmd" in
+        start)
+            echo -e "${CYAN}🌐 启动监控服务器...${NC}"
+            echo -e "${CYAN}📍 环境: ${NC}${YELLOW}${ENV_LABEL}${NC}"
+            echo -e "${CYAN}🔧 端口: ${NC}${YELLOW}${PORT}${NC}"
+            echo ""
+            cd "$SCRIPT_DIR"
+            export TRENDRADAR_ENV="$CURRENT_ENV"
+            python -m trendradar.monitor.web
+            ;;
+        stop)
+            echo -e "${YELLOW}停止监控服务器 (${ENV_LABEL})...${NC}"
+            pkill -f "trendradar.monitor.web" 2>/dev/null || echo "监控服务器未运行"
+            ;;
+        status)
+            if curl -s "http://localhost:${PORT}/api/health" > /dev/null 2>&1; then
+                echo -e "${GREEN}✓ 监控服务器运行中 (${ENV_LABEL}, 端口 ${PORT})${NC}"
+            else
+                echo -e "${RED}✗ 监控服务器未运行${NC}"
+            fi
+            ;;
+        *)
+            echo -e "${RED}未知子命令: $subcmd${NC}"
+            echo "用法: trend monitor [start|stop|status]"
+            ;;
+    esac
+}
+
+# 生产环境管理
+cmd_production() {
+    PROD_BASE="/home/zxy/Documents/install/trendradar"
+
+    if [ ! -d "$PROD_BASE" ]; then
+        echo -e "${YELLOW}⚠️  生产环境未初始化${NC}"
+        echo -e "${CYAN}💡 初始化生产环境: ./deploy/init-production.sh${NC}"
+        exit 1
+    fi
+
+    echo -e "${BLUE}═══════════════════════════════════════════════${NC}"
+    echo -e "${BLUE}  生产环境状态${NC}"
+    echo -e "${BLUE}═══════════════════════════════════════════════${NC}"
+    echo ""
+
+    # 显示当前版本
+    if [ -L "$PROD_BASE/current" ]; then
+        current_link=$(readlink "$PROD_BASE/current")
+        current_version=$(basename "$current_link")
+        echo -e "${CYAN}📦 当前版本: ${YELLOW}${current_version}${NC}"
+    else
+        echo -e "${YELLOW}⚠️  当前版本: 未部署${NC}"
+    fi
+
+    echo ""
+
+    # 显示容器状态
+    echo -e "${CYAN}🐳 容器状态:${NC}"
+    if docker ps --format "{{.Names}}" | grep -q "trendradar-prod"; then
+        docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | grep -E "NAMES|trendradar-prod"
+        echo ""
+        echo -e "${GREEN}  ✓ 生产服务运行正常${NC}"
+    else
+        echo -e "${YELLOW}  ⚠️  生产服务未运行${NC}"
+        echo -e "${CYAN}  💡 启动服务: trend update <version>${NC}"
+    fi
+
+    echo ""
+
+    # 显示目录信息
+    echo -e "${CYAN}📁 目录结构:${NC}"
+    echo -e "   安装位置: ${YELLOW}$PROD_BASE${NC}"
+    echo -e "   配置目录: ${YELLOW}$PROD_BASE/shared/config${NC}"
+    echo -e "   输出目录: ${YELLOW}$PROD_BASE/shared/output${NC}"
+    echo -e "   版本数量: ${YELLOW}$(ls -1 $PROD_BASE/releases 2>/dev/null | wc -l)${NC}"
+
+    echo ""
+}
+
+# 主逻辑
+main() {
+    # 如果没有参数，显示帮助
+    if [ $# -eq 0 ]; then
+        show_help
+        exit 0
+    fi
+
+    # 处理命令
+    case "$1" in
+        info|--info|-i)
+            cmd_info
+            ;;
+        trigger|--trigger|-t)
+            cmd_trigger
+            ;;
+        logs|--logs|-l)
+            cmd_logs
+            ;;
+        restart|--restart|-r)
+            cmd_restart
+            ;;
+        start|--start)
+            cmd_start
+            ;;
+        stop|--stop)
+            cmd_stop
+            ;;
+        config|--config|-c)
+            cmd_config
+            ;;
+        report|--report)
+            cmd_report
+            ;;
+        deploy)
+            cmd_deploy
+            ;;
+        update)
+            cmd_update "$2"
+            ;;
+        rollback)
+            cmd_rollback
+            ;;
+        versions)
+            cmd_versions
+            ;;
+        version-info)
+            cmd_version_info "$2"
+            ;;
+        production)
+            cmd_production
+            ;;
+        community)
+            cmd_community
+            ;;
+        run)
+            cmd_run "$2" "$3"
+            ;;
+        status)
+            cmd_module_status
+            ;;
+        schedule)
+            cmd_schedule
+            ;;
+        health)
+            cmd_health
+            ;;
+        monitor)
+            cmd_monitor "$2"
+            ;;
+        help|--help|-h)
+            show_help
+            ;;
+        *)
+            echo -e "${RED}❌ 未知命令: $1${NC}"
+            echo ""
+            echo -e "${CYAN}💡 查看帮助: trend help${NC}"
+            exit 1
+            ;;
+    esac
+}
+
+# 执行主函数
+main "$@"

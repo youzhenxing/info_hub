@@ -1,0 +1,119 @@
+URL: https://blog.senko.net/sandboxing-ai-agents-in-linux
+Title: Sandboxing AI agents in Linux — Senko Rašić
+Time: 2026-02-04T09:24:16.008226
+Sandboxing AI agents in Linux
+February 3, 2026
+Like many developers, I find myself more and more using AI agents to help with software development.
+I currently use Claude Code, the command line interface, together with Opus 4.5 (Anthropic's top model as of this writing). I use it to distill my rough task requirements into a detailed development plan, then implement the plan.
+By default, Claude Code asks each time if it may read and write files and run software. This is sensible default configuration, but does get annoying after a time. Worse, it interrupts me often enough that I can't do much in parallel while babysitting it.
+There's also a
+--dangerously-skip-permissions
+(a.k.a. “YOLO”) mode which will happily run anything without asking. This can be risky (although I know of some people that run it like that and still haven't destroyed their dev machines).
+Sandboxing
+The standard solution is to sandbox the agent – either on a remote machine (
+exe.dev
+,
+sprites.dev
+,
+daytona.io
+), or locally via Docker or other virtualization mechanism.
+A lightweight alternative on Linux is
+bubblewrap
+, which uses Linux kernel features like cgroups and user namespaces to limit (jail) a process.
+As it turns out, bubblewrap is a good solution for lightweight sandboxing of AI agents. Here's what I personally need from such a solution:
+mimic my regular Linux dev machine setup (I don't want to manage multiple dev environment)
+minimal/no access to information outside what's required for the current project
+write access only to the current project
+can directly operate on the files/folders of the project so I can easily inspect or modify the same files from my IDE or run the code myself
+network access – both to connect to AI providers and search the internet, and to be able to start a server that I can connect to
+Bubblewrap and Docker are not hardened security isolation mechanisms, but that's okay with me. I'm not really concerned about the following risks:
+escape via zero-day Linux kernel bug
+covert side channel communications
+exfiltration of data from current project (including project-specific access keys)
+screwing up the codebase (the code is managed via
+git
+and backed up at GitHub or elsewhere)
+The last bit is tricky, but even full remote sandboxes can't protect against that. In theory, we could have transparent API proxies that would inject proper access keys without the AI agent ever being aware of it, but this is really non-trivial to set up right now.
+An alternative is to contain potential damage by creating project-specific API keys so at least the blast area is minimal if those keys are leaked.
+In practice
+Here's how my bubblewrap sandbox script looks:
+#!/usr/bin/bash
+
+exec 3<$HOME/.claude.json
+
+exec /usr/bin/bwrap \
+ --tmpfs /tmp \
+ --dev /dev \
+ --proc /proc \
+ --hostname bubblewrap --unshare-uts \
+ --ro-bind /bin /bin \
+ --ro-bind /lib /lib \
+ --ro-bind /lib32 /lib32 \
+ --ro-bind /lib64 /lib64 \
+ --ro-bind /usr/bin /usr/bin \
+ --ro-bind /usr/lib /usr/lib \
+ --ro-bind /usr/local/bin /usr/local/bin \
+ --ro-bind /usr/local/lib /usr/local/lib \
+ --ro-bind /opt/node/node-v22.11.0-linux-x64/ /opt/node/node-v22.11.0-linux-x64/ \
+ --ro-bind /etc/alternatives /etc/alternatives \
+ --ro-bind /etc/resolv.conf /etc/resolv.conf \
+ --ro-bind /etc/profile.d /etc/profile.d \
+ --ro-bind /etc/bash_completion.d /etc/bash_completion.d \
+ --ro-bind /etc/ssl/certs /etc/ssl/certs \
+ --ro-bind /etc/ld.so.cache /etc/ld.so.cache \
+ --ro-bind /etc/ld.so.conf /etc/ld.so.conf \
+ --ro-bind /etc/ld.so.conf.d /etc/ld.so.conf.d \
+ --ro-bind /etc/localtime /etc/localtime \
+ --ro-bind /usr/share/terminfo /usr/share/terminfo \
+ --ro-bind /usr/share/ca-certificates /usr/share/ca-certificates \
+ --ro-bind /etc/nsswitch.conf /etc/nsswitch.conf \
+ --ro-bind /etc/hosts /etc/hosts \
+ --ro-bind /etc/ssl/openssl.cnf /etc/ssl/openssl.cnf \
+ --ro-bind /usr/share/zoneinfo /usr/share/zoneinfo \
+ --ro-bind $HOME/.bashrc $HOME/.bashrc \
+ --ro-bind $HOME/.profile $HOME/.profile \
+ --ro-bind $HOME/.gitconfig $HOME/.gitconfig \
+ --ro-bind $HOME/.local $HOME/.local \
+ --bind $HOME/.claude $HOME/.claude \
+ --bind $HOME/.cache $HOME/.cache \
+ --file 3 $HOME/.claude.json \
+ --bind "$PWD" "$PWD" \
+ claude --dangerously-skip-permissions $@
+If this looks rather idiosyncratic, it's because it is. Rather than using some generic rules, I experimented with
+bwrap
+until I found minimal configuration that I need to set up for my system.
+Some interesting stuff:
+/tmp
+,
+/proc
+and
+/dev
+are automatically handled by
+bwrap
+I bind-mount (ie. expose) files and directories under the same path as local machine, so there's no difference in file locations, project paths, etc
+I don't expose entire
+/etc
+, just the bare minimum
+The content of
+$HOME/.claude.json
+is injected into the sandbox so any changes there won't get saved to the real one
+The content of
+$HOME/.claude/
+directory
+is
+mapped read-write, so Claude can save and modify files there (such as session data)
+/opt/node/node-v22.11.0-linux-x64/
+is my custom
+nodejs
+install location
+I change the hostname so it's easy to distinguish between the host and sandbox
+I will probably be tweaking the script as needed, but this is a pretty good starting point for me.
+How to customize
+If you want to adapt this to another AI agent or to your system, my suggestion is to tweak the script to run
+bash
+instead, then run your agent manually, see what breaks and tweak as appropriate.
+A useful command for this is
+strace
+, which can trace file access system calls so you can see what's needed:
+strace -e trace=open,openat,stat,statx,access -o /tmp/strace.log codex
+Inspecting the log you can spot which files are needed and bind them as needed.

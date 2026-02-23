@@ -1,0 +1,33 @@
+URL: https://www.reddit.com/r/artificial/comments/1qul0dy/notebooklm_for_teams/
+Title: Reddit - The heart of the internet
+Time: 2026-02-04T09:15:41.167431
+Go to artificial
+r/artificial
+•
+Uiqueblhats
+Italiano
+NotebookLM For Teams
+For those of you who aren't familiar with SurfSense, it aims to be OSS alternative to NotebookLM, Perplexity, and Glean.
+In short, it is NotebookLM for teams, as it connects any LLM to your internal knowledge sources (search engines, Drive, Calendar, Notion, Obsidian, and 15+ other connectors) and lets you chat with it in real time alongside your team.
+I'm looking for contributors. If you're interested in AI agents, RAG, browser extensions, or building open-source research tools, this is a great place to jump in.
+Here's a quick look at what SurfSense offers right now:
+Features
+Self-Hostable (with docker support)
+Real Time Collaborative Chats
+Real Time Commenting
+Deep Agentic Agent
+RBAC (Role Based Access for Teams Members)
+Supports Any LLM (OpenAI spec with LiteLLM)
+6000+ Embedding Models
+50+ File extensions supported (Added Docling recently)
+Local TTS/STT support.
+Connects with 15+ external sources such as Search Engines, Slack, Notion, Gmail, Notion, Confluence etc
+Cross-Browser Extension to let you save any dynamic webpage you want, including authenticated content.
+Upcoming Planned Features
+Slide Creation Support
+Multilingual Podcast Support
+Video Creation Agent
+GitHub:
+https://github.com/MODSetter/SurfSense
+Read more
+Share

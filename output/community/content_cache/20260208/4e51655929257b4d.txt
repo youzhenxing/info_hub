@@ -1,0 +1,33 @@
+URL: https://github.com/Momciloo/fun-with-clip-path
+Title: Momciloo/fun-with-clip-path
+Time: 2026-02-08T09:07:38.063763
+# Momciloo/fun-with-clip-path
+
+**描述**: None
+**Stars**: 33
+**Forks**: 0
+**语言**: CSS
+**创建时间**: 2026-02-07T17:23:24Z
+**最后更新**: 2026-02-08T00:42:48Z
+
+
+---
+
+## README
+
+# Fun with clip-path
+
+This is a simple code exploration, inspired by (and stollen from) https://iventions.com/, saw it on X [here](https://x.com/sekhsoyebali/status/2019845781772202194).
+
+![CleanShot 2026-02-07 at 18 32 03](https://github.com/user-attachments/assets/b772e2a3-037e-4458-805b-db63c0ee7924)
+
+In this example, I'm trying to implement a menu that is revealed when the user clicks on a button. With HTML+CSS only. No JS.
+
+There are two clip-paths:
+
+The menu is revealed by a circle that grows from the top-left corner of the screen to the bottom-right corner. A [fun clip-path calculation](https://github.com/Momciloo/fun-with-clip-path/blob/31f6534d5a1058d77f8d390dc40665a7c6a2b0bf/styles.css#L68) that I used here (clip-path: circle(calc(1.42 \* 100vmax) at 0 0);) is based on the vmax, which is the larger of the viewport width or height. Then multiplied it by 1.42, because 1.42 is the square root of 2, which is the ratio of the width to the height of the viewport.
+
+The second clip-path is a polygon that is used to simulate the "ray".
+The polygon is hardcoded now, but it can be calculated with js, for dynamic dimension that respect the navigation dimensions for responsiveness.
+
+Thanks for stopping by.

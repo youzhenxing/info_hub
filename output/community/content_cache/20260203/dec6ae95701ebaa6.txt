@@ -1,0 +1,36 @@
+URL: https://www.reddit.com/r/MachineLearning/comments/1qtgzbv/d_msr_cambridge_vs_amazon_applied_science/
+Title: Reddit - The heart of the internet
+Time: 2026-02-03T12:15:48.223464
+Go to MachineLearning
+r/MachineLearning
+•
+StretchTurbulent7525
+Português (Brasil)
+Italiano
+Español (Latinoamérica)
+Deutsch
+[D] MSR Cambridge vs Amazon Applied Science internship, thoughts?
+Hi all,
+I’m a PhD student in the US working on LLM-related research and trying to decide between two summer internship offers.
+Option 1:
+Microsoft Research, Cambridge (UK)
+Working with a very well-known researcher
+Strong alignment with my PhD research
+Research-focused environment, likely publications
+Downside: UK compensation is ~half of the US offer
+Option 2:
+Amazon Applied Science, US
+Applied science role in the US
+Significantly higher pay
+May not be a pure research project but if my proposed method is purely built from academic data/models, it can lead to a paper submission.
+For people who’ve done MSR / Amazon AS / similar internships:
+How much does
+US-based networking
+during a PhD internship actually matter for post-PhD roles?
+Is the
+research fit + advisor name
+from MSR Cambridge typically more valuable than a US industry internship when staying in the US long-term?
+Any regrets choosing fit/research over compensation (or vice versa)?
+My longer-term plan is to continue working in the US after my PhD (industry research or applied research), but I’m also curious whether building a strong UK/EU research network via MSR Cambridge could be valuable in ways I’m underestimating.
+Read more
+Share

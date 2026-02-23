@@ -1,0 +1,12 @@
+URL: https://www.reddit.com/r/MachineLearning/comments/1qufx6b/d_optimal_transport_for_ml/
+Title: Reddit - The heart of the internet
+Time: 2026-02-03T12:13:16.700800
+Go to MachineLearning
+r/MachineLearning
+•
+arjun_r_kaushik
+[D] Optimal Transport for ML
+Where should one start to learn Optimal Transport for ML? I am finding it hard to follow the math in the book “Computational Optimal Transport”. Any pointers to some simplified versions or even an application oriented resource would be great!
+Thanks!
+Read more
+Share

@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  trendradar:
+    image: wantcat/trendradar:latest
+    container_name: trendradar
+    restart: unless-stopped
+
+    ports:
+      - "127.0.0.1:${WEBSERVER_PORT:-8080}:${WEBSERVER_PORT:-8080}"
+
+    volumes:
+      - ../config:/app/config:ro
+      - ../output:/app/output
+      - ../docker/run_investment.py:/app/docker/run_investment.py:ro
+
+    env_file:
+      - ../agents/.env
+
+    environment:
+      - TZ=Asia/Shanghai
+      - CRON_SCHEDULE=${CRON_SCHEDULE:-0 */2 * * *}
+      - INVESTMENT_ENABLED=${INVESTMENT_ENABLED:-true}
+
+  trendradar-mcp:
+    image: wantcat/trendradar-mcp:latest
+    container_name: trendradar-mcp
+    restart: unless-stopped
+
+    ports:
+      - "127.0.0.1:3333:3333"
+
+    volumes:
+      - ../config:/app/config:ro
+      - ../output:/app/output:ro
+
+    env_file:
+      - ../agents/.env
+
+    environment:
+      - TZ=Asia/Shanghai

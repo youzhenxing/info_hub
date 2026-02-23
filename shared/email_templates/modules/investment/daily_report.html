@@ -1,0 +1,292 @@
+{% extends 'base/base.html' %}
+
+{# 模板标题 #}
+{% block title %}每日投资简报 - {{ data.date }}{% endblock %}
+
+{# 主题色类（投资蓝色） #}
+{% block body_class %}theme-investment{% endblock %}
+
+{# 头部 #}
+{% block header_title %}📈 每日投资简报{% endblock %}
+
+{% block header_meta %}
+<div class="subtitle">{{ data.date }}</div>
+<div class="stats">
+    {% if data.timestamp %}
+    <span>⏰ 数据更新: {{ data.timestamp|format_date }}</span>
+    {% endif %}
+</div>
+{% endblock %}
+
+{# 主要内容 #}
+{% block content %}
+{%- if data.market_snapshot and data.market_snapshot.indices %}
+<!-- 主要指数 -->
+<section class="section">
+    <h2 class="section-title">📊 主要指数</h2>
+    <div class="card">
+        <div class="card-body" style="padding: 8px 10px;">
+            <div class="data-inline">
+                {% for idx in data.market_snapshot.indices %}
+                <span class="item">
+                    <span class="name">{{ idx.name }}</span>
+                    <span class="price">{{ idx.price|number_format(2) }}</span>
+                    <span class="{% if idx.change_pct > 0 %}up{% elif idx.change_pct < 0 %}down{% else %}flat{% endif %}">
+                        {{ '+' if idx.change_pct > 0 else '' }}{{ idx.change_pct|number_format(2) }}%
+                    </span>
+                </span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif -%}
+
+{%- if data.market_snapshot and data.market_snapshot.stocks %}
+<!-- 关注个股 -->
+<section class="section">
+    <h2 class="section-title">📈 关注个股</h2>
+    <div class="card">
+        <div class="card-body" style="padding: 8px 10px;">
+            <div class="data-inline">
+                {% for s in data.market_snapshot.stocks %}
+                <span class="item">
+                    <span class="name">{{ s.name }}</span>
+                    <span class="price">{{ s.price|number_format(2) }}</span>
+                    <span class="{% if s.change_pct > 0 %}up{% elif s.change_pct < 0 %}down{% else %}flat{% endif %}">
+                        {{ '+' if s.change_pct > 0 else '' }}{{ s.change_pct|number_format(2) }}%
+                    </span>
+                </span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif -%}
+
+{%- if data.market_snapshot and data.market_snapshot.northbound %}
+<!-- 北向资金 -->
+<section class="section">
+    <h2 class="section-title">💹 北向资金</h2>
+    <div class="card">
+        <div class="card-body" style="padding: 8px 10px;">
+            <div class="data-inline">
+                <span class="item">
+                    <span class="name">沪股通</span>
+                    <span class="{% if data.market_snapshot.northbound.sh_connect > 0 %}up{% elif data.market_snapshot.northbound.sh_connect < 0 %}down{% else %}flat{% endif %}">
+                        {{ data.market_snapshot.northbound.sh_connect|format_money }}
+                    </span>
+                </span>
+                <span class="item">
+                    <span class="name">深股通</span>
+                    <span class="{% if data.market_snapshot.northbound.sz_connect > 0 %}up{% elif data.market_snapshot.northbound.sz_connect < 0 %}down{% else %}flat{% endif %}">
+                        {{ data.market_snapshot.northbound.sz_connect|format_money }}
+                    </span>
+                </span>
+                <span class="item">
+                    <span class="name">合计</span>
+                    <span class="{% if data.market_snapshot.northbound.total > 0 %}up{% elif data.market_snapshot.northbound.total < 0 %}down{% else %}flat{% endif %}">
+                        {{ data.market_snapshot.northbound.total|format_money }}
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif -%}
+
+{%- if data.market_snapshot and data.market_snapshot.crypto %}
+<!-- 加密货币 -->
+<section class="section">
+    <h2 class="section-title">🪙 加密货币</h2>
+    <div class="card">
+        <div class="card-body" style="padding: 8px 10px;">
+            <div class="data-inline">
+                {% for c in data.market_snapshot.crypto %}
+                <span class="item">
+                    <span class="name">{{ c.symbol }}</span>
+                    <span class="price">${{ c.price_usd|number_format(2) }}</span>
+                    <span class="{% if c.change_pct_24h > 0 %}up{% elif c.change_pct_24h < 0 %}down{% else %}flat{% endif %}">
+                        {{ '+' if c.change_pct_24h > 0 else '' }}{{ c.change_pct_24h|number_format(2) }}%
+                    </span>
+                </span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif -%}
+
+{%- if data.news %}
+<!-- 财经新闻 -->
+<section class="section">
+    <h2 class="section-title">📰 财经要闻</h2>
+    <div class="card">
+        <div class="card-body" style="padding: 10px 12px;">
+            <ul class="news-list">
+                {% for item in data.news[:10] %}
+                <li>
+                    <a href="{{ item.url }}" target="_blank">{{ item.title }}</a>
+                    <span class="src">[{{ item.source }}]</span>
+                    {%- if item.published %}
+                    <span class="time">{{ item.published }}</span>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+{% endif -%}
+
+{%- if analysis and analysis.success and analysis.content %}
+<!-- AI 分析 -->
+<section class="section">
+    <h2 class="section-title">🤖 AI 分析</h2>
+    <div class="card">
+        <div class="card-body">
+            {{ analysis.content | markdown_to_html | safe }}
+        </div>
+    </div>
+</section>
+{% endif -%}
+
+<!-- 免责声明 -->
+<div class="disclaimer">
+    ⚠️ <strong>免责声明</strong>：本简报仅供参考，不构成任何投资建议。投资有风险，入市需谨慎。
+</div>
+
+{% endblock %}
+
+{# 自定义样式 #}
+{% block extra_css %}
+<style>
+/* 行情数据展示 */
+.data-inline {
+    font-size: 13px;
+    line-height: 2;
+}
+.data-inline .item {
+    display: inline-block;
+    margin-right: 16px;
+    margin-bottom: 4px;
+    white-space: nowrap;
+}
+.data-inline .name {
+    font-weight: 600;
+    color: #333;
+    margin-right: 4px;
+}
+.data-inline .price {
+    font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+    margin: 0 4px;
+}
+.up { color: #e53935; }
+.down { color: #43a047; }
+.flat { color: #666; }
+
+/* 新闻列表 */
+.news-list {
+    font-size: 13px;
+    line-height: 1.8;
+    padding-left: 18px;
+    margin: 0;
+}
+.news-list li {
+    margin: 6px 0;
+}
+.news-list a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+.news-list a:hover {
+    text-decoration: underline;
+}
+.news-list .src {
+    color: #999;
+    font-size: 11px;
+    margin-left: 4px;
+}
+.news-list .time {
+    color: #666;
+    font-size: 11px;
+    margin-left: 8px;
+}
+
+/* AI 分析内容样式 */
+.card-body h2 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin: 16px 0 10px 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #eee;
+}
+.card-body h2:first-child {
+    margin-top: 0;
+}
+
+.card-body h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #444;
+    margin: 12px 0 8px 0;
+}
+
+.card-body h4 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #666;
+    margin: 10px 0 6px 0;
+}
+
+.card-body p {
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 8px 0;
+}
+
+.card-body ul, .card-body ol {
+    margin: 8px 0;
+    padding-left: 20px;
+}
+
+.card-body li {
+    margin: 4px 0;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.card-body strong {
+    color: #c62828;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.card-body code {
+    background: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-family: 'Monaco', 'Menlo', monospace;
+}
+
+.card-body pre {
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.card-body blockquote {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 12px;
+    margin: 10px 0;
+    color: #666;
+    font-style: italic;
+    font-size: 12px;
+}
+</style>
+{% endblock %}

@@ -1,0 +1,79 @@
+URL: https://phys.org/news/2026-01-sprint-marathon-aging-muscle-stem.html
+Title: Sprint or marathon? Aging muscle stem cells shift from rapid repair to long-term survival
+Time: 2026-02-02T20:48:06.782541
+January 31, 2026
+Sprint or marathon? Aging muscle stem cells shift from rapid repair to long-term survival
+by Tiare Dunlap,
+University of California, Los Angeles
+edited by
+Stephanie Baum
+, reviewed by
+Andrew Zinin
+Editors' notes
+This article has been reviewed according to Science X's
+editorial process
+and
+policies
+.
+Editors
+have highlighted
+ the following attributes while ensuring the content's credibility:
+fact-checked
+peer-reviewed publication
+trusted source
+proofread
+The GIST
+Add as preferred source
+Muscle tissue from aged mice seven days after injury. Left: Aged mice with normal NDRG1 levels show slower regeneration with smaller muscle fibers. Right: Aged mice in which NDRG1 was recently blocked show faster regeneration with larger fibers. Credit: Jengmin Kang, Rando Lab
+Aging muscles heal more slowly after injury—a frustrating reality familiar to many older adults. A UCLA study conducted in mice reveals an unexpected cause: Stem cells in aged muscle accumulate higher levels of a protein that slows their ability to activate and repair tissue, but helps the cells survive longer in the harsh environment of aging tissue.
+The findings,
+published
+today in the journal
+Science
+, suggest that some molecular changes associated with getting older may actually be protective adaptations rather than purely detrimental effects.
+"This has led us to a new way of thinking about aging," said Dr. Thomas Rando, senior author of the new study and director of the Eli and Edythe Broad Center of Regenerative Medicine and Stem Cell Research at UCLA.
+"It's counterintuitive, but the stem cells that make it through aging may actually be the least functional ones. They survive not because they're the best at their job, but because they're the best at surviving. That gives us a completely different lens for understanding why tissues decline with age."
+The research team, led by postdoctoral scholars Jengmin Kang and Daniel Benjamin, compared muscle stem cells isolated from young and old mice and discovered that a protein called NDRG1 increased dramatically with age—reaching levels 3.5 times higher in old cells than in young cells. NDRG1 acts as a cellular brake, suppressing a key signaling pathway called mTOR that normally promotes cell activation and growth.
+To test whether NDRG1 was responsible for the
+slower muscle repair
+seen in aging, the researchers allowed mice to age normally to the equivalent of about 75 human years, then blocked NDRG1's activity. The aged muscle stem cells immediately behaved like young cells again, reactivating quickly and accelerating muscle repair after injury.
+However, this rejuvenation came at a cost. Without NDRG1's protective effects, fewer muscle stem cells survived over time, limiting the muscle tissue's ability to regenerate after repeated injuries.
+"Think of it like a marathon runner versus a sprinter," said Rando, who is also a professor of neurology at the David Geffen School of Medicine at UCLA. "The stem cells in young animals are hyper-functioning—really good at what they do, namely sprinting, but they're not good for the long term. They can make it through the 100-yard dash, but they can't make it even halfway through the marathon. By contrast, aged stem cells are like marathon runners—slower to respond, but better equipped for the long haul. However, what makes them so proficient over long distances is exactly what renders them poor at sprinting."
+The team validated their findings through multiple approaches, studying muscle stem cells from young and aged mice both in laboratory dishes and in living tissues. The results consistently showed that NDRG1 accumulation both slowed stem cells' ability to activate and repair muscle quickly and enhanced their survival and resilience over time.
+The research suggests that increased NDRG1 expression emerges through what the scientists call a "cellular survivorship bias"—stem cells that don't accumulate enough NDRG1 die off over time, leaving behind a population of slower but more resilient cells.
+"Some age-related changes that look detrimental—like slower tissue repair—may actually be necessary compromises that prevent something worse: the complete depletion of the stem cell pool," Rando said.
+Discover the latest in science, tech, and space with over
+100,000 subscribers
+who rely on Phys.org for daily insights.
+ free newsletter
+and get updates on breakthroughs,
+ innovations, and research that matter—
+daily or weekly
+.
+Rando draws parallels to
+evolutionary tradeoffs
+observed in nature. Just as animals in harsh conditions—during droughts, famines or freezing temperatures—turn on resilience programs like hibernation at the expense of reproduction, stem cells appear to shift resources from their reproductive function (making more cells) to survival programs during the stress of aging.
+"Species survive because they reproduce, but in times of deprivation, animals turn on their own resilience programs," Rando said. "There are a lot of examples in nature of allocating resources to survival under times of stress. It's exactly aligned with what we're seeing at the cellular level."
+The findings could have implications for developing therapies that balance stem cell activation with survival, though Rando cautions, "There's no free lunch. We can improve the function of aged cells for a period of time, for certain tissues, but every time we do this, there's going to be a potential cost and a potential downside."
+The research team will continue investigating what controls the balance between survival and function at the molecular level.
+"This gene is almost like our doorway that we've opened into understanding what controls these trade-offs that are so critical, not only for evolution of species but also for the aging of tissues within an individual," Rando said.
+Publication details
+Jengmin Kang et al, Cellular survivorship bias as a mechanistic driver of muscle stem cell aging,
+Science
+(2026).
+DOI: 10.1126/science.ads9175
+Journal information:
+Science
+Key concepts
+Adaptation, Biological
+Regeneration
+Hibernation
+Provided by
+University of California, Los Angeles
+Citation
+:
+ Sprint or marathon? Aging muscle stem cells shift from rapid repair to long-term survival (2026, January 31)
+ retrieved 2 February 2026
+ from https://phys.org/news/2026-01-sprint-marathon-aging-muscle-stem.html
+This document is subject to copyright. Apart from any fair dealing for the purpose of private study or research, no
+ part may be reproduced without the written permission. The content is provided for information purposes only.

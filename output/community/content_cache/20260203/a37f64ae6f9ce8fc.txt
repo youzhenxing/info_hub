@@ -1,0 +1,15 @@
+URL: https://www.reddit.com/r/MachineLearning/comments/1qu1tug/d_looking_for_advice_regarding_shortage_of/
+Title: Reddit - The heart of the internet
+Time: 2026-02-03T12:15:24.081085
+Go to MachineLearning
+r/MachineLearning
+•
+Curious-Monitor497
+[D] Looking for advice regarding shortage of references for comparison in my research work
+I'm working in machine learning- application field. There are very few references which apply machine learning framework in my field of interest. So, even if I have comparison results of our framework with
+one
+baseline, I am unable to find more methods that solve the problem I am interested in.
+I see there is an in-depth comparision analysis provided in the machine learning conference papers. How to manage my analysis work with very few comparison results? I can perform additional experiments in even higher dimensions, but other than that, I'm unsure how to proceed from there.
+I would appreciate any advice and suggestions to move forward in such situation. Thank you in advance.
+Read more
+Share

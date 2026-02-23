@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>播客RSS订阅列表</title>
+    <dateCreated>2026-02-02</dateCreated>
+  </head>
+  <body>
+    <!-- 中文播客 -->
+    <outline text="硅谷101" title="硅谷101" type="rss" xmlUrl="https://rsshub.bestblogs.dev/xiaoyuzhou/podcast/5e5c52c9418a84a04625e6cc"/>
+    <outline text="晚点聊LateTalk" title="晚点聊LateTalk" type="rss" xmlUrl="https://feeds.fireside.fm/latetalk/rss"/>
+    <outline text="硬地骇客" title="硬地骇客" type="rss" xmlUrl="https://rsshub.bestblogs.dev/xiaoyuzhou/podcast/640ee2438be5d40013fe4a87"/>
+    <outline text="晚安咖啡GoodNightCoffee" title="晚安咖啡GoodNightCoffee" type="rss" xmlUrl="https://rsshub.bestblogs.dev/xiaoyuzhou/podcast/674b16830ed328720a7b9144"/>
+    <outline text="投资实战派" title="投资实战派" type="rss" xmlUrl="https://feeds.soundon.fm/podcasts/811969b4-4493-407e-8aeb-ed413cf5d90d.xml"/>
+    <outline text="十字路口Crossing" title="十字路口Crossing" type="rss" xmlUrl="https://rsshub.bestblogs.dev/xiaoyuzhou/podcast/60502e253c92d4f62c2a9577"/>
+    <outline text="The Prompt" title="The Prompt" type="rss" xmlUrl="https://rsshub.bestblogs.dev/xiaoyuzhou/podcast/6101a3936c68b8a230638ad8"/>
+    <outline text="The Alphaist" title="The Alphaist" type="rss" xmlUrl="https://rsshub.bestblogs.dev/xiaoyuzhou/podcast/690b589170e20ba3f0553778"/>
+    <outline text="On Board" title="On Board" type="rss" xmlUrl="https://rsshub.bestblogs.dev/xiaoyuzhou/podcast/61cbaac48bb4cd867fcabe22"/>
+    <outline text="中金研究院" title="中金研究院" type="rss" xmlUrl="https://rsshub.bestblogs.dev/xiaoyuzhou/podcast/610d156f5df6959814391430"/>
+
+    <!-- 英文播客 -->
+    <outline text="Latent Space" title="Latent Space: The AI Engineer Podcast" type="rss" xmlUrl="https://rss.art19.com/latent-space-ai"/>
+    <outline text="Lex Fridman Podcast" title="Lex Fridman Podcast" type="rss" xmlUrl="https://lexfridman.com/feed/podcast/"/>
+    <outline text="The Joe Rogan Experience" title="The Joe Rogan Experience" type="rss" xmlUrl="https://feeds.megaphone.fm/GLT1412515089"/>
+    <outline text="Acquired" title="Acquired" type="rss" xmlUrl="https://feeds.transistor.fm/acquired"/>
+    <outline text="Business Breakdowns" title="Business Breakdowns" type="rss" xmlUrl="https://feeds.megaphone.fm/breakdowns"/>
+    <outline text="Huberman Lab" title="Huberman Lab" type="rss" xmlUrl="https://feeds.megaphone.fm/hubermanlab"/>
+    <outline text="Modern Wisdom" title="Modern Wisdom" type="rss" xmlUrl="https://feeds.megaphone.fm/modernwisdom"/>
+    <outline text="Anything Goes with Emma Chamberlain" title="Anything Goes with Emma Chamberlain" type="rss" xmlUrl="https://feeds.megaphone.fm/stupid-genius"/>
+    <outline text="The Diary of a CEO" title="The Diary of a CEO" type="rss" xmlUrl="https://feeds.acast.com/public/shows/the-diary-of-a-ceo"/>
+  </body>
+</opml>

@@ -1,0 +1,278 @@
+URL: https://news.ycombinator.com/item?id=46919016
+Title: Ask HN: Non AI-obsessed tech forums | Hacker News
+Time: 2026-02-07T23:23:45.546555
+Hacker News
+new
+|
+past
+|
+comments
+|
+ask
+|
+show
+|
+jobs
+|
+submit
+login
+Ask HN: Non AI-obsessed tech forums
+27 points
+by
+nanocat
+16 hours ago
+|
+hide
+|
+past
+|
+favorite
+|
+21 comments
+Since it seems like 80% of HN nowadays is focussed on the AI industry, I’m on the search for a good tech forum that focuses on the rest. Can you post your favourite non-AI-obsessed forum?
+raw_anon_1111
+13 hours ago
+|
+next
+[–]
+Asking to have a tech forum in 2026 that doesn’t discuss AI is about as much of a Luddite as asking about having tech forum anytime in the past 25 years that doesn’t discuss the internet or the 15 that doesn’t discuss mobile.
+Absolutely everything in tech is touched by AI/ML in 2026 except micro controllers/embedded systems
+On another note - YC 25 batch
+https://www.extruct.ai/data-room/ycombinator-companies-s25/
+YC 24 batch
+https://docs.google.com/spreadsheets/d/1Uy2aWoeRZopMIaXXxY2E...
+On a personal note, I lead cloud + app dev implementations for a consulting company. I’ve had 5 projects since the beginning of last year and they have all involved Amazon hosted LLMs in some form or fashion.
+Every single project I’ve been brought in with at pre sales has also involved Gen AI and/or traditional ML.
+reply
+subsection1h
+6 hours ago
+|
+parent
+|
+next
+[–]
+There are plenty of tech forums that don't discuss AI. I think your confusion might be the result of you equating tech with "writing code for employers."
+By the way, have you seriously never written[1] so much as a single backup script to back up a personal system? You only use GUI backup software?
+[1]
+https://news.ycombinator.com/item?id=46634535#:~:text=As%20f...
+reply
+raw_anon_1111
+5 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+I haven’t actually used my personal computer for much after graduating from college.
+1. To access the internet
+2. To download music from Napster and later iTunes and to create mix CDs and later for my iPod
+3. To mix music with CoolEdit (bought by Adobe as Adobe Audition) - I was a fitness instructor and created my own 32 bpm beat synchronized music
+4. As a home media theater PC (Mac Mini + Front Row) and later a media server (Plex)
+My backup was running BackBlaze. When we moved and I decided Plex + bit torrent wasn’t worth the hassle, I did a one time “aws s3 -sync…” and copied my 2TB of media to AWS S3 Glacier Deep Archive in my personal account. I’ve opened my personal computer - that I only bought for a one time contract for a former CTO/friend when I was between jobs for a month.
+reply
+add-sub-mul-div
+12 hours ago
+|
+parent
+|
+prev
+|
+next
+[–]
+Yes we already know it's omnipresent, that's the point. Some would rather lead in a different direction than follow like NPCs.
+reply
+raw_anon_1111
+12 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+I too wish the world hadn’t moved on from when I started programming on a 1Mhz Apple //e in 1986 or from my first job as a Fortran and C programmer on DEC Vax and stratus VOS mainframes…
+I also loved programming on these in 2007 using Windows Compact Framework.
+https://weareconker.com/blog/is-windows-ce-still-supported-i...
+But after being in this game for 30 years professionally and after half century of living on this earth, I still haven’t overcome my addictions to food and shelter and while I’m in pretty good shape, I don’t think I could start a successful career by opening an OnlyFans account so instead, I keep up to date on where the industry is…
+reply
+muzani
+1 hour ago
+|
+prev
+|
+next
+[–]
+HN
+is
+the low AI version.
+Social media has made it normal to have closed social circles. You like a couple posts by Karpathy and LeCun and your feed is now full of AI. Or you like a post by the anti-AI folks and your feed is now on how useless or harmful it is.
+With HN, we all see the same news. But now it's far to the extreme of either party.
+HN is often around the early majority of the Innovation Adoption curve. I was actually going to ask why Clawdbot wasn't even mentioned on HN when it had been everywhere else... but the news did hit the front page a few days later. There's a few killer updates from the AI coding groups which only get 0-2 upvotes and disappear.
+HN is not the place to go to be up to date on AI, it's where you go to see the news that has hit the mainstream. Opus 4.6 was "leaked" on media and hyped as if it were Claude 5 or something. By the time the news was actually out, people had formed their opinions.
+reply
+ex-aws-dude
+13 hours ago
+|
+prev
+|
+next
+[–]
+I don't think its possible, you're just going to have to wait for the hype to die down like any hype wave
+When's the last time you saw blockchain on the front page?
+reply
+raw_anon_1111
+10 hours ago
+|
+parent
+|
+next
+[–]
+Blockchain was useless and in 5.5 years of working in cloud consulting - first at AWS and now at a 3rd party firm, I never once heard a serious business ask - “how can we make or save money using the blockchain”.
+reply
+kirubakaran
+11 hours ago
+|
+prev
+|
+next
+[–]
+HN minus AI:
+https://histre.com/hn/?tags=+all-ai
+(Dis: it's mine, but it's free)
+reply
+nanocat
+7 hours ago
+|
+parent
+|
+next
+[–]
+This is cool! Thanks for sharing it.
+I’m more interested in forums that attract a crowd much more measured and skeptical about AI, though - I know there are a lot of you here at HN (like me)
+reply
+atleastoptimal
+15 hours ago
+|
+prev
+|
+next
+[–]
+Only about 20% of front-page links are related to AI. I think it's impossible to have a productive discussion on the tech industry nowadays without AI in context.
+reply
+krapp
+15 hours ago
+|
+parent
+|
+next
+[–]
+¯\_(ツ)_/¯ There are far fewer posts about "politics" than AI, and they all get flagged ruthlessly even when they have a legitimate tech angle.
+If people don't like AI related content then I encourage them to treat those posts the way they do politics.
+reply
+bigstrat2003
+12 hours ago
+|
+parent
+|
+prev
+|
+next
+[–]
+On the contrary, I don't think productive discussions (or even interesting ones) can be had about AI. We've seen what it has to offer (not much), now we are just waiting for the hype bubble to burst like it did for blockchain and so many other things before.
+reply
+lucenet
+16 hours ago
+|
+prev
+|
+next
+[–]
+https://news.ycombinator.com/active
+reply
+sepulchreroot
+12 hours ago
+|
+prev
+|
+next
+[–]
+lainchan
+reply
+PaulHoule
+16 hours ago
+|
+prev
+|
+next
+[–]
+If you are feeling overwhelmed with slop posts about ai, camp on the new page and upvote any halfway decent story about something else. Many of us would thank you if they knew.
+reply
+aebtebeten
+5 hours ago
+|
+parent
+|
+next
+[–]
+also, RSS is an alternative to camping
+reply
+gsf_emergency_6
+4 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+Tangential:
+Afaict mods are on our side, despite whatever "aggregated" data "suggest"
+This site (which I peruse everyday) claims that 3 AI articles were modded down today, but in actual fact the single nonAI article that was supposed to have been modded down was modded up.
+https://github.com/vitoplantamura/HackerNewsRemovals?tab=rea...
+I trust however, that the political calls are representative
+One has to delve into the data before arriving at broad judgements :)
+reply
+kgraves
+15 hours ago
+|
+prev
+[–]
+Try lobsters and probably Reddit which have a hard stance against AI.
+You're right in HN heading down the path in favouring slop, constant posts and startups about AI with now 'influencers' (simonw in particular) aggressively posting and shilling AI.
+With the moderators knowing that these 'influencers' and their kind violate the HN guidelines every day by purposefully linking back to their site for farming backlinks.
+It might as well be called AI news.
+reply
+stuxnet79
+8 hours ago
+|
+parent
+|
+next
+[–]
+Lobste.rs has a hard stance against AI? This can't be true. I browse the front page every so often & there seems to be a fair amount of overlap between it and HN. At least for the upvoted articles.
+reply
+csomar
+8 hours ago
+|
+parent
+|
+prev
+[–]
+Lobsters stance is anti-AI and cautious at best. But plenty of AI-reply
+Guidelines
+|
+FAQ
+|
+Lists
+|
+API
+|
+Security
+|
+Legal
+|
+Apply to YC
+|
+Contact

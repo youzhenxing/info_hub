@@ -1,0 +1,221 @@
+[
+    {
+        "Id": "512d6ca144676703d4714afbba4cc217c987871c2ca09ae5e1204b19300a68ee",
+        "Created": "2026-02-09T03:31:32.722221803Z",
+        "Path": "/entrypoint.sh",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1481998,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-02-09T04:01:41.95763917Z",
+            "FinishedAt": "2026-02-09T04:01:41.142322476Z"
+        },
+        "Image": "sha256:4dd1f8c492290e074453e9107d5e34090233ea6e3096c80e2cf48bfe3aa715fb",
+        "ResolvConfPath": "/var/lib/docker/containers/512d6ca144676703d4714afbba4cc217c987871c2ca09ae5e1204b19300a68ee/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/512d6ca144676703d4714afbba4cc217c987871c2ca09ae5e1204b19300a68ee/hostname",
+        "HostsPath": "/var/lib/docker/containers/512d6ca144676703d4714afbba4cc217c987871c2ca09ae5e1204b19300a68ee/hosts",
+        "LogPath": "/var/lib/docker/containers/512d6ca144676703d4714afbba4cc217c987871c2ca09ae5e1204b19300a68ee/512d6ca144676703d4714afbba4cc217c987871c2ca09ae5e1204b19300a68ee-json.log",
+        "Name": "/trendradar-prod",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/home/zxy/Documents/code/TrendRadar/config:/app/config:ro",
+                "/home/zxy/Documents/code/TrendRadar/output:/app/output"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "bridge",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "unless-stopped",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/home/zxy/Documents/code/TrendRadar/config",
+                "Destination": "/app/config",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/home/zxy/Documents/code/TrendRadar/output",
+                "Destination": "/app/output",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "512d6ca14467",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "TZ=Asia/Shanghai",
+                "RUN_MODE=cron",
+                "CRON_SCHEDULE=0 */6 * * *",
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D",
+                "PYTHON_VERSION=3.10.19",
+                "PYTHON_SHA256=c8f4a596572201d81dd7df91f70e177e19a70f1d489968b54b5fbbf29a97c076",
+                "SUPERCRONIC_VERSION=v0.2.39",
+                "PYTHONUNBUFFERED=1",
+                "CONFIG_PATH=/app/config/config.yaml",
+                "FREQUENCY_WORDS_PATH=/app/config/frequency_words.txt"
+            ],
+            "Cmd": null,
+            "Image": "trendradar:local",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": [
+                "/entrypoint.sh"
+            ],
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "SandboxID": "a0a77b89cb8ea506788373abc15e4d62d29a2c2f37a5033a17bed1297c405c3b",
+            "SandboxKey": "/var/run/docker/netns/a0a77b89cb8e",
+            "Ports": {},
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "c56776fa514f0f97706d279612faa3f4d6c2dbf1ff25cbc6b865e7a6943bdd4b",
+                    "EndpointID": "6cfefc7eca99b109b41251831d79ee0be22efb6f081120bad21290bbc7cec20f",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.2",
+                    "MacAddress": "de:ce:0e:7b:fb:9a",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:2e095c82bc2114968f4f656a657ef6cd89f46103b93db867b3ab3c1765b18983",
+            "size": 2954,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]

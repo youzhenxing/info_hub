@@ -1,0 +1,46 @@
+URL: https://www.wired.com/story/how-data-brokers-can-fuel-violence-against-public-servants/
+Title: How Data Brokers Can Fuel Violence Against Public Servants | WIRED
+Time: 2026-02-04T09:15:38.457227
+Save Story
+Save this story
+Save Story
+Save this story
+A new report
+published
+Tuesday finds that while
+violent threats
+to public servants across the US have been increasing, “comprehensive” state-level consumer privacy laws do not provide adequate protections for those
+civil servants
+, creating a “data-to-violence pipeline.”
+The report was published by researcher Justin Sherman of the Security Project at the Public Service Alliance, a
+platform
+that provides free and discounted security services to current and former public servants. While Trump officials have referred to
+documenting
+federal immigration agents’ behavior on the job as “violence” and “doxing,” Sherman says the report focuses on the more traditional, widely accepted definition—the publication of someone’s personal, private information, such as their home address, with the specific intent of harming them.
+Sherman analyzed 19 different consumer privacy laws and found that while they all give consumers the right to stop data brokers from selling personal information obtained from private sources, none give “public servants the right to legally compel state agencies to redact their personal data from public records,” and none prevent data brokers from selling data, including people’s home addresses, when they are obtained through public sources such as property records or court filings. Further, none include what is called a “private right of action,” which would allow individuals to sue over violations of their respective state’s privacy law.
+Together, this means that information about public employees is uniquely available and that they have uniquely few ways to prevent its dissemination.
+Violent threats against public servants have been increasing, according to a
+separate analysis
+by PSA and the Impact Project of over 1,600 individual threats made against public servants between 2015 and 2025. That analysis found that violent threats against local public servants, including school board members and election workers, represented nearly a third of the reports reviewed. It also found that threatening statements occurred at nearly nine times the rate of physical attacks, and that one form of threat can escalate into another.
+A 2024
+report
+from the Brennan Center for Justice found that larger shares of women and Democrats reported increases in the severity of abuse since first taking public office, compared with men and Republicans.
+Last year, a 57-year-old man was
+charged
+with assassinating Melissa Hortman, a Democratic state representative, along with her husband at their home in Minnesota. According to
+court records
+, the alleged shooter had handwritten lists of dozens of Minnesota state and federal public officials, including Hortman’s name and her home address, along with 11 “people search engines” that allow anyone to find personal information about a person, including their home addresses, phone numbers, and names of relatives, often for a nominal fee.
+The report advocates for legislation that would specifically address privacy concerns for all public servants, including public school educators and local elected officials, who are not necessarily covered by existing
+federal
+or
+state
+privacy laws. It suggests that lawmakers could try to balance First Amendment and privacy concerns by regulating the digitization of public records and how easy they are to access remotely, instead of limiting them completely.
+Sherman, the author of the new report, said that while many public records can be useful to journalists and accountability watchdogs, repackaged public records sold by data brokers can make it too easy for abusive individuals to stalk and harass victims even when they move to a different state. In the past, people seeking out public records would already have to have an idea of where that public record was, and physically go to that location.
+While residents of states with consumer privacy laws can request limits on data collected from private sources, it’s not always easy to do so. Only one state, California, offers a way for residents to limit what information data brokers collect and sell about them en masse and for free via its
+Delete Request and Opt-out Platform
+. People in other states, including public servants, must file deletion requests manually or pay for an opt-out service that promises to do so on their behalf.
+Last year, dozens of data brokers were
+caught
+hiding data removal instructions from Google, making it difficult for consumers to find them. Even when consumers pay to use services that specialize in filing data deletion requests, the results aren’t perfect. In 2024, Consumer Reports
+studied
+the effectiveness of seven different data removal services, which ranged from $19.99 to $249 a year in cost, and found that at best they were only successful about two-thirds of the time.

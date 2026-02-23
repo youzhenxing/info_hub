@@ -1,0 +1,14 @@
+URL: https://www.reddit.com/r/artificial/comments/1qrr2ps/ai_can_actually_slow_down_your_learning_if_youre/
+Title: Reddit - The heart of the internet
+Time: 2026-01-31T22:03:56.104251
+Go to artificial
+r/artificial
+•
+emudoc
+AI can actually slow down your learning if you’re new to programming
+I’m seeing too many new devs use AI as an autopilot instead of a hint system.
+By skipping the "struggle phase", you’re missing out on building that essential debugging muscle. If you don't wrestle with the errors now, you’ll be clueless when things actually break later and there's no prompt to save you.
+AI is great for boilerplate, but don't let it rot your fundamentals.
+What do you guys think? Is AI making new devs "lazy" or just more efficient in this era?
+Read more
+Share

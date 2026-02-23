@@ -1,0 +1,535 @@
+URL: https://news.ycombinator.com/item?id=46917886
+Title: Tell HN: I'm a PM at a big system of record SaaS. We're cooked | Hacker News
+Time: 2026-02-07T23:23:02.209146
+Hacker News
+new
+|
+past
+|
+comments
+|
+ask
+|
+show
+|
+jobs
+|
+submit
+login
+[flagged]
+Tell HN: I'm a PM at a big system of record SaaS. We're cooked
+97 points
+by
+throwawaypm123
+17 hours ago
+|
+hide
+|
+past
+|
+favorite
+|
+42 comments
+I found myself disagreeing with almost all of the comments on the “AI Is Killing B2B SaaS” thread [1], based on my perspective as a senior PM (~20 years in SaaS) at a massive system of record (SoR) company in California. We’re still cooked. Throwaway for obvious reasons.
+BigCo SoRs, differences aside, have historically been a good, low-drama way to make a living in tech. RSUs, ~40-hour weeks, generally smart colleagues, and real problems to solve for F100 customers. Our products work, but are not loved. Enterprise sales runs the show.
+I have no concerns about a scrappy AI startup or indie dev replacing us. The real threat is other SoR vendors, the cloud providers, and of course the AI labs themselves. All of them are coming for our SaaS margins, and as an industry we are woefully unprepared.
+Every major SoR has its core competency (HR, ERP, CRM, etc.), but also a long tail of lesser-known portfolio products that increasingly overlap with other SoRs and serve as growth vectors. The competition here is only going to accelerate. As a huge enterprise, you’re not going to rip out a component your SoR for a cool startup or a vibe-coded internal tool... but you would seriously consider doing so if the alternative comes from another SoR vendor you use and is cheaper.
+The public cloud providers are explicitly positioning themselves as the place where your business data, AI agents/LLMs, and critical applications live. This is on a direct collision course with SoRs’ own AI platform ambitions that they are banking on for growth.
+The AI labs themselves have the same ambition. Note where systems of record sit in OpenAI’s Frontier press release marketecture: a dotted, nearly invisible line at the bottom [2].
+SoRs aren’t dead, and they’re not being disrupted by vibe coders. But the path forward is brutal.
+Which brings me to the hardest point that applies to me as well. SoR teams are not known for fast execution, cutting edge AI adoption, product taste, or engineering excellence. These are exactly the strengths of our new competitors. We also struggle to attract this kind of talent. People who fit that profile go to FAANG or the labs. We could try to compete with RSUs, but those are down ~50% over the past few months, and the industry is under increasing pressure from investors around stock-based comp and M&A in general.
+The goal here is an honest take from someone on the inside. There’s a difficult road ahead. I think SoRs will always continue to exist in some form but I don’t think the recent market corrections are overblown.
+[1]
+https://news.ycombinator.com/item?id=46888441
+[2]
+https://openai.com/index/introducing-openai-frontier/
+svilen_dobrev
+1 hour ago
+|
+next
+[–]
+> We also struggle to attract this kind of talent.
+i would go further and say,
+any kind of productive/disruptive talent
+- or experience. Plus the reek of office-politics is
+everywhere
+, and that does not help either.
+You know, after 3+ decades in the industry, at various levels from bottom to top - mostly just-do-it-all-hats - last two years i have trouble landing a job. Go figure..
+reply
+_diyar
+16 hours ago
+|
+prev
+|
+next
+[–]
+When people say ”AI is Killing SaaS”, that does not have to mean ”Claude Code can one-shot your full stack“.
+More likely it means: AI code is going to distort the supply curve such that
+1) previously healthy surplus in the SaaS market is shrinking
+2) established SaaS companies have lost all existing moats
+3) due to the previous two points, investors are reluctant 
+to spend new dollars in this market to expand or retain market share, making life in those companies miserable.
+> But the path forward is brutal
+And soon™ this is coming to your industry as well!
+reply
+calvinmorrison
+16 hours ago
+|
+parent
+|
+next
+[–]
+> previously healthy surplus in the SaaS market is shrinking
+Margins that were very attractive before, but many industries have small margins and work just fine. restaurants abound on tiny margins.
+reply
+jaredklewis
+13 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+I mean define "work." Restaurants are a famously good way to light money on fire. IIRC something like half of restaurants go bust within the first five years.
+So I don't think anyone is going to be celebrating if the message is "Don't worry guys, SaaS businesses are now like restaurants: low margin and high risk."
+reply
+theturtletalks
+16 hours ago
+|
+root
+|
+parent
+|
+prev
+|
+next
+[–]
+Except restaurants bring tangible value and revenue every day. How many SaaS are losing money but bank-rolled by VC funds and are valued at a way higher multiple than restaurants are?
+reply
+calvinmorrison
+15 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+Well exactly, lets see it normmalize.
+reply
+ezekg
+16 hours ago
+|
+prev
+|
+next
+[–]
+> Our products work, but are not loved. Enterprise sales runs the show.
+Don't blame AI for this correction, then.
+reply
+Sammi
+5 hours ago
+|
+parent
+|
+next
+[–]
+Right? I'm not hearing it being said that SaaS is going away. I'm hearing that bad SaaS is being replaced by better SaaS.
+A poor supplier being replaced by a better supplier that is capable at leveraging AI for a product quality and speed of development bump.
+reply
+bwfan123
+16 hours ago
+|
+prev
+|
+next
+[–]
+> But the path forward is brutal
+Great insider feedback. What is the switching cost for a SoR ? Is it embedded so deeply that is impossible to switch (like IBM mainframes). Wont the incumbents make a good living increasing per-seat prices each year to their required growth rates, and their customers have no option but to pay-up.
+reply
+craigmccaskill
+16 hours ago
+|
+parent
+|
+next
+[–]
+Disclosure: I'm a PM at ServiceNow. Opinions my own.
+High. SoR systems tend to either be where or are closely tied to wherever the work is being done. It's an incredibly disruptive thing to rip out and change all of the process and backend systems that run your business. It's why land and expand is such an effective strategy for these companies and everything is sold as an interconnected economy of scale.
+I'm quite a bit more bullish than OP, but I would be lying if I said I wasn't worried about the way the market has reacted and the 'new multiple' trend.
+There is always going to be a market for a business operating system, we just might be a similar situation to Netflix/HBO last decade, where the race was about which side could shore up their core weakness first: content engine vs. streaming platform.
+We're seeing the same thing happen now. Enterprise has the data, business logic, customer base and distribution but it needs to add SotA AI capabilities into the core of the product without just bolting something on. The Ai companies have the models, talent and are agile enough they can turn out demos and compelling pitches abut they're missing the enterprise data, domain specificity and being able to operate with the regulatory and compliance scaffolding that is required to operate in the enterprise.
+Both sides are racing toward the middle, but the problems left for the AI companies to solve are arguably the harder ones, especially when the models themselves are rapidly commoditizing or are open source. It's tough to build enterprise-grade infrastructure on top of a layer where your core differentiation is eroding.
+There was another comment in this thread about value moving to the agent layer. I'd push back a little on this. An agent is only useful if it has reliable, governed access to the system where the work actually happens. The SoR that builds a credible agent platform on top of its own data and workflow layer has a structural advantage over a standalone agent tryin to orchestrate across five different systems via an API. IMO the strong foundation wins out here.
+reply
+Terretta
+12 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+My opinions are my own … but rhyme with this, particularly the final paragraph, with a twist: the strong foundation
+with
+in-house mastery that can sherpa an atelier of agents.
+reply
+Terretta
+12 hours ago
+|
+parent
+|
+prev
+|
+next
+[–]
+> >
+But “the path forward is brutal”
+>
+Great insider feedback.
+Also a common LLM trope.
+reply
+VoidWhisperer
+16 hours ago
+|
+parent
+|
+prev
+|
+next
+[–]
+I'm not sure if SAP is considered a SoR, but businesses that use it are often do entrenched eventually that migrating out would be a monumental effort
+reply
+indymike
+14 hours ago
+|
+prev
+|
+next
+[–]
+> All of them are coming for our SaaS margins, and as an industry we are woefully unprepared.
+My company just switched from slug slow product management driven tech to startup footing. Everything is up for grabs everywhere. And it's always like this in tech when there's a sea change.
+> We also struggle to attract this kind of talent. People who fit that profile go to FAANG or the labs.
+Hires aren't the problem, culture is. I can take the same new dev that a FAANG hires and turn them into a slug with the development process I see at most b2b saas companies. The flipside is true too: you can take an average dev and set them free and amazing things happen.
+Most B2B SaaS companies have three people managing tickets for every developer, executives don't understand bugs are the byproduct of progress (and will be fixed quickly), have name brand enterprise agile-fall style processes, have six months of sprints preplanned, are fixated on UI testing, and do releases like they are publishing CD ROMS. This kind of culture is literally repugnant to innovators, problem solvers, people doing things a new way, and people who value doing things well (because fighting everyone to change for better sucks).
+reply
+AnimalMuppet
+14 hours ago
+|
+parent
+|
+next
+[–]
+> Most B2B SaaS companies have three people managing tickets for every developer...
+Shoot me now.
+reply
+BetaDeltaAlpha
+16 hours ago
+|
+prev
+|
+next
+[–]
+Was this post by an Anthropic/OpenAI insider?
+Kinda smells like viral marketing.
+reply
+deepfriedchokes
+14 hours ago
+|
+parent
+|
+next
+[–]
+A lot of this AI stuff seems to be about creating a feeling of inevitability along with FOMO among investors who don’t know any better, while hoping the tech catches up to the expectations before everyone realizes it’s not quite there yet. Reminds me a lot of the Dot-Com bubble where everyone could see the potential but the ideas were too early for both the culture and the tech. Unfortunately dark gpus have a much shorter shelf life than dark fiber.
+reply
+bgnhackchecker
+9 hours ago
+|
+prev
+|
+next
+[–]
+It is not something to happen overnight. Enterprises will not roll over by finding new tools. They will look for the next best opportunity during renewal of current ones. they will demand better prices or price reductions and give some more life to current age SoRs (businesses have to run; sales & CIO relationships are not purely technical merits as well). Their change mgmt itself is time taking and complex projects and processes. Risk (of change) mgmt is usually well baked into their processes. Data lock-in is some time protection for them.
+SMBs will adopt fast, offer opportunities to new age SoRs.
+reply
+NikolaNovak
+15 hours ago
+|
+prev
+|
+next
+[–]
+Is SoR as you described it a Venn diagram of enterprise resource applications such as sap, peoplesoft, etc - or a different beast entirely?
+ERP world is legacy beyond belief and the technology is neither amazing nor fast as you mention. The trick here is the profound awareness of business processes. I'm a techie in ERP world and deeply aware the business transformation team are the important ones (on implementation... Sales, otherwise,of course :/). The business rules for what we as techies think is simple (payroll, taxes, accounting - how complicated can it be??) are mind blowingly complex yet often poorly documented. I honestly don't know yet if today's LLM can grok them both deeply and safely / consistently enough
+reply
+bgnhackchecker
+9 hours ago
+|
+prev
+|
+next
+[–]
+Honest answers won't cut anything here. Structural dependencies of the current age SoR vendors will have a serious threat of survival. Vibe-coding tools, practices will not overnight solve or compress the humongous structures built over years.
+Their only options are to acquire and gobble up as competition shows up or delay by some form of obstruction to current clients leaving them.
+One-off SaaS tools will probably see the quickest consolidation, either because the big SoR vendors can build them too with AI tools and offering some reduction in in IT complexities (like vendor mgmt, renewal headaches, integrations, security postures).
+New age companies with SoR capabilities being built or having unique and differentiated capabilities will challenge the current SoR players.
+reply
+0x008
+2 hours ago
+|
+prev
+|
+next
+[–]
+This is such an usually low signal FUD post for HN. I know I am not adding anything of value here either, but I couldn’t help myself. Please post something with more substance here.
+We all notice a shift in the general perception of the SaaS industry. People are afraid, massive change is coming. But that is obvious from all the posts in news outlets, on x, on Reddit etc.
+Thus far it’s just a massive hype. The technology has the potential to switch up the business, for sure, but now apart from frontier labs for everyone else it’s just eating money. No company has lost clients due to being replaced by some autonomous agent.
+Don’t get me wrong, the technology has the potential, and it will improve, and we will see massive changes. Money will flow to different entities (cloud providers? New players? Who knows). But technology still needs to be shaped into a useful product. Even for coding (undoubtedly the most mature use case for AI agents) the agents still have to demonstrate they actually safe time and money in the long run. So far it looks like they mostly create more work.
+reply
+MaxwellsDaemon
+1 hour ago
+|
+parent
+|
+next
+[–]
+Don't know where it went but there was more text to the op I cannot see now:
+https://web.archive.org/web/20260206225501/https://news.ycom...
+reply
+cadamsdotcom
+8 hours ago
+|
+prev
+|
+next
+[–]
+Disruption is only joyful when it’s not you being disrupted.
+But it is the way of things.
+No one will migrate away in a huge hurry, you’ve got plenty of time to make your plan.
+reply
+mrandish
+16 hours ago
+|
+prev
+|
+next
+[–]
+The thesis makes sense. I agree AI coding will enable increasing disruption and competitive threats in large enterprise SaaS. For being in tech, it's a category which has been relatively free of major disruption for a while and is probably overdue for some 'excitement' (in the Chinese proverb sense).
+Another factor is customer expectations, which can have a way of turning into self-fulfilling prophecies. All the hype around AI in software creates a sense of overall change in the air, making large enterprise managers question if they need to do anything about it. And just by increasing how often that question is asked, orgs will end up changing more things faster than before.
+reply
+vjerancrnjak
+16 hours ago
+|
+prev
+|
+next
+[–]
+Most software is just middlemen collecting money. Thats the reason why there is no economic drastic growth even with 2-3 years of AI.
+What you’re worrying about is just bigger middlemen.
+If you were not a value extracting middleman there would be no fear of replacement, because you can always create more than what you take.
+I’m glad if this causes a shift in the industry and we lose x analysts, x architects, x scientists, data engineers and all other formulaic middlemen that just live in a weird middlemen economy.
+It is immense luck that we don’t have to actually produce something and we get paid but it is much better if we’re forced to actually do something that isn’t empty.
+reply
+BSOhealth
+16 hours ago
+|
+prev
+|
+next
+[–]
+I’m in the same boat. AI can gen better UI forms, and a database is a database is a database. Customers want MCP and API access to do their own thing on their own terms. Model co’s and folks like Palantir come in to “partner” but the writing is on the wall.
+So what are we going to do about it? Genuinely up for a startup here.
+reply
+michaelpalmeter
+14 hours ago
+|
+prev
+|
+next
+[–]
+You are under-estimating the power of AI tools to dynamically adapt to business needs and fully supplant all SaaS, even SoR vendors. The ERP database (e.g.) is safe. The rest of the app is on the table. It will happen faster than you think.
+reply
+ck_one
+16 hours ago
+|
+prev
+|
+next
+[–]
+How do you think big labs will try to attack you guys?
+Why not just close the data to them?
+reply
+saas_yall
+16 hours ago
+|
+prev
+|
+next
+[–]
+SAAS was always dubious anyway, for every SAAS a companies team implements you end up with an "integration engineer" to bring the data back into a "data lake" from the "data silo" buying the SAAS caused - and then you just wonder "why didn't we just build this"? Then AI I made completing "20% happy path" so easy you ask "really why didn't we just build this - what's 2k more lines in our monolith between existing engineers"?
+Used to take a few days, 90% was never that hard, now it takes half a day or so.
+reply
+oidar
+16 hours ago
+|
+prev
+|
+next
+[–]
+>As a huge enterprise, you’re not going to rip out a component your SoR for a cool startup or a vibe-coded internal tool
+If you are a huge enterprise, why not?
+reply
+csours
+16 hours ago
+|
+parent
+|
+next
+[–]
+Speaking as a huge enterprise, a SaaS SoR is useful BECAUSE all the components already work together, and I don't have to pay my own people to worry about maintenance or vulnerabilities.
+Data egress and ingress are always possible, but then you have to manage authX (etc) in more than one place, more than two places, oops now it's 3, 4, 5 and now we got ransomware'd
+reply
+patmcc
+16 hours ago
+|
+parent
+|
+prev
+|
+next
+[–]
+Because as a huge enterprise you want
+stability
+and
+ability to check the boxes you need to check
+far more than anything else.
+I'm at a medium enterprise and this is true. If I go with e.g. Atlassian I can get everything checked off, even if it's expensive and kinda dogshit. But I know they have a support system, I know they read CVEs and issue patch notes, I know I can find the info for audits and SOC2 cert and everything else.
+Oh, some startup offers better software for a tenth the cost? Great. It'll be 30% more work for me to track down all that bullshit? Ok then, complete non-starter, I'll stick with Atlassian.
+reply
+reactordev
+16 hours ago
+|
+parent
+|
+prev
+|
+next
+[–]
+Because of Conway’s Law…
+There’s so much process that gets put around the tools. Headcount that’s justified. Etc.
+reply
+unicorn_cowboy
+16 hours ago
+|
+prev
+|
+next
+[–]
+SaaS is very much not my area of expertise, but this makes sense to me:
+https://x.com/DavidOndrej1/status/2019126831761572169
+TLDR excerpt:
+- Top layer — the AI agent. The thing that actually executes the work.
+- Middle layer — the SaaS UI. The dashboards, the workflows, the buttons you click.
+- Bottom layer — systems of record. The databases, CRMs, and ERPs that store the real data.
+Right now, value is getting sucked upward into the agent layer and downward into the data layer. Everything in the thin middle gets crushed.
+reply
+Terretta
+12 hours ago
+|
+parent
+|
+next
+[–]
+>
+the thing that actually executes the work
+^H^H^H^H
+toil
+reply
+kruipen
+16 hours ago
+|
+parent
+|
+prev
+|
+next
+[–]
+> but this makes sense to me:
+https://x.com/DavidOndrej1/status/2019126831761572169
+AI slop.
+reply
+unicorn_cowboy
+15 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+Can you elaborate?
+reply
+theturtletalks
+16 hours ago
+|
+prev
+|
+next
+[–]
+Open-source was already coming for all SaaS. Look at apps like Cal.com compared to Calendly and you’ll see it’s light years ahead and you can self-host with 1 click. Look at Twenty, a CRM, and it’s so much less bloated then Salesforce. These are 2 examples of hundreds if not thousands and LLMs are trained on this open-source code already.
+I’ve been following open-source alternatives long before AI and the biggest drawback was bad UI design, but AI makes that easier and now even more open-source alternatives are launching.
+The incentives made this the obvious next step. SaaS are not something that continuously needs to made better, but them being publicly traded means they have to. So what do they do? They add more features that most customers don’t need, they put essential features behind a bigger paywall, they enshittify by adding ads or selling your data. As these SaaSes added more features and the configuration to boot, people were already learning to “program” but within their walled gardens. If you’re already learning how to configure these applications, how big of a step is no-code and now asking a terminal agent to build that one functionality you need?
+Before AI became big, you could already see YC funding open-source alternatives to popular applications since they also saw this coming. Notice how they’ve slowed that down now because they know it will lead to their own demise.
+reply
+wiseowise
+16 hours ago
+|
+prev
+|
+next
+[–]
+> We're cooked
+How I know this was written by a marketing person. Stop grifting, please.
+reply
+josefritzishere
+16 hours ago
+|
+prev
+|
+next
+[–]
+This was written by Sam Altman.
+reply
+add-sub-mul-div
+16 hours ago
+|
+parent
+|
+next
+[–]
+Too many complete sentences and too much correct capitalization for an executive of such a high profile. Maybe he delegated it, though. To a human so it wouldn't look like bad writing.
+reply
+PLMUV9A4UP27D
+16 hours ago
+|
+prev
+[–]
+I'm a top executive at a system of record SaaS company. I fail to understand the argumentation this post is trying to make. Language is too vague, problem description too general. Too many abbreviations.
+reply
+Guidelines
+|
+FAQ
+|
+Lists
+|
+API
+|
+Security
+|
+Legal
+|
+Apply to YC
+|
+Contact

@@ -1,0 +1,288 @@
+URL: https://github.com/Vasco0x4/AIDA
+Title: Vasco0x4/AIDA
+Time: 2026-02-04T09:15:44.007532
+# Vasco0x4/AIDA
+
+**描述**: AI-Driven Security Assessment - Connect AI to 400+ pentesting tools via MCP
+**Stars**: 131
+**Forks**: 16
+**语言**: JavaScript
+**创建时间**: 2026-01-31T18:51:52Z
+**最后更新**: 2026-02-03T23:14:53Z
+**标签**: ai, claude, docker, exegol, hacking, mcp, pentesting, security, security-tools, vulnerability-assessment
+
+
+---
+
+## README
+
+<p align="center">
+  <img src="./assets/banner1.png" alt="AIDA Banner" width="100%">
+</p>
+<h1 align="center">AI-Driven Security Assessment</h1>
+
+<p align="center">
+  <strong>Give your AI the power of 400+ pentesting tools. Let it hack (legally).</strong>
+</p>
+
+<p align="center">
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#why-aida-exists">Why AIDA</a> •
+  <a href="Docs/INSTALLATION.md">Installation</a> •
+  <a href="Docs/USER_GUIDE.md">User Guide</a> •
+  <a href="Docs/ARCHITECTURE.md">Architecture</a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/License-AGPL_v3-blue" alt="License">
+  <img src="https://img.shields.io/badge/MCP-Compatible-green" alt="MCP">
+  <img src="https://img.shields.io/badge/Docker-Exegol-orange" alt="Exegol">
+  <img src="https://img.shields.io/badge/Version-1.0.0--alpha-purple" alt="Version">
+</p>
+
+---
+
+## What is AIDA?
+
+**AIDA** connects AI assistants to a real pentesting environment. Instead of just *talking* about security testing, your AI can actually *do* it.
+
+Here's the deal:
+-  **Exegol Docker container** with 400+ security tools (nmap, sqlmap, ffuf, nuclei...)
+-  **MCP integration** that works with *any* AI client (Claude, Gemini, GPT, Antigravity...)
+-  **Web dashboard** to track findings, commands, and progress
+-  **Structured workflow** from recon to exploitation
+
+Think of it as giving your AI a fully-equipped hacking lab and a notebook to document everything.
+
+<p align="center">
+  <img src="./assets/view.png" alt="AIDA Dashboard" width="800">
+</p>
+
+---
+
+
+
+## Why AIDA Exists
+
+Modern AI assistants know pentesting tools, techniques, and vulnerability classes—**but they can't execute them.**
+
+Without execution capabilities, security testing becomes a tedious back-and-forth: you ask the AI for a command, copy it to your terminal, wait for results, paste the output back, and repeat. Traditional scanners like Burp Suite run fixed patterns and can't adapt to specific tech stacks or chain multi-step exploits.
+
+**AIDA changes this** by connecting AI directly to a professional pentesting environment:
+
+- 🔧 **Direct Execution** - 400+ tools in Exegol (nmap, sqlmap, ffuf, nuclei...)
+- 🧠 **Persistent Memory** - Full context maintained across sessions in structured database
+- 📝 **Auto Documentation** - Findings tracked as cards with severity, proof, and technical analysis
+- ⛓️ **Attack Chains** - AI connects dots between discoveries to build multi-step exploits
+- 🎯 **Adaptive Testing** - Methodology adjusts based on findings, not fixed patterns
+
+**Result:** Your AI becomes an autonomous security researcher, not just a consultant.
+
+---
+
+##  Video Demo
+
+<p align="">
+  <a href="https://www.youtube.com/watch?v=yz6ac-y4g08">
+    <img src="https://img.youtube.com/vi/yz6ac-y4g08/maxresdefault.jpg" alt="AIDA Demo Video" width="70%">
+  </a>
+</p>
+
+---
+
+## System Requirements
+
+### Supported Platforms
+- **macOS** (Intel & Apple Silicon)
+- **Linux** (Ubuntu, Debian, RHEL, Fedora, Arch, and derivatives)
+- **Windows** (Untested)
+
+---
+
+## Quick Start
+
+### Prerequisites
+
+- **Docker Desktop** - For running Exegol and the platform
+- **An AI Client** - Claude Desktop, Claude Code, Gemini CLI, Antigravity... pick your favorite
+
+
+```bash
+# Clone
+git clone https://github.com/Vasco0x4/AIDA.git
+cd AIDA
+
+# Start everything
+./start.sh
+
+# Open the dashboard
+open http://localhost:5173
+```
+
+That's it. The platform is running.
+
+### Connect Your AI
+
+Now hook up your AI client.
+
+**Recommended: Claude Code CLI**
+
+The easiest way to get started is using the AIDA CLI wrapper with Claude Code:
+
+```bash
+python3 aida.py --assessment "test"
+```
+
+You can also use your own API keys.
+
+**Alternative: Import MCP tools into your AI client**
+
+Here's Claude Desktop as an example:
+
+**Default config path (macOS):**
+```
+~/Library/Application Support/Claude/claude_desktop_config.json
+```
+**MCP config:**
+
+```json
+{
+  "mcpServers": {
+    "aida-mcp": {
+      "command": "/bin/bash",
+      "args": [
+        "/absolute/path/to/AIDA/start_mcp.sh"
+      ]
+    }
+  }
+}
+```
+
+> **Full setup for all AI clients** → [INSTALLATION.md](Docs/INSTALLATION.md)
+
+### First Assessment
+
+1. Create an assessment in the web UI
+2. Start your AI client
+3. Inject the pre prompt. 
+4. Tell it: *"Load assessment 'Acme' and start it"*
+5. Watch it go
+
+---
+
+## Works With Any AI
+
+AIDA uses the **Model Context Protocol (MCP)** - an open standard. If your AI client supports MCP, it works with AIDA.
+
+| AI Client           | Status  | Setup Guide |
+|---------------------|---------|-------------|
+| **Claude Code**     | Recommended | [→ Guide](Docs/INSTALLATION.md#claude-code) |
+| **External API**    |  Recommended  | [→ Guide](Docs/INSTALLATION.md#vertex-ai-external-api) |
+| **Claude Desktop**  | Works   | [→ Guide](Docs/INSTALLATION.md#other-ai-clients-manual-mcp-import) |
+| **ChatGPT Desktop** | Works | [→ Guide](Docs/INSTALLATION.md#chatgpt) |
+| **Gemini CLI**      |  Works  | [→ Guide](Docs/INSTALLATION.md#gemini-cli) |
+| **Antigravity**     |  Works  | [→ Guide](Docs/INSTALLATION.md#antigravity) |
+
+
+---
+
+## MCP Tools
+
+The AI gets access to specialized tools:
+
+```
+ASSESSMENT
+   load_assessment    - Load and start working
+   update_phase       - Document progress
+
+CARDS
+   add_card          - Create findings/observations/info
+   list_cards        - View all cards
+   update_card       - Modify cards
+   delete_card       - Remove cards
+
+RECON
+   add_recon_data    - Track discovered assets
+   list_recon        - View recon data
+
+EXECUTION
+   execute           - Run any command in Exegol
+   scan              - Quick scans (nmap, gobuster, ffuf...)
+   subdomain_enum    - Find subdomains
+   ssl_analysis      - Check SSL/TLS
+   tech_detection    - Identify tech stack
+   tool_help         - Get tool documentation
+
+CREDENTIALS
+   credentials_add   - Store credentials
+   credentials_list  - List stored creds
+```
+
+> **Full tool documentation** → [MCP_TOOLS.md](Docs/MCP_TOOLS.md)
+
+---
+
+## Project Structure
+
+```
+AIDA/
+├── backend/              # FastAPI + MCP Server
+│   ├── api/             # REST endpoints
+│   ├── mcp/             # MCP server + tools
+│   ├── models/          # Database models
+│   └── services/        # Business logic
+├── frontend/            # React dashboard
+│   ├── src/pages/       # Dashboard, Assessments, Settings...
+│   └── src/components/  # Reusable UI components
+├── Docs/                # AI prompts and methodology
+├── aida.py              # CLI launcher
+├── start.sh             # Start the platform
+└── docker-compose.yml   # Infrastructure
+```
+
+---
+
+## Documentation
+
+| Document | Description |
+|----------|-------------|
+| [**INSTALLATION.md**](Docs/INSTALLATION.md) | Complete setup guide - all AI clients |
+| [**USER_GUIDE.md**](Docs/USER_GUIDE.md) | How to use the platform |
+| [**ARCHITECTURE.md**](Docs/ARCHITECTURE.md) | Technical deep dive + diagrams |
+| [**MCP_TOOLS.md**](Docs/MCP_TOOLS.md) | All MCP tools explained |
+
+
+---
+
+## Alpha Release - Known Limitations
+
+**AIDA is currently in alpha.** This means:
+
+- **Local use only recommended** - Do NOT expose the web interface publicly without additional security hardening
+- **No authentication system yet** - Anyone with access to the UI can view/modify assessments
+- **Bugs and rough edges exist** - Some error messages use browser alerts, WebSocket reconnections may require manual refresh
+- **Database credentials** - Change defaults in `.env` before any deployment
+
+**This is a working prototype for early adopters and security professionals who understand the risks.**
+
+Improvements coming in future releases:
+- Proper authentication and user management system
+- Refined UI/UX (replacing alerts with modals)
+- Production-ready Docker configuration
+- Enhanced error handling
+
+**For now: Run locally, don't expose to internet, use at your own risk.**
+
+Report bugs and request features: [GitHub Issues](https://github.com/Vasco0x4/AIDA/issues)
+
+---
+
+## Contributing
+
+AIDA is actively developed. Want to contribute?
+
+**Planned Features:**
+
+-
+
+[README 已截断...]

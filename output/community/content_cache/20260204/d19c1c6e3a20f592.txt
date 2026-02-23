@@ -1,0 +1,30 @@
+URL: https://www.reddit.com/r/MachineLearning/comments/1quwjt1/p_michiai_a_530m_fullduplex_speech_llm_with_75ms/
+Title: Reddit - The heart of the internet
+Time: 2026-02-04T08:36:22.437929
+Go to MachineLearning
+r/MachineLearning
+•
+kwazar90
+[P] MichiAI: A 530M Full-Duplex Speech LLM with ~75ms Latency using Flow Matching
+I wanted to see if I could build a full-duplex speech model that avoids the coherence degradation that plagues models of this type while also requiring low compute for training and inference.
+I don't have access to much compute so I spent a lot of the time deAlso I made sure that all the components can be pretrained quickly separately and only trained together as the last step.
+The Architecture:
+No Codebooks. Uses Rectified Flow Matching to predict continuous audio embeddings in a single forward pass
+(1 pass vs the ~32+ required by discrete models).
+The Listen head works as a multimodal encoder. Adding audio embeddings and text tokens to the backbone.
+Adding input text tokens was a big factor in retaining coherence. Other models rely on pure audio embeddings for the input stream.
+I optimize the audio embeddings for beneficial modality fusion and trained the model end to end as a last step.
+As the LLM backbone I used SmolLM 360M.
+Most of the training happened on a single 4090 and some parts requiring more memory on 2xA6000.
+One of the tricks I used to maintain coherence is mixing in pure text samples into the dataset.
+The current latency of the model is ~75ms TTFA on a single 4090 (unoptimized Python).
+Even at 530M params, the model "recycles" its pretrained text knowledge and adapts it for speech very well.
+There is no visible LM degradation looking at the loss curves and while testing, it reasons the same as the base backbone.
+It reached fluent speech with only 5k hours of audio.
+Link to the full description:
+https://ketsuilabs.io/blog/introducing-michi-ai
+Github link:
+https://github.com/KetsuiLabs/MichiAI
+I wonder what you guys think!
+Read more
+Share

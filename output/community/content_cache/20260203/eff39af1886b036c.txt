@@ -1,0 +1,66 @@
+URL: https://www.windowscentral.com/microsoft/windows-11/microsoft-is-reevaluating-its-ai-efforts-on-windows-11-plans-to-reduce-copilot-integrations-and-evolve-recall
+Title: You won: Microsoft is walking back Windows 11’s AI overload | Windows Central
+Time: 2026-02-03T07:06:49.980738
+(Image credit: Microsoft | Future | Edited with Gemini)
+Share
+Share by:
+Copy link
+Facebook
+X
+Reddit
+Pinterest
+Flipboard
+Bluesky
+Threads
+Email
+0
+Join the conversation
+Add us as a preferred source on Google
+It’s fair to say that Windows 11’s recent endeavour into
+AI
+hasn’t gone down well with its most passionate users. It started in 2024 with the unveiling of Windows Recall, which was met with such backlash that
+Microsoft was forced to postpone it
+by an entire year while it addressed major security and privacy flaws.
+It seems like things have been downhill since. In the last year, Microsoft has taken every opportunity to enshittify Windows 11 by
+placing Copilot buttons wherever it can
+across in-box apps like File Explorer and Notepad, even if the implementation is poor or unnecessary.
+This has soured Microsoft’s AI efforts in the eyes of many Windows users, resulting in major pushback online and adding to the overall negative sentiment around Windows 11. This came to a head in November, when Windows president Pavan Davuluri tweeted that
+Windows would evolve into an agentic OS
+, spawning thousands of overwhelmingly negative replies rejecting this plan.
+It appears this moment of pushback has resonated with internal teams: According to people familiar with Microsoft’s plans, the company is now reevaluating its AI strategy on Windows 11 and plans changes to streamline or even remove certain AI features where they don’t make sense.
+Details around how the company is going about this remain light, but sources say Copilot integrations like those found in Notepad and Paint are under review. This may result in Microsoft removing certain Copilot integrations from these apps, or at the very least removing the Copilot branding and pivoting to a more streamlined experience.
+Copilot features in Notepad? It's preposterous.
+(Image credit: Windows Central)
+I’m also told that Microsoft has paused work on any additional Copilot buttons for in-box apps, at least for now. While I don’t expect this pause to be permanent, it does sound like Microsoft plans to be more tactful and deliberate in where these Copilot buttons and integrations will appear going forward.
+Windows Recall is another AI experience that I’m told is under review. Sources tell me that Microsoft believes that Recall, in its current implementation, has failed, though I understand the company is exploring ways to evolve the concept rather than scrap it entirely, possibly dropping the Recall name in the process, though this is unconfirmed.
+Other AI initiatives, such as Semantic Search, Agentic Workspace, Windows ML, and Windows AI APIs, are continuing ahead as planned. Microsoft believes that these under-the-hood AI efforts are still important for app developers and users, positioning Windows as a viable contender amongst other OS’s that are also building AI frameworks into their platforms.
+The company is shifting away from ‘AI everywhere’ and toward features that actually make sense for Windows users.
+The good news is that it's clear Microsoft has heard the feedback around its heavy-handedness when it comes to Copilot buttons in Windows apps. The company is stepping back to readjust how best to implement these AI integrations across the OS, hopefully resulting in a more meaningful and useful AI experience on the platform, rather than haphazardly adding the Copilot icon to every UI surface it can.
+This effort is likely part of Microsoft's overall effort to "fix" Windows 11 this year.
+I understand that the company is moving quickly to begin shipping meaningful changes that are designed to signal to customers that it is listening to feedback, and streamlining where Copilot shows up across in-box apps would be a strong place to start.
+Microsoft pulling back its Windows 11 AI push is a big shift — fewer forced Copilot moments, a reworked Recall, and a more realistic approach overall.
+How does that land with you? Is this the right move, or should Microsoft double down instead? Share your take below and let’s see where the community stands.
+Follow
+Windows Central on Google News
+to keep our latest news, insights, and features at the top of your feeds!
+Zac Bowden
+Senior Editor
+Zac Bowden is a Senior Editor at Windows Central and has been with the site since 2016. Bringing you exclusive coverage into the world of Windows, Surface, and hardware. He's also an avid collector of rare Microsoft prototype devices! Keep in touch on
+Twitter
+and
+Threads
+Show More Comments
+You must confirm your public display name before commenting
+Please logout and then login again, you will then be prompted to enter your display name.
+Logout
+LATEST ARTICLES
+1
+8 new Windows 11 features expected to arrive with the February 2026 update — Patch Tuesday isn't flashy, but it'll deliver (some) meaningful changes
+2
+Windows 11 running slow? These 3 easy steps declutter it in minutes
+3
+With the Galleon 100, Corsair integrated the Stream Deck into a mechanical gaming keyboard, and it's brilliant — this may just be the most customizable keyboard yet
+4
+Weekly Windows Wrap: Microsoft finally reads the room — right as it loses $440 billion
+5
+The entry-level CPU we believe is "masterclass of performance-per-watt efficiency" is now under $200 — it has CPU Speeds of 3.9 GHz, 6 Cores, and more

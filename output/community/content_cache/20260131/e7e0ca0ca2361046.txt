@@ -1,0 +1,29 @@
+URL: https://www.reddit.com/r/artificial/comments/1qrtzzg/oneminute_daily_ai_news_1302026/
+Title: Reddit - The heart of the internet
+Time: 2026-01-31T22:04:23.560357
+Go to artificial
+r/artificial
+•
+Excellent-Target-847
+One-Minute Daily AI News 1/30/2026
+OpenClaw’s
+AI assistants are now building their own social network.[1]
+DeepSeek
+AI Releases DeepSeek-OCR 2 with Causal Visual Flow Encoder for Layout Aware Document Understanding.[2]
+Video game company stock prices dip after
+Google
+introduces an AI world-generation tool.[3]
+AI model from
+Google’s DeepMind
+reads recipe for life in DNA.[4]
+Sources:
+[1]
+https://techcrunch.com/2026/01/30/openclaws-ai-assistants-are-now-building-their-own-social-network/
+[2]
+https://www.marktechpost.com/2026/01/30/deepseek-ai-releases-deepseek-ocr-2-with-causal-visual-flow-encoder-for-layout-aware-document-understanding/
+[3]
+https://www.theverge.com/games/871348/google-project-genie-take-two-roblox-unity
+[4]
+https://www.bbc.com/news/articles/c39428dv18yo
+Read more
+Share

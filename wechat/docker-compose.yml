@@ -1,0 +1,81 @@
+# ═══════════════════════════════════════════════════════════════
+#         微信公众号订阅模块 - Docker Compose 配置
+# ═══════════════════════════════════════════════════════════════
+
+version: '3.8'
+
+services:
+  # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  # Wewe-RSS 服务
+  # 微信公众号 RSS 生成（基于微信读书）
+  # 后台地址：http://localhost:4000
+  # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  wewe-rss:
+    image: wewe-rss-sqlite:local
+    container_name: wewe-rss
+    restart: unless-stopped
+    ports:
+      - "4000:4000"
+    dns:
+      - 114.114.114.114
+      - 8.8.8.8
+    sysctls:
+      - net.ipv6.conf.all.disable_ipv6=1
+    environment:
+      - TZ=Asia/Shanghai
+      - DATABASE_TYPE=sqlite
+      - AUTH_CODE=${WEWE_AUTH_CODE:-123456}
+      - FEED_MODE=fulltext
+      # ⚠️ 已关闭自动定时更新，改为手动触发以避免限流
+      # - CRON_EXPRESSION=0 */2 * * *
+      # 连续更新延迟时间（秒），减少被封控
+      - UPDATE_DELAY_TIME=60
+      # 每分钟最大请求次数
+      - MAX_REQUEST_PER_MINUTE=30
+      # 修复 Node.js DNS 解析问题（优先使用 IPv4）
+      - NODE_OPTIONS=--dns-result-order=ipv4first
+    volumes:
+      - ./data/wewe-rss:/app/data
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:4000"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    networks:
+      - wechat-network
+
+  # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  # 微信公众号订阅服务
+  # 数据采集、AI 分析、邮件推送
+  # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  wechat-service:
+    build: .
+    container_name: wechat-service
+    restart: unless-stopped
+    depends_on:
+      wewe-rss:
+        condition: service_healthy
+    env_file:
+      - ../agents/.env
+    environment:
+      - TZ=Asia/Shanghai
+      - APP_VERSION=${APP_VERSION:-5.24.0}
+      # Wewe-RSS 配置（本栈内部，保留在此）
+      - WEWE_AUTH_CODE=${WEWE_AUTH_CODE:-123456}
+      - WEWE_RSS_URL=http://wewe-rss:4000
+    volumes:
+      # 配置文件
+      - ./config.yaml:/app/config.yaml:ro
+      # AI 提示词
+      - ./prompts:/app/prompts:ro
+      # 邮件模板
+      - ./templates:/app/templates:ro
+      # 数据目录
+      - ./data:/app/data
+    networks:
+      - wechat-network
+
+networks:
+  wechat-network:
+    driver: bridge

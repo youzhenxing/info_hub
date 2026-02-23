@@ -1,0 +1,210 @@
+# ═══════════════════════════════════════════════════════════════
+#            TrendRadar 系统架构配置 (System Config)
+#                      Version: 1.0.0
+# ═══════════════════════════════════════════════════════════════
+#
+# 本文件包含所有模块共享的架构层面配置：
+#   - 基础设置（时区、数据目录）
+#   - AI 服务配置
+#   - 通知服务配置
+#   - 调度配置
+#   - 监控配置
+#   - 模块数据库路径
+#
+# 业务层面配置（feeds、topics 等）在各模块独立配置文件中：
+#   - config/podcast.yaml
+#   - config/investment.yaml
+#   - config/community.yaml
+#   - wechat/config.yaml
+# ═══════════════════════════════════════════════════════════════
+
+
+# ===============================================================
+# 1. 基础设置
+# ===============================================================
+app:
+  timezone: "Asia/Shanghai"           # 时区（影响所有时间显示、调度判断）
+  data_root: "output"                 # 统一数据根目录
+  show_version_update: true           # 显示版本更新提示
+  
+  # 运行环境标识：development | production
+  # 可通过环境变量 TRENDRADAR_ENV 覆盖
+  # 影响：监控端口、状态数据库路径等
+  environment: "development"
+
+
+# ===============================================================
+# 2. AI 服务配置（所有模块共享）
+#
+# 基于 LiteLLM 统一接口，支持 100+ AI 提供商
+# 各模块可在自己的配置中覆盖（如使用不同模型）
+# ===============================================================
+ai:
+  # LiteLLM 模型格式: provider/model_name
+  # 使用 openai/ 前缀 + api_base 可连接任意兼容 OpenAI 协议的服务
+  model: "openai/deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"
+  
+  # 硅基流动 API 端点
+  api_base: "https://api.siliconflow.cn/v1"
+
+  # API Key（建议使用环境变量 AI_API_KEY）
+  api_key: "{{SILICONFLOW_API_KEY}}"
+  
+  # 请求参数
+  timeout: 120                        # 请求超时（秒）
+  max_tokens: 8000                    # 最大生成 token 数
+  temperature: 1.0                    # 采样温度
+
+
+# ===============================================================
+# 3. 通知服务配置
+#
+# 支持多渠道推送，各模块共享
+# ===============================================================
+notification:
+  enabled: true                       # 是否启用通知功能
+  
+  channels:
+    email:
+      enabled: true
+      from: "{{EMAIL_ADDRESS}}"        # 发件人邮箱（环境变量: EMAIL_FROM）
+      password: "{{EMAIL_AUTH_CODE}}"    # 邮箱密码/授权码（环境变量: EMAIL_PASSWORD）
+      to: "{{EMAIL_ADDRESS}}"          # 收件人邮箱（环境变量: EMAIL_TO）
+      smtp_server: ""                 # SMTP 服务器（留空自动识别）
+      smtp_port: ""                   # SMTP 端口（留空自动识别）
+    
+    feishu:
+      webhook_url: ""                 # 飞书机器人 webhook URL
+    
+    dingtalk:
+      webhook_url: ""                 # 钉钉机器人 webhook URL
+    
+    wework:
+      webhook_url: ""                 # 企业微信机器人 webhook URL
+    
+    telegram:
+      bot_token: ""                   # Telegram Bot Token
+      chat_id: ""                     # Telegram Chat ID
+
+
+# ===============================================================
+# 4. 调度配置（统一管理所有模块的执行时间）
+#
+# 支持两种调度模式：
+#   - interval: 间隔执行（如每2小时）
+#   - fixed: 固定时间执行（如每天 11:30）
+# ===============================================================
+schedule:
+  # 播客模块：每2小时轮询 RSS，发现新节目即时处理
+  podcast:
+    type: "interval"
+    interval_hours: 2
+    enabled: true
+  
+  # 投资模块：午间 + 收盘后
+  investment:
+    type: "fixed"
+    times: ["11:30", "23:30"]
+    enabled: true
+  
+  # 社区模块：早上5点查看昨日全球热点
+  community:
+    type: "fixed"
+    times: ["05:00"]
+    enabled: true
+  
+  # 公众号模块：每天23点执行（分批逻辑内置）
+  # 批次 A：周一、三、五、日采集 14 个公众号
+  # 批次 B：周二、四、六采集 13 个公众号
+  wechat:
+    type: "fixed"
+    times: ["23:00"]
+    interval_days: 1                    # 每天执行，分批逻辑由模块内部控制
+    enabled: true
+  
+  # 每日日志报告
+  daily_log:
+    type: "fixed"
+    times: ["23:30"]
+    enabled: true
+
+
+# ===============================================================
+# 5. 监控配置
+# ===============================================================
+monitor:
+  # 本地监控网页
+  # 端口根据环境自动选择：开发环境 8088，生产环境 8089
+  web_port:
+    development: 8088                 # 开发环境端口
+    production: 8089                  # 生产环境端口
+  
+  # 健康检查
+  health_check:
+    enabled: true
+    interval_minutes: 30              # 检查间隔（分钟）
+    alert_on_failure: true            # 失败时发送告警
+  
+  # 状态数据库（根据环境自动选择）
+  status_db:
+    development: "output/system/status.db"
+    production: "shared/output/system/status.db"
+
+
+# ===============================================================
+# 6. Wewe-RSS 配置（微信读书登录状态监控）
+# ===============================================================
+wewe_rss:
+  # Wewe-RSS 服务地址
+  base_url: "http://localhost:4000"
+  # 外部访问地址（用于扫码登录提示）
+  external_url: "http://localhost:4000"
+  # 授权码（环境变量: WEWE_AUTH_CODE）
+  auth_code: "{{WEWE_RSS_AUTH_CODE}}"
+
+
+# ===============================================================
+# 7. 模块数据库路径（各模块独立数据库）
+# ===============================================================
+databases:
+  podcast: "output/news/podcast.db"
+  investment: "output/news/investment.db"      # 投资模块可能不存在（按需创建）
+  community: "output/rss/community.db"         # 社区模块可能不存在（按需创建）
+  wechat: "wechat/data/wechat.db"
+  system: "output/system/status.db"
+
+
+# ===============================================================
+# 7. 存储配置
+# ===============================================================
+storage:
+  # 存储后端：auto | local | remote
+  backend: "local"
+  
+  # 数据格式
+  formats:
+    sqlite: true                      # 主存储（必须启用）
+    txt: false                        # 是否生成 TXT 快照
+    html: true                        # 是否生成 HTML 报告
+  
+  # 本地存储配置
+  local:
+    data_dir: "output"                # 数据目录
+    retention_days: 0                 # 保留天数（0=永久保留）
+
+
+# ===============================================================
+# 8. 高级设置
+# ===============================================================
+advanced:
+  debug: false                        # 调试模式
+  
+  # 版本检查
+  version_check_url: "https://raw.githubusercontent.com/sansan0/TrendRadar/refs/heads/master/version"
+  
+  # 模块执行超时（秒）
+  module_timeout:
+    podcast: 1800                     # 30分钟（含音频下载和转写）
+    investment: 300                   # 5分钟
+    community: 600                    # 10分钟
+    wechat: 600                       # 10分钟

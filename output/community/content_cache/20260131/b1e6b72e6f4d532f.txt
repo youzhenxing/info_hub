@@ -1,0 +1,188 @@
+URL: https://github.com/nhevers/MoltBrain
+Title: nhevers/MoltBrain
+Time: 2026-01-31T22:06:55.135632
+# nhevers/MoltBrain
+
+**描述**: Long-term memory layer for OpenClaw & MoltBook agents that learns and recalls your project context automatically.
+**Stars**: 343
+**Forks**: 28
+**语言**: TypeScript
+**创建时间**: 2026-01-26T17:22:52Z
+**最后更新**: 2026-01-31T10:35:37Z
+**标签**: ai, claude, claude-code, mcp, memory, nodejs, plugin, typescript
+
+
+---
+
+## README
+
+<p align="center">
+  
+<img width="1344" height="768" alt="Untitled design (32)" src="https://github.com/user-attachments/assets/03483342-0950-4d80-8bd2-423cd644b6ba" />
+
+</p>
+
+<p align="center">
+
+</p>
+
+<p align="center">
+  <strong>Long-term memory layer for OpenClaw, MoltBook & Claude Code that learns and recalls your project context automatically. $BRAIN CA 0x35e7942E91876Eb0c24A891128E559a744fe8B07 </strong>
+</p>
+
+<p align="center">
+  <a href="#-quick-install">Install</a> •
+  <a href="#-features">Features</a> •
+  <a href="#-how-it-works">How It Works</a> •
+  <a href="#-openclaw-integration">OpenClaw</a> •
+  <a href="#%EF%B8%8F-configuration">Config</a> •
+  <a href="#-api">API</a>
+</p>
+
+---
+
+<br>
+
+## ⚡ Quick Install
+
+<p align="center">
+
+```
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║   Step 1    /plugin marketplace add nhevers/moltbrain                ║
+║   Step 2    /plugin install moltbrain                                ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+```
+
+</p>
+
+<p align="center"><em>That's it. MoltBrain starts working automatically.</em></p>
+
+---
+
+<br>
+
+## 🧠 What It Does
+
+```
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│     ┌─────────────────┐                      ┌─────────────────┐             │
+│     │   SESSION #1    │                      │   SESSION #47   │             │
+│     │─────────────────│                      │─────────────────│             │
+│     │                 │                      │                 │             │
+│     │  "Set up auth   │                      │  "Add password  │             │
+│     │   with OAuth"   │                      │   reset flow"   │             │
+│     │                 │                      │                 │             │
+│     └────────┬────────┘                      └────────┬────────┘             │
+│              │                                        │                      │
+│              │  Claude discovers:                     │  Claude remembers:   │
+│              │  • OAuth2 + PKCE flow                  │  • Your auth setup   │
+│              │  • JWT with 1hr expiry                 │  • Token structure   │
+│              │  • bcrypt cost factor 12               │  • Security choices  │
+│              │                                        │                      │
+│              ▼                                        ▲                      │
+│     ┌────────────────┐                      ┌────────────────┐               │
+│     │    CAPTURE     │ ──────────────────►  │     INJECT     │               │
+│     │   & LEARN      │      MEMORY          │    & RECALL    │               │
+│     └────────────────┘                      └────────────────┘               │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+```
+
+<br>
+
+---
+
+## ✨ Features
+
+```
++-------------------------+-------------------------+-------------------------+
+|                         |                         |                         |
+|   OBSERVATIONS          |   SMART SEARCH          |   WEB VIEWER            |
+|   ----------------      |   ----------------      |   ----------------      |
+|   Auto-captures         |   Semantic search       |   Browse history        |
+|   discoveries,          |   via MCP tools         |   at localhost          |
+|   decisions & code      |   finds context         |   :37777                |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+|                         |                         |                         |
+|   ANALYTICS             |   TAGS & FILTERS        |   FAVORITES             |
+|   ----------------      |   ----------------      |   ----------------      |
+|   Track tokens,         |   Organize with         |   Bookmark your         |
+|   sessions, and         |   custom tags &         |   most important        |
+|   concept trends        |   smart filters         |   observations          |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+|                         |                         |                         |
+|   EXPORT                |   THEMES                |   SHORTCUTS             |
+|   ----------------      |   ----------------      |   ----------------      |
+|   JSON, CSV, or         |   Dark & light          |   Full keyboard         |
+|   Markdown with         |   mode with             |   navigation in         |
+|   custom templates      |   custom themes         |   the web viewer        |
+|                         |                         |                         |
++-------------------------+-------------------------+-------------------------+
+```
+
+<br>
+
+---
+
+## 🔧 How It Works
+
+```
+                         ╔═══════════════════════════════════╗
+                         ║      CLAUDE CODE SESSION          ║
+                         ╚═══════════════╤═══════════════════╝
+                                         │
+                    ┌────────────────────┼────────────────────┐
+                    │                    │                    │
+                    ▼                    ▼                    ▼
+           ╔════════════════╗   ╔════════════════╗   ╔════════════════╗
+           ║  SessionStart  ║   ║  PostToolUse   ║   ║     Stop       ║
+           ║────────────────║   ║────────────────║   ║────────────────║
+           ║ Inject context ║   ║ Capture output ║   ║ Generate       ║
+           ║ from memory    ║   ║ extract facts  ║   ║ summary        ║
+           ╚═══════╤════════╝   ╚═══════╤════════╝   ╚═══════╤════════╝
+                   │                    │                    │
+                   └────────────────────┼────────────────────┘
+                                        │
+                         ╔══════════════╧══════════════╗
+                         ║      WORKER SERVICE         ║
+                         ║    http://localhost:37777   ║
+                         ╚══════════════╤══════════════╝
+                                        │
+              ┌─────────────────────────┼─────────────────────────┐
+              │                         │                         │
+              ▼                         ▼                         ▼
+     ╔════════════════╗       ╔════════════════╗       ╔════════════════╗
+     ║    SQLite      ║       ║   ChromaDB     ║       ║  Web Viewer    ║
+     ║   Database     ║       ║ Vector Search  ║       ║     UI         ║
+     ║────────────────║       ║────────────────║       ║────────────────║
+     ║ Observations   ║       ║ Semantic       ║       ║ Timeline       ║
+     ║ Summaries      ║       ║ similarity     ║       ║ Search         ║
+     ║ Sessions       ║       ║ matching       ║       ║ Analytics      ║
+     ╚════════════════╝       ╚════════════════╝       ╚════════════════╝
+```
+
+<br>
+
+---
+
+## ⚙️ Configuration
+
+Settings stored in `~/.moltbrain/settings.json`:
+
+```
+┌──────────────────────────────────────┬─────────┬────────────────────────────┐
+│             SETTING                  │ DEFAULT │        DESCRIPTION         │
+├──────────────────────────────────────┼─────────┼────────────────────────────┤
+│ MOLTBRAIN_WORKER_PORT                │  37777  │ Worker service port        │
+├──────────────────────────────────────┼─────────┼────────────────────────────┤
+│ MOLTBRAIN_CONTEXT_OBSERVATIONS       │   50    │ Max observations to inject │
+├──────────────────────────────────────┼─────────┼────────────────────────────┤
+│ MO
+
+[README 已截断...]

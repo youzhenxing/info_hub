@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  TrendRadar 播客订阅列表 (验证有效)
+  更新时间: 2026-01-30
+  
+  验证状态: ✅ 8 个有效 | ❌ 13 个失败（网络限制）
+-->
+
+<opml version="1.0">
+  <head>
+    <title>TrendRadar Podcast Subscriptions</title>
+  </head>
+  <body>
+    <!-- ===== 已验证有效 (8个) ===== -->
+    
+    <!-- 中文播客 - 小宇宙 via rsshub.bestblogs.dev -->
+    <outline text="硅谷101" title="硅谷101" type="rss" 
+             xmlUrl="https://rsshub.bestblogs.dev/xiaoyuzhou/podcast/5e5c52c9418a84a04625e6cc"
+             status="valid" language="zh"/>
+    <outline text="张小珺Jùn｜商业访谈录" title="张小珺Jùn｜商业访谈录" type="rss" 
+             xmlUrl="https://rsshub.bestblogs.dev/xiaoyuzhou/podcast/626b46ea9cbbf0451cf5a962"
+             status="valid" language="zh"/>
+    <outline text="罗永浩的十字路口" title="罗永浩的十字路口" type="rss" 
+             xmlUrl="https://rsshub.bestblogs.dev/xiaoyuzhou/podcast/68981df29e7bcd326eb91d88"
+             status="valid" language="zh"/>
+    
+    <!-- 英文播客 - 官方源 -->
+    <outline text="The a16z Show" title="The a16z Show" type="rss" 
+             xmlUrl="https://feeds.simplecast.com/JGE3yC0V"
+             status="valid" language="en"/>
+    <outline text="Latent Space" title="Latent Space (The AI Engineer Podcast)" type="rss" 
+             xmlUrl="https://www.latent.space/feed"
+             status="valid" language="en"/>
+    <outline text="Lex Fridman Podcast" title="Lex Fridman Podcast" type="rss" 
+             xmlUrl="https://lexfridman.com/feed/podcast/"
+             status="valid" language="en"/>
+    <outline text="Anything Goes with Emma Chamberlain" title="Anything Goes with Emma Chamberlain" type="rss" 
+             xmlUrl="https://feeds.megaphone.fm/anythinggoes"
+             status="valid" language="en"/>
+    <outline text="Acquired" title="Acquired" type="rss" 
+             xmlUrl="https://feeds.transistor.fm/acquired"
+             status="valid" language="en"/>
+
+    <!-- ===== 待修复 (13个) - 需要代理或替代源 ===== -->
+    
+    <!-- rsshub.bestblogs.dev 限流，需等待或自建实例 -->
+    <outline text="晚点聊 LateTalk" status="failed" reason="rsshub限流"
+             xmlUrl="https://rsshub.bestblogs.dev/xiaoyuzhou/podcast/5f5ef29b1e1d67ec16f64e85"
+             xiaoyuzhou_id="5f5ef29b1e1d67ec16f64e85"/>
+    <outline text="硬地骇客" status="failed" reason="rsshub限流"
+             xmlUrl="https://rsshub.bestblogs.dev/xiaoyuzhou/podcast/6108c3e1e5cdc30f6f9dfa6a"
+             xiaoyuzhou_id="6108c3e1e5cdc30f6f9dfa6a"/>
+    
+    <!-- rsshub.app 无法访问，需替换实例 -->
+    <outline text="The Alphaist" status="failed" reason="rsshub.app不可用"
+             apple_id="1854368018"/>
+    <outline text="晚安咖啡 GoodNightCoffee" status="failed" reason="rsshub.app不可用"
+             apple_id="1783138066"/>
+    <outline text="投资实战派" status="failed" reason="rsshub.app不可用"
+             apple_id="1718660227"/>
+    <outline text="十字路口 Crossing" status="failed" reason="rsshub.app不可用"
+             apple_id="1729552193"/>
+    <outline text="On Board (创业邦)" status="failed" reason="rsshub.app不可用"
+             apple_id="1554546830"/>
+    
+    <!-- 网络限制，需代理 -->
+    <outline text="The Prompt" status="failed" reason="HTTP 403"/>
+    <outline text="The Joe Rogan Experience" status="failed" reason="网络不通"/>
+    <outline text="Modern Wisdom" status="failed" reason="网络不通"/>
+    <outline text="The Diary of a CEO" status="failed" reason="网络不通"/>
+    <outline text="Business Breakdowns" status="failed" reason="网络不通"/>
+    <outline text="Huberman Lab" status="failed" reason="网络不通"/>
+    
+  </body>
+</opml>

@@ -1,0 +1,960 @@
+URL: https://news.ycombinator.com/item?id=46857488
+Title: Ask HN: Who is hiring? (February 2026) | Hacker News
+Time: 2026-02-03T07:06:46.670159
+Hacker News
+new
+|
+past
+|
+comments
+|
+ask
+|
+show
+|
+jobs
+|
+submit
+login
+Ask HN: Who is hiring? (February 2026)
+222 points
+by
+whoishiring
+7 hours ago
+|
+hide
+|
+past
+|
+favorite
+|
+280 comments
+Please state the location and include REMOTE for remote work, REMOTE (US)
+or similar if the country is restricted, and ONSITE when remote work is
+not
+an option.
+Please only post if you personally are part of the hiring company—no
+recruiting firms or job boards. One post per company. If it isn't a household name,
+explain what your company does.
+Please only post if you are actively filling a position and are committed
+to replying to applicants.
+Commenters: please don't reply to job posts to complain about
+something. It's off topic here.
+Readers: please only email if you are personally interested in the job.
+Searchers: try
+https://dheerajck.github.io/hnwhoishiring/
+,
+http://nchelluri.github.io/hnjobs/
+,
+https://hnresumetojobs.com
+,
+https://hnhired.fly.dev
+,
+https://kennytilton.github.io/whoishiring/
+,
+https://hnjobs.emilburzo.com
+, or this (unofficial) Chrome extension:
+https://chromewebstore.google.com/detail/hn-hiring-pro/mpfal...
+.
+Don't miss this other fine thread:
+Who wants to be hired?
+https://news.ycombinator.com/item?id=46857487
+maximz
+13 minutes ago
+|
+next
+[–]
+Immunera | Principal Machine Learning Engineer | NYC area (hybrid) | Full-time | immunera.ai
+Hey! I’m Maxim, cofounder/CEO of Immunera.
+We're building blood tests that use gene sequencing and machine learning to help patients with autoimmune disease. Immunera spun out of years of research at Stanford, and our technology has been published in Science and covered by The New York Times.
+We're hiring a Principal Machine Learning Engineer to shape the core models and infrastructure that power our blood tests. We are partnering with hospitals to generate training data from real patients for our language models and other biological sequence models.
+This is a senior engineering role with significant autonomy at an early-stage, venture-backed startup. We're looking for strong experience building and operating ML systems in production (Python, PyTorch/TensorFlow, cloud platforms). Prior biology or healthcare experience is NOT required; we care much more about your ability to reason about data, models, and systems.
+Full JD:
+https://www.immunera.ai/jobs
+Contact: maxim@immunera.ai (subject: “HN ML job”)
+reply
+gwbrooks
+18 minutes ago
+|
+prev
+|
+next
+[–]
+Tech and Research roles | Remote (US) or on-site in Albuquerque
+America First Policy Institute's Office for Fiscal and Regulatory Analysis is looking for coders, policy researchers (or the rare dual-skilled unicorns!) for several roles. Be part of the fastest growing public policy organization in America and do work with direct impact on your country.
+https://www.americafirstpolicy.com/careers
+reply
+jacksplash
+37 minutes ago
+|
+prev
+|
+next
+[–]
+Splash Tech| FE/Fullstack Mid-Senior/Senior | Remote( +-2 EU CET) | Full Time |
+https://splash.tech/
+We’re a small UK-based free-to-play gaming company with a distributed EU team, growing fast after recent success and scaling our platform. We’re looking for a FE/Fullstack role, from mid-senior to senior engineer with at least 5+ years of experience.
+Our engineers must be able to think product-first, and take a task from idea to production, work across the full cycle. You must write your own code, AI assistance is fine, but you must be able to produce all your work independently. We value clear thinking and communication, you should be comfortable sketching simple architecture or flow diagrams (boxes and lines, nothing formal) to explain your ideas.
+You’ll also be asked to write SQL and some Java Controllers that access data. It’s ok if you don’t know Java, but our controllers are written in Java and you’ll need willingness to learn.
+Our stack includes Java, Python, TypeScript, Angular, SQL.
+To apply, please send an email to jack[at]splash.tech with the subject “FE/Fullstack Hackernews 2026”. Please send any git/bitbucket/source-forge project that represents your coding otherwise I’ll ask you to complete a small test project.
+reply
+bshul-silkline1
+37 minutes ago
+|
+prev
+|
+next
+[–]
+Silkline | Senior Software Engineer | Seattle | ONSITE (5 days/week) | $150k-$220k + equity |
+https://silkline.ai
+Modern hardware supply chains run on spreadsheets, email, and PDFs. It's like fax woke up in 2025. We're fixing this with an AI-first procurement platform for aerospace, defense, and nuclear manufacturing.
+Our customers: Machina Labs, Astranis, K2 Space, Castelion, Antares, and more. They use us to manage suppliers, track $M+ in orders, automate RFQs, and stay ITAR-compliant. Every day of production delay costs $50k+—our platform keeps them moving.
+The role: Own features end-to-end, build ERP integrations that sync POs and manufacturing data, real-time order tracking dashboards, and a user experience that people LOVE. Work directly with customers whose supply chains depend on what you ship.
+Stack: TypeScript, React, Next.js, Hasura (GraphQL), PostgreSQL, Trigger.dev, AWS GovCloud, Pulumi, Elbow grease.
+You: 5+ years shipping production systems, strong full-stack or frontend generalist who moves fast, thrive on customer feedback and direct impact, bonus: ERP integrations, B2B SaaS, or regulated industries
+Traction: 5x'd customer count last year, $5M funding to date, landing massive defense/space logos. Small team shipping incredibly fast—you'll work directly with our founders (Isaac and myself).
+Apply:
+https://jobs.gem.com/silkline/am9icG9zdDrLwsEQTKKa02Ut_F9kgz...
+Questions? brent@silkline.ai (mention HN)
+reply
+subleq
+43 minutes ago
+|
+prev
+|
+next
+[–]
+Fusionbox | Python + TypeScript Engineers | United States| Full-time | REMOTE (Legal to work in the US)
+We're a software engineering consultancy that builds enterprise software the right way. We negotiate the right to open source all our client code, maintain a handful of popular libraries, and our engineers contribute to Django core. We sponsor PyCon, DjangoCon, and Django Girls because we're invested in the ecosystem we build on.
+We're looking for software engineers who value software design, system architecture, and collaboration. You should be comfortable with about half of these areas and eager to learn the rest: web application security, relational database design (PostgreSQL, beyond "SELECT *..."), Django internals, React, and distributed systems. What you'll actually work on: complex state machines for financial workflows, multi-tenant architectures with row-level security, custom database functions when the ORM isn't enough, and React frontends that handle real-time data without being a mess of useEffect hooks.
+We're a small team where you'll own features end-to-end (database design to React components) and have opportunities to shape technical decisions. You'll get paid to write source code with a team that practices empathy and values work-life balance. If you've ever wished your job involved more elegant state machines and fewer marketing landing pages, let's talk: info@fusionbox.com.
+reply
+futohq
+6 hours ago
+|
+prev
+|
+next
+[–]
+FUTO | Austin, TX | Remote | Full Time
+FUTO is an organization dedicated to developing, both through in-house engineering and investment, technologies that frustrate centralization and industry consolidation. Our work consists of a combination of in-house engineering projects, targeted investments, generous grants, and multi-media public education efforts.
+Senior Infastructure & Platform Engineer - Immich
+Immich is on a mission to provide a secure and private home for your most precious memories through our high-performance, self-hostable photo and video backup solution. We are now taking the next step in our journey by building out our own cloud platform. Our initial cloud offering will be a fully managed backup service, secured with mandatory end-to-end encryption to ensure our users retain absolute privacy over their data.
+We are seeking a versatile Senior Infrastructure & Platform Engineer who can work across the full stack of our cloud infrastructure, from bare-metal servers to the services running on them. This is a unique opportunity combining hands-on infrastructure work with platform and application-level development. You’ll be working in a small team to build our infrastructure from the ground up on our own hardware clusters while also contributing to the services and tooling that power our cloud offering.
+More info is available here:
+https://futo.org/jobs/senior-engineer/
+To apply, send your resume and cover letter to jobs at futo dot org.
+reply
+fabuzaid21
+1 hour ago
+|
+prev
+|
+next
+[–]
+Neo.Tax | Senior Full-Stack Engineer | Remote (US Timezones) | Full-time
+Neo.Tax is automating enterprise accounting and tax with AI. We help companies like Notion, Mercury, Brex, and Whoop calculate R&D tax credits and capitalize software costs in hours instead of weeks—saving millions in manual consulting fees. Our stack is TypeScript/Node.js/React/SQL with distributed data pipelines processing millions of records from Jira, GitHub, payroll systems, and accounting software.
+We're hiring a Senior Full-Stack Engineer to join our 7-person engineering team. You'll build our software capitalization product end-to-end—deWhat we're looking for:
+- 7+ years full-stack experience with TypeScript, Node.js, React, SQL, and distributed systems
+- Ownership mentality—you can take product requirements and break them into iterative deliverables that ship value quickly
+- Comfortable with ambiguity and greenfield problems
+- Strong fundamentals (we use AI as a multiplier, not a substitute for engineering skills)
+*Why join now*: We're preparing for Series B with 2x YoY growth, multiple profitable months, and real product-market fit. You'd be joining at a stage where early employees have outsized impact on trajectory.
+Salary: $190k–$210k + equity. Remote-first, but we prefer timezones that overlap with Mountain View, CA.
+Apply:
+https://apply.workable.com/neo-tax/j/BD05B5C7B1/
+reply
+chadwittman
+1 hour ago
+|
+prev
+|
+next
+[–]
+ELDRICK.com | Austin, TX / Remote | Hiring Founding AI Engineer + Videographer
+ELDRICK is the world’s #1 AI golf club fitter, trained on 80,000 real club fittings. We’re building an AI-powered golf fitting platform using real data to replace guesswork and brand bias.
+OPEN ROLES:
+FOUNDING AI ENGINEER (GENERALIST)
+Austin, TX preferred | REMOTE (strong candidates)
+Comp: $200k+ base + equity
+Founding-level role working directly with founders on core AI systems.
+Build end-to-end AI translating golfer inputs, swing data, and fitting history into equipment recommendations.
+Looking for strong applied AI/ML or LLM experience, generalist mindset, product instincts.
+Must be a golfer — include your handicap in the email.
+VIDEOGRAPHER / SHORT-FORM CONTENT CREATOR
+Fort Wayne, IN | ONSITE
+Comp: $50k–$75k base
+Shoot and edit short-form video (TikTok/Reels/Shorts).
+CapCut required. Familiar with AI tools like Midjourney or Kling.
+Junior-to-mid level. Golf interest a plus.
+Apply: hi@eldrick.golf
+reply
+stubbi
+2 hours ago
+|
+prev
+|
+next
+[–]
+Realm.fun | Full-Stack Engineer | Remote (EU timezone preferred)
+Realm.fun is a game server hosting platform - think "Vercel for game servers." We make it dead simple to spin up Minecraft, Valheim, Palworld, and 25+ other game servers in seconds.
+
+ Stack:
+ - TypeScript, Astro 5 (SSR), Tailwind CSS
+ - Supabase (PostgreSQL), Stripe
+ - Docker, Kubernetes, Pelican Panel
+ - Deployed on Hetzner Cloud
+
+ What you'd work on:
+ - Building the dashboard where players manage their servers
+ - Real-time features (console, metrics, player lists)
+ - Payment/subscription flows
+ - Infrastructure automation (node provisioning, scaling)
+
+ What we're looking for:
+ - Strong TypeScript skills
+ - Experience with either frontend (React/Astro) or backend (Node/PostgreSQL)
+ - Comfortable with infrastructure (Docker, K8s is a plus)
+ - Bonus: You've actually hosted or played on game servers
+
+ Small team, early stage, lots of ownership. We're bootstrapped and profitable.
+
+ Apply: https://realm.fun/careers
+reply
+ZohaibV
+2 hours ago
+|
+parent
+|
+next
+[–]
+The link does not have an option for full stack engineer at the moment
+reply
+ShaneCurran
+40 minutes ago
+|
+prev
+|
+next
+[–]
+Evervault |
+https://evervault.com
+| New York, London, Dublin, Remote | Full Time | Hybrid (3 days in office)
+Evervault's mission is to make world-class data security effortless and pervasive. We use applied cryptography to secure the most sensitive data, in the most sensitive areas like payments, banking and healthcare. We build products to protect customer data with the latest advances in encryption and confidential computing, so our customers can minimize the headache of compliance and data security.
+We are a small team (10 engineering, 25 overall) hiring across engineering, sales, marketing and finance for people who are passionate about building out our roadmap of products to protect companies from data breaches in a world where data has become gold.
+Open roles:
+- Senior Software Engineer (Payments) 
+ - Product Engineer 
+ - Design Engineer 
+ - Head of Finance & Ops
+Out stack is: Rust, Node.js (TypeScript), AWS
+Apply here:
+https://evervault.com/jobs
+or ask me a question shane@
+reply
+hazn
+1 hour ago
+|
+prev
+|
+next
+[–]
+Jurata | Software Engineer (Frontend/Fullstack) | Zurich, Switzerland | ONSITE | Full-time
+Jurata is a LegalTech startup building an online one-stop shop for legal, accounting, and tax services. We help thousands of SMEs get fast, affordable access to professional support. Heavy focus on automation and AI.
+We're looking for versatile engineers who thrive in a TypeScript environment and enjoy owning features end-to-end.
+What you'll do:
+Build and maintain Next.js frontends
+Migrate legacy apps from no-code tools (WeWeb/Retool)
+Deliver fullstack features (backend: Nest.js, Python)
+Own problems from idea through release and monitoring
+Stack: TypeScript, Next.js, Nest.js, Python, MongoDB, Vercel, AWS
+Looking for:
+TypeScript and Next.js experience
+Strong eye for design (you can build beautiful UIs without a Figma file)
+You actively use AI coding tools (Cursor, Windsurf, etc.)
+Builder mindset, comfortable working autonomously
+Benefits: 25 vacation days, ESOP, free gym membership, team lunches, central Zurich office with snacks and drinks.
+EU/EFTA citizenship required (or willingness to relocate to Zurich).
+Apply:
+https://join.com/companies/jurata/15604453-fullstack-softwar...
+(mention HN)
+reply
+benhobro
+1 hour ago
+|
+prev
+|
+next
+[–]
+Midpage |
+https://midpage.ai
+| Senior Software/Data Engineer | prefer NYC, open to remote | Full-time | $170-240k + equity
+Midpage is seeking a senior engineer to help us catalog the world's legal data. Our dataset currently covers US case law and powers some of the largest law firms, legal technology platforms, and AI companies through our webapp, API, MCP, and custom data services. We're currently the only vendor openly widely selling this data in the US and customers appreciate that we have good citation linkages and a citator (indication of which judgments have been overruled/criticized).
+We're looking to expand data coverage, adapt our infrastructure to our scaling enterprise needs, and find new ways to enrich our data offerings and delight our developer customers.
+We're a team of 7, mostly in-office in lower Manhattan with a few remote/international teammates. Seeking a backend generalist with deep Python + Postgres experience who's ready to move quickly. Prefer NYC but flexible.
+If interested email ben/dot/hoffner/dash/brodsky/at/midpage/dot/ai with HN in the subject.
+reply
+trshiring
+7 hours ago
+|
+prev
+|
+next
+[–]
+Apple | Senior Software Engineer - Transparency | Cupertino, California, US | ONSITE (3 days/week in office)
+We're looking for software engineers to join a team focused on transparency services. These are the backend systems that help ensure the integrity of high-profile Apple features like iMessage and Private Cloud Compute. Learn about some of our work here:
+https://security.apple.com/blog/imessage-contact-key-verific...
+This is a fun role at the intersection of privacy, scalability, and end-user functionality. If you enjoy building sophisticated distributed systems that have an impact on billions of people, please reach out!
+Apply here:
+https://jobs.apple.com/en-us/details/200626488-0836/senior-s...
+reply
+html5cat
+49 minutes ago
+|
+prev
+|
+next
+[–]
+Puma.tech | Remote-first with PST overlap | iOS/MacOS, Android, Ai/ML, Growth |
+https://puma.tech
+Hi all, I’m Yuriy, founder of Puma.tech. Previously worked as software engineer & developer advocate at Cloudant (YC S08, Acq. by IBM), Meteor (YC S11), Parse (YC S11, Facebook/Meta), and explored AI/ML (computer vision for self-driving cars).
+We have two products:
+1. Puma Browser (iOS & Android) – browser with built in LLMs & Wallets. Private by design.
+2. PumaAI app for Mac – ChatGPT/Atlas, but with ability to pick different model providers and fall-back to local-first ones for data privacy.
+Open Roles: Eng (iOS/MacOS, Android, Ai/ML, Browser Extensions), Based Social Media Intern; Internships: Eng, Design, Growth
+We’ve raised a few rounds from some of the best builders in crypto and ai:
+Protocol Labs (YC S14), Chris Larsen (Ripple), Anatoly Yakovenko (Solana), Illia Polosukhin (NEAR Protocol), Sridhar Ramaswamy (Snowflake CEO, Neeva, Greylock), Jason Warner (poolside.ai, ex-GitHub CTO), Don Ho (Orange DAO, Quantstamp W18), Evil Rabbit (Vercel), John Phamous (SF Compute) and other amazing builders.
+How to Apply: email
+careers+hn [at] puma.tech
+with your GitHub, a note on what you're most proud of building and what you'd like to build next.
+Thank you!
+reply
+necubi
+4 hours ago
+|
+prev
+|
+next
+[–]
+Cloudflare | Rust/DB engineers | SF/Austin/Seattle/NYC/London/Lisbon (Onsite) | Full-time
+Hey HN, I'm hiring engineers for the new Cloudflare Data Platform (
+https://blog.cloudflare.com/cloudflare-data-platform
+). We do streaming ingest and processing, managed Iceberg catalogs, and a distributed query engine—all built on R2 and the Cloudflare Edge. We're making it ridiculously easy for Cloudflare customers to build data lakes.
+I'm looking for Rust engineers with experience working on databases, stream processing engines, and query engines. You'll get to work on incredibly cool tech on a huge scale.
+Note: we are hiring for on-site roles in one of our engineering hubs, not hiring remote at this time.
+If you're interested, shoot me an email (in profile) with subject HN and a brief description of your background and interest in the role.
+reply
+Tom1380
+3 hours ago
+|
+parent
+|
+next
+[–]
+Am I interpreting the abbreviations correctly? San Francisco, Australia, South East Asia, New York City, London and Lisbon?
+reply
+necubi
+2 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+Sorry for the ambiguity and confusing mix of abbreviations and airport codes!
+It's San Francisco/Austin/Seattle/New York City/London/Lisbon
+reply
+murderfs
+2 hours ago
+|
+root
+|
+parent
+|
+prev
+|
+next
+[–]
+They're IATA airport codes (except for San Francisco, which should be SFO).
+reply
+shawn_w
+3 hours ago
+|
+root
+|
+parent
+|
+prev
+|
+next
+[–]
+Probably Austin and Seattle.
+reply
+hsbauauvhabzb
+57 minutes ago
+|
+root
+|
+parent
+|
+prev
+|
+next
+[–]
+Edit: deleted, parent edited their own post, disregard.
+reply
+Ckayler
+1 hour ago
+|
+prev
+|
+next
+[–]
+Staff / Principal Product, Backend, Distributed Systems Engineers @Artemis in NYC
+Hiring 7+yrs Senior or Staff Engineers who want to be founding members at our Stealth AI-security startup (seed $15M).
+Stack: Python/Node/Rust, React/TS, Kafka, ClickHouse, AWS.
+Ship end-to-end: design → prod → detection stories that customers use daily.
+Prefer experience at scale (Google/Meta/AWS/Abnormal/Wiz) - we have a super senior experienced technical team.
+Comp: Base: $200,000 - $250,000 USD
++ the opportunity to work with some of the world brightest minds + Equity/Bonuses/Unlimited PTO, etc.
+Email: christina@goartemis.ai
+ + with CV + one line on what you’d own - I’ll reply personally.
+reply
+tristansokol
+5 hours ago
+|
+prev
+|
+next
+[–]
+Small boutique consulting | Remote (US) (some est meetings) | part-time/flexible/1099
+Hi! I work with a small group of developers doing custom software development and consulting for small/medium businesses.
+We are seeking a developery-data person with experience specifically with CloudSuite Distribution by Infor for one of our clients. It may be a bit of a shot in the dark, but if you have worked with this *specific* ERP system before, we'd be eager to talk to you. Reach out at "ekib.eikooc@rofni".reverse() Please include your experience in your email body/subject as we will have to quickly triage out most of the spam.
+PS. Each time I post here I get ~500 emails, almost all are low effort that don't meet anything I am looking for, sometimes for months in the future. I expect it to be even worse as LLMs gain traction. I've hired 4 people from past posts (check my history if you want!), but it can take some time dig through everyone so I apologize to legitimate interests.
+reply
+mech422
+2 hours ago
+|
+parent
+|
+next
+[–]
+Just wanted to mention it was nice to see such a down to earth posting. Unfortunately, I've never even heard of the ERP you mentioned, but you sound like a good company to work for :-)
+reply
+rednafi
+43 minutes ago
+|
+parent
+|
+prev
+|
+next
+[–]
+This is a wholesome job post. Reminded me there’s a human somewhere in the loop. I hope you find the right person.
+reply
+d-ward
+1 hour ago
+|
+prev
+|
+next
+[–]
+ToucanTix | Lead Engineer | Berlin/REMOTE (EU) | Rails | €60k-€90k
+We're the ticketing platform behind major theme parks, zoos, and experience villages across Germany and the USA. Spin-off from COMBASE AG focusing on leisure/culture.
+The situation:
+2-engineer team building on COMBASE's platform. We handle online ticketing, visitor management, capacity control. CSO just joined from major competitor, closing enterprise deals. We're staying lean using AI tools to compete with larger competitors.
+Technical challenges:
+- Multi-tenant booking with venue-specific business logic (pricing rules, capacity, timed entry)
+- Real-time capacity management across access zones
+- Integration with COMBASE platform
+- Making AI-augmented development work in production
+The role:
+Lead engineer working with founder. Own features E2E, architecture decisions, full-stack but backend-heavy.
+You fit if:
+- 3+ years shipping production code
+- Excited by small teams doing more with AI
+- Prefer ownership over structure
+- Rails or quick to learn
+Stack: Rails, Svelte, PostgreSQL, GraphQL, GCP
+Perks: Remote (occasional Berlin meetups), MacBook + home office, free attraction admission, stable backing (COMBASE: 80+ people, 3 decades)
+Apply: jobs@toucantix.com
+Include: CV/LinkedIn, a technical challenge you're proud of, why this interests you, favorite attraction. in subject.
+https://www.toucantix.com/careers/lead-engineer
+reply
+random3
+2 hours ago
+|
+prev
+|
+next
+[–]
+SEEKING PARTNER | Bay Area | Applied Research Lab
+Not a job. I’m exploring alignment with a potential partner.
+I’m a systems builder (CS/infra founder; shut down my last startup) who spent the past two years going deep on foundational math that most engineers (and I guess many mathematicians) tend to ignore, largely at an nLab level, because standard abstractions stop composing.
+I’m working toward a small, private apply-focus lab to bridge native CS intuition (computation, scale, systems) with structural, information-theoretic mathematics. The focus is composability, learning, universality, and complexity, with the intent to build, not publish.
+The approach is unconventional, but intentional: staying close to real systems while reworking foundations when existing methods stop composing.
+Looking for a self-funded generalist comfortable crossing CS, math, and theory that's interested in structure, information, ethics, and long-horizon work.
+reply
+osazuwa
+1 hour ago
+|
+parent
+|
+next
+[–]
+I'm interested in chatting. Have a way to contact you?
+reply
+random3
+1 hour ago
+|
+root
+|
+parent
+|
+next
+[–]
+twitter handle on gmail or direct message on twitter
+reply
+beautiful-ai
+2 hours ago
+|
+prev
+|
+next
+[–]
+Beautiful.ai | Full-Time | Remote in US & CAN | SaaS B2B Presentation Software | Series B | 16M Funding | AI Industry
+1. Senior Platform Engineer | 160k - 200k Base salary + Equity |
+https://job-boards.greenhouse.io/beautifulai/jobs/4802989007
+2. Senior Software Engineer | 160k - 200k Base Salary + Equity |
+https://job-boards.greenhouse.io/beautifulai/jobs/4802854007
+3. Software Engineer | 120k - 160k Base Salary + Equity |
+https://job-boards.greenhouse.io/beautifulai/jobs/4802768007
+4. Staff Platform Engineer | 200k - 250k Base Salary + Equity |
+https://job-boards.greenhouse.io/beautifulai/jobs/4803038007
+5. Staff Software Engineer | 200k - 250k Base Salary + Equity |
+https://job-boards.greenhouse.io/beautifulai/jobs/4802916007
+6. Account Executive | 140k - 180k USD Base Salary + Uncapped On-Target Commission at 50/50 Split |
+https://job-boards.greenhouse.io/beautifulai/jobs/4955956007
+reply
+Skeletor
+1 hour ago
+|
+prev
+|
+next
+[–]
+DrSwarm | Founding Engineer (Full-Stack) | REMOTE (US or LATAM; must overlap with US Pacific hours) | Full-time or Contract to Full-time
+DrSwarm is building AI-driven workflow automation for healthcare clinics / health systems (scheduling, RCM/billing workflows, patient ops). This is a true 0→1 role: ship fast, talk to customers, own systems end-to-end.
+You will:
+- Build product end-to-end (Next.js + Django)
+- Ship integrations + workflow automation (APIs, webhooks, background jobs, queues)
+- Own reliability (logs/metrics, retries, failure modes) and pragmatic security (HIPAA-aware)
+Stack: Next.js, React/TypeScript, Django/Python, Postgres, Celery/Redis, Docker, AWS/DigitalOcean, LLM APIs.
+Looking for:
+- Strong full-stack builder who ships
+- Good to work with
+- Can talk to customers / users / salespeople
+- High integrity, cares about healthcare
+Comp: Market with mix of base + bonus + meaningful equity
+Process: 30m intro → 60m technical/product deep dive → short paid work trial → references. I (founder) read every email and reply.
+Contact: jobs@drswarm.com (include “HN Founding Engineer” in subject) + GitHub/LinkedIn + 2–3 projects you’re proud of.
+reply
+osigurdson
+5 hours ago
+|
+prev
+|
+next
+[–]
+In addition to the search tools mentioned above, feel free to use
+https://nthesis.ai/public/hn-who-is-hiring
+. You can search and chat with the posts on this page. Updates live. Hope it helps!
+Note: The default view is a basic text / tag search, click on the "Chat" button to chat with the results (direct link:
+https://nthesis.ai/public/396dee3b-b181-4f6a-a17b-c0d72a0cde...
+).
+reply
+groznyj
+3 hours ago
+|
+prev
+|
+next
+[–]
+Atomscale | Software Engineer, Full Stack | Boston, MA (Hybrid Onsite) |
+https://atomscale.ai
+Atomscale is building AI to improve atomic-scale materials manufacturing. Our goal is to help translate new materials into new technologies and products by making sure they can be created at scale instead of stalling at R&D.
+This is a hard (but exciting!) challenge that involves high-throughput data ingestion and processing pipelines, complex data visualization, and hardware integrations for direct control. The payoff is unlocking new technologies that address today's most pressing challenges.
+⎯
+We're looking for a Product-oriented Software Engineer that will:
+- Build ergonomic interfaces for data visualization, workflow automation, and AI-copilot assistance.
+- Develop backend systems with flexible, expressive data models and performant APIs.
+- Create desktop apps for on-premises low-latency data streaming and hardware integrations.
+(You don't need background in materials science!)
+⎯
+More details:
+https://www.atomscale.ai/careers/software-engineer-full-stac...
+To apply: email jobs@atomscale.ai with the job title + HN
+reply
+marcpl
+6 hours ago
+|
+prev
+|
+next
+[–]
+Charted Sea | Senior Product & Platform Engineer | REMOTE | Full-time
+Location: Hong Kong
+https://chartedsea.com/about
+Charted Sea is a small, bootstrapped SaaS company helping customers scrape very complex platforms such as Shopee (a major e-commerce platform in Southeast Asia). We focus on hard technical problems (anti-bot, browser automation, fingerprinting, captcha solving).
+We are hiring a senior engineer to take ownership of our core platform: scraper orchestrator, billing & payments, customer dashboard, and parts of our AI-based captcha tooling. This is a hands-on role with real ownership: architectural decisions, setting standards, and gradually mentoring other engineers. The role is very full-stack (infra, backend, frontend).
+Stack includes TypeScript (most backend & web), Rust (new backend services, migration in progress), Go (Android scraper), PyTorch (captcha solvers), PostgreSQL, Redis, GitHub Actions, Ansible, Ubuntu Linux, bare-metal Hetzner servers.
+We are profitable, demand is growing fast, and engineering bandwidth is the main bottleneck. Team is small (3 engineers), fully remote, mostly async (we expect ~4h overlap with UTC+8).
+Compensation: $80k–$120k USD base (depending on experience) + monthly bonus tied to company revenue (10% of net revenue shared with employees).
+Apply by emailing marc.plouhinec@chartedsea.com with a short intro and CV/GitHub. I'm the founder and will personally read and reply.
+reply
+stomczyk09
+6 hours ago
+|
+prev
+|
+next
+[–]
+Graphite |Senior Software Engineers| New York, NY in our Soho Headquarters |
+https://graphite.dev
+We’re building Graphite to help high-performing engineering teams run faster, cleaner code reviews. Our product is already used by some of the world’s best developers, and we’re just getting started!
+We are also thrilled to share that Graphite is joining Cursor! With Cursor, we’ll bring together the best-in-class tools for creating, reviewing, and merging code in the age of AI.
+We're hiring experienced engineers across the stack, are are looking for people who:
+-Care deeply about code quality, system design, and scaling software responsibly
+-Have a strong product sense and enjoy collaborating closely with design & product teams
+-Have experience with AI-driven workflows, prompt engineering, or interest in developer tooling is a plus
+-Are product-driven and quality-obsessed; we ship thoughtfully and often
+The hiring process: quick intro call, 2 technical interviews, & an onsite interview, followed by offer!
+If you are someone who wants to work on meaningful problems, values clean code and thoughtful systems, & loves building tools for other engineers, we'd love to chat with you!
+You can apply directly on our careers page(
+https://graphite.dev/careers#positions
+) or email sam@graphite.dev with the subject title: "Thank you for stacking with us) with a copy of your CV.
+Recruiters: appreciate your hustle, but we’re only hiring through direct applications.
+reply
+denalilumma
+6 hours ago
+|
+prev
+|
+next
+[–]
+Software Engineer (Contract) | Chicago, IL or REMOTE (US)
+I am part of the hiring team. We are an early-stage venture building a new consumer mobile product in the health and wellness space, focused on creating a mission-driven platform from the ground up. We are actively hiring an early engineer to support the v1 mobile and backend stack. I will reply to all applicants.
+This is a 1099 contract role, 40 hrs per week. Chicago is preferred for regular in-person collaboration, but REMOTE (US) is available. Applicants must be authorized to work in the U.S. as an independent contractor.
+Apply here:
+https://www.doubling.io/careers/software-engineer-contract
+Role overview
+You will work closely with the founding team to architect, build, and launch a 0-to-1 mobile product, spanning React Native, backend services and cloud infrastructure. This role has significant influence over technical direction, product decisions, and future team scaling.
+reply
+thomas-arcol
+6 hours ago
+|
+prev
+|
+next
+[–]
+Arcol | Senior Software Engineer | NYC, SF, or Remote (US/Canada) | Full-time
+Arcol (arcol.io) is a small, high talent density team building the future of building design - a future that's collaborative, fast, and intuitive. We're a web-native, fully collaborative 3d design tool modernizing the experience of architectural design for teams of all sizes.
+We're looking for senior engineers with experience in modern web technologies - some of our key technical building blocks are Typescript, Rust, wasm, WebGL - and a strong ownership mindset. Experience with computational geometry, computer graphics, or similar a strong plus. This role sits at the intersection of solving deep technical foundational challenges with shipping a product that solves real problems for real people.
+Reach out to me directly at thomas@arcol.io or peruse our careers page (
+https://www.arcol.io/careers
+) - we'd love to hear from you!
+reply
+BiraIgnacio
+4 hours ago
+|
+parent
+|
+next
+[–]
+> shipping a product that solves real problems for real people.
+Off-topic but I must...
+Love to see that there are still software companies doing that! Really great work. I'm not an expert but the product looks great.
+reply
+thomas-arcol
+4 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+Thank you!
+reply
+PascualM
+1 hour ago
+|
+prev
+|
+next
+[–]
+Mozart AI | 2 Full-Stack Engineers (FE-leaning + BE-leaning) | London, UK | ONSITE (central London) / Hybrid | Full-time
+Mozart AI is a Digital Audio Workstation (DAW) with built-in AI Co-Production. We empower what we call the ‘Hybrid Musician’, an artist driven by human creativity and assisted by AI. You could say we want people to become “vibe musicians”.
+We started around 8 months ago, have 80k+ beta users, and have been Product Hunt’s Product of the Day twice. Seed-stage (oversubscribed, will be announced soon) with meaningful equity for every role.
+We’re hiring 2 engineers:
+Full-Stack Engineer (Frontend-leaning): product UI/UX, React, Zustand, realtime-ish creative workflows, making the browser feel like a native studio
+Full-Stack Engineer (Backend-leaning): platform + APIs + data and db design, reliability + performance, supporting fast product iteration
+What you’ll like here:
+Small team, high ownership, ship fast (by choice, you feel the urgency to change music creation)
+Working on generative audio + creative tooling (hard but really fun problems)
+More about us (Forbes):
+https://www.forbes.com/sites/charliefink/2025/07/01/mozart-a...
+Try Mozart AI:
+https://mozartai.com/
+Apply, we (I) review every application: send me an email at pascual@arthos.inc , be creative :)
+reply
+PoslavskySV
+49 minutes ago
+|
+prev
+|
+next
+[–]
+MiLaboratories | Bilbao, Spain | ONSITE | VISA SPONSORSHIP | RELOCATION SUPPORT
+We are MiLaboratories, the team behind Platforma.bio & MiXCR. We are building the "OS for Biology"—a platform that processes terabytes of genomic data to accelerate biological discovery and drug development.
+We are a deep-tech research lab, not a typical SaaS. We work fully on-site in Bilbao because the complexity of our problems (high-performance computing + biological nuances) requires high-bandwidth, in-person collaboration.
+We are hiring for three core roles:
+1. Senior TypeScript Engineer (Desktop Platform / SDK): This is not a dashboard or a simple web GUI. You will build the architecture of our Desktop Platform—a high-performance local application that acts as the "OS" interface. You will deal with complex state management, massive data throughput, and bridge directly with our high-performance Rust data layer. We need someone who treats the browser engine as a runtime for heavy applications, not just for websites.
+2. Senior Go Engineer: You will build distributed systems for high-load genomic data processing. This is not CRUD. We need someone who understands memory management, concurrency, and algorithmic efficiency at scale.
+3. Bioinformatics Developer (Antibody Discovery): You will work on the scientific core, developing production blocks for NGS data analysis and antibody structure prediction. You should be fluent in both code and biology (Builder profile, not just analyst).
+The Offer:
+Comp: Top-tier EU salaries (~€90k - €120k).
+Tax Advantage: Bizkaia has independent tax autonomy. You qualify for the "Special Impatriate Regime" (30% salary tax exemption + expense deductions).
+The Reality: Your effective tax rate drops to ~15-20%, yielding a significantly higher net income than London or Berlin.
+Stock: We grant ESOP and treat equity as a life-changing wealth vehicle, not a "nice to have."
+Relocation: Comprehensive "Soft Landing" package (Visa, temporary housing, school search).
+Location: Bilbao is a hidden gem—ocean, mountains, and high quality of life with a low cost of living.
+Process: No HR screening. You will talk directly to the engineering team.
+Email me (I am the CEO): stanp@milaboratories.com. Please mention "HN" in the subject and include your GitHub.
+reply
+rsyring
+59 minutes ago
+|
+prev
+|
+next
+[–]
+Level 12 | Full Stack Web Developer - Python, JavaScript, SQL | Mid-Level & Senior | REMOTE | SALARY:$95K-145K+ |
+https://www.level12.io/careers/
+Level 12 is a software consulting and custom development agency. We have mid and senior level positions. Our job descriptions are written by developers for developers. No HR fluff here, we want you to know what you are really getting into:
+https://www.level12.io/careers/
+- We have a commitment to transparency and offer a "no surprises experience" throughout the interview and hiring process. We value candor...as evidenced by the length of our job description. :)
+- Our CEO prefers the title CED, Chief Executive Developer. Engineering and operational concerns don't take a back seat when potential sales come to the front door.
+- You will be working remote with a team that is all working remote and has been for years. Let's make the best use of our time by not commuting.
+- We practice and preach sound development practices. You are likely to learn and grow as a developer while working here.
+- You are committed to automated testing of all the software you write (our apps typically have 92%+ test coverage).
+- We have a no-drama office policy. We value and cultivate enjoyable working relationships among team members. No jerks allowed!
+- We emphasize work/life balance and adopt policies that make sure our people don't get burnt out. For instance, our PTO/Vacation policies are designed so that you actually use them.
+- If you apply, we guarantee that we will give you a response, whether "yay" or "nay". No black holes here!
+NOTE: our intent to hire is currently tentative but should be resolved one way or the other in the next couple weeks. So, if you are interested, read the job description but, for now, don't go through the entire application process unless you really want to. Just email me (the CEO) with a clean dad joke, or your take on Kirk vs Picard, and reference your interest: randy.syring@level12.io. I'll follow-up in a couple weeks when I know for sure if we are going to be taking applications.
+reply
+kirin_memorang
+6 hours ago
+|
+prev
+|
+next
+[–]
+Memorang (Vercel + Shopify for EdTech) | Full-Time | Hybrid - Los Angeles
+Our mission is to automate learning. We're building the AI stack for education—combining knowledge graphs, agents, and apps so enterprises can build curricula and learning products at scale. We bootstrapped to profitability (now VC-backed), won #1 (of 1,500) in the Vercel AI Accelerator, and have powered 200MM+ assessments for credentialing organizations and publishers across aviation, healthcare, and more. If you want to shape how tens of millions of professionals learn and upskill in the AI era, this might be the right startup for you.
+# Our stack is awesome:
+Vercel, Supabase, Neo4j, Langchain, Expo
+# Our roles are open:
+-Founding Technical Product Managers: (1) AI Platform; (2) Apps (Web/Mobile/MCP)
+-Agent Engineer/Architects: Work on EdFlow (Agent Builder) and the new LCP (Learning Context Protocol) standard
+-Founding Product Designer: Help redefine AI as the new UI
+-Staff/Senior Engineers: Build tools for builders: LearnKit (App Builder), EdWrite (Knowledge Graph CMS), Item Studio (AI Artifact Lifecycle), Neuron (SDK)
+# Why Memorang?
+- You thrive when given autonomy to solve hard problems with global impact
+- You genuinely care about reshaping the way people learn
+- You love building with the latest open source and AI tools
+# How to apply:
+## Blue Pill: Apply here: (
+https://memorang.com/careers
+)
+## Red Pill: Uncover the specific technique we're using to fingerprint applicants who use AI in their cover letters when applying via the normal route. (Hint: It's on the job description pages). Email us with your findings (careers@memorang.com), and, if correct, you'll skip straight past inbox purgatory and into the shortlist for an interview.
+reply
+bkrausz
+3 hours ago
+|
+prev
+|
+next
+[–]
+Stainless | Engineers, EMs, GTM, Former Founders | NYC & SF (onsite) | Full-time
+When you npm install openai or pip install anthropic, you’re pulling code generated by Stainless.
+We’re building the platform for high-quality, easy-to-use APIs — and companies like OpenAI, Anthropic, and Cloudflare already rely on us.
+We’re ~3 years old, ~60 people, with strong revenue, several years of runway, and backing from Sequoia and a16z.
+As one of our first 40 engineers, you’ll have real ownership, autonomy to build great products, and a direct hand in shaping the future of how developers consume APIs.
+We’re looking for exceptionally productive, thoughtful, and kind people who want to make software development better for everyone.
+Learn more & apply →
+https://stainless.com/jobs?utm_source=YlRQ8pvARO
+reply
+sbalesi
+1 hour ago
+|
+prev
+|
+next
+[–]
+Sphinx Defense | Software Engineering | Remote (US Only) |
+https://www.sphinxdefense.com
+Sphinx Defense builds software to solve complex national security problems for America and its allies. Founded by engineers and technologists with deep experience across commercial and defense technology, we're building a vehicle-agnostic communication infrastructure to enable satellite operators to securely utilize antenna networks and maneuver satellites in real-time. We're bootstrapped, profitable, and growing aggressively.
+To learn more about who we are, our engineering culture, and whether this is the right place for you,
+https://sphinxdefense.com/
+Our current openings are:
+Sr. Software Engineer - Frontend - Colorado Springs :
+https://grnh.se/hj59fohy8us
+Don’t see a role that aligns with your interests or don’t have the specific Space/ Command & Control experience? Apply to the general interest application and list what type of role you would be interested in :
+https://grnh.se/4ce199d68us
+Check out our open roles:
+https://sphinxdefense.com/careers/#open-positions
+reply
+bill_duckduckgo
+5 hours ago
+|
+prev
+|
+next
+[–]
+DuckDuckGo | Multiple Roles | Remote | Full-time | $178,500 - $320,000 USD + equity
+We are looking for candidates that are excited to join us on a mission to raise the standard of trust online. All of our roles are fully-remote, except where specific locations are noted.
+Most of the software engineering positions have been repeating here for years because we've been continually hiring for them, scaling our whole team to now over 300 people — many of those hires have come through Hacker News. We've been improving our hiring process over time, and we know some good candidates may have fallen through the cracks. Some people who tried in the past have had success going through it again, and we still pay for hiring projects.
+Senior Privacy Engineer - $178,500 USD + equity
+https://jobs.ashbyhq.com/duck-duck-go/72ec81ce-54a2-447a-9a8...
+Senior Web Security Engineer, Browser Platform - $178,500 USD + equity
+https://jobs.ashbyhq.com/duck-duck-go/12b7b49c-ee06-4d70-850...
+Senior Product Researcher - $178,500 USD + equity
+https://jobs.ashbyhq.com/duck-duck-go/ac40d717-5a72-49c9-8d2...
+VP, Business Development - $320,000 USD + equity
+https://jobs.ashbyhq.com/duck-duck-go/276ae352-55b5-4fb2-9b9...
+Senior CloudOps Engineer - $178,500 USD + equity
+https://jobs.ashbyhq.com/duck-duck-go/6ea1e8dd-addf-48e9-867...
+https://duckduckgo.com/careers
+reply
+mavam
+2 hours ago
+|
+prev
+|
+next
+[–]
+Tenzir | Software Engineering & Sales | Remote (EU Timezones) | Full-time
+Tenzir is building an open-core security data pipeline for the AI era. We empower defenders to collect, shape, and route security telemetry at scale. Our stack relies on C++23/26 and Apache Arrow for the core engine, with a modern TypeScript platform layer.
+We are hiring for 4 key technical roles to join our distributed team (HQ in Hamburg):
+- Software Engineer (Core Engine): Systems programming with C++23/26. Work on our pipeline language, query execution, database integrations, and streaming data processing with Apache Arrow.
+- Software Engineer (Product): Full-stack TypeScript/Python focus. Build the control plane, platform APIs, and developer tools, AI workflows, and anything else that makes our engine accessible.
+- Account Executive: Our first dedicated AE to own the full enterprise sales cycle. You'll work with complex deals in security and data infrastructure.
+- Solutions Engineer: Lead POCs and post-sales implementation. You'll be the hands-on engineer ensuring customers succeed with complex data pipelines.
+We are a remote-first team across European timezones. If you like solving hard data problems, we'd love to hear from you.
+Apply:
+https://tenzir.com/company/careers
+reply
+emilt2020
+1 hour ago
+|
+prev
+|
+next
+[–]
+Adobe - Brand Concierge | 2 Sr. AI Systems Architect with ML | San Jose, CA | ONSITE (3 days - hybrid) | Full-time
+Turn conversations into conversions. learn more
+https://business.adobe.com/products/brand-concierge.html
+We started around 8 months ago, have 80k+ beta users, and have been Product Hunt’s Product of the Day twice. Seed-stage (oversubscribed, will be announced soon) with meaningful equity for every role.
+We’re hiring 2 Architects, Start up culture, build fast, ship fast
+APPLY NOW at
+https://careers.adobe.com/us/en/job/ADOBUSR158280EXTERNALENU...
+send me a message on LinkedIn , be creative :)
+https://www.linkedin.com/in/emilthomasca/
+reply
+fjames2023
+1 hour ago
+|
+prev
+|
+next
+[–]
+Flotive AI |
+https://flotive.ai
+| Founding Software Engineer | Jersey City / New York Metropolitan Area / NYC Area | Onsite (Hybrid OK)
+Flotive is building an AI-powered platform to reshape the grid. We help energy developers identify buildable sites and manage regulatory complexity so power generation and large loads (such as data centers and manufacturing facilities) can come online faster.
+Salary: $150-180k + equity
+Details here:
+https://flotive.notion.site/founding-software-engineer
+reply
+nherment
+4 hours ago
+|
+prev
+|
+next
+[–]
+EggAI | Software Engineer, Team lead, AI engineer | REMOTE (EU, Switzerland, Norway) | Full-time or Contract
+We have multiple roles open:
+- Senior Python Developer
+- Technical Team Lead
+- AI engineer, 2+ years of hands on experience with production-deployed AI: apply as "Python Developer" and ensure that AI experience is explicit in your resume, I am manually looking through each of them.
+We are a small boutique consultancy and are quite experienced. A lot of us have extensive consultant experience. You will join a small, highly skilled remote team of engineers and transformation practitioners working at the forefront of enterprise AI.
+We use AI for both development and in our solutions. We are looking for engineers that are critical thinkers, understand the limitations of AI but also where it can have a positive impact.
+You’ll design and implement backend services, event-driven architectures, and multi-agent communication layers using modern Python, Pydantic, async frameworks, and cloud-native tools.
+Apply at:
+https://grnh.se/wr97lgu2teu
+Our website:
+https://egg-ai.com/
+reply
+Kraji
+2 hours ago
+|
+prev
+|
+next
+[–]
+Aqora | Quantum Computing Expert | Full-time | Paris (HQ) or Remote (Europe) We're building the go-to hub for quantum computing, focused on organizing quantum hackathons and competitions globally as well as hosting quantum datasets and algorithms. We've partnered with major industry players, generating six-figure revenues, and have more exciting projects lined up. Our MVP is live, and we're looking for a Quantum Computing Expert to help us scale. In this role, you’ll: - Refine quantum use cases and define metrics to evaluate submissions.
+- Build partnerships and onboard quantum professionals.
+- Contribute to product-market fit and platform growth.
+- Assist with hackathons and write technical articles on challenges.
+Requirements:
+- Experience in quantum algorithm development (digital & analog).
+- Experience mentoring at hackathons.
+- Proactive and detail-oriented.
+Bonus: PhD in quantum physics. Perks: Competitive salary, equity options, workspace at Station F (Paris).
+Apply by sending your resume, intro, and portfolio to
+https://quantum.jobs/jobs/85500519-quantum-computing-expert
+.
+Help shape the future of quantum computing at Aqora!
+reply
+govmaspy
+2 hours ago
+|
+prev
+|
+next
+[–]
+Mason | Software Engineer | Fulltime | San Francisco | thisismason.com
+We're building an agent to manage single family rental properties across the United States. We currently manage ~4,000 homes, are growing quickly, and are looking for full stack, back-end leaning engineers who would love to contribute to a state of the art agent.
+I've written a bit about our culture + product before:
+-> What it means to be "in-person" with our customers:
+https://medium.com/@maspinwall22/being-there-5c167dd8b163
+-> LLM Communications in the wild:
+https://medium.com/@maspinwall22/llm-communications-in-the-w
+...
+If interested, reach out directly to me: michael@thisismason.com
+reply
+tmountain
+5 hours ago
+|
+prev
+|
+next
+[–]
+Neurotone.ai | Fully Remote | Full-time | neurotone.com
+Neurotone is revolutionizing auditory training with AI, helping people with hearing disabilities maximize their hearing aids. We’re a small, fast-moving team of technologists and indu
+
+[内容已截断...]

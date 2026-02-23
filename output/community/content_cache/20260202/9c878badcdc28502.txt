@@ -1,0 +1,63 @@
+URL: https://arstechnica.com/tech-policy/2026/01/ice-protester-says-her-global-entry-was-revoked-after-agent-scanned-her-face/
+Title: ICE observer says her Global Entry was revoked after agent scanned her face - Ars Technica
+Time: 2026-02-02T20:47:37.209929
+Text
+ settings
+Story text
+Size
+Small
+Standard
+Large
+Width
+*
+Standard
+Wide
+Links
+Standard
+Orange
+* Subscribers only
+Learn more
+Minimize to nav
+Minnesota resident Nicole Cleland had her Global Entry and TSA Precheck privileges revoked three days after an incident in which she observed activity by immigration agents, the woman said in a court declaration. An agent told Cleland that he used facial recognition technology to identify her, she wrote in a
+declaration
+filed in US District Court for the District of Minnesota.
+Cleland, a 56-year-old resident of Richfield and a director at Target Corporation, volunteers with a group that tracks potential Immigration and Customs Enforcement (ICE) and Customs and Border Protection (CBP) vehicles in her neighborhood, according to her declaration. On the morning of January 10, she “observed a white Dodge Ram being driven by what I believed to be federal enforcement agents” and “maneuvered behind the vehicle with the intent of observing the agents’ actions.”
+Cleland said that she and another observer in a different car followed the Dodge Ram because of “concern about a local apartment building being raided.” She followed the car for a short time and from a safe distance until “the Dodge Ram stopped in front of the other commuter’s vehicle,” she wrote. Cleland said two other vehicles apparently driven by federal agents stopped in front of the Dodge Ram, and her path forward was blocked.
+“An agent exited the vehicle and approached my vehicle,” Cleland wrote. “I remained in my vehicle. The agent addressed me by my name and informed me that they had ‘facial recognition’ and that his body cam was recording. The agent stated that he worked for border patrol. He wore full camouflage fatigues. The agent stated that I was impeding their work. He indicated he was giving me a verbal warning and if I was found to be impeding again, I would be arrested.”
+Cleland acknowledged that she heard what the agent said, and they drove off in opposite directions, according to her declaration. Cleland submitted the declaration on January 21 in a
+lawsuit
+filed by Minnesota residents against US government officials with the Department of Homeland Security and ICE. Cleland’s court filing was mentioned yesterday in a
+Boston Globe column
+about tactics used by ICE agents to intimidate protesters.
+Global Entry and Precheck revoked
+Cleland said she could “discern no reason why the agents stopped me other than the fact that I was following them.” But on January 13, she received an email notification that her Global Entry and TSA Precheck privileges for passing through airport security were revoked, she said. Cleland said the revocation appears to be a form of intimidation and retaliation:
+I logged onto the Global Entry site and the notification letter indicated that indeed my status had been revoked and that they can’t always disclose the reason. The notification did provide some reasons that my status may have changed and the only one that makes sense was “The applicant has been found in violation of any customs, immigration, or agriculture regulations, procedures, or laws in any country.” I was not detained, I was not arrested so [it is] difficult to understand how I was “found in violation.”
+I had been a member of the Global Entry program since 2014 without incident. I am not particularly concerned with the revocation of my privileges in isolation. However, given that only three days had passed from the time that I was stopped, I am concerned that the revocation was the result of me following and observing the agents. This is intimidation and retaliation. I was following Legal Observer laws. I [was] within my rights to be doing what I was doing.
+Cleland said she and her husband travel frequently, and she is worried that they may encounter problems going forward.
+“I am concerned that border patrol and other federal enforcement agencies now have my license plate and personal information, and that I may be detained or arrested again in the future,” she wrote. “I am concerned about further actions that could be taken against me or my family. I have instructed my family to be cautious and return inside if they see unfamiliar vehicles outside of our home.”
+Cleland said she hasn’t performed any observation of federal agents since January 10, but has “continued to engage in peaceful protests” and is “assessing when I will return to active observations.”
+We contacted the Department of Homeland Security about Cleland’s declaration and will update this article if we get a response.
+Extensive use of facial recognition
+Federal agents have made
+extensive use
+of facial recognition during President Trump’s immigration crackdown with technology from
+Clearview AI
+and a face-scanning app called
+Mobile Fortify
+. They use facial recognition technology both to verify citizenship and identify protesters.
+“Ms. Cleland was one of at least seven American citizens told by ICE agents this month that they were being recorded with facial recognition technology in and around Minneapolis, according to local activists and videos posted to social media,” The New York Times
+reported
+today, adding that none of the people had given consent to be recorded.
+ICE also uses a
+variety of other technologies
+, including cell-site simulators (or Stingrays) to track phone locations, and
+Palantir software
+to help identify potential deportation targets.
+Although Cleland vowed to continue protesting and eventually get back to observing ICE and CBP agents, her declaration said she felt intimidated after the recent incident.
+“The interaction with the agents on January 10th made me feel angry and intimidated,” she wrote. “I have been through Legal Observer Training and know my rights. I believe that I did not do anything that warranted being stopped in the way that I was on January 10th.”
+Jon Brodkin
+Senior IT Reporter
+Jon Brodkin
+Senior IT Reporter
+Jon is a Senior IT Reporter for Ars Technica. He covers the telecom industry, Federal Communications Commission rulemakings, broadband consumer affairs, court cases, and government regulation of the tech industry.
+247 Comments

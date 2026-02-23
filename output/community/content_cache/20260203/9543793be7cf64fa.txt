@@ -1,0 +1,18 @@
+URL: https://www.reddit.com/r/artificial/comments/1qthime/india_budget_2026_commits_90b_to_ai/
+Title: Reddit - The heart of the internet
+Time: 2026-02-03T07:06:59.145592
+Go to artificial
+r/artificial
+•
+prakersh
+India Budget 2026 commits $90B to AI infrastructure, recommends application-led approach over scale
+India's latest budget mentions AI 11 times - highest ever. Key commitments:
+$90B data centre investments
+Tax holiday till 2047 for cloud providers
+Semiconductor Mission 2.0 for domestic chips
+Policy preference for "smaller, sector-specific models"
+890+ GenAI startups active now, deep-tech funding up 78%.
+Analysis:
+https://onllm.dev/blog/3-budget-2026
+Read more
+Share

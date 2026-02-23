@@ -1,0 +1,26 @@
+URL: https://www.reddit.com/r/MachineLearning/comments/1qtr62c/p_perpetualbooster_v112_gbm_without/
+Title: Reddit - The heart of the internet
+Time: 2026-02-03T12:13:38.109210
+Go to MachineLearning
+r/MachineLearning
+•
+mutlu_simsek
+Deutsch
+Filipino
+Italiano
+[P] PerpetualBooster v1.1.2: GBM without hyperparameter tuning, now 2x faster with ONNX/XGBoost support
+Hi all,
+We just released v1.1.2 of PerpetualBooster. For those who haven't seen it, it's a gradient boosting machine (GBM) written in Rust that eliminates the need for hyperparameter optimization by using a generalization algorithm controlled by a single "budget" parameter.
+This update focuses on performance, stability, and ecosystem integration.
+Key Technical Updates:
+Performance: up to 2x faster training.
+Ecosystem: Full R release, ONNX support, and native "Save as XGBoost" for interoperability.
+Python Support: Added Python 3.14, dropped 3.9.
+Data Handling: Zero-copy Polars support (no memory overhead).
+API Stability: v1.0.0 is now the baseline, with guaranteed backward compatibility for all 1.x.x releases (compatible back to v0.10.0).
+Benchmarking against LightGBM + Optuna typically shows a 100x wall-time speedup to reach the same accuracy since it hits the result in a single run.
+GitHub:
+https://github.com/perpetual-ml/perpetual
+Would love to hear any feedback or answer questions about the algorithm!
+Read more
+Share

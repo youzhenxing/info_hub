@@ -1,0 +1,56 @@
+# WhisperX GPU 转写服务
+# 
+# 使用方法:
+#   1. 构建镜像: docker-compose build
+#   2. 启动服务: docker-compose up -d
+#   3. 查看日志: docker-compose logs -f
+#
+# 注意: 需要 NVIDIA Container Toolkit 支持 GPU
+# 安装指南: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html
+
+services:
+  whisperx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        HF_TOKEN: ${HF_TOKEN}
+        WHISPER_MODEL: ${WHISPER_MODEL:-large-v3}
+        COMPUTE_TYPE: ${COMPUTE_TYPE:-float16}
+    image: trendradar/whisperx:latest
+    container_name: whisperx-server
+    restart: unless-stopped
+    
+    # GPU 支持
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    
+    ports:
+      - "127.0.0.1:5000:5000"
+    
+    environment:
+      - HF_TOKEN=${HF_TOKEN}
+      - WHISPER_MODEL=${WHISPER_MODEL:-large-v3}
+      - COMPUTE_TYPE=${COMPUTE_TYPE:-float16}
+      - BATCH_SIZE=${BATCH_SIZE:-16}
+      - DEVICE=cuda
+    
+    volumes:
+      # 模型缓存（避免每次启动重新下载）
+      - whisperx-cache:/root/.cache
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 120s  # 模型加载需要时间
+
+volumes:
+  whisperx-cache:
+    name: whisperx-model-cache

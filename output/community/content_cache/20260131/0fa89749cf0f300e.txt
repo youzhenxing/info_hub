@@ -1,0 +1,101 @@
+URL: https://github.com/embedding-shapes/one-agent-one-browser
+Title: embedding-shapes/one-agent-one-browser
+Time: 2026-01-31T21:37:02.338150
+# embedding-shapes/one-agent-one-browser
+
+**描述**: One from scratch browser built by one human and one agent, working hand in hand
+**Stars**: 193
+**Forks**: 5
+**语言**: Rust
+**创建时间**: 2026-01-26T21:29:52Z
+**最后更新**: 2026-01-31T12:06:43Z
+**标签**: agents, ai, anti-coordination, browser, llm
+
+
+---
+
+## README
+
+# One Agent - One Browser
+
+This is an experiment to see if an agent using LLMs, could build a functional browser by itself with minimal guidance, and without using any 3rd party libraries.
+
+## Ideal Result / Goals
+
+- A binary that can render a .html file to the display
+
+## Running
+
+Platform:
+
+- Linux/X11 (requires an X server and `$DISPLAY`).
+- Windows 10 (1703+) or Windows 11
+- macOS 11+ (double-check)
+
+### System dependencies
+
+This project uses system libraries/frameworks via FFI.
+
+- Linux/X11: X11/Xft/Cairo, librsvg, libcurl, libpng, libjpeg-turbo, libwebp.
+- Windows 10/11: WinHTTP, WIC (PNG/JPEG/WebP), Direct2D/DirectWrite. If WebP decode fails, install Microsoft "WebP Image Extensions".
+- macOS: system frameworks (CoreGraphics/CoreText/ImageIO/QuickLook).
+
+Arch Linux (Wayland via XWayland):
+
+```sh
+sudo pacman -S --needed xorg-xwayland libx11 libxft cairo librsvg curl libpng libjpeg-turbo libwebp
+```
+
+Ubuntu (Wayland via XWayland):
+
+```sh
+sudo apt-get update
+sudo apt-get install -y xwayland libx11-dev libxft-dev libcairo2-dev librsvg2-dev libglib2.0-dev libcurl4-openssl-dev libpng-dev libjpeg-turbo8-dev libturbojpeg0-dev libwebp-dev
+```
+
+RHEL (Wayland via XWayland):
+
+```sh
+sudo dnf install -y xorg-x11-server-Xwayland libX11 libXft cairo librsvg2 libcurl libpng libjpeg-turbo libwebp
+```
+
+If you run an Xorg session (not Wayland), install an Xorg server package instead of XWayland (`xorg-server` / `xorg` / `xorg-x11-server-Xorg`).
+
+```sh
+# Built-in "Hello World"
+cargo run
+
+# Render a local file
+cargo run -- test-file.html
+
+# Render a URL
+cargo run -- https://example.com
+
+# Save a PNG screenshot and exit once the page is ready
+cargo run -- test-file.html --screenshot out.png
+
+# Headless mode (Linux/X11: still requires an X server, e.g. via xvfb-run)
+cargo run -- --headless test-file.html --screenshot out.png
+```
+
+### Arguments
+
+- `<target>` (optional): path to an HTML file, or an `http(s)://...` URL.
+- `--screenshot <path>` / `--screenshot=<path>`: write a PNG screenshot and exit.
+- `--headless`: don't map a window; useful for automation/tests.
+- `--width <px>` / `--width=<px>`: initial viewport width in CSS pixels (default: 1024).
+- `--height <px>` / `--height=<px>`: initial viewport height in CSS pixels (default: 768).
+- `OAB_SCALE` (env): override the DPI scale factor (e.g. `1.25` or `125%`).
+
+## Tests
+
+```sh
+cargo test
+
+# If you don't have an X server (Linux CI/headless), use Xvfb:
+xvfb-run -a cargo test
+```
+
+Render regression tests compare screenshots to per-platform baseline PNGs in `tests/cases/`.
+
+- `OAB_RENDER_TEST_MIN_SIMILARITY` (env): minimum required similarity ratio (default: `0.95`; set `1.0` for exact match).

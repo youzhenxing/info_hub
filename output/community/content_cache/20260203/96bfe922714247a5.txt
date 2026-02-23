@@ -1,0 +1,24 @@
+URL: https://www.reddit.com/r/robotics/comments/1qu9d74/gyro_v24/
+Title: Reddit - The heart of the internet
+Time: 2026-02-03T10:21:47.985232
+Go to robotics
+r/robotics
+•
+Creepy-Smile4907
+Gyro V2.4
+Hey everyone,
+A little while ago I posted a video of my
+Animatronic Head
+The response was way more positive than I expected, and honestly, I had a blast building it. So… I decided to keep going :D
+I’m now expanding the project into a complete torso.
+So far I’ve:
+Built a torso using PVC pipes combined with PLA parts
+Started working on the arms (still a work in progress)
+I’d love to hear any suggestions, ideas, or improvements you think could make this build even better, whether mechanical, electronic, or software-related.
+I’m also experimenting with a new feature that I think is pretty cool. Once I get it working reliably, I’ll post an update here.
+If you’re interested, I’ve published the model files (currently .3mf only) on GitHub:
+https://github.com/koenll23/gyro
+(files may be outdated and/or unoptimized, they just work. use at your own risk)
+Thanks for all the feedback so far, it’s been a huge motivation to keep going!
+Read more
+Share

@@ -1,0 +1,736 @@
+URL: https://www.githubstatus.com?todayis=2026-02-02
+Title: GitHub Status
+Time: 2026-02-03T09:58:11.786456
+GitHub Octicon logo
+Subscribe
+x
+Get email notifications whenever GitHub
+creates
+,
+updates
+or
+resolves
+an incident.
+Get text message notifications whenever GitHub
+creates
+or
+resolves
+an incident.
+Get incident updates and maintenance status messages in Slack.
+Subscribe via Slack
+By subscribing you acknowledge our
+Privacy Policy
+. In addition, you agree to the Atlassian
+Cloud Terms of Service
+and acknowledge Atlassian's
+Privacy Policy
+.
+Get webhook notifications whenever GitHub
+creates
+an incident,
+updates
+an incident,
+resolves
+an incident or
+changes
+a component status.
+Follow @githubstatus
+or
+view our profile
+.
+Visit our
+support site
+.
+Get the
+Atom Feed
+or
+RSS Feed
+.
+All Systems Operational
+About This Site
+Check GitHub Enterprise Cloud status by region:
+- Australia:
+au.githubstatus.com
+- EU:
+eu.githubstatus.com
+- Japan:
+jp.githubstatus.com
+- US:
+us.githubstatus.com
+Git Operations
+?
+Operational
+Webhooks
+?
+Operational
+Visit www.githubstatus.com for more information
+Operational
+API Requests
+?
+Operational
+Issues
+?
+Operational
+Pull Requests
+?
+Operational
+Actions
+?
+Operational
+Packages
+?
+Operational
+Pages
+?
+Operational
+Codespaces
+?
+Operational
+Copilot
+Operational
+Operational
+Degraded Performance
+Partial Outage
+Major Outage
+Maintenance
+Past Incidents
+Feb
+3
+,
+2026
+Incident with Actions
+Resolved
+-
+This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available.
+Feb
+3
+,
+00:56
+UTC
+Update
+-
+Actions is operating normally.
+Feb
+3
+,
+00:56
+UTC
+Update
+-
+Based on our telemetry, most customers should see full recovery from failing GitHub Actions jobs on hosted runners.
+We are monitoring closely to confirm complete recovery.
+Other GitHub features that rely on GitHub Actions (for example, Copilot Coding Agent and Dependabot) should also see recovery.
+Feb
+2
+,
+23:50
+UTC
+Update
+-
+Actions is experiencing degraded performance. We are continuing to investigate.
+Feb
+2
+,
+23:43
+UTC
+Update
+-
+Copilot is operating normally.
+Feb
+2
+,
+23:42
+UTC
+Update
+-
+Pages is operating normally.
+Feb
+2
+,
+23:31
+UTC
+Update
+-
+Our upstream provider has applied a mitigation to address queuing and job failures on hosted runners.
+Telemetry shows improvement, and we are monitoring closely for full recovery.
+Feb
+2
+,
+22:53
+UTC
+Update
+-
+We continue to investigate failures impacting GitHub Actions hosted-runner jobs.
+We're waiting on our upstream provider to apply the identified mitigations, and we're preparing to resume job processing as safely as possible.
+Feb
+2
+,
+22:10
+UTC
+Update
+-
+Copilot is experiencing degraded performance. We are continuing to investigate.
+Feb
+2
+,
+21:27
+UTC
+Update
+-
+We continue to investigate failures impacting GitHub Actions hosted-runner jobs.
+We have identified the root cause and are working with our upstream provider to mitigate.
+This is also impacting GitHub features that rely on GitHub Actions (for example, Copilot Coding Agent and Dependabot).
+Feb
+2
+,
+21:13
+UTC
+Update
+-
+The team continues to investigate issues causing GitHub Actions jobs on hosted runners to remain queued for extended periods, with a percentage of jobs failing. We will continue to provide updates as we make progress toward mitigation.
+Feb
+2
+,
+20:27
+UTC
+Update
+-
+Pages is experiencing degraded performance. We are continuing to investigate.
+Feb
+2
+,
+19:48
+UTC
+Update
+-
+The team continues to investigate issues causing GitHub Actions jobs on hosted runners to remain queued for extended periods, with a percentage of jobs failing. We will continue to provide updates as we make progress toward mitigation.
+Feb
+2
+,
+19:44
+UTC
+Update
+-
+Actions is experiencing degraded availability. We are continuing to investigate.
+Feb
+2
+,
+19:43
+UTC
+Update
+-
+GitHub Actions hosted runners are experiencing high wait times across all labels. Self-hosted runners are not impacted.
+Feb
+2
+,
+19:07
+UTC
+Investigating
+-
+We are investigating reports of degraded performance for Actions
+Feb
+2
+,
+19:03
+UTC
+Incident with Codespaces
+Resolved
+-
+This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available.
+Feb
+3
+,
+00:54
+UTC
+Update
+-
+Codespaces is operating normally.
+Feb
+3
+,
+00:54
+UTC
+Update
+-
+Codespaces is experiencing degraded performance. We are continuing to investigate.
+Feb
+3
+,
+00:25
+UTC
+Update
+-
+Codespaces is seeing steady recovery
+Feb
+2
+,
+23:52
+UTC
+Update
+-
+Users may see errors creating or resuming codespaces. We are investigating and will provide further updates as we have them.
+Feb
+2
+,
+20:19
+UTC
+Investigating
+-
+We are investigating reports of degraded availability for Codespaces
+Feb
+2
+,
+20:17
+UTC
+Feb
+2
+,
+2026
+Disruption with some GitHub services
+Resolved
+-
+This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available.
+Feb
+2
+,
+18:46
+UTC
+Update
+-
+Dependabot is currently experiencing an issue that may cause scheduled update jobs to fail when creating pull requests.
+Our team has identified the problem and deployed a fix. We’re seeing signs of recovery and expect full resolution within the next few hours.
+Feb
+2
+,
+17:58
+UTC
+Investigating
+-
+We are investigating reports of impacted performance for some GitHub services.
+Feb
+2
+,
+17:41
+UTC
+Disruption with some GitHub services
+Resolved
+-
+This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available.
+Feb
+2
+,
+17:43
+UTC
+Update
+-
+We’ve observed a low rate (~0.01%) of 5xx errors for HTTP-based fetches and clones. We’re currently routing traffic away from the affected location and are seeing recovery.
+Feb
+2
+,
+17:42
+UTC
+Update
+-
+Git Operations is experiencing degraded performance. We are continuing to investigate.
+Feb
+2
+,
+17:35
+UTC
+Investigating
+-
+We are investigating reports of impacted performance for some GitHub services.
+Feb
+2
+,
+17:34
+UTC
+Feb
+1
+,
+2026
+No incidents reported.
+Jan
+31
+,
+2026
+No incidents reported.
+Jan
+30
+,
+2026
+Degraded Experience - Failing to finalize some CCA Jobs
+Resolved
+-
+This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available.
+Jan
+30
+,
+21:22
+UTC
+Update
+-
+Customers may experience misreported Copilot Coding Agent tasks in the GitHub UI. Although the underlying actions are completing as requested, surfaces like Agent Sessions on the GitHub website, or Agent Hub in VS Code, will show that an agent is still working on a task, even if that work has completed.
+We are working to understand the root cause and mitigate these discrepancies.
+Jan
+30
+,
+21:05
+UTC
+Investigating
+-
+We are investigating reports of degraded performance for Actions
+Jan
+30
+,
+20:59
+UTC
+Jan
+29
+,
+2026
+No incidents reported.
+Jan
+28
+,
+2026
+Actions Workflows Run Start Delays
+Resolved
+-
+On Jan 28, 2026, between 14:56 UTC and 15:44 UTC, GitHub Actions experienced degraded performance. During this time, workflows experienced an average delay of 49 seconds, and 4.7% of workflow runs failed to start within 5 minutes. The root cause was an atypical load pattern that overwhelmed system capacity and caused resource contention.
+Recovery began once additional resources came online at 15:25 UTC, with full recovery at 15:44 UTC. We are implementing safeguards to prevent this failure mode and enhancing our monitoring to detect and address similar patterns more quickly in the future.
+Jan
+28
+,
+15:54
+UTC
+Update
+-
+Actions workflow run starts are delayed. We are actively investigating to find a mitigation.
+Jan
+28
+,
+15:37
+UTC
+Investigating
+-
+We are investigating reports of degraded performance for Actions
+Jan
+28
+,
+15:12
+UTC
+Jan
+27
+,
+2026
+No incidents reported.
+Jan
+26
+,
+2026
+Regression in windows runners for public repositories
+Resolved
+-
+On Jan 26, 2026, from approximately 14:03 UTC to 23:42 UTC, GitHub Actions experienced job failures on some Windows standard hosted runners. This was caused by a configuration difference in a new Windows runner type that caused the expected D: drive to be missing. About 2.5% of all Windows standard runners jobs were impacted. Re-run of failed workflows had a high chance of succeeding given the limited rollout of the change.
+The job failures were mitigated by rolling back the affected configuration and removing the provisioned runners that had this configuration. To reduce the chance of recurrence, we are expanding runner telemetry and improving validation of runner configuration changes. We are also evaluating options to accelerate the mitigation time of any similar future events.
+Jan
+26
+,
+23:51
+UTC
+Update
+-
+At 23:45 UTC we applied a mitigation to take remaining impacted capacity offline and are seeing improvement. We will update again once we've confirmed the issue is resolved.
+Jan
+26
+,
+23:49
+UTC
+Update
+-
+Our investigation into GitHub Actions 4 Core Windows runner failures in public repositories is ongoing.
+If you have a failing GitHub Actions run, please retry it and it is likely to succeed.
+Jan
+26
+,
+23:04
+UTC
+Update
+-
+We're continuing to investigate failures in GitHub Actions 4 Core Windows runners in public repositories.
+If you have a failing GitHub Actions run, please retry it and it is likely to succeed.
+Jan
+26
+,
+22:02
+UTC
+Update
+-
+Rollback has been completed, but we are still seeing failures on about 11% of GitHub Actions runs on 4 Core Windows runners in public repositories.
+If your workflow fails to start, try re-running and it is likely to work a second time.
+Jan
+26
+,
+21:20
+UTC
+Update
+-
+Mitigation for failing GitHub Actions jobs on 4-Core Windows runners is still being mitigated. You should start to see more runs succeeding.
+If you do see failing runs, please retry and they might succeed.
+Jan
+26
+,
+20:10
+UTC
+Update
+-
+We've applied a mitigation to unblock running Actions. A regression occurred for Windows runners in public repositories which caused Actions workflows to fail. A mitigation is in place and customers should expect to see resolution soon.
+If you have a failing Actions workflow on a Windows runner, please retry and it is likely to work.
+Jan
+26
+,
+19:32
+UTC
+Investigating
+-
+We are investigating reports of impacted performance for some GitHub services.
+Jan
+26
+,
+19:25
+UTC
+Jan
+25
+,
+2026
+Disruption with repo creation
+Resolved
+-
+Between January 24, 2026,19:56 UTC and January 25, 2026, 2:50 UTC repository creation and clone were degraded. On average, the error rate was 25% and peaked at 55% of requests for repository creation. This was due to increased latency on the repositories database impacting a read-after-write problem during repo creation. We mitigated the incident by stopping an operation that was generating load on the database to increase throughput.
+We have identified the repository creation problem and are working to address the issue and improve our observability to reduce our time to detection and mitigation of issues like this one in the future.
+Jan
+25
+,
+03:08
+UTC
+Update
+-
+The issue has been resolved. We will continue to monitor to ensure stability.
+Jan
+25
+,
+03:08
+UTC
+Update
+-
+Repo creation failure rate increased above 50%. We have mitigated the problem and are monitoring for recovery.
+Jan
+25
+,
+02:58
+UTC
+Investigating
+-
+We are investigating reports of impacted performance for some GitHub services.
+Jan
+25
+,
+02:43
+UTC
+Jan
+24
+,
+2026
+No incidents reported.
+Jan
+23
+,
+2026
+No incidents reported.
+Jan
+22
+,
+2026
+Disruption with some GitHub services
+Resolved
+-
+On January 22, 2026, our authentication service experienced an issue between 14:00 UTC and 14:50 UTC, resulting in downstream disruptions for users.
+From 14:00 UTC to 14:23 UTC, authenticated API requests experienced higher-than-normal error rates, with an average of 16.9% and occasional peaks up to 22.2% resulting in HTTP 401 responses for authenticated API requests.
+From 14:00 UTC to 14:50 UTC, git operations over HTTP were impacted, with error rates averaging 3.8% and peaking at 10.8%. As a result, some users may have been unable to run git commands as expected.
+This was due to the authentication service reaching the maximum allowed number of database connections. We mitigated the incident by increasing the maximum number of database connections in the authentication service.
+We are adding additional monitoring around database connection pool usage and improving our traffic projection to reduce our time to detection and mitigation of issues like this one in the future.
+Jan
+22
+,
+15:22
+UTC
+Update
+-
+We have identified an issue in one of our services and have mitigated it. Services have recovered and we have a mitigation but we are working on a longer term solution.
+Jan
+22
+,
+15:22
+UTC
+Update
+-
+Issues is operating normally.
+Jan
+22
+,
+14:27
+UTC
+Update
+-
+Issues is experiencing degraded performance. We are continuing to investigate.
+Jan
+22
+,
+14:23
+UTC
+Investigating
+-
+We are investigating reports of impacted performance for some GitHub services.
+Jan
+22
+,
+14:12
+UTC
+Jan
+21
+,
+2026
+Policy pages for Copilot are timing out
+Resolved
+-
+On January 21, between 17:50 and 20:53 UTC, around 350 enterprises and organizations experienced slower load times or timeouts when viewing Copilot policy pages. The issue was traced to performance degradation under load due to an issue in upstream database caching capability within our billing infrastructure, which increased query latency to retrieve billing and policy information from approximately 300ms to up to 1.5s.
+To restore service, we disabled the affected caching feature, which immediately returned performance to normal. We then addressed the issue in the caching capability and re-enabled our use of the database cache and observed continued recovery.
+Moving forward, we’re tightening our procedures for deploying performance optimizations, adding test coverage, and improving cross-service visibility and alerting so we can detect upstream degradations earlier and reduce impact to customers.
+Jan
+21
+,
+20:53
+UTC
+Update
+-
+We are rolling out a fix to reduce latency and timeouts on policy pages and are continuing to monitor impact.
+Jan
+21
+,
+20:47
+UTC
+Update
+-
+We are continuing to investigate latency and timeout issues affecting Copilot policy pages.
+Jan
+21
+,
+20:12
+UTC
+Update
+-
+We are investigating timeouts for customers visiting the Copilot policy pages for organizations and enterprises.
+Jan
+21
+,
+19:37
+UTC
+Investigating
+-
+We are investigating reports of impacted performance for some GitHub services.
+Jan
+21
+,
+19:31
+UTC
+Copilot Chat - Grok Code Fast 1 Outage
+Resolved
+-
+On Jan 21st, 2025, between 11:15 UTC and 13:00 UTC the Copilot service was degraded for Grok Code Fast 1 model. On average, more than 90% of the requests to this model failed due to an issue with an upstream provider. No other models were impacted.
+The issue was resolved after the upstream provider fixed the problem that caused the disruption. GitHub will continue to enhance our monitoring and alerting systems to reduce the time it takes to detect and mitigate similar issues in the future.
+Jan
+21
+,
+12:38
+UTC
+Update
+-
+We are experiencing degraded availability for the Grok Code Fast 1 model in Copilot Chat, VS Code and other Copilot products. This is due to an issue with an upstream model provider. We are working with them to resolve the issue.
+Other models are available and working as expected.
+Jan
+21
+,
+12:09
+UTC
+Investigating
+-
+We are investigating reports of degraded performance for Copilot
+Jan
+21
+,
+11:33
+UTC
+Jan
+20
+,
+2026
+Run start delays in Actions
+Resolved
+-
+On January 20, 2026, between 19:08 UTC and 20:18 UTC, manually dispatched GitHub Actions workflows saw delayed job starts. GitHub products built on Actions such as Dependabot, Pages builds, and Copilot coding agent experienced similar delays. All jobs successfully completed despite the delays. At peak impact, approximately 23% of workflow runs were affected, with an average delay of 11 minutes.
+This was caused by a load pattern shift in Actions scheduled jobs that saturated a shared backend resource. We mitigated the incident by temporarily throttling traffic and scaling up resources to account for the change in load pattern. To prevent recurrence, we have scaled resources appropriately and implemented optimizations to prevent this load pattern in the future.
+Jan
+20
+,
+20:10
+UTC
+Update
+-
+We are investigating delays in manually dispatched Actions workflows as well as other GitHub products which run on Actions. We have identified a fix and are working on mitigating the delays.
+Jan
+20
+,
+19:56
+UTC
+Investigating
+-
+We are investigating reports of degraded performance for Actions
+Jan
+20
+,
+19:49
+UTC
+Incident affecting actions-runner-controller
+Resolved
+-
+On January 20, 2026, between 14:39 UTC and 16:03 UTC, actions-runner-controller users experienced a 1% failure rate for API requests managing GitHub Actions runner scale sets. This caused delays in runner creation, resulting in delayed job starts for workflows targeting those runners. The root cause was a service to service circuit breaker that incorrectly tripped for all users when a single user hit rate limits for runner registration. The issue was mitigated by bypassing the circuit breaker, and users saw immediate and full service recovery following the fix.
+We have updated our circuit breakers to exclude individual customer rate limits from their triggering logic and are continuing work to improve detection and mitigation times.
+Jan
+20
+,
+16:23
+UTC
+Update
+-
+GitHub Actions customers that use actions-runner-controller are experiencing errors from our APIs that informs auto-scaling. We are investigating the issue and working on mitigating the impact.
+Jan
+20
+,
+16:03
+UTC
+Investigating
+-
+We are investigating reports of degraded performance for Actions
+Jan
+20
+,
+16:02
+UTC
+←
+Incident History
+Powered by Atlassian Statuspage
+GitHub text logo
+Get tips, technical guides, and best practices. Twice a month. Right in your
+ inbox.
+Subscribe

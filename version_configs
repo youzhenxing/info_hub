@@ -1,0 +1,4 @@
+config.yaml=1.0.0
+frequency_words.txt=1.0.0
+ai_analysis_prompt.txt=1.0.0
+ai_translation_prompt.txt=1.0.0

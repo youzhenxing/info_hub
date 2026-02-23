@@ -1,0 +1,23 @@
+# WhisperX API Server Dependencies
+# ================================
+
+# Web Framework
+fastapi>=0.100.0
+uvicorn[standard]>=0.23.0
+python-multipart>=0.0.6
+
+# Audio Processing
+ffmpeg-python>=0.2.0
+pydub>=0.25.1
+
+# WhisperX dependencies (whisperx installed via git)
+# torch and torchaudio installed separately with CUDA support
+numpy<2.0
+pandas>=2.0.0
+
+# Speaker Diarization (pyannote)
+pyannote.audio>=3.1.0
+
+# Utilities
+requests>=2.28.0
+tqdm>=4.65.0

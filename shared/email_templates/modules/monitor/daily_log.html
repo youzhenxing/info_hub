@@ -1,0 +1,268 @@
+{% extends 'base/base.html' %}
+
+{# 模板标题 #}
+{% block title %}TrendRadar 工作日志 - {{ date }}{% endblock %}
+
+{# 主题色类（监控橙色） #}
+{% block body_class %}theme-monitor{% endblock %}
+
+{# 头部 #}
+{% block header_title %}📋 TrendRadar 工作日志{% endblock %}
+
+{% block header_meta %}
+<div class="subtitle">{{ date }}</div>
+<div class="stats">生成时间: {{ now|format_date }}</div>
+{% endblock %}
+
+{# 主要内容 #}
+{% block content %}
+
+<!-- 监控服务状态 -->
+{% if monitor_status %}
+<section class="section">
+    <h2 class="section-title">🖥️ 监控服务状态</h2>
+    <div class="card">
+        <div class="card-body" style="padding: 0;">
+            <div class="status-list">
+                {% for env_name, env_data in monitor_status.items() %}
+                <div class="status-item">
+                    <span class="name">{{ env_name|upper }} 环境</span>
+                    {{ env_data.running | render_status_badge | safe }}
+                    <span class="detail">端口 {{ env_data.port }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Wewe-RSS 状态 -->
+{% if wewe_status %}
+<section class="section">
+    <h2 class="section-title">📱 Wewe-RSS / 公众号</h2>
+    <div class="card">
+        <div class="card-body" style="padding: 0;">
+            <div class="status-list">
+                <div class="status-item">
+                    <span class="name">服务状态</span>
+                    {{ wewe_status.service.running | render_status_badge | safe }}
+                    <span class="detail">{{ wewe_status.service.feeds }} 订阅源</span>
+                </div>
+                {% if wewe_status.login %}
+                <div class="status-item">
+                    <span class="name">登录状态</span>
+                    {{ (wewe_status.login.status == 'ok') | render_status_badge | safe }}
+                    <span class="detail">{{ wewe_status.login.active }}/{{ wewe_status.login.total }} 账号</span>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- 模块运行记录 -->
+{% if module_status %}
+<section class="section">
+    <h2 class="section-title">📊 今日模块运行</h2>
+    <div class="card">
+        <div class="card-body" style="padding: 0;">
+            <div class="status-list">
+                {% for m in module_status %}
+                <div class="status-item">
+                    <span class="name">{{ m.module }}</span>
+                    {{ (m.status == 'success') | render_status_badge | safe }}
+                    <span class="detail">{{ m.started_at[:16] if m.started_at else '-' }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- 调度配置 -->
+{% if schedule_config %}
+<section class="section">
+    <h2 class="section-title">⏰ 调度配置详情</h2>
+    <div class="card">
+        <div class="card-body" style="padding: 0;">
+            <div class="config-list">
+                {% for module, config in schedule_config.items() %}
+                <div class="config-item">
+                    <span class="name">{{ module_icons[module] if module_icons is defined else '📌' }} {{ module_names[module] if module_names is defined else module }}</span>
+                    <div class="config-details">
+                        <span class="config-cron">{{ config.cron if config.cron is defined else (config.times|join(', ') if config.times is defined else (config.type ~ ' / ' ~ config.interval_hours ~ 'h' if config.interval_hours is defined else '-')) }}</span>
+                        <span class="config-desc">{{ config.description if config.description is defined else '' }}</span>
+                        <span class="config-status badge {{ 'ok' if config.enabled else 'disabled' }}">{{ '启用' if config.enabled else '禁用' }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- 播客处理记录 -->
+{% if podcast_logs %}
+<section class="section">
+    <h2 class="section-title">📻 播客处理记录</h2>
+    <div class="card">
+        <div class="card-body">
+            <ul class="log-list">
+                {% for log in podcast_logs %}
+                <li>{{ log }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Git 提交 -->
+{% if git_commits %}
+<section class="section">
+    <h2 class="section-title">💾 Git 提交</h2>
+    <div class="card">
+        <div class="card-body" style="padding: 0;">
+            <ul class="commit-list">
+                {% for commit in git_commits %}
+                <li>
+                    <code>{{ commit.hash }}</code>
+                    {{ commit.message }}
+                    <span class="time">{{ commit.time }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- 系统日志 -->
+{% if system_logs %}
+<section class="section">
+    <h2 class="section-title">📝 系统日志</h2>
+    <div class="card">
+        <div class="card-body">
+            <pre class="log-content">{{ '\n'.join(system_logs[:50]) }}</pre>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+{% endblock %}
+
+{# 自定义样式 #}
+{% block extra_css %}
+<style>
+/* 状态列表 */
+.status-list, .config-list {
+    font-size: 13px;
+}
+.status-item, .config-item {
+    display: block;
+    padding: 10px 12px;
+    border-bottom: 1px solid #f5f5f5;
+}
+.status-item:last-child, .config-item:last-child {
+    border-bottom: none;
+}
+.status-item .name, .config-item .name {
+    display: flex;
+    align-items: center;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+.status-item .detail, .config-item .detail {
+    color: #999;
+    font-size: 11px;
+    margin-left: 0;
+}
+
+/* 配置详情 */
+.config-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+.config-cron {
+    font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+    background: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    color: #666;
+}
+.config-desc {
+    color: #888;
+    font-size: 11px;
+}
+.config-status {
+    margin-left: auto;
+}
+
+/* 日志列表 */
+.log-list {
+    font-size: 12px;
+    line-height: 1.8;
+    padding-left: 18px;
+    margin: 0;
+}
+.log-list li {
+    margin: 4px 0;
+    color: #555;
+}
+
+/* 日志内容 */
+.log-content {
+    background: #f5f5f5;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    max-height: 300px;
+    overflow-y: auto;
+    font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+    line-height: 1.5;
+    color: #666;
+}
+
+/* 提交列表 */
+.commit-list {
+    font-size: 12px;
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+.commit-list li {
+    padding: 8px 12px;
+    border-bottom: 1px solid #f5f5f5;
+}
+.commit-list li:last-child {
+    border-bottom: none;
+}
+.commit-list code {
+    font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+    color: var(--secondary-color);
+    margin-right: 8px;
+    font-size: 11px;
+}
+.commit-list .time {
+    color: #999;
+    font-size: 11px;
+    float: right;
+}
+
+/* 空状态 */
+.empty-state {
+    text-align: center;
+    padding: 20px;
+    color: #999;
+    font-size: 13px;
+}
+</style>
+{% endblock %}

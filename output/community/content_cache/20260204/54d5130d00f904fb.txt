@@ -1,0 +1,26 @@
+URL: https://www.reddit.com/r/MachineLearning/comments/1qv7nz9/d_rebase_for_agents_why_your_ai_workflows_should/
+Title: Reddit - The heart of the internet
+Time: 2026-02-04T08:38:03.684131
+Go to MachineLearning
+r/MachineLearning
+•
+DoltHub_Official
+[D] Rebase for agents: why your AI workflows should use linear history
+We've been working on agent workflows that write to Dolt (SQL database with Git semantics), and rebase has become a core part of the pattern.
+The setup:
+Each agent gets its own branch
+Agent makes changes, commits
+Before merge to main, agent rebases onto latest main
+Conflicts = signal to the agent that something changed and it needs to re-evaluate
+Why rebase over merge:
+Linear history is way easier for humans to review (and we're swimming in agent-generated changes that need review)
+Conflicts surface early and force agents to reason about new information
+Agents don't have the emotional baggage humans do with rebase—they just execute
+The kicker: agents are surprisingly good at rebase because there's so much Git documentation online. They've "read" all of it.
+One-liner in SQL:
+CALL DOLT_REBASE('main')
+Full writeup:
+https://www.dolthub.com/blog/2026-01-28-everybody-rebase/
+Anyone else building agent systems with version control? What's your branching model?
+Read more
+Share

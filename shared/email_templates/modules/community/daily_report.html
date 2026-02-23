@@ -1,0 +1,366 @@
+{% extends 'base/base.html' %}
+
+{# 模板标题 #}
+{% block title %}社区热点日报 - {{ date }}{% endblock %}
+
+{# 主题色类（社区紫色） #}
+{% block body_class %}theme-community{% endblock %}
+
+{# 头部 #}
+{% block header_title %}🌐 社区热点日报{% endblock %}
+
+{% block header_meta %}
+<div class="subtitle">{{ date }}</div>
+<div class="stats">
+    {% if timestamp %}
+    <span>⏰ 数据更新: {{ timestamp|format_date }}</span>
+    {% endif %}
+    <span>📊 {{ sources|length }} 个来源</span>
+</div>
+{% endblock %}
+
+{# 主要内容 #}
+{% block content %}
+
+<!-- AI 分析（置顶） -->
+{% if analysis and analysis.hackernews and analysis.hackernews.success and analysis.hackernews.content %}
+<section class="section">
+    <h2 class="section-title">🤖 AI 分析</h2>
+    <div class="card">
+        <div class="card-body">
+            {{ analysis.hackernews.content | markdown_to_html | safe }}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+{% for source in sources %}
+<!-- {{ source.name }} -->
+<section class="section">
+    <h2 class="section-title" style="border-color: {{ source.color }};">
+        {{ source.icon }} {{ source.name }}
+    </h2>
+
+    <div class="card">
+        <div class="card-body">
+            {% if source.source_type == 'hackernews' %}
+            <!-- HackerNews 特定样式 -->
+            {% for item in source.entries %}
+            <div class="hn-item">
+                <div class="hn-title">
+                    <a href="{{ item.url }}" target="_blank">{{ item.title }}</a>
+                </div>
+                <div class="hn-meta">
+                    <span class="hn-score">▲ {{ item.score }}</span>
+                    <span class="hn-comments">💬 {{ item.comments }}</span>
+                    <span class="hn-author">👤 {{ item.author }}</span>
+                    <span class="hn-time">🕐 {{ item.published_at|format_date('%H:%M') }}</span>
+                </div>
+                {% if item.ai_summary %}
+                <div class="hn-summary">{{ item.ai_summary | markdown_to_html | safe }}</div>
+                {% endif %}
+            </div>
+            {% endfor %}
+
+            {% elif source.source_type == 'github' %}
+            <!-- GitHub 特定样式 -->
+            {% for item in source.entries %}
+            <div class="github-item">
+                <div class="github-header">
+                    <a href="{{ item.url }}" target="_blank" class="github-title">{{ item.title }}</a>
+                    <span class="github-language">{{ item.language }}</span>
+                </div>
+                <div class="github-desc">{{ item.description }}</div>
+                <div class="github-meta">
+                    <span class="github-stars">⭐ {{ item.stars }}</span>
+                    <span class="github-forks">🔱 {{ item.forks }}</span>
+                </div>
+                {% if item.ai_summary %}
+                <div class="github-summary">{{ item.ai_summary | markdown_to_html | safe }}</div>
+                {% endif %}
+            </div>
+            {% endfor %}
+
+            {% elif source.source_type == 'producthunt' %}
+            <!-- ProductHunt 特定样式 -->
+            {% for item in source.entries %}
+            <div class="ph-item">
+                <div class="ph-header">
+                    <a href="{{ item.url }}" target="_blank" class="ph-title">{{ item.title }}</a>
+                </div>
+                <div class="ph-desc">{{ item.description }}</div>
+                <div class="ph-meta">
+                    <span class="ph-votes">👍 {{ item.votes }}</span>
+                    <span class="ph-comments">💬 {{ item.comments }}</span>
+                </div>
+                {% if item.ai_summary %}
+                <div class="ph-summary">{{ item.ai_summary | markdown_to_html | safe }}</div>
+                {% endif %}
+            </div>
+            {% endfor %}
+
+            {% else %}
+            <!-- 通用样式 -->
+            {% for item in source.entries %}
+            <div class="generic-item">
+                <a href="{{ item.url }}" target="_blank" class="generic-title">{{ item.title }}</a>
+                {% if item.description %}
+                <div class="generic-desc">{{ item.description }}</div>
+                {% endif %}
+                {% if item.ai_summary %}
+                <div class="generic-summary">{{ item.ai_summary | markdown_to_html | safe }}</div>
+                {% endif %}
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+        </div>
+    </div>
+</section>
+{% endfor %}
+
+{% endblock %}
+
+{# 自定义样式 #}
+{% block extra_css %}
+<style>
+/* HackerNews 样式 */
+.hn-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+.hn-item:last-child {
+    border-bottom: none;
+}
+.hn-title {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+.hn-title a {
+    color: #333;
+    text-decoration: none;
+}
+.hn-title a:hover {
+    color: var(--primary-color);
+}
+.hn-meta {
+    font-size: 11px;
+    color: #888;
+}
+.hn-meta span {
+    margin-right: 12px;
+}
+
+/* GitHub 样式 */
+.github-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+.github-item:last-child {
+    border-bottom: none;
+}
+.github-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+.github-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    flex: 1;
+}
+.github-title:hover {
+    color: var(--primary-color);
+}
+.github-language {
+    font-size: 10px;
+    background: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #666;
+}
+.github-desc {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+.github-meta {
+    font-size: 11px;
+    color: #888;
+}
+.github-meta span {
+    margin-right: 12px;
+}
+
+/* ProductHunt 样式 */
+.ph-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+.ph-item:last-child {
+    border-bottom: none;
+}
+.ph-header {
+    margin-bottom: 6px;
+}
+.ph-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+}
+.ph-title:hover {
+    color: var(--primary-color);
+}
+.ph-desc {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+.ph-meta {
+    font-size: 11px;
+    color: #888;
+}
+.ph-meta span {
+    margin-right: 12px;
+}
+
+/* 条目AI总结样式 */
+.hn-summary, .github-summary, .ph-summary, .generic-summary {
+    background: #f5f5f5;
+    border-left: 2px solid var(--primary-color);
+    border-radius: 4px;
+    padding: 8px 10px;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* 通用样式 */
+.generic-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+.generic-item:last-child {
+    border-bottom: none;
+}
+.generic-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 4px;
+}
+.generic-title:hover {
+    color: var(--primary-color);
+}
+.generic-desc {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* AI 分析内容样式 */
+.card-body h2 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin: 16px 0 10px 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #eee;
+}
+.card-body h2:first-child {
+    margin-top: 0;
+}
+
+.card-body h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #444;
+    margin: 12px 0 8px 0;
+}
+
+.card-body h4 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #666;
+    margin: 10px 0 6px 0;
+}
+
+.card-body p {
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 8px 0;
+}
+
+.card-body ul, .card-body ol {
+    margin: 8px 0;
+    padding-left: 20px;
+}
+
+.card-body li {
+    margin: 4px 0;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.card-body strong {
+    color: #c62828;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.card-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0;
+    font-size: 11px;
+}
+
+.card-body th, .card-body td {
+    border: 1px solid #ddd;
+    padding: 6px 8px;
+    text-align: left;
+}
+
+.card-body th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+}
+
+.card-body code {
+    background: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-family: 'Monaco', 'Menlo', monospace;
+}
+
+.card-body pre {
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.card-body blockquote {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 12px;
+    margin: 10px 0;
+    color: #666;
+    font-style: italic;
+    font-size: 12px;
+}
+</style>
+{% endblock %}

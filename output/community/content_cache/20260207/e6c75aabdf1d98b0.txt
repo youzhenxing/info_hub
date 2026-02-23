@@ -1,0 +1,237 @@
+URL: https://github.com/llmsresearch/paperbanana
+Title: llmsresearch/paperbanana
+Time: 2026-02-07T23:27:09.255342
+# llmsresearch/paperbanana
+
+**描述**: Open source implementation and extension of Google Research’s PaperBanana for automated academic figures, diagrams, and research visuals, expanded to new domains like slide generation.
+**Stars**: 93
+**Forks**: 16
+**语言**: Python
+**创建时间**: 2026-02-04T14:46:47Z
+**最后更新**: 2026-02-07T14:45:54Z
+**标签**: academic-diagrams, academic-research, arxiv, gemini, llm, llmagents, llms, mcp, mcp-server, multiagent, multiagent-systems, muti-agent, nanobanana, nanobananapro, neurips, paperbanana, paperwriting, scientific-visualization
+
+
+---
+
+## README
+
+<!-- mcp-name: io.github.llmsresearch/paperbanana -->
+<table align="center" width="100%" style="border: none; border-collapse: collapse;">
+  <tr>
+    <td width="220" align="left" valign="middle" style="border: none;">
+      <img src="https://dwzhu-pku.github.io/PaperBanana/static/images/logo.jpg" alt="PaperBanana Logo" width="180"/>
+    </td>
+    <td align="left" valign="middle" style="border: none;">
+      <h1>PaperBanana</h1>
+      <p><strong>Automated Academic Illustration for AI Scientists</strong></p>
+      <p>
+        <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.10%2B-blue?logo=python&logoColor=white" alt="Python 3.10+"/></a>
+        <a href="https://arxiv.org/abs/2601.23265"><img src="https://img.shields.io/badge/arXiv-2601.23265-b31b1b?logo=arxiv&logoColor=white" alt="arXiv"/></a>
+        <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green?logo=opensourceinitiative&logoColor=white" alt="License: MIT"/></a>
+        <br/>
+        <a href="https://pydantic.dev"><img src="https://img.shields.io/badge/Pydantic-v2-e92063?logo=pydantic&logoColor=white" alt="Pydantic v2"/></a>
+        <a href="https://typer.tiangolo.com"><img src="https://img.shields.io/badge/CLI-Typer-009688?logo=gnubash&logoColor=white" alt="Typer"/></a>
+        <a href="https://ai.google.dev/"><img src="https://img.shields.io/badge/Gemini-Free%20Tier-4285F4?logo=google&logoColor=white" alt="Gemini Free Tier"/></a>
+      </p>
+    </td>
+  </tr>
+</table>
+
+---
+
+> **Disclaimer**: This is an **unofficial, community-driven open-source implementation** of the paper
+> *"PaperBanana: Automating Academic Illustration for AI Scientists"* by Dawei Zhu, Rui Meng, Yale Song,
+> Xiyu Wei, Sujian Li, Tomas Pfister, and Jinsung Yoon ([arXiv:2601.23265](https://arxiv.org/abs/2601.23265)).
+> This project is **not affiliated with or endorsed by** the original authors or Google Research.
+> The implementation is based on the publicly available paper and may differ from the original system.
+
+An agentic framework for generating publication-quality academic diagrams and statistical plots from text descriptions. Uses Google Gemini for both VLM and image generation.
+
+- Two-phase multi-agent pipeline with iterative refinement
+- Gemini-based VLM planning and image generation
+- CLI, Python API, and MCP server for IDE integration
+- Claude Code skills for `/generate-diagram`, `/generate-plot`, and `/evaluate-diagram`
+
+<p align="center">
+  <img src="assets/img/hero_image.png" alt="PaperBanana takes paper as input and provide diagram as output" style="max-width: 960px; width: 100%; height: auto;"/>
+</p>
+
+---
+
+## Quick Start
+
+### Prerequisites
+
+- Python 3.10+
+- A Google Gemini API key (available at no cost from [Google AI Studio](https://makersuite.google.com/app/apikey))
+
+### Step 1: Install
+
+```bash
+pip install paperbanana
+```
+
+Or install from source for development:
+
+```bash
+git clone https://github.com/llmsresearch/paperbanana.git
+cd paperbanana
+pip install -e ".[dev,google]"
+```
+
+### Step 2: Get Your API Key
+
+Run the interactive setup wizard:
+
+```bash
+paperbanana setup
+```
+
+This opens your browser to get a Google Gemini API key from [Google AI Studio](https://makersuite.google.com/app/apikey) and saves it to `.env`.
+
+Or set it up manually:
+
+```bash
+cp .env.example .env
+# Edit .env and add: GOOGLE_API_KEY=your-key-here
+```
+
+### Step 3: Generate a Diagram
+
+```bash
+# Using the included sample input
+paperbanana generate \
+  --input examples/sample_inputs/transformer_method.txt \
+  --caption "Overview of our encoder-decoder architecture with sparse routing"
+```
+
+Or write your own methodology text:
+
+```bash
+cat > my_method.txt << 'EOF'
+Our framework consists of an encoder that processes input sequences
+through multi-head self-attention layers, followed by a decoder that
+generates output tokens auto-regressively using cross-attention to
+the encoder representations. We add a novel routing mechanism that
+selects relevant encoder states for each decoder step.
+EOF
+
+paperbanana generate \
+  --input my_method.txt \
+  --caption "Overview of our encoder-decoder framework"
+```
+
+Output is saved to `outputs/run_<timestamp>/final_output.png` along with all intermediate iterations and metadata.
+
+---
+
+## How It Works
+
+PaperBanana implements a two-phase multi-agent pipeline with 5 specialized agents:
+
+**Phase 1 -- Linear Planning:**
+
+1. **Retriever** selects the most relevant reference examples from a curated set of 13 methodology diagrams spanning agent/reasoning, vision/perception, generative/learning, and science/applications domains
+2. **Planner** generates a detailed textual description of the target diagram via in-context learning from the retrieved examples
+3. **Stylist** refines the description for visual aesthetics using NeurIPS-style guidelines (color palette, layout, typography)
+
+**Phase 2 -- Iterative Refinement (3 rounds):**
+
+4. **Visualizer** renders the description into an image (Gemini 3 Pro for diagrams, Matplotlib code for plots)
+5. **Critic** evaluates the generated image against the source context and provides a revised description addressing any issues
+6. Steps 4-5 repeat for up to 3 iterations
+
+## Providers
+
+| Component | Provider | Model |
+|-----------|----------|-------|
+| VLM (planning, critique) | Google Gemini | `gemini-2.0-flash` |
+| Image Generation | Google Gemini | `gemini-3-pro-image-preview` |
+
+---
+
+## CLI Reference
+
+### `paperbanana generate` -- Methodology Diagrams
+
+```bash
+paperbanana generate \
+  --input method.txt \
+  --caption "Overview of our framework" \
+  --output diagram.png \
+  --iterations 3
+```
+
+| Flag | Short | Description |
+|------|-------|-------------|
+| `--input` | `-i` | Path to methodology text file (required) |
+| `--caption` | `-c` | Figure caption / communicative intent (required) |
+| `--output` | `-o` | Output image path (default: auto-generated in `outputs/`) |
+| `--iterations` | `-n` | Number of Visualizer-Critic refinement rounds |
+| `--vlm-provider` | | VLM provider name (default: `gemini`) |
+| `--vlm-model` | | VLM model name (default: `gemini-2.0-flash`) |
+| `--image-provider` | | Image gen provider (default: `google_imagen`) |
+| `--image-model` | | Image gen model (default: `gemini-3-pro-image-preview`) |
+| `--config` | | Path to YAML config file (see `configs/config.yaml`) |
+
+### `paperbanana plot` -- Statistical Plots
+
+```bash
+paperbanana plot \
+  --data results.csv \
+  --intent "Bar chart comparing model accuracy across benchmarks"
+```
+
+| Flag | Short | Description |
+|------|-------|-------------|
+| `--data` | `-d` | Path to data file, CSV or JSON (required) |
+| `--intent` | | Communicative intent for the plot (required) |
+| `--output` | `-o` | Output image path |
+| `--iterations` | `-n` | Refinement iterations (default: 3) |
+
+### `paperbanana evaluate` -- Quality Assessment
+
+Comparative evaluation of a generated diagram against a human reference using VLM-as-a-Judge:
+
+```bash
+paperbanana evaluate \
+  --generated diagram.png \
+  --reference human_diagram.png \
+  --context method.txt \
+  --caption "Overview of our framework"
+```
+
+| Flag | Short | Description |
+|------|-------|-------------|
+| `--generated` | `-g` | Path to generated image (required) |
+| `--reference` | `-r` | Path to human reference image (required) |
+| `--context` | | Path to source context text file (required) |
+| `--caption` | `-c` | Figure caption (required) |
+
+Scores on 4 dimensions (hierarchical aggregation per the paper):
+- **Primary**: Faithfulness, Readability
+- **Secondary**: Conciseness, Aesthetics
+
+### `paperbanana setup` -- First-Time Configuration
+
+```bash
+paperbanana setup
+```
+
+Interactive wizard that walks you through obtaining a Google Gemini API key and saving it to `.env`.
+
+---
+
+## Python API
+
+```python
+import asyncio
+from paperbanana import PaperBananaPipeline, GenerationInput, DiagramType
+from paperbanana.core.config import Settings
+
+settings = Settings(
+    vlm_provider="gemini",
+    image_provider="google_imag
+
+[README 已截断...]

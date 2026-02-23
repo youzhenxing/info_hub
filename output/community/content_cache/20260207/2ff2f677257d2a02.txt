@@ -1,0 +1,244 @@
+URL: https://github.com/voocel/openclaw-mini
+Title: voocel/openclaw-mini
+Time: 2026-02-07T23:25:49.684449
+# voocel/openclaw-mini
+
+**描述**: 🦞 OpenClaw 核心架构的极简复现，涵盖 sessionKey 会话域、队列串行、工具化记忆检索、按需上下文加载、可扩展技能与主动心跳唤醒机制
+**Stars**: 298
+**Forks**: 16
+**语言**: TypeScript
+**创建时间**: 2026-02-01T09:24:33Z
+**最后更新**: 2026-02-07T08:58:00Z
+**标签**: agent, ai, clawdbot, openclaw
+
+
+---
+
+## README
+
+# OpenClaw Mini
+
+**OpenClaw 核心架构的极简复现，用于学习 AI Agent 的系统级设计。**
+
+> "没有记忆的 AI 只是函数映射，有记忆 + 主动唤醒的 AI，才是会演化的'生命系统'"
+
+## 为什么做这个项目
+
+网上大多数 Agent 教程只讲 Agent Loop：
+
+```python
+while tool_calls:
+    response = llm.generate(messages)
+    for tool in tools:
+        result = tool.execute()
+        messages.append(result)
+```
+
+**这不是真正的 Agent 架构。** 一个生产级 Agent 需要的是"系统级最佳实践"。
+
+OpenClaw 是一个超43w行的复杂Agent 系统，本项目从中提炼出核心设计与最小实现，帮助你理解：
+
+- 为什么需要长期记忆？
+- 如何实现按需上下文加载？
+- 如何做上下文管理与压缩（裁剪 + 摘要）？
+- 技能系统怎么设计才能扩展？
+- 主动唤醒机制的真实实现是什么？
+
+## 架构对照
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│                       OpenClaw Mini                               │
+│                      (本项目 · 精简核心版)                            │
+├──────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────────┐   │
+│  │   Context   │  │   Skills    │  │       Heartbeat         │   │
+│  │   Loader    │  │   Manager   │  │       Manager           │   │
+│  │             │  │             │  │  ┌─────────────────┐    │   │
+│  │ AGENTS.md   │  │ SKILL.md    │  │  │ HeartbeatWake   │    │   │
+│  │ SOUL.md     │  │ 触发词匹配  │  │  │ (请求合并层)    │    │   │
+│  │ TOOLS.md... │  │ 内置+自定义 │  │  └────────┬────────┘    │   │
+│  └──────┬──────┘  └──────┬──────┘  │           │             │   │
+│         │                │         │  ┌────────▼────────┐    │   │
+│         │                │         │  │ HeartbeatRunner │    │   │
+│         │                │         │  │ (调度层)        │    │   │
+│         │                │         │  └────────┬────────┘    │   │
+│         │                │         └───────────┼─────────────┘   │
+│         │                │                     │                  │
+│         ▼                ▼                     ▼                  │
+│  ┌────────────────────────────────────────────────────────────┐  │
+│  │                      Agent Loop                             │  │
+│  │                                                             │  │
+│  │   while (tool_calls) {                                      │  │
+│  │     response = llm.generate(system_prompt + messages)       │  │
+│  │     for (tool of tools) { result = tool.execute() }         │  │
+│  │     messages.push(result)                                   │  │
+│  │   }                                                         │  │
+│  │                                                             │  │
+│  └────────────────────────────────────────────────────────────┘  │
+│         │                                          │              │
+│         ▼                                          ▼              │
+│  ┌─────────────┐                          ┌─────────────┐        │
+│  │   Session   │                          │   Memory    │        │
+│  │   Manager   │                          │   Manager   │        │
+│  │  (JSONL)    │                          │ (关键词检索) │        │
+│  └─────────────┘                          └─────────────┘        │
+│                                                                   │
+└──────────────────────────────────────────────────────────────────┘
+```
+
+## 5 大核心子系统
+
+| 子系统 | 本项目 | OpenClaw 源码 | 核心职责 |
+|--------|--------|---------------|----------|
+| **Session** | `session.ts` | `src/agents/session-manager.ts` | 会话持久化 (JSONL)、历史管理 |
+| **Memory** | `memory.ts` | `src/memory/manager.ts` (76KB) | 长期记忆、语义检索 |
+| **Context** | `context/loader.ts` | `src/agents/bootstrap-files.ts` | 按需加载 AGENTS/SOUL/TOOLS/IDENTITY/USER/HEARTBEAT/BOOTSTRAP/MEMORY |
+| **Skills** | `skills.ts` | `src/agents/skills/` | 可扩展技能、触发词匹配 |
+| **Heartbeat** | `heartbeat.ts` | `src/infra/heartbeat-runner.ts`<br>`src/infra/heartbeat-wake.ts` | 主动唤醒、事件驱动调度 |
+
+---
+
+## 深入解析
+
+### 1. Session Manager - 会话持久化
+
+**问题**：Agent 重启后如何恢复对话上下文？
+
+**OpenClaw 方案**：
+- JSONL 格式存储（每行一条消息，追加写入）
+- 分布式锁防止并发写入
+- 自动 compaction 压缩历史
+
+**本项目实现** (`session.ts:45-62`)：
+```typescript
+async append(sessionId: string, message: Message): Promise<void> {
+  const filePath = this.getFilePath(sessionId);
+  await fs.mkdir(path.dirname(filePath), { recursive: true });
+  await fs.appendFile(filePath, JSON.stringify(message) + "\n");
+}
+```
+
+### 2. Memory Manager - 长期记忆
+
+**问题**：如何让 Agent "记住"跨会话的信息？
+
+**OpenClaw 方案** (`src/memory/manager.ts`)：
+- SQLite-vec 向量数据库做语义搜索
+- BM25 做关键词搜索
+- 混合排序 (Hybrid Search)
+
+**本项目简化** (`memory.ts:85-118`)：
+```typescript
+async search(query: string, limit = 5): Promise<MemorySearchResult[]> {
+  const queryTerms = query.toLowerCase().split(/\s+/);
+
+  for (const entry of this.entries) {
+    let score = 0;
+    // 关键词匹配得分
+    for (const term of queryTerms) {
+      if (text.includes(term)) score += 1;
+      if (entry.tags.some(t => t.includes(term))) score += 0.5;
+    }
+    // 时间衰减：越新的记忆分数越高
+    const recencyBoost = Math.max(0, 1 - ageHours / (24 * 30));
+    score += recencyBoost * 0.3;
+  }
+}
+```
+
+### 3. Context Loader - 按需上下文
+
+**问题**：如何注入项目级规范而不污染每次对话？
+
+**OpenClaw 方案** (`src/agents/bootstrap-files.ts`)：
+- `AGENTS.md / SOUL.md / TOOLS.md / IDENTITY.md / USER.md / HEARTBEAT.md / BOOTSTRAP.md`
+- `MEMORY.md`（或 `memory.md`）作为记忆补充
+- 子代理仅允许 `AGENTS.md` + `TOOLS.md` 进入上下文
+- 超长文件按 head+tail 截断并加标记
+
+**本项目实现** (`context/loader.ts`)：
+```typescript
+async buildContextPrompt(params?: { sessionKey?: string }): Promise<string> {
+  const files = await this.loadBootstrapFiles(params);
+  const contextFiles = buildBootstrapContextFiles(files, { maxChars: this.maxChars });
+  // Project Context 输出（含 SOUL.md 特殊提示）
+}
+```
+
+### 3.1 Context Pruning/Compaction - 上下文压缩
+
+**OpenClaw 方案**：
+- `src/agents/pi-extensions/context-pruning/*`：裁剪工具结果、保留最近上下文
+- `src/agents/compaction.ts`：超长历史摘要压缩
+
+**本项目实现**：
+- `context/pruning.ts`：软裁剪 tool_result + 保留最近 assistant
+- `context/compaction.ts`：触发阈值后生成“历史摘要”并注入
+
+### 4. Skills Manager - 可扩展技能
+
+**问题**：如何让用户自定义 Agent 能力？
+
+**OpenClaw 方案** (`src/agents/skills/types.ts`)：
+- SKILL.md frontmatter 定义元数据
+- 支持触发条件、安装脚本、参数校验
+- 运行时动态加载
+
+**本项目实现** (`skills.ts:125-170`)：
+```typescript
+// SKILL.md 格式
+// ---
+// id: deploy
+// name: 部署助手
+// triggers: ["/deploy", "部署"]
+// ---
+// Prompt 内容...
+
+async match(input: string): Promise<SkillMatch | null> {
+  for (const skill of this.skills.values()) {
+    for (const trigger of skill.triggers) {
+      if (input.startsWith(trigger)) {
+        return { skill, matchedTrigger: trigger };
+      }
+    }
+  }
+}
+```
+
+### 5. Heartbeat Manager - 主动唤醒
+
+**问题**：Agent 如何"主动"工作，而不只是被动响应？
+
+**OpenClaw 方案** (`src/infra/heartbeat-runner.ts`, `src/infra/heartbeat-wake.ts`)：
+
+这是最复杂的子系统，包含两层架构：
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                     HeartbeatWake (请求合并层)               │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│  多来源触发:                                                 │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐    │
+│  │ interval │  │   cron   │  │   exec   │  │ requested│    │
+│  │ (定时器) │  │ (任务完成)│  │ (命令完成)│  │ (手动)   │    │
+│  └────┬─────┘  └────┬─────┘  └────┬─────┘  └────┬─────┘    │
+│       │             │             │             │           │
+│       └─────────────┴──────┬──────┴─────────────┘           │
+│                            ▼                                 │
+│                    request({ reason })                       │
+│                            │                                 │
+│                    ┌───────▼───────┐                        │
+│                    │ 原因优先级合并 │                        │
+│                    │ exec > cron   │                        │
+│                    │ > interval    │                        │
+│                    └───────┬───────┘                        │
+│                            │                                 │
+│                    ┌───────▼───────┐                        │
+│                    │ schedule(250ms)│ ◄── 合并窗口          │
+│                    └───────┬───────┘                        │
+│
+
+[README 已截断...]

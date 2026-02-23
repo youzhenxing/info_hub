@@ -1,0 +1,34 @@
+URL: https://www.reddit.com/r/artificial/comments/1qtqqcj/im_experimenting_with_an_ai_that_grows_a_story/
+Title: Reddit - The heart of the internet
+Time: 2026-02-03T07:07:00.480803
+Go to artificial
+r/artificial
+•
+Distinct-Path659
+Français
+हिन्दी
+Italiano
+Español (Latinoamérica)
+I’m experimenting with an AI that grows a story world together with kids instead of generating one-off stories
+I’ve been thinking a lot about AI storytelling tools lately, and something keeps bothering me.
+Most of them generate content, but nothing really persists.
+You get a story, you read it, and then it disappears. The next one has no memory of what came before.
+So I decided to run a small experiment.
+Instead of asking AI to write isolated children’s stories, I’m trying to build a system where a story world actually keeps evolving over time.
+The idea is that characters remember past events, relationships carry forward, and kids make choices that permanently shape what happens next. The AI’s role isn’t just to generate text, but to maintain continuity and grow the universe as it goes.
+In a way, it’s more like human and AI co-creating a living story world rather than consuming disposable stories.
+My hypothesis is that if kids actively participate in shaping a world by choosing paths, helping characters, and influencing outcomes, the stories will feel far more meaningful than static books or one-shot AI generations.
+Almost like a lightweight narrative universe that grows naturally.
+Right now there’s no product yet.
+The first step I’m taking is letting the AI simulate many rounds of “child-like” choices on its own to see if long-term story arcs, recurring characters, and emergent plotlines appear organically.
+If that shows promise, the next step will be inviting real kids to co-create.
+Some things I’m especially curious about:
+Will coherent long-term story structure emerge on its own?
+Will certain characters naturally become central over time?
+Will preferences shape each world’s tone and direction?
+Will participation increase emotional attachment to the stories?
+I’m planning to document this whole experiment publicly as I go.
+If anyone here has experience with agent systems, long-term memory in AI, emergent storytelling, or just thoughts about potential pitfalls, I’d really appreciate hearing them.
+I’ll share updates as the experiment progresses.
+Read more
+Share

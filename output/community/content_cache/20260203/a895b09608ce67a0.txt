@@ -1,0 +1,11 @@
+URL: https://www.reddit.com/r/robotics/comments/1qu82tf/need_help_with_a_yaskawa_motoman_up130/
+Title: Reddit - The heart of the internet
+Time: 2026-02-03T10:24:12.795681
+Go to robotics
+r/robotics
+•
+Nanomachines100
+Need help with a Yaskawa Motoman UP130
+I'm new to motoman robots and am running into an issue where I can't change the max disturbance value even though I'm in management mode. The cursor just jumps over the value. I'm trying to change this because the robot is constantly throwing an "invalid shock detection" whenever I try to move the manipulator. I tried searching through the documentation and can't find why it's doing this.
+Read more
+Share

@@ -1,0 +1,1059 @@
+URL: https://news.ycombinator.com/item?id=46826277
+Title: Ask HN: Do you also "hoard" notes/links but struggle to turn them into actions? | Hacker News
+Time: 2026-01-31T22:02:53.326194
+Hacker News
+new
+|
+past
+|
+comments
+|
+ask
+|
+show
+|
+jobs
+|
+submit
+login
+Ask HN: Do you also "hoard" notes/links but struggle to turn them into actions?
+201 points
+by
+item007
+17 hours ago
+|
+hide
+|
+past
+|
+favorite
+|
+169 comments
+Hi HN — I’m exploring an idea and would love your feedback.
+I’m a builder and user of Obsidian, validating a concept called Concerns. Today it’s only a landing page + short survey (no product yet) to test whether this pain is real.
+The core idea (2–3 bullets):
+- Many of us capture tons of useful info (notes/links/docs), but it rarely becomes shipped work.
+- Instead of better “organization” (tags/folders), I’m exploring an “action engine” that:
+1.detects what you’re actively targetting/working on (“active projects”)
+
+ 2.surfaces relevant saved material at the right moment
+
+ 3.proposes a concrete next action (ideally pushed into your existing task tool)
+My own “second brain” became a graveyard of good intentions: the organizing tax was higher than the value I got back. I’m trying to validate whether the real bottleneck is execution, not capture.
+Before writing code, I’m trying to pin down two things:
+- Project context signals (repo/PRs? issues? tasks? calendar? a “project doc”?)
+- How to close the loop: ingest knowledge → rank against active projects → emit a small set of next-actions into an existing todo tool → learn from outcomes (done/ignored/edited) and optionally write back the minimal state. The open question: what’s the cleanest feedback signal without creating noise or privacy risk? (explicit ratings vs completion events vs doc-based write-back)
+What I’m asking from you:
+1.Where does your “second brain” break down the most?
+capture / organization / retrieval / execution
+(If you can, share a concrete recent example.)
+2.What best represents “active project context” for you today?
+task project (Todoist/Things/Reminders)
+
+ issues/boards (GitHub/Linear/Jira)
+
+ a doc/wiki page (Notion/Docs)
+
+ calendar
+
+ "in my head"
+Which one would you actually allow a tool to read?
+3.What’s your hard “no” for an AI that suggests actions from your notes/links? (pick 1–2)
+privacy/data retention
+
+ noisy suggestions / interruption
+
+ hallucinations / wrong suggestions
+
+ workflow change / migration cost
+
+ pricing
+
+ others
+nicbou
+14 hours ago
+|
+next
+[–]
+At some point, organisation can become a form of procrastination. Building a second brain is not Doing The Thing.[0]
+A note is not an intention. It commits to memory, not to action. I really don't care about having a whole searchable, tagged database; I hardly ever look at those notes again.
+At work I have topic-based Markdown notes. Sometimes I collect information about a topic for a few weeks or months, and eventually turn it into a proper guide (making guides is my job).
+I also LOVE paper notebooks, because they become a beautiful timeline of sketches, to-do lists, thoughts and plans. When I finish a notebook, I scan it then throw it in a drawer.
+I also use Obsidian daily notes to journal, mostly because it's easier to open an app than to write in a notebook. I don't do anything special with those notes, unless I'm trying to "debug" something happening in my life.
+[0]
+https://strangestloop.io/essays/things-that-arent-doing-the-...
+reply
+item007
+8 hours ago
+|
+parent
+|
+next
+[–]
++1 to “organization as procrastination”. I’m trying to avoid making the archive more “beautiful” and instead make it more actionable.
+It seems you're more accustomed to treating stored information as memories rather than a knowledge base. That's perfectly fine. However, I personally believe that the progress humans and AI have made to reach our current stage likely stems largely from the accumulation of knowledge, combined with the evolution driven by new challenges!
+reply
+nicbou
+4 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+It's just information. Even calling it knowledge is a stress because it more closely reflects my emotional state than actual truth.
+It's only useful in the context of understanding myself.
+reply
+item007
+4 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+I get that, and I think that distinction is healthy.
+“Knowledge base” can imply objective truth and completeness, which creates pressure. For a lot of us, what we store is really a snapshot of attention, curiosity, anxiety, and identity at a moment in time — more like a personal log than a database.
+One framing that helps me is: the archive isn’t “truth”, it’s “evidence of what I cared about”, and it’s only useful when it reduces friction for a real moment (re-entry, reflection, or a concrete next step). Otherwise it’s just noise.
+Do you find it more useful as a mirror (patterns about yourself), or as a tool (helping you make decisions / take action)?
+reply
+nicbou
+2 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+Sometimes the writing itself is useful, like when I realise that I've been stressing about something minor for a few days, or when I hesitate to write down how I _really_ feel about something. In other cases it forces me to actually understand what I'm feeling in order to put it into words. In a sense those notes could be write-only and still be useful.
+In other cases these notes are a complement to my photos. They show a different aspect of my life at a given moment. My photos don't show that on September 4, 2015, I had a massive crush on someone. I have built a timeline that combines my journals, photos, sketches, geolocation, Google searches and other things. It reveals a far more nuanced picture of me at a given time.
+I also have more technical notes. Those are a bit of a "collection of facts". It's a bit like putting all the parts on the table, and slowly organising them into a coherent structure. This is how I approach bigger topics before I understand them fully. Then my notes act as a sort of medium-term memory. When I finish a project, I usually have a bunch of leftover notes and todos that I don't intend to ever finish. That's why I say that notes are not an obligation.
+reply
+item007
+1 hour ago
+|
+root
+|
+parent
+|
+next
+[–]
+That’s a really thoughtful distinction. I like how you separate “write-only but still valuable” (emotional clarity / self-understanding) from “collection of facts” (laying pieces on the table until a structure emerges).
+The “notes aren’t an obligation” line also resonates — treating them as medium-term memory rather than a forever archive removes a lot of pressure.
+When you finish a project and you have leftover notes/todos you don’t intend to finish, do you actively prune/close them (mark done/obsolete), or do you just let them fade and trust that what matters will resurface naturally?
+reply
+visarga
+9 hours ago
+|
+parent
+|
+prev
+|
+next
+[–]
+Me too, I already exported my data from all platforms including HN and indexed them in a RAG database but I don't feel like using them much. They are past oriented and I need present oriented stuff. With LLMs I noticed I don't like when they use chat history search or memory functions, it makes them fall into a rut and become less creative.
+I even got to a point where I made an "anti-memory system" - a MCP tool that just calls a model without context from the full conversation or past conversations, to get a fresh perspective. And I instruct the host model to reveal only partially the information we discussed, explaining that creativity is sparked when LLMs get to see not too much, not too little - like a sexy dress.
+reply
+item007
+8 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+"anti-memory system" Cool~！
+When it comes to stimulating AI creativity, it may indeed be better to impose fewer constraints. However, in most scenarios, problems are likely still solved through simple information aggregation, refinement, analysis, and planning, right?
+reply
+nicbou
+4 hours ago
+|
+root
+|
+parent
+|
+prev
+|
+next
+[–]
+I put my data on a timeline because I find it interesting, but I rarely check it.
+reply
+tolerance
+6 hours ago
+|
+parent
+|
+prev
+|
+next
+[–]
+> Building a second brain is not Doing The Thing.
+I hate the concept of a “second brain” but this isn’t necessarily true.
+Those guides you make at work seemingly precede the action of someone else, right? And even if the notes you write for yourself aren’t needed afterwards, don’t they contribute to “doing the thing”?
+reply
+item007
+5 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+I think “second brain isn’t doing” is a good antidote to procrastination-by-organization, but it’s not universally true. Guides/runbooks are clearly “doing” because they enable action by others. Even personal notes can be “doing” if they change decisions, reduce re-entry cost, or prevent repeating mistakes. The failure mode is when system-building becomes a substitute for output, not a support for it.
+reply
+nicbou
+4 hours ago
+|
+root
+|
+parent
+|
+prev
+|
+next
+[–]
+These notes are explicitly part of the process, but they're just markdown files in a folder.
+reply
+tolerance
+3 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+That’s quite like how I see my own system.
+reply
+input_sh
+14 hours ago
+|
+prev
+|
+next
+[–]
+I legitimately don't struggle with this. I have the "root" note which opens by default whenever I reset my Obsidian vault and it shows three lists:
+1. most recently updated notes
+2. most recently created notes
+3. notes I've added to my favourites
+On top of a search bar that doesn't suck, this is pretty much all I ever need.
+As for "AI", it's never going anywhere near my notes. It's supposed to be
+my
+second brain filled with content
+I've
+bothered to write down for myself. "AI" doesn't write it, "AI" doesn't process it, and I will never be convinced to change that. I use "AI" extensively, but this is a hard line that I will never cross.
+reply
+swah
+2 hours ago
+|
+parent
+|
+next
+[–]
+Do you mean reset as reopening? How can I get those lists?
+I would like AI to tell me "this note looks like an incomprehensible brain dump and needs review before you forget today's meetings"
+reply
+input_sh
+2 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+> Do you mean reset as reopening?
+Yes, I have two vaults (one work-oriented, one completely personal) and frequently switch between them. Whenever I do so, I use a homepage plugin that always opens the same "root" note. You can vibe-code this plugin within minutes if you prefer, it's literally all that it does. Or you can have that note pinned to the sidebar and skip the plugins entirely, up to you really.
+> How can I get those lists?
+You need to be able to embed queries into your notes. Either you use Bases (first-party plugin) or Dataview (third-party plugin). The second one is a little more ironed out as of now, so I keep using that (but will probably migrate in the future). For the first two lists you create queries that simply look at file's creation/modification time. For the third one, Obsidian gives you an option to "star" a note, so you query for that.
+reply
+item007
+1 hour ago
+|
+root
+|
+parent
+|
+next
+[–]
+That’s a great breakdown — thank you. The “root note as a homepage” + three lists feels like the simplest re-entry surface.
+Quick question: do you keep those lists purely time-based (recently updated/created), or do you also include any “active project” signal (e.g. notes linked from a project hub / kanban) so the homepage reflects what you’re actually working on rather than what was last touched?
+reply
+item007
+7 hours ago
+|
+parent
+|
+prev
+|
+next
+[–]
+Appreciate the clear boundary.
+If we reframe it as non-generative assistance (pure local indexing + better retrieval, no writing), would that still be a “no”, or is the hard line specifically about model processing?
+reply
+input_sh
+1 hour ago
+|
+root
+|
+parent
+|
+next
+[–]
+In theory I have nothing against some sort of a tiny local LLM model that will index them and make the search a little bit more powerful, but to be honest if the feature is advertised as "AI", I doubt I will care enough to look into details.
+I'd rather take a dumb "synonyms" plugin that I have complete control over and renders results "instantly" than invoking any sort of LLM where I have to wait more than 3 seconds for a result.
+reply
+item007
+1 hour ago
+|
+root
+|
+parent
+|
+next
+[–]
+That makes total sense. Latency kills the workflow, and “advertised as AI” carries baggage even if the underlying technique is harmless.
+One nuance: the way I’m thinking about this isn’t “you type a query and wait for an LLM”. It’s more like local indexing/pre-computation so retrieval is instant, and any heavier processing happens ahead of time (or during a scheduled review) so it never blocks you. Then you can consume it as a pull-based view or a tiny daily digest—no interruptions, no spinning cursor.
+If you could pick one: would you prefer a deterministic synonyms/alias layer (instant, fully controllable), or a local semantic index that improves recall but still feels “tool-like” rather than “AI”?
+I’m exploring a similar local-first, low-noise approach (more context in my HN profile/bio if you’re curious).
+reply
+sureglymop
+2 hours ago
+|
+prev
+|
+next
+[–]
+I'm working on a project in this realm. Basically I am building a "personal" spyware/data collection software suite. Kind of in the same realm as ms recall but more focused on security/privacy with sensible cryptographic defaults where needed.
+It is basically a server/data store and client agents, currently the agent is only for linux end user devices. The agent records evdev events (keystrokes/mouse movement), currently active window, clipboard history, shell commands issued and browsing behaviour. It runs as its own user and different functionality is compartmentalized into their own processes. Data is encrypted at rest. I'm still looking into how to best handle sensitive data in-memory at runtime.
+It stores these events in a persistent queue on the clients and one-way syncs it to the server. If a client is offline for a bit it syncs it when it comes back online. As such, I am also trying to minimize storage used.
+The idea is that rather than overwhelmingly linking stuff manually, e.g. with obsidian, locality of reference seems more useful as a baseline. In this data set, links by time are valued the most. In the future I'd like to add also the screenshot/video feature using hashes and perceptual hashes or an RDP like way to store as little data as possible.
+For now I'm mostly in the architecting phase but I do have an early working version. Really looking for suggestions architecture wise too. So far I came up with my own binary format to save events on the clients but I'm unsure if it's the right way to go. There are many challenges to be thought about, such as changing hardware configuration (display plugged in), protecting against statistical analysis (e.g. keystroke bursts), deletion of data across sources if required, how to make sure the system can run smoothly for a decade, etc.
+reply
+kyriakos
+3 hours ago
+|
+prev
+|
+next
+[–]
+I use self hosted
+https://karakeep.app/
+to keep links I find interesting. In a year of use I think I only went back twice to find a link I saved. That means most of the time the stuff I think I need to keep for later are useless.
+reply
+item007
+1 hour ago
+|
+parent
+|
+next
+[–]
+That’s a brutally honest metric, and I think it’s common: most “save for later” is really “offload for now”. The fact you only resurfaced twice doesn’t mean the tool failed — it might mean the capture filter is too loose, or resurfacing is missing a good trigger.
+Do you think the better fix is stronger filtering at capture time (keep less), or a lightweight resurfacing habit (e.g. a weekly 10-minute review / 1–2 items per day digest) so more of it gets a fair second look?
+I’m exploring this exact “offload vs resurfacing” problem (more context in my HN profile/bio if you’re curious).
+reply
+flexagoon
+1 hour ago
+|
+parent
+|
+prev
+|
+next
+[–]
+I also use Karakeep, but for me the value is in the full text search + AI tagging. I very often remember some page or article I visited a while ago and want to revisit it, only to not be able to find it because I don't remember where it was. Karakeep essentially acts as my own personal search engine to let me search through the best pages I visited.
+reply
+item007
+1 hour ago
+|
+root
+|
+parent
+|
+next
+[–]
+That makes sense — treating it as a personal search engine is a real, high-ROI use case. Full-text search covers the “I remember the idea but not where I saw it” problem really well.
+Out of curiosity, what’s the bigger win for you: full-text search itself, or the tagging/metadata layer that helps narrow results when your memory is fuzzy? And do you mostly search by keywords, or by “context” (project/topic you’re working on)?
+I’m validating a similar retrieval-first angle (summarized in my HN profile/bio if you want to compare notes).
+reply
+flexagoon
+18 minutes ago
+|
+root
+|
+parent
+|
+next
+[–]
+Given that your comment is AI generated I don't know if you're actually interested or just want to plug your product, though I'll assume good faith and answer the question
+I don't manually tag any entries - the automatic AI tags just add extra keywords I can search for that are not included in the original article text. So I mostly search by keywords, yes. Not sure what the difference is between "keywords" and "topic you're working on".
+See also
+https://mymind.com
+, which takes the AI tagging even further. Potentially similar to what you're building (although, again, your landing page contains a lot of AI generated metaphors and nothing that explains what your product actually does)
+reply
+aappleby
+12 hours ago
+|
+prev
+|
+next
+[–]
+So here's what's worked for me over the years -
+I collect interesting links/pages/stuff by emailing myself notes about them. I never actually _do_ anything with these notes, but from time to time I open the "Notes To Self" folder and skim through them. Anything that seems worthless I delete, anything that seems obvious I delete, the rest just sit there.
+And that's more useful than you'd think - by reviewing them semi-regularly, you're indirectly memorizing their contents and refreshing their presence in your short term memory. And that to me is the benefit - not "copy this cool thing", but "feed my mind cool ideas until it has digested them and incorporated them into the gestalt.
+reply
+item007
+7 hours ago
+|
+parent
+|
+next
+[–]
+Thank you for sharing the email‑to‑self workflow and regular review habit. How often you prune the folder and whether you’d appreciate intelligent reminders.
+reply
+johngossman
+11 hours ago
+|
+parent
+|
+prev
+|
+next
+[–]
+I do something similar but also cooy the most interesting of these into Obsidian. Doesn't take long and the activity of sorting helps me remember. It's amazing how often when I skim these that I find something interesting/profound/useful that I've forgotten.
+reply
+item007
+7 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+Cool! This just goes to show that old savings can sometimes come in handy.
+reply
+rapjr9
+14 hours ago
+|
+prev
+|
+next
+[–]
+While I do hoard notes I've realized over the years that the main reason I write notes is as a memory aid. If I write it down I remember it better, and I'm more likely to do it. Notes also act as a filter because I write stuff down, sometimes review the notes later, and decide what I wrote down isn't worth doing, so making a note of an idea essentially gives me a delay to review the idea and decide if it is worth doing. I do also record links, keeping them in wiki pages (along with wiki pages for notes about various projects); I started doing that because browser histories today seem to autodelete old links. Putting them into a wiki makes them searchable. I keep journals as well, which are also searchable. I don't necessarily want to be reminded of my notes and wiki/journal entries, I know they are there, I mainly want to call them up when I decide I need them. That's the main drawback of paper notes, I can't search them. I've tried scanning them, but it's tedious and they don't translate to ASCII text well, and drawings are not searchable. I've considered using one of the e-paper notepads instead of paper notes, but I'd need a notepad handy in every room of the house and that would cost too much, and the procedures to automatically sync them to a central location don't seem very reliable (and I don't want to sync personal notes to some public cloud).
+So for me, an AI that suggests stuff would be annoying. An AI that could take some vague search terms and my history and could pull old information out of notes that don't necessarily have the keywords I enter, using the context provided by my history might be useful. So for example, I may remember I happened across a design for the DSP algorithms in guitar pedals, but the URL or note may not even mention DSP, so something that could turn a search for "guitar pedal DSP" into finding a link for an audio processing web page I visited would be useful. The AI would probably have to scan all the web pages I visit to be able to store enough context to be useful for a search like that. Doing this for 20 years or more might run into some scalability/cost issues.
+reply
+item007
+8 hours ago
+|
+parent
+|
+next
+[–]
+Thank you for your feedback.
+That makes sense — for many people notes are primarily a memory/idea-filter, not a task generator.
+Context, long-term memory, and storage issues are indeed challenges currently facing AI and large language models (LLMs), and they're not unique to the scenarios we're discussing. However, with technological advancements, I believe these issues will eventually be resolved.
+Based on your requirements, it seems you need to grant the AI sufficiently broad access and privacy permissions. That said, leveraging what you've already stored, achieving the fuzzy retrieval functionality you mentioned should be feasible.
+It's impressive that you can recall exactly where to find your notes! That said, active retrieval still requires you to remember what you're looking for. I think your fuzzy retrieval concept shares some similarities with what I'm aiming for—where the AI offers suggestions based on your intended actions, even when you haven't consciously decided what to search for. Wouldn't you welcome that kind of assistance?
+reply
+phippsytech
+5 hours ago
+|
+prev
+|
+next
+[–]
+I hoard information that I find interesting but cannot act on right now, mostly because engaging with it immediately would derail me. The problem is that I almost never come back to what I have saved.
+A simple example is YouTube. I save videos to watch later because I am not in the right headspace at the time. Then I avoid them completely. I think part of the resistance is that I know watching them properly will demand attention and probably lead to follow-up work, and I am rarely in a mode where I want that interruption.
+I have thought about the whole “second brain” idea, but I worry it would just become a dumping ground. Nothing would really resurface when it actually matters. I would mostly be relying on myself to remember that I once made a note about something when I happen to be working on a related problem.
+Lately I have been thinking about the idea of a passive, radio style feed that summarises the information I have collected and plays it back to me, so I can at least consume each item once.
+You see those TV shows about people who hoard. They cannot throw things away because they might be important one day. This feels uncomfortably similar.
+Maybe the real problem is not how we store information. Maybe it is that we aren't filtering hard enough on what is actually worth keeping in the first place.
+reply
+item007
+5 hours ago
+|
+parent
+|
+next
+[–]
+This resonates a lot. “Save now so I don’t derail myself” is rational in the moment, but it creates a pile that later feels like a commitment (attention + follow-up work), so you avoid it.
+I think you’re pointing at two separate problems that get tangled:
+1. Re-entry: how to resurface the right item when you’re actually in the right mode
+2. Filtering: deciding what’s worth keeping so the backlog doesn’t become guilt
+The “radio-style passive feed” is interesting because it changes the contract: you’re not promising yourself you’ll do deep work, you’re just letting the system replay what you captured at a low cognitive cost. If it worked, it could also become a filter: only the stuff that still feels valuable on playback deserves a second pass.
+One question: if you had a “listen/read later” mode, would you prefer it to be time-based (10 minutes a day) or context-based (only when you mark yourself as in a “curious/exploration” headspace)?
+Details in my HN profile/bio if you want to compare this to the “active projects + pull-based resurfacing” angle I’m validating.
+reply
+pcardoso
+7 hours ago
+|
+prev
+|
+next
+[–]
+I tend to hoard things sometimes: links, notes, screenshots with useful tidbits, scraps of paper with notes…
+One of the things I keep is the list of stuff I did during the day for when the standup call comes. Sometimes I forgot of mention a lot of stuff.
+Then a few weeks ago I build the MVP of a note taking app specifically for this purpose: what did I do, what am I doing next, am I blocked by something?
+No backend, data is stored in browser local storage, quick to load, a weekly summary and data export. No tracking whatsoever.
+Not ready yet, which is why I didn’t do a Show HN feature yet, but has been useful to me even in its current state.
+It lives at
+https://tinyleaps.app
+reply
+item007
+7 hours ago
+|
+parent
+|
+next
+[–]
+Nice step!
+If you are ok to help, check my bio for more.
+reply
+laurieg
+10 hours ago
+|
+prev
+|
+next
+[–]
+I started using obsidian about a year ago and I have found it to be an invaluable tool.
+The key is using it to solve problems you actually have, rather than problems you want to have.
+I was losing track of people's contact details --> I made an addressbook in obsidian.
+I wanted to track my exercise to find out how much I was running each week --> make graphs
+And so on. Your obsidian should get a bit messy before you try to impose order on it. Use it to solve a problem badly (Just writing down how far I run in a daily diary note) then improve (Writing a query to turn all of those notes into a graph).
+Personally I don't use any AI with my knowledge base. Good searching tools and a little bit of organization are the most useful thing for me.
+Personally, I think keeping lots of notes/links is a kind of digital hoarding. Just like real hoarding, it's an emotional problem not an organizational problem. If you can work out what emotional need hoarding links is fulfilling for you then you're on the way to working out how to get that emotional need fulfilled by something else.
+reply
+item007
+6 hours ago
+|
+parent
+|
+next
+[–]
+I think this is an underrated point. A lot of “knowledge management” is really anxiety management — saving feels like progress, and deleting feels like losing options.
+One thing I’m trying to learn is whether the “fix” is actually less intake / better filters (so you don’t hoard), versus better retrieval/action tooling after the fact.
+For you personally: what has helped more — changing the capture habit (rules/quotas/digests), or having a ruthless review/delete loop? And what triggers you to save in the first place (fear of forgetting, future usefulness, perfectionism, etc.)?
+reply
+allenu
+12 hours ago
+|
+prev
+|
+next
+[–]
+I don't really use "second brain" style notes and links for taking action. I use them to record something I think I might find interesting later, like a bookmark. I tag it and move on and later when enough time has passed, I search the notes by particular tag to see what things I recorded. Usually in that scenario, I actually will be in some mode where I'm trying take action. I'll often be looking for inspiration (say interesting UX design) and will have a ton of saved links and ideas to draw on. But I wouldn't say I'm writing these notes for particular action items.
+On the other hand, for work that I do day to day, I do take notes and those are a different type. Those are tied to actions I'm taking and I'll sprinkle them with actual to-do lists that I check off in the notes. I'll link ideas that are related and document things, but for my own projects, I don't try to make it too formal or strict. The notes aren't the goal, they're sort of a scratchpad for day to day operations.
+reply
+item007
+7 hours ago
+|
+parent
+|
+next
+[–]
+Validate that notes can be scratchpads for inspiration while action lists are separate. Whether you’d find value in connecting ideas and tasks automatically?
+reply
+WilcoKruijer
+5 hours ago
+|
+prev
+|
+next
+[–]
+I’ve recently started using a similar process to what you’re describing. It basically involves writing/speaking to AI in an unstructured manner, and having it extract entries for my knowledge base based on a certain schema. I built a tool to validate the entries to the schema, giving the AI a feedback loop so it can automatically fix/improve the entries. It also supports linking. I use agentic search in both entering and finding knowledge. Links, categories and metadata help the AI tremendously in finding relevant snippets. I go into more detail in this blog post [0].
+[0]
+https://thalo.rejot.dev/blog/plain-text-knowledge-management
+reply
+item007
+5 hours ago
+|
+parent
+|
+next
+[–]
+I read the post — the plain-text accounting analogy is a great fit. The “unit test for knowledge” idea (a checker like bean-check, but for schema + links) feels like the missing feedback loop for most AI-assisted note workflows, and using git/history as the trust layer makes it much more auditable.
+I also like the idempotency/provenance angle (unique IDs/links, checkpointing) and the “commit processing” workflow — that’s a concrete example of turning ongoing work into structured, queryable knowledge without a ton of manual ceremony.
+Curious: in practice, what improved your quality the most — schema validation catching broken links/types, or constraining the entity set so the agent can’t invent structure? Also, do you find yourself actually using the query language day-to-day, or is it mostly agent-driven retrieval?
+I’m exploring a similar closed-loop (context → retrieval → suggestion → human review → write-back) and summarized my angle in my HN profile/bio if you want to compare approaches.
+reply
+alexsmirnov
+6 hours ago
+|
+prev
+|
+next
+[–]
+I do use Obsidian on pair with Claude code and git.
+I organize notes by tags, folders, and links from tree of "map of content" notes. Those documented as rules for AI. All notes came to "Inbox" folder, and from time to time I run special script that checks inbox, formats notes, tags them, and put in the most appropriate place. "git diff" to check results and fix mistakes, reset if it went wrong.
+As notes organized by the limited number of well defined rules, they became easy to search and navigate by AI. Claude Code easily finds requested notes, working as advanced search engine, and they became a starting point for "deep research" : find relevant notes, follow links, detect gaps, search internet. Repeat until reach required confidence level.
+The most advanced workflow so far is combination of TRIZ (Theory of Inventive Problem Solving) + First Principles Framework. Former generates ideas and hypotheses, later validates them and converge on final answer.
+reply
+item007
+5 hours ago
+|
+parent
+|
+next
+[–]
+This is a great example of making the system trustworthy: Inbox → scripted processing → git diff review → reset if needed. The diff-as-trust-layer feels like the missing piece for a lot of “AI organizes my notes” ideas.
+Also +1 on “limited rules” being more important than fancy models — once the structure is predictable, Claude becomes a genuinely useful retrieval and research assistant.
+Out of curiosity, where does the loop close for you today? After “deep research” produces a conclusion, do you write back into a MOC / decision log / project note, or does it mostly live in chat + commits? I’m exploring a similar loop (context → retrieval → suggestion → human review → write-back) with the same constraint: keep it auditable and reversible (diff-friendly). Details are in my HN profile/bio if you want to compare approaches.
+reply
+item007
+5 hours ago
+|
+prev
+|
+next
+[–]
+Quick clarification as OP: 
+A lot of comments anchored on Obsidian/PKM (which makes sense), but I’m not trying to build an Obsidian-only tool.
+When I say “notes/links/docs”, I mean scattered personal inputs in general: emails, chats, bookmarks, posts, documents, repos, meeting notes, etc. The problem I’m validating is re-entry: surfacing the right context when something becomes relevant, without forcing everything to be rewritten as “notes” or adding another inbox.
+If you’ve dealt with this, which source is the worst “graveyard” for you (email/chat/bookmarks/posts/docs/repos...), and do you prefer better recall/search, a pull-based digest, or a review ritual that extracts 1–3 concrete next actions?
+reply
+fathermarz
+14 hours ago
+|
+prev
+|
+next
+[–]
+I hoard links, research papers, blog posts as a reference. My human brain can make connections of the smallest detail of things I have read or seen before but I don’t always remember what. So if I am working on something I think, oh I have seen something like this before, I search in my tagged links. It rarely comes in handy, but when it does, it is a great feeling.
+reply
+item007
+6 hours ago
+|
+parent
+|
+next
+[–]
+Thanks for sharing—it seems you have an extraordinary brain!
+I'm also very curious, what makes a retrieval moment “great” and how often it happens.If someone could help you increase the likelihood of it happening, would you find that valuable?
+reply
+stuartaxelowen
+13 hours ago
+|
+prev
+|
+next
+[–]
+Notes are options. Sometimes options for taking action later, sometimes as reference for related action. The bet when writing a note is that its risk adjusted return for those avenues is higher than the opportunity cost.
+I also have similar thoughts on turning writing into action and re-entrance, would be interested to hear your thoughts:
+https://blog.sao.dev/2025-threads/
+This has proven to work well for me, but I’m chafing with git and agentic coding abstractions and looking for a unifying concept. Agent of empires doesn’t feel quite right, but is in the right direction.
+reply
+item007
+6 hours ago
+|
+parent
+|
+next
+[–]
+I read your post — the `thread` file structure (Bet / Context / Next steps / DoD / Log) is a really clean “re-entrance artifact” for both humans and agents.
+One thought: it also gives you a natural closed-loop signal —
+Log + DoD changes
+are the feedback, not vague “AI memory”. A tool could surface notes as *options* only when a thread is active, then write back only via diffs to `Next steps` / `Log` (human-approved), keeping it deterministic.
+For the git/agentic abstraction itch: what do you want as the single source of truth — the thread file, issues, or git events?
+reply
+tunesmith
+14 hours ago
+|
+prev
+|
+next
+[–]
+I think a super common problem with any todo system is the "capture anything" mindset. They've even redefined what "focus" means, like now it just means to focus on whatever thing you're focused on at that moment.
+Focus is supposed to mean you have a clear idea of who you are and what you need to work on, and also what you don't.
+So I've taken to follow a (bespoke) process where I identify what my own personal principles are, and what priorities and efforts they imply. Then, of all the "oh I could/should do this" potential tasks that occur to me, I have an out: if it doesn't align with my own personal focus, then I can delete it.
+reply
+item007
+6 hours ago
+|
+parent
+|
+next
+[–]
+This resonates — the real superpower is having a clear “no”, not capturing everything.
+One idea I’m exploring with *Concerns* is making that constraint explicit: when you set “active goals/projects”, you can only keep a *small fixed number* (e.g. 3–5). Anything else becomes “not active”, so the system won’t surface it or turn it into tasks.
+Curious: what’s your number—3, 5, or 10—and what rule do you use to decide what gets to be “active”?
+reply
+specproc
+11 hours ago
+|
+prev
+|
+next
+[–]
+The only thing that's ever worked is a piece of paper and a pen. Never really look back more than a week.
+Not sophisticated, but it moves me forward.
+reply
+ozim
+11 hours ago
+|
+parent
+|
+next
+[–]
+Realizing graveyard of good intentions is not that valuable is one of the most important things that we have to learn. Best to just cut it and work on what is ahead.
+reply
+item007
+6 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+Totally agree — learning to prune the “good intentions” pile is a real productivity upgrade.
+Out of curiosity: do you have a simple rule for what you cut (age-based, relevance to current projects, or “if it didn’t turn into action, delete”)?
+reply
+ozim
+4 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+Last 2 or 3 years I do end of the year pruning.
+Stuff that is relevant for things I am currently busy with are recent so like last couple weeks. Stuff that I don’t remember touching in those weeks gets deleted.
+reply
+item007
+4 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+That’s a great pruning heuristic. Is this mostly about notes/links, or do you apply the same rule to other inputs too (email, chat threads, bookmarked posts, PDFs, repos, etc.)?
+For the non-note stuff, do you have a “recently touched” equivalent, or do you rely on different rules (e.g. archiving/search for email, starred threads for chat, etc.)?
+reply
+item007
+6 hours ago
+|
+parent
+|
+prev
+|
+next
+[–]
+Totally get it — paper forces focus and has near-zero overhead.
+Out of curiosity, is the “one-week horizon” a deliberate constraint to avoid backlog guilt, or just what naturally works for you?
+reply
+specproc
+4 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+Just what "works" for me, I guess.
+reply
+yawnxyz
+13 hours ago
+|
+prev
+|
+next
+[–]
+yes and no;
+I "hoard" ideas and articles because it's a good way for me to offload them from my brain
+As a designer, I absolutely DO scroll through my swipe files once in a while to get inspiration; sometimes I'll also go through saved github repos to borrow an implementation
+E.g. that's how I ended up using a lot of libraries like Immer, Svelte, ended up loving Observable / d3js, etc.
+Idk about all y'all, but notes are absolutely useful for me.
+reply
+item007
+6 hours ago
+|
+parent
+|
+next
+[–]
+Totally agree — “notes as offloading” is real, and for design/dev work swipe files are legitimately high ROI (inspo + implementation references).
+Concerns isn’t trying to turn everything into more notes. The premise is: most useful context already exists in lots of places (articles, emails, posts, links, repos), and forcing all of it into a single note system is extra work. I’m exploring a connector approach where those sources can stay where they are, and the system only surfaces/reconnects the right items when they’re relevant to an active project — without you having to rewrite them as notes.
+Curious: for your workflow, what’s the most valuable “resurface moment” — when starting a new project, when you’re stuck mid-way, or during review/polish?
+reply
+xenodium
+14 hours ago
+|
+prev
+|
+next
+[–]
+I had been hoarding links/notes to movies/tv shows for some time, saved to a plain text file. Often by sharing links from other apps (ie. Reddit or Letterboxd), paired with hashtags, using an iOS app I built.
+Finally extracted the data for these hashtags and fed it to an LLM to organize. I'm happy with the result
+https://xenodium.com/film-tv-bookmarks-chaos-resolved
+reply
+item007
+6 hours ago
+|
+parent
+|
+next
+[–]
+Nice write-up — I like the “capture with lightweight hashtags, then batch-organize with an LLM” approach.
+Curious: what part created the most friction before you automated it — capturing, tagging consistency, or resurfacing when you actually want to watch something?
+Also, after the LLM organized it, did you find yourself maintaining that structure, or do you plan to re-run organization periodically?
+reply
+danparsonson
+10 hours ago
+|
+parent
+|
+prev
+|
+next
+[–]
+That is an interesting film/TV watch list, I might have to harvest that for my own!
+reply
+haunter
+13 hours ago
+|
+prev
+|
+next
+[–]
+To some extent I wish there was a bookmarking / note keeping service with snapshots and context based (local LLM?) search solving this.
+My main problem with bookmarks / notes that I forget about them. I don't need a bookmark keeping service, I need one which would bring them forward when I look for something, based on context too. Something like which also makes a plain text searchable snapshot of the page.
+reply
+item007
+8 hours ago
+|
+parent
+|
+next
+[–]
+It seems you do have some pain points and needs. But is mere retrieval really enough? What I mean is, retrieval is an active pull action—you need to know what you're searching for in the first place. My goal is more about leveraging AI for push notifications to maximize your existing knowledge base.
+If you're interested, feel free to check out my profile to help me gather more insights.
+reply
+danparsonson
+10 hours ago
+|
+parent
+|
+prev
+|
+next
+[–]
++1 for this - I have a ton of links saved up and a system that stored them in a searchable list, saved a copy of each site (PDF would be good enough), and then fed it all to an LLM that could give me relevant info when I needed it, would be ideal. I'm planning to try something like linkding for the first two, if I can find the time.
+reply
+item007
+8 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+Your needs are indeed quite similar to my own ideas.I put an optional feedback form in my HN profile, if you are open to that.
+reply
+danparsonson
+6 hours ago
+|
+root
+|
+parent
+|
+next
+[–]
+Sure I'll try to take a look
+reply
+guybedo
+12 hours ago
+|
+parent
+|
+prev
+|
+next
+[–]
+shameless plug here, i'm building something that might be of interest.
+It's an opinionated app so it might not fit everyone's needs but that's my dream productivity app: LLM*(notes+tasks+rss+flashcards+routines). So basically an all in one app with LLM actions and workflows. no subscription, optional cloud service (can be self hosted too).
+Here's a very early landing page:
+https://getmetis.app
+reply
+ge96
+9 hours ago
+|
+prev
+|
+next
+[–]
+For work I have a daily note (Apple Notes) and I just write my thoughts by time stamps eg. 10:30 AM ...
+Unfortunately I am a "write to remember" type person
+My phone color notes (Android) and 70% of my screen is a note widget. This is always in my face so stuff I want to get done is at the top. Then I write on top of it kind of pushing stuff/the stack downwards.
+I have a Twilio number I text to remind myself of stuff in the future by minutes/hours/days.
+I've written a lot of random note-taking apps whether it's desktop, web, chrome extension... at some point I would like to unify them/central data storage
+reply
+item007
+7 hours ago
+|
+parent
+|
+next
+[–]
+Thank you for sharing your excellent habit. May I ask, do you record all the information you receive—emails, articles, posts, etc.—that you find useful as notes? My current idea extends beyond just notes to encompass all the information you collect that you think might be useful. Wouldn't it be valuable if you didn't have to manually organize and summarize it?
+reply
+alecco
+4 hours ago
+|
+prev
+|
+next
+[–]
+Define a time of the week you fix your notes. Ideally rewrite them frequently to distill what matters. You don't need to do it all at once, just constant progress.
+reply
+item007
+4 hours ago
+|
+parent
+|
+next
+[–]
+Totally agree — a recurring ritual beats any tool. Rewriting/distilling is basically how notes turn into something you can actually re-enter later.
+One nuance I’m exploring is making that weekly “fix notes” time the primary UX: during the review, help you pick the few items worth distilling, link them to a small set of active projects, and extract 1–2 concrete next steps. Outside that window, stay quiet so it doesn’t become another inbox.
+What cadence has actually stuck for you in practice: a short daily pass, or a deeper weekly review?
+reply
+MomsAVoxell
+11 hours ago
+|
+prev
+|
+next
+[–]
+Workflow is key. Things do not just immediately get done - there is a process. Over-generalization is the devil - precise description of targets and goals is key to execution, and soon enough, delivery.
+The ability to describe a workflow - or a production pipeline, or whatever you want to call it - but lets say, workflow, is very important in these kinds of automation systems.
+You could generalise workflows such that the user is prompted to define and enforce their own flows of work, as a matter of UI/UX interaction, and see if you don't start collecting a lot of successfully executed projects...
+reply
+item007
+6 hours ago
+|
+parent
+|
+next
+[–]
+Strongly agree. I think the biggest leverage is forcing explicit targets + a small, user-defined workflow, otherwise automation becomes vague and noisy.
+One direction I’m exploring is a constrained “active projects” list (only a few at a time) plus lightweight workflow templates, so the system can map incoming info to a specific stage/next-step rather than spraying suggestions.
+If you had to pick, what’s the minimum workflow schema that’s still useful: stages (e.g. research/draft/review), clear Definition of Done, or explicit next-action ownership?
+(If helpful, I wrote up the idea in my HN profile/bio.)
+reply
+mrklol
+5 hours ago
+|
+prev
+|
+next
+[–]
+My main problem always was that I hoard these links and never read again. Now I am trying to get a short summary (via llm‘s) and it works quite well.
+reply
+item007
+5 hours ago
+|
+parent
+|
+next
+[–]
+Summaries are a great first step — they reduce the friction of “re-reading”, and they can help you decide what’s actually worth keeping.
+The question I’m curious about is what happens after the summary: do you want it to end as “good to know”, or do you sometimes want it to turn into something concrete (a bookmark tagged to an active topic, a short brief, or a next action)?
+If you’re open to one more detail: how do you consume the summaries today — a daily digest you pull when you have time, or do you generate them only when you’re searching for something?
+reply
+keithluu
+13 hours ago
+|
+prev
+|
+next
+[–]
+I always thought my problem was my notes being scattered and disorganized. But reading this post made me realize something. I don't need better organization for the random links or braindumps I collect over time. Because I rarely actively revisit them. Usually That happens thanks to reminders, or when I need references for something I can't find anywhere else. So I think your action engine idea is sound.
+To answer your questions:
+1. Retrieval. 90% of my notes never get touched the second time, and I can't remember them at the right time.
+2. On my head + a simple task list I made.
+3. Hallucinations and pricing.
+reply
+item007
+9 hours ago
+|
+parent
+|
+next
+[–]
+Thanks a lot for your comments and glad to hear that my idea has inspired you.
+"Retrieval at the right moment" is exactly what I’m trying to solve.
+Also on hallucinations: would you trust suggestions more if each proposed action came with a quoted “evidence snippet” + source link?
+If you are open to it, I put some context + a short survey in my profile if you want to take a look.
+reply
+nitwit005
+14 hours ago
+|
+prev
+|
+next
+[–]
+> Project context signals (repo/PRs? issues? tasks? calendar? a “project doc”?)
+There's a cost to recording what you're working on, so usually the only people who track it in a fine grained way are those that need exact numbers for billing. It's not worth the time otherwise.
+There are hints to what people are working on. Connecting to a database means SQL may happen, but maybe not.
+It's a big issue with personal assistant ideas in general. It's very difficult to get any real context on things. Even data that seems firm like calendar appointments, isn't in practice. Look at people's calendars, and you'll see them triple booked.
+reply
+item007
+6 hours ago
+|
+parent
+|
+next
+[–]
+You're totally right — fine-grained “what I’m working on” tracking is usually not worth the overhead unless it’s tied to billing or some hard accountability.
+One direction I’m exploring is to stop treating context as a single ground-truth stream and instead use cheap, probabilistic hints: a small “active projects” list (explicit but constrained), plus weak signals (recent files, open tabs, issue activity), and then ask for confirmation only when confidence is low. Calendars are a great example of why “seems firm” isn’t actually firm.
+If you were deAnd yes — this is exactly the problem I’m outlining in my HN bio/profile if you want the longer version.
+reply
+appsoftware
+15 hours ago
+|
+prev
+|
+next
+[–]
+I like obsidian, but use Logseq day-to-day. I find it pretty easy to dump information without too much work due to the block / indenting structure. Retrieval isn't too bad, because you navigate to the wikilink you need, and everything is under it (I do sometimes swear I used a specific wiki link and then find I used something else, and have to dig for information).
+Something that did work well recently, was creating a node script to gather all text under a given wiki link and copy to a doc with some formatting modifications, and then feed the document to an LLM for consolidation and a summary of everything I have recorded for a given subject.
+reply
+item007
+6 hours ago
+|
+parent
+|
+next
+[–]
+That’s a really solid workflow: keep capture friction low in Logseq, then do “topic export → LLM consolidation” when you actually need a brief.
+The wiki-link mismatch problem also sounds like a naming/alias layer issue more than retrieval itself.
+If you were to take this one step further, would you want the output to be:
+1.a consolidated brief you can re-enter later, or
+2.a small set of next-actions / open questions extracted from the brief?
+This “export + consolidate” pattern is very close to what I’m exploring (details in my HN bio/profile if you’re curious).
+reply
+inetknght
+15 hours ago
+|
+prev
+|
+next
+[–]
+>
+What I’m asking from you:
+>
+1.Where does your “second brain” break down the most?
+First and foremost, remembering to write notes or to review them. What do I want? Is there a timeline that requires things to be done before it becomes invalid or increases liabi
+
+[内容已截断...]

@@ -1,0 +1,22 @@
+URL: https://www.reddit.com/r/robotics/comments/1qtklj3/why_are_there_no_autonomous_mobile_robots_in/
+Title: Reddit - The heart of the internet
+Time: 2026-02-03T10:26:37.015250
+Go to robotics
+r/robotics
+•
+Electrical-You4014
+हिन्दी
+Português (Brasil)
+Deutsch
+Italiano
+Why are there no Autonomous Mobile Robots in Construction Sites
+I live in India and in a day I see about 4 construction sites on my way to work . I quite often notice that we don't have Autonomous robots that carry heavy load from one place to another. People continue to use wheel barrow as a mode to carry heavy load.
+I do not know why we are not in a time where people can start using robots to carry heavy load. I am new to robotics and learning still about the mechanics and the business of it.
+I wanted to know if:
+Is this the case in most countries?
+Are people not using robots to carry heavy load due to extremely high costs?
+Are these robots not as fast and efficient as they claim to be?
+Is there no need in the first place?
+I would love to know your thoughts as to why we don't see as many robots carry heavy load in construction sites?
+Read more
+Share
